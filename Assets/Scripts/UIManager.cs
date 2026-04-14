@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -12,9 +13,12 @@ public class UIManager : MonoBehaviour
 
     public RectTransform boton1Transform; //NUEVO
 
+    private string contextoActual;
+
     // UNIVERSO (2 botones)
     public void PopupUniverso()
     {
+        contextoActual = "Universo";
         panelPopup.SetActive(true);
 
         textoBoton1.text = "Explorando el Sistema Solar";
@@ -29,6 +33,7 @@ public class UIManager : MonoBehaviour
     // TIERRA (2 botones)
     public void PopupTierra()
     {
+        contextoActual = "Tierra";
         panelPopup.SetActive(true);
 
         textoBoton1.text = "El Planeta Tierra";
@@ -42,6 +47,7 @@ public class UIManager : MonoBehaviour
     // TIEMPO (1 botón)
     public void PopupTiempo()
     {
+        contextoActual = "Tiempo";
         panelPopup.SetActive(true);
 
         textoBoton1.text = "Reloj Analógico y Digital";
@@ -55,6 +61,7 @@ public class UIManager : MonoBehaviour
     // MUNDO (1 botón)
     public void PopupMundo()
     {
+        contextoActual = "Mundo";
         panelPopup.SetActive(true);
 
         textoBoton1.text = "Los Continentes";
@@ -68,5 +75,41 @@ public class UIManager : MonoBehaviour
     public void OcultarPopup()
     {
         panelPopup.SetActive(false);
+    }
+
+    public void IrACuerposCelestes()
+    {
+        SceneManager.LoadScene("CuerposCelestes");
+    }
+
+    public void Boton1Popup()
+    {
+        if (contextoActual == "Universo")
+        {
+            SceneManager.LoadScene("SistemaSolar");
+        }
+        else if (contextoActual == "Tierra")
+        {
+            SceneManager.LoadScene("PlanetaTierra");
+        }
+        else if (contextoActual == "Tiempo")
+        {
+            SceneManager.LoadScene("Reloj");
+        }
+        else if (contextoActual == "Mundo")
+        {
+            SceneManager.LoadScene("Continentes");
+        }
+    }
+    public void Boton2Popup()
+    {
+        if (contextoActual == "Universo")
+        {
+            SceneManager.LoadScene("CuerposCelestes");
+        }
+        else if (contextoActual == "Tierra")
+        {
+            SceneManager.LoadScene("Estaciones");
+        }
     }
 }
