@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Globalization;
 
 public class UIManager : MonoBehaviour
 {
@@ -9,12 +10,26 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI textoBoton1;
     public TextMeshProUGUI textoBoton2;
 
+    public TextMeshProUGUI textoInfo;
+
     public GameObject boton2;
 
     public RectTransform boton1Transform; //NUEVO
 
     private string contextoActual;
+    public static UIManager Instance;
 
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     // UNIVERSO (2 botones)
     public void PopupUniverso()
     {
@@ -110,6 +125,24 @@ public class UIManager : MonoBehaviour
         else if (contextoActual == "Tierra")
         {
             SceneManager.LoadScene("Estaciones");
+        }
+    }
+    public void VolverMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void MostrarInfo(string planeta)
+    {
+        panelPopup.SetActive(true);
+
+        if (planeta == "Tierra")
+        {
+            textoInfo.text = "La Tierra es el tercer planeta del sistema solar, formado hace unos 4.500 millones de años, y el único conocido que alberga vida.";
+        }
+        else if (planeta == "Marte")
+        {
+            textoInfo.text = "Marte es el planeta rojo...";
         }
     }
 }

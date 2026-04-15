@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CuerposCelestes.unity
     guid: e1019d8a71765bf409ed7ef84caf6a74
+  - enabled: 1
+    path: Assets/Scenes/SistemaSolar.unity
+    guid: d4e9b4bd9959677439b16f46ba144ac2
   m_configObjects: {}
