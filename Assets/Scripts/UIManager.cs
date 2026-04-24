@@ -136,13 +136,44 @@ public class UIManager : MonoBehaviour
     {
         panelPopup.SetActive(true);
 
-        if (planeta == "Tierra")
+        switch (planeta)
         {
-            textoInfo.text = "La Tierra es el tercer planeta del sistema solar, formado hace unos 4.500 millones de años, y el único conocido que alberga vida.";
-        }
-        else if (planeta == "Marte")
-        {
-            textoInfo.text = "Marte es el planeta rojo...";
+            case "Mercurio":
+                textoInfo.text = "Mercurio es el planeta más cercano al Sol y el más pequeño del sistema solar.";
+                break;
+
+            case "Venus":
+                textoInfo.text = "Venus es el segundo planeta del sistema solar y el más caliente, con temperaturas de hasta 465°C.";
+                break;
+
+            case "Tierra":
+                textoInfo.text = "La Tierra es el tercer planeta del sistema solar, formado hace unos 4.500 millones de años, y el único conocido que alberga vida.";
+                break;
+
+            case "Marte":
+                textoInfo.text = "Marte es el planeta rojo...";
+                break;
+
+            case "Júpiter":
+                textoInfo.text = "Júpiter es el planeta más grande del sistema solar, una gigante gaseosa con la famosa Gran Mancha Roja.";
+                break;
+
+            case "Saturno":
+                textoInfo.text = "Saturno es conocido por su impresionante sistema de anillos, compuestos principalmente de hielo y roca.";
+                break;
+
+            case "Urano":
+                textoInfo.text = "Urano es un gigante de hielo que rota sobre su lado, con un eje de inclinación de casi 98 grados.";
+                break;
+
+            case "Neptuno":
+                textoInfo.text = "Neptuno es el planeta más lejano del sistema solar, conocido por sus vientos más veloces, superando los 2.000 km/h.";
+                break;
+
+            default:
+                textoInfo.text = "Información no disponible.";
+                panelPopup.SetActive(false);
+                break;
         }
     }
 }
