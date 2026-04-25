@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using System.Globalization;
 
 public class UIManager : MonoBehaviour
@@ -14,7 +15,20 @@ public class UIManager : MonoBehaviour
 
     public GameObject boton2;
 
-    public RectTransform boton1Transform; //NUEVO
+    public RectTransform boton1Transform;
+
+    public Image imagenPlaneta;  // NUEVO: arrastra el objeto Image del panel aquí
+
+    [Header("Sprites Planetas")]  // NUEVO: asigna cada sprite en el Inspector
+    public Sprite spriteMercurio;
+    public Sprite spriteVenus;
+    public Sprite spriteTierra;
+    public Sprite spriteMarte;
+    public Sprite spriteJupiter;
+    public Sprite spriteSaturno;
+    public Sprite spriteUrano;
+    public Sprite spriteNeptuno;
+    public Sprite spriteDefault;
 
     private string contextoActual;
     public static UIManager Instance;
@@ -140,38 +154,47 @@ public class UIManager : MonoBehaviour
         {
             case "Mercurio":
                 textoInfo.text = "Mercurio es el planeta más cercano al Sol y el más pequeño del sistema solar.";
+                imagenPlaneta.sprite = spriteMercurio;
                 break;
 
             case "Venus":
                 textoInfo.text = "Venus es el segundo planeta del sistema solar y el más caliente, con temperaturas de hasta 465°C.";
+                imagenPlaneta.sprite = spriteVenus;
                 break;
 
             case "Tierra":
                 textoInfo.text = "La Tierra es el tercer planeta del sistema solar, formado hace unos 4.500 millones de años, y el único conocido que alberga vida.";
+                imagenPlaneta.sprite = spriteTierra;
                 break;
 
             case "Marte":
                 textoInfo.text = "Marte es el planeta rojo...";
+                imagenPlaneta.sprite = spriteMarte;
                 break;
 
             case "Júpiter":
                 textoInfo.text = "Júpiter es el planeta más grande del sistema solar, una gigante gaseosa con la famosa Gran Mancha Roja.";
+                imagenPlaneta.sprite = spriteJupiter;
                 break;
 
             case "Saturno":
                 textoInfo.text = "Saturno es conocido por su impresionante sistema de anillos, compuestos principalmente de hielo y roca.";
+                imagenPlaneta.sprite = spriteSaturno;
                 break;
 
             case "Urano":
                 textoInfo.text = "Urano es un gigante de hielo que rota sobre su lado, con un eje de inclinación de casi 98 grados.";
+                imagenPlaneta.sprite = spriteUrano;
                 break;
 
             case "Neptuno":
                 textoInfo.text = "Neptuno es el planeta más lejano del sistema solar, conocido por sus vientos más veloces, superando los 2.000 km/h.";
+                imagenPlaneta.sprite = spriteNeptuno;
                 break;
 
             default:
                 textoInfo.text = "Información no disponible.";
+                imagenPlaneta.sprite = spriteDefault;
                 panelPopup.SetActive(false);
                 break;
         }
