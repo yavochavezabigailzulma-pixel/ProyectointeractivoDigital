@@ -123,7 +123,7 @@ public class UIManager : MonoBehaviour
         }
         else if (contextoActual == "Tiempo")
         {
-            SceneManager.LoadScene("Reloj");
+            SceneManager.LoadScene("JuegoReloj");
         }
         else if (contextoActual == "Mundo")
         {
