@@ -19,6 +19,18 @@ public class UIManager : MonoBehaviour
 
     public Image imagenPlaneta;  // NUEVO: arrastra el objeto Image del panel aquí
 
+    [Header("Fondos de Popup")]
+    public Image fondoPopup;
+    public Sprite fondoUniverso;
+    public Sprite fondoTierra;
+    public Sprite fondoTiempo;
+    public Sprite fondoMundo;
+
+    public Color colorUniverso = Color.white;
+    public Color colorTierra = Color.white;
+    public Color colorTiempo = Color.white;
+    public Color colorMundo = Color.white;
+
     [Header("Sprites Planetas")]  // NUEVO: asigna cada sprite en el Inspector
     public Sprite spriteMercurio;
     public Sprite spriteVenus;
@@ -57,6 +69,7 @@ public class UIManager : MonoBehaviour
 
         // posición normal (arriba)
         boton1Transform.anchoredPosition = new Vector2(0, 200);
+        AplicarEstiloPopup(fondoUniverso, colorUniverso);
     }
 
     // TIERRA (2 botones)
@@ -71,6 +84,7 @@ public class UIManager : MonoBehaviour
         boton2.SetActive(true);
 
         boton1Transform.anchoredPosition = new Vector2(0, 200);
+        AplicarEstiloPopup(fondoTierra, colorTierra);
     }
 
     // TIEMPO (1 botón)
@@ -85,6 +99,7 @@ public class UIManager : MonoBehaviour
 
         // CENTRAR
         boton1Transform.anchoredPosition = new Vector2(0, 0);
+        AplicarEstiloPopup(fondoTiempo, colorTiempo);
     }
 
     // MUNDO (1 botón)
@@ -99,6 +114,22 @@ public class UIManager : MonoBehaviour
 
         //CENTRAR
         boton1Transform.anchoredPosition = new Vector2(0, 0);
+        AplicarEstiloPopup(fondoMundo, colorMundo);
+    }
+
+    // PLAY (1 botón)
+    public void PopupPlay()
+    {
+        contextoActual = "play";
+        panelPopup.SetActive(true);
+
+        textoBoton1.text = "Los Continentes";
+
+        boton2.SetActive(false);
+
+        //CENTRAR
+        boton1Transform.anchoredPosition = new Vector2(0, 0);
+        fondoPopup.sprite = fondoMundo;
     }
 
     public void OcultarPopup()
@@ -109,6 +140,13 @@ public class UIManager : MonoBehaviour
     public void IrACuerposCelestes()
     {
         SceneManager.LoadScene("CuerposCelestes");
+    }
+
+    void AplicarEstiloPopup(Sprite fondo, Color colorTexto)
+    {
+        fondoPopup.sprite = fondo;
+        textoBoton1.color = colorTexto;
+        textoBoton2.color = colorTexto;
     }
 
     public void Boton1Popup()
@@ -138,7 +176,7 @@ public class UIManager : MonoBehaviour
         }
         else if (contextoActual == "Tierra")
         {
-            SceneManager.LoadScene("Estaciones");
+            SceneManager.LoadScene("LasEstaciones");
         }
     }
     public void VolverMenu()

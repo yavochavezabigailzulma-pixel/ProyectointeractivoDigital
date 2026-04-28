@@ -2,7 +2,7 @@
 - Project name: ProyectointeractivoDigital
 - Unity version: Unity 2022.3.62f1
 - Active game object:
-  - Name: UIManager
+  - Name: CinturonAsteroides
   - Tag: Untagged
   - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

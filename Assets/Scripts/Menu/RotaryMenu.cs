@@ -38,6 +38,12 @@ public class RotaryMenu : MonoBehaviour,
     [Header("Avatar")]
     public Image avatarImage;
 
+    [Header("Fondo")]
+    [Tooltip("Un sprite por cada ítem, en el mismo orden que los botones hijos")]
+    public Sprite[] backgroundSprites;
+    [Tooltip("La Image del objeto 'Fondo' en el Canvas")]
+    public Image backgroundImage;
+
     public System.Action<int> onCenterChanged;
 
     private RectTransform[] items;
@@ -49,6 +55,7 @@ public class RotaryMenu : MonoBehaviour,
     private float dragVelocity;
     private bool isDragging;
     private int centeredIndex;
+    private int lastCenteredIndex = -1;
     private Vector2 lastDragPos;
 
     void Start()
@@ -82,6 +89,8 @@ public class RotaryMenu : MonoBehaviour,
 
         foreach (var rt in items)
             rt.sizeDelta = itemSize;
+
+        ApplyBackground(0);
     }
 
     void Update()
@@ -107,16 +116,33 @@ public class RotaryMenu : MonoBehaviour,
 
             int idx = Mathf.RoundToInt(currentAngle / anglePerItem) % itemCount;
             centeredIndex = ((idx % itemCount) + itemCount) % itemCount;
+
+            // Avatar
             if (avatarImage != null)
                 avatarImage.color = items[centeredIndex].GetComponent<Image>().color;
+
+            // Fondo — solo actualiza cuando realmente cambió el ítem central
+            if (centeredIndex != lastCenteredIndex)
+            {
+                lastCenteredIndex = centeredIndex;
+                ApplyBackground(centeredIndex);
+                onCenterChanged?.Invoke(centeredIndex);
+            }
         }
 
         PositionAllItems(currentAngle);
-        UpdateScalesAndAlpha(currentAngle);
-
-        
+        UpdateScalesAndAlpha(currentAngle);        
     }
-
+    void ApplyBackground(int index)
+    {
+        if (backgroundImage == null) return;
+        if (backgroundSprites == null || backgroundSprites.Length == 0) return;
+ 
+        // Usa módulo por si backgroundSprites tiene menos entradas que items
+        int spriteIdx = index % backgroundSprites.Length;
+        if (backgroundSprites[spriteIdx] != null)
+            backgroundImage.sprite = backgroundSprites[spriteIdx];
+    }
     public void OnBeginDrag(PointerEventData eventData)
     {
         isDragging = true;
@@ -145,6 +171,8 @@ public class RotaryMenu : MonoBehaviour,
             float rad = itemAngle * Mathf.Deg2Rad;
             //items[i].anchoredPosition = new Vector2(Mathf.Cos(rad) * radius, Mathf.Sin(rad) * radius);
             items[i].anchoredPosition = new Vector2(Mathf.Cos(rad) * radius, Mathf.Sin(rad) * radius) + centerOffset;
+
+            items[i].localRotation = Quaternion.Euler(0f, 0f, itemAngle - 90f);
         }
     }
 

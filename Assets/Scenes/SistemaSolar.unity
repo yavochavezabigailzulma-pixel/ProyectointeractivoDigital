@@ -407,6 +407,15 @@ MonoBehaviour:
   boton2: {fileID: 0}
   boton1Transform: {fileID: 0}
   imagenPlaneta: {fileID: 772383341}
+  fondoPopup: {fileID: 0}
+  fondoUniverso: {fileID: 0}
+  fondoTierra: {fileID: 0}
+  fondoTiempo: {fileID: 0}
+  fondoMundo: {fileID: 0}
+  colorUniverso: {r: 1, g: 1, b: 1, a: 1}
+  colorTierra: {r: 1, g: 1, b: 1, a: 1}
+  colorTiempo: {r: 1, g: 1, b: 1, a: 1}
+  colorMundo: {r: 1, g: 1, b: 1, a: 1}
   spriteMercurio: {fileID: 21300000, guid: 23d369f40069b7d4c9c2ad638e3f54a3, type: 3}
   spriteVenus: {fileID: 21300000, guid: d120186f1a7bb5b4391ef79d5c7b5ef8, type: 3}
   spriteTierra: {fileID: 21300000, guid: ed312cfca3221c9468e2c2a45ce5ba6e, type: 3}
@@ -668,8 +677,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190335
-  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
+    rgba: 4285756275
+  m_fontColor: {r: 0.4509804, g: 0.4509804, b: 0.4509804, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1358,7 +1367,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 4.1, z: -5.2}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 2016774613}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &849696183
@@ -4865,6 +4875,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1973503855}
   m_CullTransparentMesh: 1
+--- !u!1 &2016774612
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2016774613}
+  - component: {fileID: 2016774614}
+  m_Layer: 0
+  m_Name: CinturonAsteroides
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2016774613
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016774612}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 849696182}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2016774614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016774612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ad8baf4d2413d4288d01a8063f83ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroidePrefab: {fileID: 2734493952813391089, guid: ebc4c1528a8ac0244a76bd9f5687a33b,
+    type: 3}
+  radioMinimo: 2.5
+  radioMaximo: 2.6
+  dispersionY: 0.05
+  cantidadAsteroides: 150
+  escalaMin: 0.03
+  escalaMax: 0.03
+  velocidadOrbita: 3
 --- !u!1 &2142237625
 GameObject:
   m_ObjectHideFlags: 0
