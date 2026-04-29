@@ -4919,14 +4919,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ad8baf4d2413d4288d01a8063f83ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asteroidePrefab: {fileID: 2734493952813391089, guid: ebc4c1528a8ac0244a76bd9f5687a33b,
+  asteroidePrefab: {fileID: 8790801849273007847, guid: 0721a0a3e6b8d3344996aaa530141e5c,
     type: 3}
   radioMinimo: 2.5
   radioMaximo: 2.6
   dispersionY: 0.05
-  cantidadAsteroides: 150
-  escalaMin: 0.03
-  escalaMax: 0.03
+  cantidadAsteroides: 200
+  escalaMin: 0.02
+  escalaMax: 0.04
   velocidadOrbita: 3
 --- !u!1 &2142237625
 GameObject:
