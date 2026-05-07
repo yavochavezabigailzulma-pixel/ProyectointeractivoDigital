@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 30116e32b4b93be46a64a5a057bac35c, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 04f41351c45eded4e99bb911efe5a87f, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -930,7 +930,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 209ee05bee40d584897af89fa7b4e611, type: 3}
+  m_Sprite: {fileID: 21300000, guid: adf854bb3b5736d4e83c79f912bf964a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
