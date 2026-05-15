@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using FMODUnity;
-[ExecuteInEditMode]
+//[ExecuteInEditMode]
 public class RotaryMenu : MonoBehaviour,
     IBeginDragHandler, IDragHandler, IEndDragHandler
 {

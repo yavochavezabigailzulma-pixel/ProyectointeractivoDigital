@@ -1,18 +1,37 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using FMODUnity;
-
 using FMOD.Studio;
 public class MenuManager : MonoBehaviour
 {
-    public EventReference musicaIntroMenu;
-    EventInstance musicaInstance;
-    private void Start()
+    public static MenuManager Instance;
+
+    public bool primeraVez = true;
+    void Awake()
     {
-        musicaInstance = AudioManager.Instance.CreateLoop(musicaIntroMenu);
+        if (Instance != null) { Destroy(gameObject); return; }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
-    public void IrAMenu()
+
+    public void setPrimeraVez(bool check)
     {
-        SceneManager.LoadScene("Menu");
+        primeraVez=check;
+    }
+    public bool getPrimeraVez()
+    {
+        return primeraVez;
     }
 }
+
+
+//    public EventReference musicaIntroMenu;
+//    EventInstance musicaInstance;
+//    private void Start()
+//    {
+//        musicaInstance = AudioManager.Instance.CreateLoop(musicaIntroMenu);
+//    }
+//    public void IrAMenu()
+//    {
+//        SceneManager.LoadScene("Menu");
+//    }

@@ -1,11 +1,18 @@
-using UnityEngine;
+using System.Globalization;
+using FMOD.Studio;
+using FMODUnity;
 using TMPro;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using System.Globalization;
-using FMODUnity;
 public class UIManager : MonoBehaviour
 {
+    public GameObject panelInicio;
+    public GameObject panelMenu;
+
+    public EventReference musicaIntroMenu;
+    EventInstance musicaInstance;
+
     public GameObject panelPopup;
 
     public TextMeshProUGUI textoBoton1;
@@ -58,6 +65,25 @@ public class UIManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void Start()
+    {
+        if(!musicaIntroMenu.IsNull)
+            musicaInstance = AudioManager.Instance.CreateLoop(musicaIntroMenu);
+
+        if (!MenuManager.Instance.getPrimeraVez() && SceneManager.GetActiveScene().name == "Menu")
+        {
+            panelInicio.SetActive(false);
+            panelMenu.SetActive(true);
+        }
+    }
+    public void IrAMenu()
+    {
+        AudioManager.Instance.Play(selectBoton);
+        panelMenu.SetActive(true);
+        panelInicio.SetActive(false);
+        MenuManager.Instance.setPrimeraVez(false);
+    }
+
     // UNIVERSO (2 botones)
     public void PopupUniverso()
     {
@@ -159,6 +185,9 @@ public class UIManager : MonoBehaviour
 
     public void Boton1Popup()
     {
+        AudioManager.Instance.Play(selectBoton);
+        AudioManager.Instance.StopLoop(musicaInstance);
+
         if (contextoActual == "Universo")
         {
             SceneManager.LoadScene("SistemaSolar");
@@ -178,6 +207,9 @@ public class UIManager : MonoBehaviour
     }
     public void Boton2Popup()
     {
+        AudioManager.Instance.Play(selectBoton);
+        AudioManager.Instance.StopLoop(musicaInstance);
+
         if (contextoActual == "Universo")
         {
             SceneManager.LoadScene("CuerposCelestes");
@@ -189,6 +221,7 @@ public class UIManager : MonoBehaviour
     }
     public void VolverMenu()
     {
+        AudioManager.Instance.Play(clicVolver);
         SceneManager.LoadScene("Menu");
     }
 
@@ -199,42 +232,106 @@ public class UIManager : MonoBehaviour
         switch (planeta)
         {
             case "Mercurio":
-                textoInfo.text = "Mercurio es el planeta más cercano al Sol y el más pequeño del sistema solar.";
+                textoInfo.text = 
+                    "<b>MERCURIO</b>\n" +
+                    "\n" +
+                    "<b>Posición:</b> 1\n" +
+                    "<b>Tipo:</b> Rocoso\n" +
+                    "N° de Lunas: Ninguna\n" +
+                    "<b>Curiosidades:</b>\n" +
+                    "   - Es el planeta más cercano al Sol.\n" +
+                    "   - Tiene temperaturas muy extremas.";
                 imagenPlaneta.sprite = spriteMercurio;
                 break;
 
             case "Venus":
-                textoInfo.text = "Venus es el segundo planeta del sistema solar y el más caliente, con temperaturas de hasta 465°C.";
+                textoInfo.text =
+                    "<b>VENUS</b>\n" +
+                    "\n" +
+                    "<b>Posición:</b> 2\n" +
+                    "<b>Tipo:</b> Rocoso\n" +
+                    "N° de Lunas: Ninguna\n" +
+                    "<b>Curiosidades:</b>\n" +
+                    "   - Tiene una atmósfera densa que atrapa el calor, lo que lo hace el planeta más caliente.\n" +
+                    "   - Gira en sentido contrario a la mayoría de los planetas.";
                 imagenPlaneta.sprite = spriteVenus;
                 break;
 
             case "Tierra":
-                textoInfo.text = "La Tierra es el tercer planeta del sistema solar, formado hace unos 4.500 millones de años, y el único conocido que alberga vida.";
+                textoInfo.text =
+                    "<b>TIERRA</b>\n" +
+                    "\n" +
+                    "<b>Posición:</b> 3\n" +
+                    "<b>Tipo:</b> Rocoso\n" +
+                    "<b>Nº de Lunas:</b> 1\n" +
+                    "<b>Curiosidades:</b>\n" +
+                    "- Es el único planeta conocido que alberga vida.\n" +
+                    "- Casi tres cuartas partes de su superficie están cubiertas por agua.";
                 imagenPlaneta.sprite = spriteTierra;
                 break;
 
             case "Marte":
-                textoInfo.text = "Marte es el planeta rojo...";
+                textoInfo.text =
+                    "<b>MARTE</b>\n" +
+                    "\n" +
+                    "<b>Posición:</b> 4\n" +
+                    "<b>Tipo:</b> Rocoso\n" +
+                    "<b>Nº de Lunas:</b> 2\n" +
+                    "<b>Curiosidades:</b>\n" +
+                    "- Es conocido como el \"planeta rojo\" debido al óxido de hierro en su superficie.\n" +
+                    "- Tiene el volcán más grande del sistema solar, el Monte Olimpo.";
                 imagenPlaneta.sprite = spriteMarte;
                 break;
 
             case "Júpiter":
-                textoInfo.text = "Júpiter es el planeta más grande del sistema solar, una gigante gaseosa con la famosa Gran Mancha Roja.";
+                textoInfo.text =
+                    "<b>JÚPITER</b>\n" +
+                    "\n" +
+                    "<b>Posición:</b> 5\n" +
+                    "<b>Tipo:</b> Gaseoso\n" +
+                    "<b>Nº de Lunas:</b> 95\n" +
+                    "<b>Curiosidades:</b>\n" +
+                    "- Es el planeta más grande de todo el sistema solar.\n" +
+                    "- Tiene una gran mancha roja que es una tormenta gigante.";
                 imagenPlaneta.sprite = spriteJupiter;
                 break;
 
             case "Saturno":
-                textoInfo.text = "Saturno es conocido por su impresionante sistema de anillos, compuestos principalmente de hielo y roca.";
+                textoInfo.text =
+                    "<b>SATURNO</b>\n" +
+                    "\n" +
+                    "<b>Posición:</b> 6\n" +
+                    "<b>Tipo:</b> Gaseoso\n" +
+                    "<b>Nº de Lunas:</b> 146\n" +
+                    "<b>Curiosidades:</b>\n" +
+                    "- Es famoso por su complejo y visible sistema de anillos.\n" +
+                    "- Es el segundo planeta más grande del sistema solar.";
                 imagenPlaneta.sprite = spriteSaturno;
                 break;
 
             case "Urano":
-                textoInfo.text = "Urano es un gigante de hielo que rota sobre su lado, con un eje de inclinación de casi 98 grados.";
+                textoInfo.text =
+                    "<b>URANO</b>\n" +
+                    "\n" +
+                    "<b>Posición:</b> 7\n" +
+                    "<b>Tipo:</b> Gigante helado\n" +
+                    "<b>Nº de Lunas:</b> 28\n" +
+                    "<b>Curiosidades:</b>\n" +
+                    "- Gira de lado, casi paralelo a su órbita.\n" +
+                    "- Su color azul verdoso se debe al metano en su atmósfera.";
                 imagenPlaneta.sprite = spriteUrano;
                 break;
 
             case "Neptuno":
-                textoInfo.text = "Neptuno es el planeta más lejano del sistema solar, conocido por sus vientos más veloces, superando los 2.000 km/h.";
+                textoInfo.text =
+                    "<b>NEPTUNO</b>\n" +
+                    "\n" +
+                    "<b>Posición:</b> 8\n" +
+                    "<b>Tipo:</b> Gigante helado\n" +
+                    "<b>Nº de Lunas:</b> 16\n" +
+                    "<b>Curiosidades:</b>\n" +
+                    "- Es el planeta más alejado del Sol.\n" +
+                    "- Tiene vientos supersónicos extremadamente rápidos.";
                 imagenPlaneta.sprite = spriteNeptuno;
                 break;
 
@@ -244,5 +341,10 @@ public class UIManager : MonoBehaviour
                 panelPopup.SetActive(false);
                 break;
         }
+    }
+
+    public void MostrarDesplegable()
+    {
+        Debug.Log("Desplegable aun vacio");
     }
 }
