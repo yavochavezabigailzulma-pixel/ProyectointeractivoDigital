@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Globalization;
-
+using FMODUnity;
 public class UIManager : MonoBehaviour
 {
     public GameObject panelPopup;
@@ -18,6 +18,8 @@ public class UIManager : MonoBehaviour
     public RectTransform boton1Transform;
 
     public Image imagenPlaneta;  // NUEVO: arrastra el objeto Image del panel aquí
+    public EventReference selectBoton;
+    public EventReference clicVolver;
 
     [Header("Fondos de Popup")]
     public Image fondoPopup;
@@ -61,6 +63,7 @@ public class UIManager : MonoBehaviour
     {
         contextoActual = "Universo";
         panelPopup.SetActive(true);
+        AudioManager.Instance.Play(selectBoton);
 
         textoBoton1.text = "Explorando el Sistema Solar";
         textoBoton2.text = "Cuerpos Celestes";
@@ -77,6 +80,7 @@ public class UIManager : MonoBehaviour
     {
         contextoActual = "Tierra";
         panelPopup.SetActive(true);
+        AudioManager.Instance.Play(selectBoton);
 
         textoBoton1.text = "El Planeta Tierra";
         textoBoton2.text = "Las Estaciones";
@@ -92,6 +96,7 @@ public class UIManager : MonoBehaviour
     {
         contextoActual = "Tiempo";
         panelPopup.SetActive(true);
+        AudioManager.Instance.Play(selectBoton);
 
         textoBoton1.text = "Reloj Analógico y Digital";
 
@@ -107,6 +112,7 @@ public class UIManager : MonoBehaviour
     {
         contextoActual = "Mundo";
         panelPopup.SetActive(true);
+        AudioManager.Instance.Play(selectBoton);
 
         textoBoton1.text = "Los Continentes";
 
@@ -122,8 +128,9 @@ public class UIManager : MonoBehaviour
     {
         contextoActual = "play";
         panelPopup.SetActive(true);
+        AudioManager.Instance.Play(selectBoton);
 
-        textoBoton1.text = "Los Continentes";
+        textoBoton1.text = "Aprendamos Jugando";
 
         boton2.SetActive(false);
 
@@ -135,6 +142,7 @@ public class UIManager : MonoBehaviour
     public void OcultarPopup()
     {
         panelPopup.SetActive(false);
+        AudioManager.Instance.Play(clicVolver);
     }
 
     public void IrACuerposCelestes()

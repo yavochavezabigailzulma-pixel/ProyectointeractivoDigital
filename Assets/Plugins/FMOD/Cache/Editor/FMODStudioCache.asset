@@ -1,0 +1,222 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4664911101318860837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/UI.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/BancoSonidos/Desktop/UI.bank
+  Name: UI
+  StudioPath: bank:/UI
+  lastModified: 639144007714514628
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-4132588466075913682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/ClicVolver
+  m_EditorClassIdentifier: 
+  Path: event:/UI/ClicVolver
+  Guid:
+    Data1: -541596362
+    Data2: 1080860997
+    Data3: -1174453631
+    Data4: -1774216874
+  Banks:
+  - {fileID: -4664911101318860837}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-1175276518836623753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/GiroMenu
+  m_EditorClassIdentifier: 
+  Path: event:/UI/GiroMenu
+  Guid:
+    Data1: -1950528052
+    Data2: 1255847135
+    Data3: 1934656957
+    Data4: -486088150
+  Banks:
+  - {fileID: -4664911101318860837}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 4536964855871900339}
+  - {fileID: 4725744668468142691}
+  - {fileID: 5375049294219994478}
+  - {fileID: -4664911101318860837}
+  EditorEvents:
+  - {fileID: 8217766366099881555}
+  - {fileID: -1175276518836623753}
+  - {fileID: 4545387245336529628}
+  - {fileID: -4132588466075913682}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 4725744668468142691}
+  StringsBanks:
+  - {fileID: 4536964855871900339}
+  cacheVersion: 131859
+  cacheTime: 639144007714514628
+  SerializableEventsDict:
+  - key: event:/Music/Inicio
+    index: 0
+  - key: event:/UI/GiroMenu
+    index: 1
+  - key: event:/UI/ClicSelect
+    index: 2
+  - key: event:/UI/ClicVolver
+    index: 3
+--- !u!114 &4536964855871900339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/BancoSonidos/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 639144002517077345
+  FileSizes:
+  - Name: 
+    Value: 1022
+  Exists: 1
+--- !u!114 &4545387245336529628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/ClicSelect
+  m_EditorClassIdentifier: 
+  Path: event:/UI/ClicSelect
+  Guid:
+    Data1: 563518035
+    Data2: 1210902707
+    Data3: -943627087
+    Data4: -1136224814
+  Banks:
+  - {fileID: -4664911101318860837}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4725744668468142691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/BancoSonidos/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 639144002517037323
+  FileSizes: []
+  Exists: 1
+--- !u!114 &5375049294219994478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/BancoSonidos/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 639144002695657372
+  FileSizes: []
+  Exists: 1
+--- !u!114 &8217766366099881555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Inicio
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Inicio
+  Guid:
+    Data1: -1603088301
+    Data2: 1259327195
+    Data3: 1683254931
+    Data4: 1779533768
+  Banks:
+  - {fileID: 5375049294219994478}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 165069

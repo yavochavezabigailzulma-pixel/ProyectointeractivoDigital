@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-
+using FMODUnity;
 [ExecuteInEditMode]
 public class RotaryMenu : MonoBehaviour,
     IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+    [Header("Sonidos")]
+    public EventReference clicMatraca;
+
     [Header("Geometría de la rueda")]
     public float radius = 300f;
     [Range(60f, 360f)]
@@ -55,7 +58,7 @@ public class RotaryMenu : MonoBehaviour,
     private float dragVelocity;
     private bool isDragging;
     private int centeredIndex;
-    private int lastCenteredIndex = -1;
+    private int lastCenteredIndex = 0;
     private Vector2 lastDragPos;
 
     void Start()
@@ -81,6 +84,8 @@ public class RotaryMenu : MonoBehaviour,
         if (itemCount == 0) { Debug.LogWarning("RotaryMenu: no hay ítems hijos activos."); return; }
 
         anglePerItem = 360f / itemCount;
+        lastCenteredIndex = Mathf.RoundToInt(currentAngle / anglePerItem) % itemCount;
+        lastCenteredIndex = ((lastCenteredIndex % itemCount) + itemCount) % itemCount;
         currentAngle = 0f;
         targetAngle = 0f;
 
@@ -114,20 +119,23 @@ public class RotaryMenu : MonoBehaviour,
             float nearest = Mathf.Round(currentAngle / anglePerItem) * anglePerItem;
             currentAngle = Mathf.LerpAngle(currentAngle, nearest, Time.deltaTime * snapSpeed);
 
-            int idx = Mathf.RoundToInt(currentAngle / anglePerItem) % itemCount;
-            centeredIndex = ((idx % itemCount) + itemCount) % itemCount;
 
             // Avatar
             if (avatarImage != null)
                 avatarImage.color = items[centeredIndex].GetComponent<Image>().color;
 
             // Fondo — solo actualiza cuando realmente cambió el ítem central
-            if (centeredIndex != lastCenteredIndex)
-            {
-                lastCenteredIndex = centeredIndex;
-                ApplyBackground(centeredIndex);
-                onCenterChanged?.Invoke(centeredIndex);
-            }
+            
+        }
+
+        int idx = Mathf.RoundToInt(currentAngle / anglePerItem) % itemCount;
+        centeredIndex = ((idx % itemCount) + itemCount) % itemCount;
+        if (centeredIndex != lastCenteredIndex)
+        {
+            lastCenteredIndex = centeredIndex;
+            ApplyBackground(centeredIndex);
+            onCenterChanged?.Invoke(centeredIndex);
+            AudioManager.Instance.Play(clicMatraca);
         }
 
         PositionAllItems(currentAngle);
