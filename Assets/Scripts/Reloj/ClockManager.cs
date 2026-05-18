@@ -8,6 +8,8 @@ public class ClockManager : MonoBehaviour
     public int hours = 12;
     public int minutes = 0;
 
+    public GameObject bienvenidaPanel;
+
     public static event Action<int, int> OnTimeChanged;
 
     void Awake()
@@ -15,6 +17,14 @@ public class ClockManager : MonoBehaviour
         Instance = this;
     }
 
+    private void Start()
+    {
+        if (MenuManager.Instance.primeraVezReloj)
+        {            
+            bienvenidaPanel.SetActive(true);
+            MenuManager.Instance.primeraVezReloj = false;
+        }
+    }
     public void SetTime(int h, int m)
     {
         int prevMinutes = minutes;
@@ -52,5 +62,10 @@ public class ClockManager : MonoBehaviour
         if (m >= 60) { m -= 60; h = (h + 1) % 24; }
         if (m < 0) { m += 60; h = (h + 23) % 24; }
         SetTimeFromHour(h, m);
+    }
+    public void Continuar()
+    {
+        if (bienvenidaPanel)
+            bienvenidaPanel.SetActive(false);
     }
 }

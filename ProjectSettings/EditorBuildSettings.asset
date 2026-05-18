@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LasEstaciones.unity
     guid: 6d3e1989f8829354fa4f28192d30bfba
+  - enabled: 1
+    path: Assets/Scenes/PlanetaTierra.unity
+    guid: cccf9c4a6f75e2f4d8b79cf669d97c7d
   m_configObjects: {}

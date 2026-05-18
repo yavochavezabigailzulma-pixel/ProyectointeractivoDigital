@@ -70,7 +70,7 @@ public class UIManager : MonoBehaviour
         if(!musicaIntroMenu.IsNull)
             musicaInstance = AudioManager.Instance.CreateLoop(musicaIntroMenu);
 
-        if (!MenuManager.Instance.getPrimeraVez() && SceneManager.GetActiveScene().name == "Menu")
+        if (SceneManager.GetActiveScene().name == "Menu" && !MenuManager.Instance.getPrimeraVez())
         {
             panelInicio.SetActive(false);
             panelMenu.SetActive(true);
