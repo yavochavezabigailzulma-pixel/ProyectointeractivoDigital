@@ -34,11 +34,18 @@ public class UIManager : MonoBehaviour
     public Sprite fondoTierra;
     public Sprite fondoTiempo;
     public Sprite fondoMundo;
+    //public Sprite fondoPlay;
 
     public Color colorUniverso = Color.white;
     public Color colorTierra = Color.white;
     public Color colorTiempo = Color.white;
     public Color colorMundo = Color.white;
+    //public Color colorPlay = Color.white;
+
+    public Image imagenBoton1;
+    public Image imagenBoton2;
+
+    public Sprite[] spritesBoton1;
 
     [Header("Sprites Planetas")]  // NUEVO: asigna cada sprite en el Inspector
     public Sprite spriteMercurio;
@@ -98,7 +105,7 @@ public class UIManager : MonoBehaviour
 
         // posición normal (arriba)
         boton1Transform.anchoredPosition = new Vector2(0, 200);
-        AplicarEstiloPopup(fondoUniverso, colorUniverso);
+        AplicarEstiloPopup(fondoUniverso, colorUniverso, 0, 1);
     }
 
     // TIERRA (2 botones)
@@ -114,7 +121,7 @@ public class UIManager : MonoBehaviour
         boton2.SetActive(true);
 
         boton1Transform.anchoredPosition = new Vector2(0, 200);
-        AplicarEstiloPopup(fondoTierra, colorTierra);
+        AplicarEstiloPopup(fondoTierra, colorTierra, 2, 3);
     }
 
     // TIEMPO (1 botón)
@@ -130,7 +137,7 @@ public class UIManager : MonoBehaviour
 
         // CENTRAR
         boton1Transform.anchoredPosition = new Vector2(0, 0);
-        AplicarEstiloPopup(fondoTiempo, colorTiempo);
+        AplicarEstiloPopup(fondoTiempo, colorTiempo, 4);
     }
 
     // MUNDO (1 botón)
@@ -146,7 +153,7 @@ public class UIManager : MonoBehaviour
 
         //CENTRAR
         boton1Transform.anchoredPosition = new Vector2(0, 0);
-        AplicarEstiloPopup(fondoMundo, colorMundo);
+        AplicarEstiloPopup(fondoMundo, colorMundo, 5);
     }
 
     // PLAY (1 botón)
@@ -176,11 +183,17 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene("CuerposCelestes");
     }
 
-    void AplicarEstiloPopup(Sprite fondo, Color colorTexto)
+    void AplicarEstiloPopup(Sprite fondo, Color colorTexto, int idxBoton1 = -1, int idxBoton2 = -1)
     {
         fondoPopup.sprite = fondo;
         textoBoton1.color = colorTexto;
         textoBoton2.color = colorTexto;
+
+        if (imagenBoton1 != null && idxBoton1 >= 0 && idxBoton1 < spritesBoton1.Length)
+            imagenBoton1.sprite = spritesBoton1[idxBoton1];
+
+        if (imagenBoton2 != null && idxBoton2 >= 0 && idxBoton2 < spritesBoton1.Length)
+            imagenBoton2.sprite = spritesBoton1[idxBoton2];
     }
 
     public void Boton1Popup()

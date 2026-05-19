@@ -40,6 +40,9 @@ public class RotaryMenu : MonoBehaviour,
 
     [Header("Avatar")]
     public Image avatarImage;
+    public Sprite[] avatarSprites;
+    public Sprite[] avatarBackgroundSprites;
+    public Image avatarBackgroundImage;
 
     [Header("Fondo")]
     [Tooltip("Un sprite por cada ítem, en el mismo orden que los botones hijos")]
@@ -120,11 +123,11 @@ public class RotaryMenu : MonoBehaviour,
             currentAngle = Mathf.LerpAngle(currentAngle, nearest, Time.deltaTime * snapSpeed);
 
 
-            // Avatar
-            if (avatarImage != null)
-                avatarImage.color = items[centeredIndex].GetComponent<Image>().color;
+            //// Avatar
+            //if (avatarImage != null)
+            //    avatarImage.color = items[centeredIndex].GetComponent<Image>().color;
 
-            // Fondo — solo actualiza cuando realmente cambió el ítem central
+            //// Fondo — solo actualiza cuando realmente cambió el ítem central
             
         }
 
@@ -150,6 +153,22 @@ public class RotaryMenu : MonoBehaviour,
         int spriteIdx = index % backgroundSprites.Length;
         if (backgroundSprites[spriteIdx] != null)
             backgroundImage.sprite = backgroundSprites[spriteIdx];
+
+        // Avatar sprite
+        if (avatarImage != null && avatarSprites != null && avatarSprites.Length > 0)
+        {
+            int idx = index % avatarSprites.Length;
+            if (avatarSprites[idx] != null)
+                avatarImage.sprite = avatarSprites[idx];
+        }
+
+        // Avatar fondo
+        if (avatarBackgroundImage != null && avatarBackgroundSprites != null && avatarBackgroundSprites.Length > 0)
+        {
+            int idx = index % avatarBackgroundSprites.Length;
+            if (avatarBackgroundSprites[idx] != null)
+                avatarBackgroundImage.sprite = avatarBackgroundSprites[idx];
+        }
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
