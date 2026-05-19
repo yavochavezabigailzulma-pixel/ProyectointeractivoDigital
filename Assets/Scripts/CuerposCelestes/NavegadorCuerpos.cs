@@ -10,7 +10,7 @@ public class NavegadorCuerpos : MonoBehaviour
     public GameObject pantallaContenido;
 
     public GameObject[] paneles; // arrastra los 6 paneles en orden
-
+    public Sprite[] infoBG;
     //void Awake() => Instance = this;
 
     //public GameObject pantallasBienvenida; // padre de las 3 pantallas
@@ -30,6 +30,10 @@ public class NavegadorCuerpos : MonoBehaviour
     public GameObject satNaturales;
     public GameObject satArtificiales;
 
+    public GameObject cometas;
+
+    public GameObject asteroides;
+
     public GameObject panelInfo;
     public TextMeshProUGUI textoInfo;
 
@@ -39,7 +43,11 @@ public class NavegadorCuerpos : MonoBehaviour
         pantallaContenido.SetActive(true);
 
         for (int i = 0; i < paneles.Length; i++)
+        {
             paneles[i].SetActive(i == index);
+            if(i == index)
+                panelInfo.GetComponent<UnityEngine.UI.Image>().sprite = infoBG[i];
+        }
 
         // Verifica si debe mostrar bienvenida
         if (index == 0 && MenuManager.Instance.primeraVezEstrellas)
@@ -87,6 +95,8 @@ public class NavegadorCuerpos : MonoBehaviour
             case 6: galIrregulares.SetActive(true); break;
             case 7: satNaturales.SetActive(true); break;
             case 8: satArtificiales.SetActive(true); break;
+            case 9: cometas.SetActive(true); break;
+            case 10: asteroides.SetActive(true); break;
         }
     }
 
@@ -104,6 +114,8 @@ public class NavegadorCuerpos : MonoBehaviour
             case 6: galIrregulares.SetActive(false); break;
             case 7: satNaturales.SetActive(false); break;
             case 8: satArtificiales.SetActive(false); break;
+            case 9: cometas.SetActive(false); break;
+            case 10: asteroides.SetActive(false); break;
         }
     }
 
@@ -152,6 +164,16 @@ public class NavegadorCuerpos : MonoBehaviour
                     "<b> 2.\tArtificiales. </b>\n" +
                     "\n" +
                     "Son máquinas creadas por las personas y enviadas al espacio para orbitar junto con la Tierra. Sirven para comunicarnos, tomar fotos de la Tierra y estudiar el universo."; break;
+            case 9:
+                textoInfo.text =
+                    "<b> Cometas. </b>\n" +
+                    "\n" +
+                    "Los cometas son cuerpos de hielo, polvo y roca que viajan por el espacio. Cuando se acercan al Sol, el calor forma una brillante cola."; break;
+            case 10:
+                textoInfo.text =
+                    "<b> Asteroides. </b>\n" +
+                    "\n" +
+                    "Los asteroides son grandes rocas espaciales que giran alrededor del Sol. La mayoría se encuentra entre Marte y Júpiter."; break;
         }
     }
     public void ocultarInfo()
