@@ -18,13 +18,19 @@ public class NavegadorCuerpos : MonoBehaviour
     public GameObject bienvenidaGalaxias;
     public GameObject bienvenidaPlanetas;
 
+    [Header("Objetos 3D")]
     public GameObject nebulosa;
-    //public GameObject nebulosaContenido;
     public GameObject secuenciaPrincipal;
-    //public GameObject secuenciaContenido;
     public GameObject muerteEstrella;
-    //public GameObject muerteEstrContenido;
-    public GameObject estrellaInfo;
+
+    public GameObject galEspirales;
+    public GameObject galElipticas;
+    public GameObject galIrregulares;
+
+    public GameObject satNaturales;
+    public GameObject satArtificiales;
+
+    public GameObject panelInfo;
     public TextMeshProUGUI textoInfo;
 
     public void AbrirSeccion(int index)
@@ -76,6 +82,11 @@ public class NavegadorCuerpos : MonoBehaviour
             case 1: nebulosa.SetActive(true); break;
             case 2: secuenciaPrincipal.SetActive(true); break;
             case 3: muerteEstrella.SetActive(true); break;
+            case 4: galEspirales.SetActive(true); break;
+            case 5: galElipticas.SetActive(true); break;
+            case 6: galIrregulares.SetActive(true); break;
+            case 7: satNaturales.SetActive(true); break;
+            case 8: satArtificiales.SetActive(true); break;
         }
     }
 
@@ -88,12 +99,17 @@ public class NavegadorCuerpos : MonoBehaviour
             case 1: nebulosa.SetActive(false); break;
             case 2: secuenciaPrincipal.SetActive(false); break;
             case 3: muerteEstrella.SetActive(false); break;
+            case 4: galEspirales.SetActive(false); break;
+            case 5: galElipticas.SetActive(false); break;
+            case 6: galIrregulares.SetActive(false); break;
+            case 7: satNaturales.SetActive(false); break;
+            case 8: satArtificiales.SetActive(false); break;
         }
     }
 
     public void mostrarInfo(int tipo)
     {
-        estrellaInfo.SetActive(true);
+        panelInfo.SetActive(true);
         switch (tipo)
         {
             case 1: 
@@ -111,10 +127,35 @@ public class NavegadorCuerpos : MonoBehaviour
                     "<b> 3.\tMuerte. </b>\n" +
                     "\n" +
                     "Cuando una estrella agota su energía, cambia según su tamaño. Algunas se convierten en enanas blancas y otras explotan formando supernovas o agujeros negros."; break;
+            case 4:
+                textoInfo.text =
+                    "<b> 1.\tEspirales. </b>\n" +
+                    "\n" +
+                    "Tienen forma de remolino con brazos llenos de estrellas. La Vía Láctea, donde vivimos, es una galaxia espiral."; break;
+            case 5:
+                textoInfo.text =
+                    "<b> 2.\tElípticas. </b>\n" +
+                    "\n" +
+                    "Tienen forma redonda u ovalada. Contienen muchas estrellas antiguas y poco gas."; break;
+            case 6:
+                textoInfo.text =
+                    "<b> 3.\tIrregulares. </b>\n" +
+                    "\n" +
+                    "No tienen una forma definida. Parecen desordenadas porque han cambiado por choques o movimientos en el espacio."; break;
+            case 7:
+                textoInfo.text =
+                    "<b> 1.\tNaturales. </b>\n" +
+                    "\n" +
+                    "Son cuerpos que giran alrededor de un planeta. La Luna es el satélite natural de la Tierra."; break;
+            case 8:
+                textoInfo.text =
+                    "<b> 2.\tArtificiales. </b>\n" +
+                    "\n" +
+                    "Son máquinas creadas por las personas y enviadas al espacio para orbitar junto con la Tierra. Sirven para comunicarnos, tomar fotos de la Tierra y estudiar el universo."; break;
         }
     }
     public void ocultarInfo()
     {
-        estrellaInfo.SetActive(false);
+        panelInfo.SetActive(false);
     }
 }
