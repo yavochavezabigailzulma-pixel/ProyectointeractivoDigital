@@ -477,6 +477,98 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &731735997
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 731735999}
+  - component: {fileID: 731735998}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &731735998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731735997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08dd4038f15ea4448f93eee75a96a8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInicio: {fileID: 0}
+  panelMenu: {fileID: 0}
+  musicaIntroMenu:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  panelPopup: {fileID: 0}
+  textoBoton1: {fileID: 0}
+  textoBoton2: {fileID: 0}
+  textoInfo: {fileID: 0}
+  boton2: {fileID: 0}
+  boton1Transform: {fileID: 0}
+  imagenPlaneta: {fileID: 0}
+  selectBoton:
+    Guid:
+      Data1: 563518035
+      Data2: 1210902707
+      Data3: -943627087
+      Data4: -1136224814
+    Path: event:/UI/ClicSelect
+  clicVolver:
+    Guid:
+      Data1: -541596362
+      Data2: 1080860997
+      Data3: -1174453631
+      Data4: -1774216874
+    Path: event:/UI/ClicVolver
+  fondoPopup: {fileID: 0}
+  fondoUniverso: {fileID: 0}
+  fondoTierra: {fileID: 0}
+  fondoTiempo: {fileID: 0}
+  fondoMundo: {fileID: 0}
+  colorUniverso: {r: 1, g: 1, b: 1, a: 1}
+  colorTierra: {r: 1, g: 1, b: 1, a: 1}
+  colorTiempo: {r: 1, g: 1, b: 1, a: 1}
+  colorMundo: {r: 1, g: 1, b: 1, a: 1}
+  spriteMercurio: {fileID: 21300000, guid: 23d369f40069b7d4c9c2ad638e3f54a3, type: 3}
+  spriteVenus: {fileID: 21300000, guid: d120186f1a7bb5b4391ef79d5c7b5ef8, type: 3}
+  spriteTierra: {fileID: 21300000, guid: ed312cfca3221c9468e2c2a45ce5ba6e, type: 3}
+  spriteMarte: {fileID: 21300000, guid: 94efb70d043e329439918bb3050ee3a6, type: 3}
+  spriteJupiter: {fileID: 21300000, guid: 87b2469eb32db99489b1c679f9bb55fb, type: 3}
+  spriteSaturno: {fileID: 21300000, guid: 898c39027e5bd00438206902525fcf59, type: 3}
+  spriteUrano: {fileID: 21300000, guid: 098811ee2e623f3419ddb484384648b9, type: 3}
+  spriteNeptuno: {fileID: 21300000, guid: f37cc28dadd1a6048b7c4939b4e507a2, type: 3}
+  spriteDefault: {fileID: 21300000, guid: d6d7909db4f754d4db1d93a1e446b539, type: 3}
+--- !u!4 &731735999
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731735997}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 902.7405, y: 617.4265, z: -343.53027}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1174524018
 GameObject:
   m_ObjectHideFlags: 0
@@ -913,7 +1005,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 731735998}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: VolverMenu
         m_Mode: 1
@@ -980,9 +1072,77 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 893.16, y: -528.55194}
+  m_AnchoredPosition: {x: 801, y: -443}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &1763745236
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2925368091745860925, guid: a98d864fd6dbeb044b871dc8c6408392,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 616.9473
+      objectReference: {fileID: 0}
+    - target: {fileID: 2925368091745860925, guid: a98d864fd6dbeb044b871dc8c6408392,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 320.32257
+      objectReference: {fileID: 0}
+    - target: {fileID: 2925368091745860925, guid: a98d864fd6dbeb044b871dc8c6408392,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 703.3946
+      objectReference: {fileID: 0}
+    - target: {fileID: 2925368091745860925, guid: a98d864fd6dbeb044b871dc8c6408392,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2925368091745860925, guid: a98d864fd6dbeb044b871dc8c6408392,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2925368091745860925, guid: a98d864fd6dbeb044b871dc8c6408392,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2925368091745860925, guid: a98d864fd6dbeb044b871dc8c6408392,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2925368091745860925, guid: a98d864fd6dbeb044b871dc8c6408392,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2925368091745860925, guid: a98d864fd6dbeb044b871dc8c6408392,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2925368091745860925, guid: a98d864fd6dbeb044b871dc8c6408392,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5077794237193205165, guid: a98d864fd6dbeb044b871dc8c6408392,
+        type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a98d864fd6dbeb044b871dc8c6408392, type: 3}
 --- !u!1 &1988432314
 GameObject:
   m_ObjectHideFlags: 0
@@ -1215,3 +1375,5 @@ SceneRoots:
   - {fileID: 2096507333}
   - {fileID: 1988432318}
   - {fileID: 703606121}
+  - {fileID: 731735999}
+  - {fileID: 1763745236}
