@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using FMODUnity;
-//[ExecuteInEditMode]
+[ExecuteInEditMode]
 public class RotaryMenu : MonoBehaviour,
     IBeginDragHandler, IDragHandler, IEndDragHandler
 {
@@ -146,14 +146,15 @@ public class RotaryMenu : MonoBehaviour,
     }
     void ApplyBackground(int index)
     {
-        if (backgroundImage == null) return;
-        if (backgroundSprites == null || backgroundSprites.Length == 0) return;
- 
-        // Usa módulo por si backgroundSprites tiene menos entradas que items
-        int spriteIdx = index % backgroundSprites.Length;
-        if (backgroundSprites[spriteIdx] != null)
-            backgroundImage.sprite = backgroundSprites[spriteIdx];
+        if (backgroundImage != null && backgroundSprites != null && backgroundSprites.Length > 0)
+        {
+            // Usa módulo por si backgroundSprites tiene menos entradas que items
+            int spriteIdx = index % backgroundSprites.Length;
+            if (backgroundSprites[spriteIdx] != null)
+                backgroundImage.sprite = backgroundSprites[spriteIdx];
+        }
 
+        Debug.Log("Entrando al aplicador: " + index);
         // Avatar sprite
         if (avatarImage != null && avatarSprites != null && avatarSprites.Length > 0)
         {
