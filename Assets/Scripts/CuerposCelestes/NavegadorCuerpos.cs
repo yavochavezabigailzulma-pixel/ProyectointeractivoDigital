@@ -43,6 +43,7 @@ public class NavegadorCuerpos : MonoBehaviour
     public GameObject planetUrano;
     public GameObject planetNeptuno;
 
+    [Header ("Paneles")]
     public GameObject panelInfo;
     public TextMeshProUGUI textoInfo;
 
@@ -96,32 +97,50 @@ public class NavegadorCuerpos : MonoBehaviour
         canvas.SetActive(false);
         
         switch (tipo){
-            case 1: nebulosa.SetActive(true); break;
-            case 2: secuenciaPrincipal.SetActive(true); break;
-            case 3: muerteEstrella.SetActive(true); break;
-            case 4: galEspirales.SetActive(true); break;
-            case 5: galElipticas.SetActive(true); break;
-            case 6: galIrregulares.SetActive(true); break;
-            case 7: satNaturales.SetActive(true); break;
-            case 8: satArtificiales.SetActive(true); break;
-            case 9: cometas.SetActive(true); break;
-            case 10: asteroides.SetActive(true); break;
+            case 1: nebulosa.SetActive(true);
+                ZoomCuerpos.Instance.SetObjetivo(nebulosa.transform); break;
+            case 2: secuenciaPrincipal.SetActive(true);
+                ZoomCuerpos.Instance.SetObjetivo(secuenciaPrincipal.transform); break;
+            case 3: muerteEstrella.SetActive(true);
+                ZoomCuerpos.Instance.SetObjetivo(muerteEstrella.transform); break;
+            case 4: galEspirales.SetActive(true);
+                ZoomCuerpos.Instance.SetObjetivo(galEspirales.transform); break;
+            case 5: galElipticas.SetActive(true);
+                ZoomCuerpos.Instance.SetObjetivo(galElipticas.transform); break;
+            case 6: galIrregulares.SetActive(true);
+                ZoomCuerpos.Instance.SetObjetivo(galIrregulares.transform); break;
+            case 7: satNaturales.SetActive(true);
+                ZoomCuerpos.Instance.SetObjetivo(satNaturales.transform); break;
+            case 8: satArtificiales.SetActive(true);
+                ZoomCuerpos.Instance.SetObjetivo(satArtificiales.transform); break;
+            case 9: cometas.SetActive(true);
+                ZoomCuerpos.Instance.SetObjetivo(cometas.transform); break;
+            case 10: asteroides.SetActive(true);
+                ZoomCuerpos.Instance.SetObjetivo(asteroides.transform); break;
 
-            case 11: planetMercurio.SetActive(true); break;
-            case 12: planetVenus.SetActive(true); break;
-            case 13: planetTierra.SetActive(true); break;
-            case 14: planetMarte.SetActive(true); break;
-            case 15: planetJupiter.SetActive(true); break;
-            case 16: planetSaturno.SetActive(true); break;
-            case 17: planetUrano.SetActive(true); break;
-            case 18: planetNeptuno.SetActive(true); break;
+            case 11: planetMercurio.SetActive(true);
+                ZoomCuerpos.Instance.SetObjetivo(planetMercurio.transform); break;
+            case 12: planetVenus.SetActive(true);
+                ZoomCuerpos.Instance.SetObjetivo(planetVenus.transform); break;
+            case 13: planetTierra.SetActive(true);
+                ZoomCuerpos.Instance.SetObjetivo(planetTierra.transform); break;
+            case 14: planetMarte.SetActive(true);
+                ZoomCuerpos.Instance.SetObjetivo(planetMarte.transform); break;
+            case 15: planetJupiter.SetActive(true);
+                ZoomCuerpos.Instance.SetObjetivo(planetJupiter.transform); break;
+            case 16: planetSaturno.SetActive(true);
+                ZoomCuerpos.Instance.SetObjetivo(planetSaturno.transform); break;
+            case 17: planetUrano.SetActive(true);
+                ZoomCuerpos.Instance.SetObjetivo(planetUrano.transform); break;
+            case 18: planetNeptuno.SetActive(true);
+                ZoomCuerpos.Instance.SetObjetivo(planetNeptuno.transform); break;
         }
     }
 
     public void Volver3D(int tipo)
     {
         canvas.SetActive(true);
-
+        ZoomCuerpos.Instance.SetObjetivo(null);
         switch (tipo)
         {
             case 1: nebulosa.SetActive(false); break;

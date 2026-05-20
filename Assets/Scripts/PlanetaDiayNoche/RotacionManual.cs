@@ -1,3 +1,5 @@
+using System.Globalization;
+using TMPro;
 using UnityEngine;
 
 public class RotacionManual : MonoBehaviour
@@ -5,6 +7,7 @@ public class RotacionManual : MonoBehaviour
     [Header("Configuración")]
     public float sensibilidad = 0.3f;
     public bool manual = true; // el botón externo cambia este valor
+    public TextMeshProUGUI btnText;
 
     private RotarPropio rotarPropio;
     private Vector2 ultimaPosicion;
@@ -39,8 +42,7 @@ public class RotacionManual : MonoBehaviour
 
     public void SetManual()
     {
-        if (manual)
-            manual = false;
-        else manual = true;
+        if (manual) { btnText.text = "Manual"; manual = false; }
+        else { btnText.text = "Auto";  manual = true; }
     }
 }

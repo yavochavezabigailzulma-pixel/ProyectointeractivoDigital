@@ -841,6 +841,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensibilidad: 0.3
   manual: 0
+  btnText: {fileID: 1426376604}
 --- !u!1 &1426376602
 GameObject:
   m_ObjectHideFlags: 0
