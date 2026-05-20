@@ -34,6 +34,15 @@ public class NavegadorCuerpos : MonoBehaviour
 
     public GameObject asteroides;
 
+    public GameObject planetMercurio;
+    public GameObject planetVenus;
+    public GameObject planetTierra;
+    public GameObject planetMarte;
+    public GameObject planetJupiter;
+    public GameObject planetSaturno;
+    public GameObject planetUrano;
+    public GameObject planetNeptuno;
+
     public GameObject panelInfo;
     public TextMeshProUGUI textoInfo;
 
@@ -97,6 +106,15 @@ public class NavegadorCuerpos : MonoBehaviour
             case 8: satArtificiales.SetActive(true); break;
             case 9: cometas.SetActive(true); break;
             case 10: asteroides.SetActive(true); break;
+
+            case 11: planetMercurio.SetActive(true); break;
+            case 12: planetVenus.SetActive(true); break;
+            case 13: planetTierra.SetActive(true); break;
+            case 14: planetMarte.SetActive(true); break;
+            case 15: planetJupiter.SetActive(true); break;
+            case 16: planetSaturno.SetActive(true); break;
+            case 17: planetUrano.SetActive(true); break;
+            case 18: planetNeptuno.SetActive(true); break;
         }
     }
 
@@ -116,6 +134,15 @@ public class NavegadorCuerpos : MonoBehaviour
             case 8: satArtificiales.SetActive(false); break;
             case 9: cometas.SetActive(false); break;
             case 10: asteroides.SetActive(false); break;
+
+            case 11: planetMercurio.SetActive(false); break;
+            case 12: planetVenus.SetActive(false); break;
+            case 13: planetTierra.SetActive(false); break;
+            case 14: planetMarte.SetActive(false); break;
+            case 15: planetJupiter.SetActive(false); break;
+            case 16: planetSaturno.SetActive(false); break;
+            case 17: planetUrano.SetActive(false); break;
+            case 18: planetNeptuno.SetActive(false); break;
         }
     }
 
@@ -174,6 +201,46 @@ public class NavegadorCuerpos : MonoBehaviour
                     "<b> Asteroides. </b>\n" +
                     "\n" +
                     "Los asteroides son grandes rocas espaciales que giran alrededor del Sol. La mayoría se encuentra entre Marte y Júpiter."; break;
+            case 11:
+                textoInfo.text =
+                    "<b> Mercurio. </b>\n" +
+                    "\n" +
+                    "."; break;
+            case 12:
+                textoInfo.text =
+                    "<b> Venus. </b>\n" +
+                    "\n" +
+                    "."; break;
+            case 13:
+                textoInfo.text =
+                    "<b> Tierra. </b>\n" +
+                    "\n" +
+                    "."; break;
+            case 14:
+                textoInfo.text =
+                    "<b> Marte. </b>\n" +
+                    "\n" +
+                    "."; break;
+            case 15:
+                textoInfo.text =
+                    "<b> Júpiter. </b>\n" +
+                    "\n" +
+                    "."; break;
+            case 16:
+                textoInfo.text =
+                    "<b> Saturno. </b>\n" +
+                    "\n" +
+                    "."; break;
+            case 17:
+                textoInfo.text =
+                    "<b> Urano. </b>\n" +
+                    "\n" +
+                    "."; break;
+            case 18:
+                textoInfo.text =
+                    "<b> Neptuno. </b>\n" +
+                    "\n" +
+                    "."; break;
         }
     }
     public void ocultarInfo()
