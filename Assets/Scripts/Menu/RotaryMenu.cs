@@ -154,7 +154,6 @@ public class RotaryMenu : MonoBehaviour,
                 backgroundImage.sprite = backgroundSprites[spriteIdx];
         }
 
-        Debug.Log("Entrando al aplicador: " + index);
         // Avatar sprite
         if (avatarImage != null && avatarSprites != null && avatarSprites.Length > 0)
         {
