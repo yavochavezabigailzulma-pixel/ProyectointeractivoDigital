@@ -1,6 +1,7 @@
 using System.Globalization;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RotacionManual : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class RotacionManual : MonoBehaviour
 
     private RotarPropio rotarPropio;
     private Vector2 ultimaPosicion;
+
+    public Sprite toggleOn;
+    public Sprite toggleOff;
+    public Button buttonSwitch;
 
     void Start()
     {
@@ -42,7 +47,7 @@ public class RotacionManual : MonoBehaviour
 
     public void SetManual()
     {
-        if (manual) { btnText.text = "Manual"; manual = false; }
-        else { btnText.text = "Auto";  manual = true; }
+        if (manual) { btnText.text = "Auto"; buttonSwitch.image.sprite = toggleOn; manual = false; }
+        else { btnText.text = "Manual"; buttonSwitch.image.sprite = toggleOff; manual = true; }
     }
 }
