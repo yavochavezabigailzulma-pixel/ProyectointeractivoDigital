@@ -824,10 +824,10 @@ MonoBehaviour:
       Data4: -1774216874
     Path: event:/UI/ClicVolver
   fondoPopup: {fileID: 1010154922}
-  fondoUniverso: {fileID: 21300000, guid: 4a367bbc1a899d14281b940b92a7c701, type: 3}
-  fondoTierra: {fileID: 21300000, guid: f9f6a71929f017a4aa8a7fdc8e5a3aa0, type: 3}
-  fondoTiempo: {fileID: 21300000, guid: 61f87e718565fa84b9226f18586498cd, type: 3}
-  fondoMundo: {fileID: 21300000, guid: b17dff58278370f4eb0a10c09ce0b361, type: 3}
+  fondoUniverso: {fileID: 21300000, guid: cee8ad27a189f194d95ab6d37eb9709e, type: 3}
+  fondoTierra: {fileID: 21300000, guid: 4ef203aac785bbd4c8002647487ad157, type: 3}
+  fondoTiempo: {fileID: 21300000, guid: e506d0e07608932419d16aae7532c27b, type: 3}
+  fondoMundo: {fileID: 21300000, guid: 2df88e6a139888b4db409af35f74906f, type: 3}
   colorUniverso: {r: 0.4901961, g: 0.4666667, b: 0.909804, a: 1}
   colorTierra: {r: 0.36078432, g: 0.8980393, b: 0.5254902, a: 1}
   colorTiempo: {r: 0.43137258, g: 0.72156864, b: 0.9176471, a: 1}
@@ -835,12 +835,12 @@ MonoBehaviour:
   imagenBoton1: {fileID: 924081565}
   imagenBoton2: {fileID: 2097639609}
   spritesBoton1:
-  - {fileID: 21300000, guid: 367ea8ad97a97b249ac31a830c28f4e7, type: 3}
-  - {fileID: 21300000, guid: 367ea8ad97a97b249ac31a830c28f4e7, type: 3}
-  - {fileID: 21300000, guid: 18fa40ff4fc6c974aa794c70ef4db593, type: 3}
-  - {fileID: 21300000, guid: 18fa40ff4fc6c974aa794c70ef4db593, type: 3}
-  - {fileID: 21300000, guid: e2088a94bea07334a810d60ef82324d1, type: 3}
-  - {fileID: 21300000, guid: 74b82d3f221fdbf42bc02a9028bad064, type: 3}
+  - {fileID: 21300000, guid: 08acee7f477e8c24e8c2ad455284e500, type: 3}
+  - {fileID: 21300000, guid: 08acee7f477e8c24e8c2ad455284e500, type: 3}
+  - {fileID: 21300000, guid: f65987a6cb64ac5429515711a36b8988, type: 3}
+  - {fileID: 21300000, guid: f65987a6cb64ac5429515711a36b8988, type: 3}
+  - {fileID: 21300000, guid: 166b0dbed00fed240a5738af7cea1a47, type: 3}
+  - {fileID: 21300000, guid: 3379160f63f3ed04292430f292e011a1, type: 3}
   spriteMercurio: {fileID: 0}
   spriteVenus: {fileID: 0}
   spriteTierra: {fileID: 0}
@@ -1240,7 +1240,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &614529483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1874,7 +1874,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 1.7999945}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &942266642
@@ -1924,8 +1924,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 11
-  m_fontSizeBase: 11
+  m_fontSize: 9.11
+  m_fontSizeBase: 9.11
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2305,7 +2305,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1036317384
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2580,7 +2580,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1a7dee10be39cea4f92ef84d267c57b1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6815fadb9bf15854cad89d4a065b91d5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2632,7 +2632,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 1.3519336}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1237419357
@@ -3330,7 +3330,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.10000038}
+  m_AnchoredPosition: {x: 0, y: 1.7}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1590344718
@@ -3380,8 +3380,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 11
-  m_fontSizeBase: 11
+  m_fontSize: 9.11
+  m_fontSizeBase: 9.11
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3971,7 +3971,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e5faef229078dc64cb7cb44c86a387d7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7747f5762ecd3674c9c9f1443b04a4fb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

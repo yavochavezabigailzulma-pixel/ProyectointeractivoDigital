@@ -31,19 +31,28 @@ public class ZoomCamara : MonoBehaviour
     private bool enfoqueCompletado = false;
     private bool animando = false;
 
+    private Vector3 posicionInicial;
+    private bool esperandoSoltarDedos = false;
+
     void Awake() => Instance = this;
 
     void Start()
     {
         targetPosition = transform.position;
+        posicionInicial = transform.position;
         minZoomActual = minZoom;
         maxZoomActual = maxZoom;
     }
 
+    Vector3 PuntoMira => focusTarget - Vector3.up * 0.25f;
     void Update()
     {
+        if (Input.touchCount == 0) esperandoSoltarDedos = false;
         if (Input.touchCount == 1) ManejarDrag();
-        if (Input.touchCount == 2) ManejarZoom();
+        if (Input.touchCount == 2)
+        {
+            if (!esperandoSoltarDedos) ManejarZoom();
+        }
 
         if (planetaSeguido != null && !animando)
             SeguirPlaneta();
@@ -52,8 +61,7 @@ public class ZoomCamara : MonoBehaviour
         {
             transform.position = Vector3.SmoothDamp(
                 transform.position, targetPosition, ref velocity, smoothTime);
-
-            transform.LookAt(focusTarget + Vector3.up * 0.5f);
+            transform.LookAt(PuntoMira);
         }
     }
 
@@ -73,9 +81,14 @@ public class ZoomCamara : MonoBehaviour
         else
         {
             // Deslizamiento libre
-            float factor = Vector3.Distance(transform.position, Vector3.zero) * dragSpeed;
+            float distanciaActual = Vector3.Distance(transform.position, Vector3.zero);
+            float factor = distanciaActual * dragSpeed;
+
             targetPosition += -transform.right * t.deltaPosition.x * factor
                             + transform.up * -t.deltaPosition.y * factor;
+
+            // Mantiene distancia fija al centro del sistema
+            targetPosition = targetPosition.normalized * distanciaActual;
         }
     }
 
@@ -105,8 +118,9 @@ public class ZoomCamara : MonoBehaviour
             if (planetaSeguido != null)
             {
                 // Supera el máximo: desenfoca y vuelve al sistema solar
-                EnfocarEn(null);
-                targetPosition = transform.position.normalized * maxZoom * 0.5f;
+                EnfocarEn(null); 
+                targetPosition = posicionInicial;
+                esperandoSoltarDedos = true;
             }
             else
             {
@@ -187,7 +201,7 @@ public class ZoomCamara : MonoBehaviour
 
             transform.position = Vector3.Lerp(origen, destino, t);
             transform.rotation = Quaternion.Slerp(rotacionOrigen,
-                Quaternion.LookRotation((focusTarget + Vector3.up * 0.5f) - transform.position), t);
+                Quaternion.LookRotation(PuntoMira - transform.position), t);
 
             yield return null;
         }
