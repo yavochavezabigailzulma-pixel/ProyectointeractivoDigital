@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 public class SkyController : MonoBehaviour
 {
@@ -7,6 +7,7 @@ public class SkyController : MonoBehaviour
     {
         public RawImage image;
         public float startHour;
+        public float transitionDuration;
     }
     public SkyEntry[] entries;
     void OnEnable()
@@ -34,10 +35,15 @@ public class SkyController : MonoBehaviour
             float end = entries[next].startHour;
             float total = end > start ? end - start : 24f - start + end;
             float elapsed = t >= start ? t - start : t + 24f - start;
-            if (elapsed >= 0f && elapsed <= total)
+            if (elapsed >= 0f && elapsed < total)
             {
                 currentIdx = i;
-                frac = Mathf.Clamp01(elapsed / total);
+                float transDur = entries[next].transitionDuration;
+                float transStart = total - transDur; // momento dentro del intervalo donde empieza el fade
+                frac = elapsed >= transStart
+                    ? Mathf.Clamp01((elapsed - transStart) / transDur)
+                    : 0f;
+                //Debug.Log($"t={t:F2} | current={currentIdx}(start={start}) | next={next}(start={end}) | elapsed={elapsed:F2} | total={total:F2} | transStart={transStart:F2} | frac={frac:F2}");
                 break;
             }
         }
@@ -55,6 +61,8 @@ public class SkyController : MonoBehaviour
         Color c = img.color;
         c.a = alpha;
         img.color = c;
+
+        Debug.Log($"SetAlpha: {img.name} → {alpha:F2}");
     }
 }
 
@@ -70,8 +78,8 @@ public class SkyController : MonoBehaviour
 //        new Color(0.02f, 0.04f, 0.12f),  // 0h  - noche
 //        new Color(0.06f, 0.08f, 0.24f),  // 5h  - madrugada
 //        new Color(1.00f, 0.63f, 0.31f),  // 6h  - amanecer
-//        new Color(0.53f, 0.75f, 0.94f),  // 8h  - ma�ana
-//        new Color(0.31f, 0.67f, 1.00f),  // 12h - mediod�a
+//        new Color(0.53f, 0.75f, 0.94f),  // 8h  - mañana
+//        new Color(0.31f, 0.67f, 1.00f),  // 12h - mediodía
 //        new Color(1.00f, 0.78f, 0.31f),  // 17h - tarde
 //        //new Color(1.00f, 0.39f, 0.16f),  // 19h - atardecer        
 //        new Color(0.12f, 0.12f, 0.31f),  // 19h - noche
