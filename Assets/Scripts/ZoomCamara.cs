@@ -57,6 +57,22 @@ public class ZoomCamara : MonoBehaviour
         if (planetaSeguido != null && !animando)
             SeguirPlaneta();
 
+        // Límite de altura global, se aplica siempre
+        if (planetaSeguido != null)
+        {
+            float limite = 0.8f;
+
+            Vector3 dirPos = (transform.position - focusTarget).normalized;
+            if (dirPos.y < -limite || dirPos.y > limite)
+            {
+                dirPos.y = Mathf.Clamp(dirPos.y, -limite, limite);
+                transform.position = focusTarget + dirPos.normalized * zoomActual;
+            }
+
+            Vector3 dirTarget = (targetPosition - focusTarget).normalized;
+            dirTarget.y = Mathf.Clamp(dirTarget.y, -limite, limite);
+            targetPosition = focusTarget + dirTarget.normalized * zoomActual;
+        }
         if (!animando)
         {
             transform.position = Vector3.SmoothDamp(
@@ -72,9 +88,18 @@ public class ZoomCamara : MonoBehaviour
 
         if (enfoqueCompletado && planetaSeguido != null)
         {
-            // Orbita alrededor del planeta a distancia fija
             transform.RotateAround(focusTarget, Vector3.up, t.deltaPosition.x * dragSpeed * 50f);
-            transform.RotateAround(focusTarget, transform.right, -t.deltaPosition.y * dragSpeed * 50f);
+
+            // Calcula si el movimiento vertical sobrepasaría el límite
+            float limite = 0.5f;
+            float deltaY = -t.deltaPosition.y * dragSpeed * 50f;
+            Quaternion rotSimulada = Quaternion.AngleAxis(deltaY, transform.right);
+            Vector3 posSimulada = focusTarget + rotSimulada * (transform.position - focusTarget);
+            Vector3 dirSimulada = (posSimulada - focusTarget).normalized;
+
+            if (dirSimulada.y >= -limite && dirSimulada.y <= limite)
+                transform.RotateAround(focusTarget, transform.right, deltaY);
+
             transform.position = focusTarget + (transform.position - focusTarget).normalized * zoomActual;
             targetPosition = transform.position;
         }
@@ -89,6 +114,14 @@ public class ZoomCamara : MonoBehaviour
 
             // Mantiene distancia fija al centro del sistema
             targetPosition = targetPosition.normalized * distanciaActual;
+
+            float limite = 0.8f;
+
+            Vector3 dir = targetPosition.normalized;
+            dir.y = Mathf.Clamp(dir.y, -limite, limite);
+
+            targetPosition = dir.normalized * distanciaActual;
+
         }
     }
 
@@ -118,7 +151,7 @@ public class ZoomCamara : MonoBehaviour
             if (planetaSeguido != null)
             {
                 // Supera el máximo: desenfoca y vuelve al sistema solar
-                EnfocarEn(null); 
+                EnfocarEn(null);
                 targetPosition = posicionInicial;
                 esperandoSoltarDedos = true;
             }

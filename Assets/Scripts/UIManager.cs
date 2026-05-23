@@ -245,8 +245,8 @@ public class UIManager : MonoBehaviour
         switch (planeta)
         {
             case "Mercurio":
-                textoInfo.text = 
-                    "<b>MERCURIO</b>\n" +
+                textoInfo.text =
+                    "<align=center><size=150%><b>MERCURIO</b></size></align>\n" +
                     "\n" +
                     "<b>Posición:</b> 1\n" +
                     "<b>Tipo:</b> Rocoso\n" +
@@ -259,7 +259,7 @@ public class UIManager : MonoBehaviour
 
             case "Venus":
                 textoInfo.text =
-                    "<b>VENUS</b>\n" +
+                    "<align=center><size=150%><b>VENUS</b></size></align>\n" +
                     "\n" +
                     "<b>Posición:</b> 2\n" +
                     "<b>Tipo:</b> Rocoso\n" +
@@ -272,7 +272,7 @@ public class UIManager : MonoBehaviour
 
             case "Tierra":
                 textoInfo.text =
-                    "<b>TIERRA</b>\n" +
+                    "<align=center><size=150%><b>TIERRA</b></size></align>\n" +
                     "\n" +
                     "<b>Posición:</b> 3\n" +
                     "<b>Tipo:</b> Rocoso\n" +
@@ -285,7 +285,7 @@ public class UIManager : MonoBehaviour
 
             case "Marte":
                 textoInfo.text =
-                    "<b>MARTE</b>\n" +
+                    "<align=center><size=150%><b>MARTE</b></size></align>\n" +
                     "\n" +
                     "<b>Posición:</b> 4\n" +
                     "<b>Tipo:</b> Rocoso\n" +
@@ -298,7 +298,7 @@ public class UIManager : MonoBehaviour
 
             case "Júpiter":
                 textoInfo.text =
-                    "<b>JÚPITER</b>\n" +
+                    "<align=center><size=150%><b>JÚPITER</b></size></align>\n" +
                     "\n" +
                     "<b>Posición:</b> 5\n" +
                     "<b>Tipo:</b> Gaseoso\n" +
@@ -311,7 +311,7 @@ public class UIManager : MonoBehaviour
 
             case "Saturno":
                 textoInfo.text =
-                    "<b>SATURNO</b>\n" +
+                    "<align=center><size=150%><b>SATURNO</b></size></align>\n" +
                     "\n" +
                     "<b>Posición:</b> 6\n" +
                     "<b>Tipo:</b> Gaseoso\n" +
@@ -324,7 +324,7 @@ public class UIManager : MonoBehaviour
 
             case "Urano":
                 textoInfo.text =
-                    "<b>URANO</b>\n" +
+                    "<align=center><size=150%><b>URANO</b></size></align>\n" +
                     "\n" +
                     "<b>Posición:</b> 7\n" +
                     "<b>Tipo:</b> Gigante helado\n" +
@@ -337,7 +337,7 @@ public class UIManager : MonoBehaviour
 
             case "Neptuno":
                 textoInfo.text =
-                    "<b>NEPTUNO</b>\n" +
+                    "<align=center><size=150%><b>NEPTUNO</b></size></align>\n" +
                     "\n" +
                     "<b>Posición:</b> 8\n" +
                     "<b>Tipo:</b> Gigante helado\n" +
