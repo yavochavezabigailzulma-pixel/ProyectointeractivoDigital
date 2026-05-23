@@ -203,21 +203,26 @@ public class UIManager : MonoBehaviour
 
         if (contextoActual == "Universo")
         {
+            MenuManager.Instance.indiceCarrusel = 0; // índice del carrusel
             SceneManager.LoadScene("SistemaSolar");
         }
         else if (contextoActual == "Tierra")
         {
+            MenuManager.Instance.indiceCarrusel = 4;
             SceneManager.LoadScene("PlanetaTierra");
         }
         else if (contextoActual == "Tiempo")
         {
+            MenuManager.Instance.indiceCarrusel = 3;
             SceneManager.LoadScene("JuegoReloj");
         }
         else if (contextoActual == "Mundo")
         {
+            MenuManager.Instance.indiceCarrusel = 2;
             SceneManager.LoadScene("Continentes");
         }
     }
+
     public void Boton2Popup()
     {
         AudioManager.Instance.Play(selectBoton);
@@ -225,10 +230,12 @@ public class UIManager : MonoBehaviour
 
         if (contextoActual == "Universo")
         {
+            MenuManager.Instance.indiceCarrusel = 0;
             SceneManager.LoadScene("CuerposCelestes");
         }
         else if (contextoActual == "Tierra")
         {
+            MenuManager.Instance.indiceCarrusel = 4;
             SceneManager.LoadScene("LasEstaciones");
         }
     }

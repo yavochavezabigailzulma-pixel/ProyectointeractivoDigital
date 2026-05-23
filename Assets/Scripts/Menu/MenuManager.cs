@@ -6,12 +6,14 @@ public class MenuManager : MonoBehaviour
 {
     public static MenuManager Instance;
 
+    public int indiceCarrusel = 0;
+
     public bool primeraVez = true;
 
     // Un bool por sección que necesita pantalla de bienvenida
-    public bool primeraVezEstrellas = true;
-    public bool primeraVezGalaxias = true;
-    public bool primeraVezPlanetas = true;
+    //public bool primeraVezEstrellas = true;
+    //public bool primeraVezGalaxias = true;
+    //public bool primeraVezPlanetas = true;
 
     public bool primeraVezReloj = true;
     void Awake()

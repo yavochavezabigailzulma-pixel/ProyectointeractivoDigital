@@ -99,6 +99,9 @@ public class RotaryMenu : MonoBehaviour,
             rt.sizeDelta = itemSize;
 
         ApplyBackground(0);
+
+        if (MenuManager.Instance != null && MenuManager.Instance.indiceCarrusel != 0)
+            GoToItem(MenuManager.Instance.indiceCarrusel);
     }
 
     void Update()
