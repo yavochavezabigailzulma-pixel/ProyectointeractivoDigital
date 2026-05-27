@@ -179,7 +179,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0cf075ab70288e84dacb3beb3161ae03, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a14ac68555440bd44a54b4c33974c740, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -417,10 +417,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4edb211b614b003418d672035c0f118a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indiceCarrusel: 0
   primeraVez: 1
-  primeraVezEstrellas: 1
-  primeraVezGalaxias: 1
-  primeraVezPlanetas: 1
   primeraVezReloj: 1
 --- !u!1 &314172711
 GameObject:
@@ -1649,8 +1647,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: PONGO
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
-  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 02598dfbcbf2b804bb4802a98b6a04d8, type: 2}
+  m_sharedMaterial: {fileID: 5269316667690932197, guid: 02598dfbcbf2b804bb4802a98b6a04d8,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2669,8 +2668,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4285756275
-  m_fontColor: {r: 0.4490565, g: 0.4490565, b: 0.4490565, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
