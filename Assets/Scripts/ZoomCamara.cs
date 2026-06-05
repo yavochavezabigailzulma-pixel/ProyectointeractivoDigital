@@ -1,6 +1,4 @@
-//script para corregir
-
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ZoomCamara : MonoBehaviour
 {
@@ -35,7 +33,7 @@ public class ZoomCamara : MonoBehaviour
 
     private Vector3 posicionInicial;
     private bool esperandoSoltarDedos = false;
-
+    private float distanciaLibre;
     void Awake() => Instance = this;
 
     void Start()
@@ -44,6 +42,8 @@ public class ZoomCamara : MonoBehaviour
         posicionInicial = transform.position;
         minZoomActual = minZoom;
         maxZoomActual = maxZoom;
+
+        distanciaLibre = Vector3.Distance(transform.position, Vector3.zero);
     }
 
     Vector3 PuntoMira => focusTarget - Vector3.up * 0.25f;
@@ -57,16 +57,50 @@ public class ZoomCamara : MonoBehaviour
         }
 
         if (planetaSeguido != null && !animando)
+        {
             SeguirPlaneta();
 
+            // Corrector global de polo (igual que ZoomCuerpos)
+            float limite = 0.8f;
+            Vector3 dir = (transform.position - focusTarget).normalized;
+            if (dir.y < -limite || dir.y > limite)
+            {
+                dir.y = Mathf.Clamp(dir.y, -limite, limite);
+                transform.position = focusTarget + dir.normalized * zoomActual;
+                targetPosition = transform.position;
+            }
+        }
+        // Corrector global de polo en espacio libre
+        if (planetaSeguido == null && !animando)
+        {
+            float limite = 0.8f;
+            Vector3 dir = transform.position.normalized;
+            if (dir.y < -limite || dir.y > limite)
+            {
+                dir.y = Mathf.Clamp(dir.y, -limite, limite);
+                float distancia = Vector3.Distance(transform.position, Vector3.zero);
+                transform.position = dir.normalized * distancia;
+                targetPosition = transform.position;
+            }
+        }
         if (!animando)
         {
             transform.position = Vector3.SmoothDamp(
                 transform.position, targetPosition, ref velocity, smoothTime);
             transform.LookAt(PuntoMira);
+
+            if (planetaSeguido == null)
+            {
+                if (Input.touchCount == 2)
+                    distanciaLibre = Vector3.Distance(transform.position, Vector3.zero);
+                else
+                {
+                    transform.position = transform.position.normalized * distanciaLibre;
+                    targetPosition = transform.position;
+                }
+            }
         }
     }
-
     void ManejarDrag()
     {
         Touch t = Input.GetTouch(0);
@@ -74,26 +108,34 @@ public class ZoomCamara : MonoBehaviour
 
         if (enfoqueCompletado && planetaSeguido != null)
         {
-            // Orbita alrededor del planeta a distancia fija
+            // Rotación horizontal libre
             transform.RotateAround(focusTarget, Vector3.up, t.deltaPosition.x * dragSpeed * 50f);
-            transform.RotateAround(focusTarget, transform.right, -t.deltaPosition.y * dragSpeed * 50f);
+
+            // Simula rotación vertical antes de aplicar para verificar límite
+            float limite = 0.8f;
+            float deltaY = -t.deltaPosition.y * dragSpeed * 50f;
+            Quaternion rotSimulada = Quaternion.AngleAxis(deltaY, transform.right);
+            Vector3 posSimulada = focusTarget + rotSimulada * (transform.position - focusTarget);
+            Vector3 dirSimulada = (posSimulada - focusTarget).normalized;
+
+            if (dirSimulada.y >= -limite && dirSimulada.y <= limite)
+                transform.RotateAround(focusTarget, transform.right, deltaY);
+
             transform.position = focusTarget + (transform.position - focusTarget).normalized * zoomActual;
             targetPosition = transform.position;
         }
         else
         {
-            // Deslizamiento libre
+            // Deslizamiento libre — igual que antes
             float distanciaActual = Vector3.Distance(transform.position, Vector3.zero);
             float factor = distanciaActual * dragSpeed;
 
             targetPosition += -transform.right * t.deltaPosition.x * factor
                             + transform.up * -t.deltaPosition.y * factor;
 
-            // Mantiene distancia fija al centro del sistema
             targetPosition = targetPosition.normalized * distanciaActual;
         }
     }
-
     void ManejarZoom()
     {
         Touch t0 = Input.GetTouch(0);
@@ -104,7 +146,7 @@ public class ZoomCamara : MonoBehaviour
         float diff = currDist - prevDist;
         float factor = Vector3.Distance(transform.position, Vector3.zero) * zoomSpeed * Time.deltaTime;
 
-        // Al iniciar pinch sobre un planeta, abandona el modo �rbita
+        // Al iniciar pinch sobre un planeta, abandona el modo órbita
         if (enfoqueCompletado && planetaSeguido != null)
         {
             zoomActual = Vector3.Distance(transform.position, focusTarget);
@@ -113,13 +155,13 @@ public class ZoomCamara : MonoBehaviour
 
         targetPosition += transform.forward * diff * factor;
 
-        // Aplica l�mites
+        // Aplica límites
         float dist = Vector3.Distance(targetPosition, focusTarget);
         if (dist > maxZoomActual)
         {
             if (planetaSeguido != null)
             {
-                // Supera el m�ximo: desenfoca y vuelve al sistema solar
+                // Supera el máximo: desenfoca y vuelve al sistema solar
                 EnfocarEn(null);
                 targetPosition = posicionInicial;
                 esperandoSoltarDedos = true;
@@ -140,7 +182,7 @@ public class ZoomCamara : MonoBehaviour
 
         if (!enfoqueCompletado)
         {
-            // Esperando que la animaci�n termine
+            // Esperando que la animación termine
             if (Mathf.Abs(Vector3.Distance(transform.position, focusTarget) - maxZoomActual) > 0.5f)
                 enfoqueCompletado = true;
             transform.position = posicionDeseada;
