@@ -15,6 +15,7 @@ public class SeleccionPlaneta : MonoBehaviour
     private GameObject botonInfo;
     private Button botonComponent;
 
+    private bool estabaSeleccionado;
     void Start()
     {
         botonComponent = transform.parent.GetComponentInChildren<Button>(true);
@@ -31,7 +32,7 @@ public class SeleccionPlaneta : MonoBehaviour
         EventTrigger.Entry up = new EventTrigger.Entry { eventID = EventTriggerType.PointerUp };
         up.callback.AddListener(_ => {
             if (Time.time - tiempoPresion < ZoomCamara.Instance.toleranciaPinch)
-                UIManager.Instance.MostrarInfo(nombrePlaneta);
+                UISistemaSolar.Instance.MostrarInfo(nombrePlaneta);
         });
         trigger.triggers.Add(up);
     }
@@ -42,10 +43,29 @@ public class SeleccionPlaneta : MonoBehaviour
     }
     private void Update()
     {
-        if (seleccionado = (ZoomCamara.Instance.planetaSeguido == transform))
-            GetComponent<CapsuleCollider>().enabled = false;
-        else { GetComponent<CapsuleCollider>().enabled = true; botonInfo.SetActive(false); }
+        seleccionado = (ZoomCamara.Instance.planetaSeguido == transform);
 
+        if (seleccionado)
+        {
+            GetComponent<CapsuleCollider>().enabled = false;
+
+            if (!estabaSeleccionado)
+            {
+                UISistemaSolar.Instance.panelInfoPlanetas.SetActive(true);
+            }
+        }
+        else
+        {
+            GetComponent<CapsuleCollider>().enabled = true;
+            botonInfo.SetActive(false);
+
+            if (estabaSeleccionado)
+            {
+                UISistemaSolar.Instance.panelInfoPlanetas.SetActive(false);
+            }
+        }
+
+        estabaSeleccionado = seleccionado;
     }
     void OnMouseUp()
     {
