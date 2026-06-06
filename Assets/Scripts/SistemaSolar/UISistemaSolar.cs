@@ -52,12 +52,18 @@ public class UISistemaSolar : MonoBehaviour
     public void MostrarInfo(string planeta)
     {
         planetaActual = planeta;
+        // Activar primero, luego animar
+        panelInfoPlanetas.SetActive(true);
+
+        // Forzar reset del Animator por si quedó en estado sucio
+        animator.Rebind();
+        animator.Update(0f);
+
         animator.SetBool("InfoOn", true);
 
         botonInfoDesplegable.SetActive(false);
         botonVolverDesplegable.SetActive(true);
 
-        Debug.Log("Deberia salir la wea");
         switch (planeta)
         {
             case "Mercurio":
@@ -202,5 +208,10 @@ public class UISistemaSolar : MonoBehaviour
             return;
 
         MostrarInfo(planetaActual);
-    }   
+    }
+    public void SetPlanetaActual(string planeta)
+    {
+        planetaActual = planeta;
+        Debug.Log($"[SetPlanetaActual] actualizado a: '{planeta}'");
+    }
 }
