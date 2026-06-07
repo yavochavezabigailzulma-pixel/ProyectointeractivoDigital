@@ -202,7 +202,8 @@ public class RotaryMenu : MonoBehaviour,
             //items[i].anchoredPosition = new Vector2(Mathf.Cos(rad) * radius, Mathf.Sin(rad) * radius);
             items[i].anchoredPosition = new Vector2(Mathf.Cos(rad) * radius, Mathf.Sin(rad) * radius) + centerOffset;
 
-            items[i].localRotation = Quaternion.Euler(0f, 0f, itemAngle - 90f);
+            //items[i].localRotation = Quaternion.Euler(0f, 0f, itemAngle - 90f);
+            items[i].localRotation = Quaternion.identity;
         }
     }
 

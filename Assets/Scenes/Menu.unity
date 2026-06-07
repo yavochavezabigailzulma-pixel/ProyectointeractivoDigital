@@ -804,10 +804,8 @@ MonoBehaviour:
   panelPopup: {fileID: 614529482}
   textoBoton1: {fileID: 942266642}
   textoBoton2: {fileID: 1590344718}
-  textoInfo: {fileID: 0}
   boton2: {fileID: 2097639606}
   boton1Transform: {fileID: 924081563}
-  imagenPlaneta: {fileID: 0}
   selectBoton:
     Guid:
       Data1: 563518035
@@ -840,15 +838,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f65987a6cb64ac5429515711a36b8988, type: 3}
   - {fileID: 21300000, guid: 166b0dbed00fed240a5738af7cea1a47, type: 3}
   - {fileID: 21300000, guid: 3379160f63f3ed04292430f292e011a1, type: 3}
-  spriteMercurio: {fileID: 0}
-  spriteVenus: {fileID: 0}
-  spriteTierra: {fileID: 0}
-  spriteMarte: {fileID: 0}
-  spriteJupiter: {fileID: 0}
-  spriteSaturno: {fileID: 0}
-  spriteUrano: {fileID: 0}
-  spriteNeptuno: {fileID: 0}
-  spriteDefault: {fileID: 0}
 --- !u!4 &353847726
 Transform:
   m_ObjectHideFlags: 0
@@ -1868,7 +1857,7 @@ RectTransform:
   m_GameObject: {fileID: 942266640}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.82, y: 1.1842105, z: 1.1842105}
+  m_LocalScale: {x: 0.7, y: 1.1842105, z: 1.1842105}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 924081563}
@@ -1876,7 +1865,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 3}
-  m_SizeDelta: {x: 180.3, y: 40}
+  m_SizeDelta: {x: 261.6, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &942266642
 MonoBehaviour:
@@ -1926,8 +1915,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 11
-  m_fontSizeBase: 11
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3329,7 +3318,7 @@ RectTransform:
   m_GameObject: {fileID: 1590344716}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.82, y: 1.1842105, z: 1.1842105}
+  m_LocalScale: {x: 0.7, y: 1.1842105, z: 1.1842105}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2097639607}
@@ -3337,7 +3326,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 2.8999982}
-  m_SizeDelta: {x: 180.3, y: 40}
+  m_SizeDelta: {x: 261.6, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1590344718
 MonoBehaviour:
@@ -3387,8 +3376,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 11
-  m_fontSizeBase: 11
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3892,8 +3881,8 @@ RectTransform:
   m_GameObject: {fileID: 1908392382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.6000001, y: 3.7546668, z: 1.6000001}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 1.3, y: 3.7546668, z: 1.6000001}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1237419356}
   m_Father: {fileID: 1010154921}
