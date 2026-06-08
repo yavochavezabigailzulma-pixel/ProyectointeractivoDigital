@@ -7,10 +7,15 @@ using UnityEngine.UI;
 
 public class SeleccionarContinente : MonoBehaviour
 {
+    [Header("Imágenes panorámicas por continente")]
+    public RectTransform[] imagenesPanoramicas; // Índice 0=América, 1=Europa, etc.
+
+    public PanoramicaScroll panoramicaScroll;
+
     public GameObject panelContent;
     public GameObject panelMenu;
 
-    public Sprite[] contents;
+    public GameObject[] contents;
     //public Image contentImage;
     public TMP_Text textoInfo;
 
@@ -40,42 +45,16 @@ public class SeleccionarContinente : MonoBehaviour
     }
     public void AbrirPanelContent(int catego)
     {
-        switch (catego)
-        {
-            case 0:
-                textoInfo.text =
-                    "<b>- Es un continente muy grande</b>\n" +
-                    "\n" +
-                    "<b>- Está en el oeste del planeta</b>\n" +
-                    "\n" +
-                    "<b>- Se divide en: Norte, Centro y Sur</b>\n";
-                break;
 
-            case 1:
-                textoInfo.text =
-                    "<b>- Frío como en la cordillera de los Andes</b>\n" +
-                    "\n" +
-                    "<b>- Lluvioso como en la Amazonía</b>\n" +
-                    "\n" +
-                    "<b>- Desértico como en México</b>\n" +
-                    "\n" +
-                    "<b>- Animales como llamas y jaguares</b>\n";
-                break;
-
-            case 2:
-                textoInfo.text =
-                    "<b>- Machu Picchu</b>\n" +
-                    "\n" +
-                    "<b>- Cataratas del Iguazú</b>\n" +
-                    "\n" +
-                    "<b>- Estatua de la Libertad</b>\n" +
-                    "\n" +
-                    "<b>- Pirámides mayas</b>\n" +
-                    "\n" +
-                    "<b>- Amazonía</b>\n";
-                break;
-        }
         panelContent.SetActive(true);
+
+        contents[catego].SetActive(true);
+        // Asignar la imagen correspondiente ANTES de activar el content
+        if (panoramicaScroll != null)
+        {
+            panoramicaScroll.CambiarImagen(imagenesPanoramicas[catego]);
+        }
+
     }
     public void CerrarPanelMenu()
     {
@@ -84,6 +63,10 @@ public class SeleccionarContinente : MonoBehaviour
     }
     public void CerrarPanelContent()
     {
-        panelContent.SetActive(false);
+        panelContent.SetActive(false); 
+        foreach (GameObject content in contents)
+        {
+            content.SetActive(false);
+        }
     }
 }
