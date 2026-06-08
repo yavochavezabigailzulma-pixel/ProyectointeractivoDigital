@@ -1,4 +1,4 @@
-using System.Globalization;
+锘縰sing System.Globalization;
 using FMOD.Studio;
 using FMODUnity;
 using TMPro;
@@ -91,7 +91,7 @@ public class UIManager : MonoBehaviour
 
         boton2.SetActive(true);
 
-        // posici髇 normal (arriba)
+        // posici贸n normal (arriba)
         boton1Transform.anchoredPosition = new Vector2(0, 200);
         AplicarEstiloPopup(fondoUniverso, colorUniverso, 0, 1);
     }
@@ -112,14 +112,14 @@ public class UIManager : MonoBehaviour
         AplicarEstiloPopup(fondoTierra, colorTierra, 2, 3);
     }
 
-    // TIEMPO (1 bot髇)
+    // TIEMPO (1 bot贸n)
     public void PopupTiempo()
     {
         contextoActual = "Tiempo";
         panelPopup.SetActive(true);
         AudioManager.Instance.Play(selectBoton);
 
-        textoBoton1.text = "Reloj Anal骻ico y Digital";
+        textoBoton1.text = "Reloj Anal贸gico y Digital";
 
         boton2.SetActive(false);
 
@@ -128,7 +128,7 @@ public class UIManager : MonoBehaviour
         AplicarEstiloPopup(fondoTiempo, colorTiempo, 4);
     }
 
-    // MUNDO (1 bot髇)
+    // MUNDO (1 bot贸n)
     public void PopupMundo()
     {
         contextoActual = "Mundo";
@@ -144,20 +144,13 @@ public class UIManager : MonoBehaviour
         AplicarEstiloPopup(fondoMundo, colorMundo, 5);
     }
 
-    // PLAY (1 bot髇)
+    // PLAY (1 bot贸n)
     public void PopupPlay()
     {
-        contextoActual = "play";
-        panelPopup.SetActive(true);
         AudioManager.Instance.Play(selectBoton);
-
-        textoBoton1.text = "Aprendamos Jugando";
-
-        boton2.SetActive(false);
-
-        //CENTRAR
-        boton1Transform.anchoredPosition = new Vector2(0, 0);
-        fondoPopup.sprite = fondoMundo;
+        AudioManager.Instance.StopLoop(musicaInstance);
+        MenuManager.Instance.indiceCarrusel = 1; // ajusta el 铆ndice que corresponda
+        SceneManager.LoadScene("minijuegos");
     }
 
     public void OcultarPopup()
@@ -191,7 +184,7 @@ public class UIManager : MonoBehaviour
 
         if (contextoActual == "Universo")
         {
-            MenuManager.Instance.indiceCarrusel = 0; // 韓dice del carrusel
+            MenuManager.Instance.indiceCarrusel = 0; // 铆ndice del carrusel
             SceneManager.LoadScene("SistemaSolar");
         }
         else if (contextoActual == "Tierra")
@@ -229,7 +222,7 @@ public class UIManager : MonoBehaviour
     }
     public void VolverMenu()
     {
-        AudioManager.Instance.Play(clicVolver);
+        //AudioManager.Instance.Play(clicVolver);
         SceneManager.LoadScene("Menu");
     }
 

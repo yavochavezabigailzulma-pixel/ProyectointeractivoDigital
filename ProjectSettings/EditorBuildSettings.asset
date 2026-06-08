@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Continentes.unity
     guid: e48947fd2db1f524398be3e84ab04943
+  - enabled: 1
+    path: Assets/Scenes/minijuegos.unity
+    guid: a1185e2bd2740a1438971fa19094f13a
   m_configObjects: {}
