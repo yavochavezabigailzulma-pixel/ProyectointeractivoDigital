@@ -1,14 +1,16 @@
 using UnityEngine;
-using TMPro;
-using UnityEngine.UI;
-using System.Collections;
 
-[CreateAssetMenu(fileName = "NuevaPreguntaReloj", menuName = "Preguntas/DatosPreguntas")]
+[CreateAssetMenu(fileName = "NuevaPreguntaReloj", menuName = "Preguntas/DatosPreguntasReloj")]
 public class DatosPreguntasReloj : ScriptableObject
 {
     public string pregunta;
-    public Sprite imagenReloj;  // imagen del reloj para esta pregunta
-    public string opcion1;      // siempre la correcta
+
+    [Header("Configuracion del reloj")]
+    public float rotacionAgujaHoras;   // grados en Z para la aguja de horas
+    public float rotacionAgujaMinutos; // grados en Z para la aguja de minutos
+
+    [Header("Opciones")]
+    public string opcion1; // siempre la correcta
     public string opcion2;
     public string opcion3;
 }

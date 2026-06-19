@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
+ï»¿using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
-// ?? Script para cada opción arrastrable ??????????????????????
+
 public class OpcionArrastrable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [HideInInspector] public bool esCorrecta = false;
@@ -12,6 +11,7 @@ public class OpcionArrastrable : MonoBehaviour, IBeginDragHandler, IDragHandler,
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
     private Canvas canvas;
+    private bool posicionGuardada = false;
 
     void Awake()
     {
@@ -20,19 +20,38 @@ public class OpcionArrastrable : MonoBehaviour, IBeginDragHandler, IDragHandler,
         canvas = GetComponentInParent<Canvas>();
     }
 
-    void OnEnable()
+    void Start()
     {
+        StartCoroutine(GuardarPosicionAlFrame());
+    }
+
+    IEnumerator GuardarPosicionAlFrame()
+    {
+        // Esperar un frame para que el Canvas termine de calcular posiciones
+        yield return null;
         posicionOriginal = rectTransform.anchoredPosition;
+        posicionGuardada = true;
     }
 
     public void RestablecerPosicion()
     {
-        rectTransform.anchoredPosition = posicionOriginal;
+        if (rectTransform == null)
+            rectTransform = GetComponent<RectTransform>();
+        if (posicionGuardada)
+            rectTransform.anchoredPosition = posicionOriginal;
+    }
+
+    public void ResetearEstado()
+    {
+        if (canvasGroup == null)
+            canvasGroup = GetComponent<CanvasGroup>();
+        canvasGroup.blocksRaycasts = true;
+        RestablecerPosicion();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        canvasGroup.blocksRaycasts = false; // permite detectar el recuadro debajo
+        canvasGroup.blocksRaycasts = false;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -43,11 +62,6 @@ public class OpcionArrastrable : MonoBehaviour, IBeginDragHandler, IDragHandler,
     public void OnEndDrag(PointerEventData eventData)
     {
         canvasGroup.blocksRaycasts = true;
-        Debug.Log($"{gameObject.name} - esCorrecta: {esCorrecta}");
         RestablecerPosicion();
     }
-
 }
-
-
-

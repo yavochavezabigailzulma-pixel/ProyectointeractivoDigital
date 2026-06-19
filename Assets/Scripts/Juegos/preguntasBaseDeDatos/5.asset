@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d420590715a7df458f754d978bfd5fb, type: 3}
-  m_Name: 2
+  m_Name: 5
   m_EditorClassIdentifier: 
-  pregunta: "\xBFCon qu\xE9 otro nombre se conoce al universo?"
-  opcion1: Cosmos
-  opcion2: Galaxia
-  opcion3: Sistema
+  pregunta: "\xBFQu\xE9 forma tiene nuestra galaxia, la V\xEDa L\xE1ctea?"
+  opcion1: Espiral
+  opcion2: "El\xEDptica"
+  opcion3: Irregular

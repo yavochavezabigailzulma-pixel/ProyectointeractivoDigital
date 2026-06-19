@@ -9,10 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d420590715a7df458f754d978bfd5fb, type: 3}
-  m_Name: 2
+  m_Script: {fileID: 11500000, guid: d72dc8b4e659fd343b69be9d4e46bac9, type: 3}
+  m_Name: 8
   m_EditorClassIdentifier: 
-  pregunta: "\xBFCon qu\xE9 otro nombre se conoce al universo?"
-  opcion1: Cosmos
-  opcion2: Galaxia
-  opcion3: Sistema
+  pregunta: "\xBFQu\xE9 hora es?"
+  rotacionAgujaHoras: 101
+  rotacionAgujaMinutos: 15
+  opcion1: Nueve y cuarto
+  opcion2: Seis en punto
+  opcion3: Once y treinta y cinco

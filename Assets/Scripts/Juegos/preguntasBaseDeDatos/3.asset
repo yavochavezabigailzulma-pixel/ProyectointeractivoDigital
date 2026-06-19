@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d72dc8b4e659fd343b69be9d4e46bac9, type: 3}
-  m_Name: NuevaPreguntaReloj
+  m_Script: {fileID: 11500000, guid: 2d420590715a7df458f754d978bfd5fb, type: 3}
+  m_Name: 3
   m_EditorClassIdentifier: 
-  pregunta: "\xBFQu\xE9 hora es?"
-  imagenReloj: {fileID: 21300000, guid: a6a9abc89e9dda741a4ddd28d8c2006b, type: 3}
-  opcion1: Una y cuarto
-  opcion2: Tres y cinco
-  opcion3: Una en Punto
+  pregunta: "\xBFCu\xE1l es nuestra estrella m\xE1s cercana y la que nos da energ\xEDa?"
+  opcion1: El Sol
+  opcion2: La Luna
+  opcion3: Marte

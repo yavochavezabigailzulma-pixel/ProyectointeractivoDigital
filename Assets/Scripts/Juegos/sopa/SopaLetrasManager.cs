@@ -1,11 +1,10 @@
 ﻿// ── SopaLetrasManager.cs ──────────────────────────────────────
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
 
-public class SopaLetrasManager : MonoBehaviour, IPointerUpHandler
+public class SopaLetrasManager : MonoBehaviour
 {
     [Header("Grid")]
     public GameObject celdaPrefab;
@@ -29,15 +28,15 @@ public class SopaLetrasManager : MonoBehaviour, IPointerUpHandler
 
     // Cuadrícula raw
     private readonly string[] GRID_RAW = {
-        "COSMOSRVREESTRELLAS",
-        "UNIVERSOPRLS VADTXHE",
-        "NIVERSOS P HEEPZSIX",
-        "IXCRGALAXIASCDLTCBU",
-        "VENDDEA  LI UARUCOH",
-        "EEXBCFSPOLV  OFCXEOA",
-        "RRKEACTFCTRES PIRKVL",
-        "SRASPIRALESYCCHBDFR",
-        "OOVALADAEDAELIPTICA"
+        "COSMOSRVREESVFSDRTY",
+        "UNIVERLLORLS VADTXHE",
+        "NIVERSOV P HTEPZSIX",
+        "IXCRGALAXIASCRLTCBU",
+        "VENDDOA  LI UAEUCOH",
+        "EEXBPFSPOJUO OFLXEOA",
+        "RRKEACTFCTRES PILKVL",
+        "SRESPIRALESYCCHBDAR",
+        "OOVALADAEDELIPTICAS"
     };
 
     private int ROWS;
@@ -59,6 +58,15 @@ public class SopaLetrasManager : MonoBehaviour, IPointerUpHandler
         BuscarPalabras();
         GenerarCeldas();
         GenerarTags();
+    }
+
+    void Update()
+    {
+        if (arrastrando && Input.GetMouseButtonUp(0))
+        {
+            arrastrando = false;
+            Verificar();
+        }
     }
 
     void ConstruirGrid()
@@ -149,34 +157,37 @@ public class SopaLetrasManager : MonoBehaviour, IPointerUpHandler
         ActualizarVisualSeleccion();
     }
 
-    public void OnPointerUp(PointerEventData e)
-    {
-        if (!arrastrando) return;
-        arrastrando = false;
-        Verificar();
-    }
-
     List<Vector2Int> ObtenerLinea(Vector2Int desde, Vector2Int hasta)
     {
         var resultado = new List<Vector2Int>();
-        int dr = (int)Mathf.Sign(hasta.x - desde.x);
-        int dc = (int)Mathf.Sign(hasta.y - desde.y);
 
-        if (dr == 0 && dc == 0) { resultado.Add(desde); return resultado; }
+        int diffR = hasta.x - desde.x;
+        int diffC = hasta.y - desde.y;
 
-        int distR = Mathf.Abs(hasta.x - desde.x);
-        int distC = Mathf.Abs(hasta.y - desde.y);
+        int dr = diffR == 0 ? 0 : (diffR > 0 ? 1 : -1);
+        int dc = diffC == 0 ? 0 : (diffC > 0 ? 1 : -1);
 
-        // Solo líneas rectas u diagonales perfectas
-        if (dr != 0 && dc != 0 && distR != distC) return resultado;
+        if (dr == 0 && dc == 0)
+        {
+            resultado.Add(desde);
+            return resultado;
+        }
+
+        int distR = Mathf.Abs(diffR);
+        int distC = Mathf.Abs(diffC);
+
+        if (dr != 0 && dc != 0 && distR != distC)
+            return resultado;
 
         int r = desde.x, c = desde.y;
         while (true)
         {
             resultado.Add(new Vector2Int(r, c));
             if (r == hasta.x && c == hasta.y) break;
-            r += dr; c += dc;
+            r += dr;
+            c += dc;
         }
+
         return resultado;
     }
 

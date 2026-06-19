@@ -2,10 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.EventSystems;
 
-
-// ?? Script principal ??????????????????????????????????????????
 public class PreguntasManager : MonoBehaviour
 {
     [Header("UI")]
@@ -21,53 +18,88 @@ public class PreguntasManager : MonoBehaviour
     public GameObject panelIncorrecto;
     public float tiempoFeedback = 1.5f;
 
+    [Header("Fin del juego")]
+    public GameObject panelFinJuego;  // asignar en el inspector
+
     [Header("Preguntas")]
     public DatosPreguntas[] preguntas;
-    public int indice = 0;
 
     private DatosPreguntas preguntaActual;
     private GameObject[] opciones;
+    private List<int> indicesRestantes = new List<int>();
 
     void Start()
     {
         opciones = new GameObject[] { opcion1, opcion2, opcion3 };
-        CargarPregunta(indice);
+
+        if (panelCorrecto) panelCorrecto.SetActive(false);
+        if (panelIncorrecto) panelIncorrecto.SetActive(false);
+        if (panelFinJuego) panelFinJuego.SetActive(false);
+
+        StartCoroutine(IniciarAlFrame());
+    }
+
+    IEnumerator IniciarAlFrame()
+    {
+        yield return null;
+        InicializarIndices();
+        CargarSiguientePreguntaAleatoria();
+    }
+
+    void InicializarIndices()
+    {
+        indicesRestantes.Clear();
+        for (int i = 0; i < preguntas.Length; i++)
+            indicesRestantes.Add(i);
+    }
+
+    void CargarSiguientePreguntaAleatoria()
+    {
+        if (indicesRestantes.Count == 0)
+        {
+            FinDelJuego();
+            return;
+        }
+
+        // Elegir un índice aleatorio de los que quedan
+        int pos = Random.Range(0, indicesRestantes.Count);
+        int idx = indicesRestantes[pos];
+        indicesRestantes.RemoveAt(pos);
+
+        CargarPregunta(idx);
     }
 
     public void CargarPregunta(int idx)
     {
-        if (idx >= preguntas.Length) return;
-
         preguntaActual = preguntas[idx];
         preguntaTexto.text = preguntaActual.pregunta;
 
-        // Armar lista mezclada: correcta + incorrectas
         List<(string texto, bool correcta)> lista = new List<(string, bool)>
         {
-            (preguntaActual.opcion1, true),  // opcion1 en DatosPreguntas es la correcta
+            (preguntaActual.opcion1, true),
             (preguntaActual.opcion2, false),
             (preguntaActual.opcion3, false)
         };
 
-        // Mezclar aleatoriamente
+        // Mezclar opciones
         for (int i = 0; i < lista.Count; i++)
         {
             int rand = Random.Range(i, lista.Count);
             (lista[i], lista[rand]) = (lista[rand], lista[i]);
         }
 
-        // Asignar a cada GameObject
         for (int i = 0; i < opciones.Length; i++)
         {
             opciones[i].SetActive(true);
-            opciones[i].GetComponentInChildren<TextMeshProUGUI>().text = lista[i].texto;
 
             OpcionArrastrable arrastrable = opciones[i].GetComponent<OpcionArrastrable>();
+            arrastrable.ResetearEstado();
             arrastrable.esCorrecta = lista[i].correcta;
             arrastrable.manager = this;
+
+            opciones[i].GetComponentInChildren<TextMeshProUGUI>().text = lista[i].texto;
         }
 
-        // Asegura que los paneles de feedback estén ocultos
         if (panelCorrecto) panelCorrecto.SetActive(false);
         if (panelIncorrecto) panelIncorrecto.SetActive(false);
     }
@@ -84,17 +116,13 @@ public class PreguntasManager : MonoBehaviour
 
     IEnumerator FeedbackCorrecta(OpcionArrastrable opcion)
     {
+        opcion.ResetearEstado();
         opcion.gameObject.SetActive(false);
         if (panelCorrecto) panelCorrecto.SetActive(true);
         yield return new WaitForSeconds(tiempoFeedback);
         if (panelCorrecto) panelCorrecto.SetActive(false);
 
-        // Avanzar a la siguiente pregunta
-        indice++;
-        if (indice < preguntas.Length)
-            CargarPregunta(indice);
-        else
-            FinDelJuego();
+        CargarSiguientePreguntaAleatoria();
     }
 
     IEnumerator FeedbackIncorrecta(OpcionArrastrable opcion)
@@ -102,12 +130,16 @@ public class PreguntasManager : MonoBehaviour
         if (panelIncorrecto) panelIncorrecto.SetActive(true);
         yield return new WaitForSeconds(tiempoFeedback);
         if (panelIncorrecto) panelIncorrecto.SetActive(false);
-        opcion.RestablecerPosicion(); // vuelve a su lugar
+        opcion.ResetearEstado();
     }
 
     void FinDelJuego()
     {
+        // Ocultar opciones al terminar
+        foreach (var op in opciones)
+            op.SetActive(false);
+
+        if (panelFinJuego) panelFinJuego.SetActive(true);
         Debug.Log("Juego terminado");
-        // aquí puedes cargar otra escena o mostrar un panel final
     }
 }

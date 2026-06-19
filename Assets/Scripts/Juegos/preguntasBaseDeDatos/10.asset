@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d420590715a7df458f754d978bfd5fb, type: 3}
-  m_Name: 2
+  m_Name: 10
   m_EditorClassIdentifier: 
-  pregunta: "\xBFCon qu\xE9 otro nombre se conoce al universo?"
-  opcion1: Cosmos
-  opcion2: Galaxia
-  opcion3: Sistema
+  pregunta: "\xBFCu\xE1l es la fase en la que nace una estrella?"
+  opcion1: Nebulosa
+  opcion2: Supernova
+  opcion3: Secuencia principal

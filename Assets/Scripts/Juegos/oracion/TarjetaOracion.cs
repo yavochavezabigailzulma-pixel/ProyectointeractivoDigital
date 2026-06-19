@@ -1,11 +1,8 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-// ── Tarjeta arrastrable ───────────────────────────────────────
 public class TarjetaOracion : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [HideInInspector] public string valorRespuesta;
@@ -15,6 +12,7 @@ public class TarjetaOracion : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
     private Canvas canvas;
+    private bool posicionGuardada = false;
 
     void Awake()
     {
@@ -23,14 +21,33 @@ public class TarjetaOracion : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         canvas = GetComponentInParent<Canvas>();
     }
 
-    void OnEnable()
+    void Start()
     {
+        // Esperar un frame para que el Canvas termine de calcular posiciones reales
+        StartCoroutine(GuardarPosicionAlFrame());
+    }
+
+    IEnumerator GuardarPosicionAlFrame()
+    {
+        yield return null;
         posicionOriginal = rectTransform.anchoredPosition;
+        posicionGuardada = true;
     }
 
     public void RestablecerPosicion()
     {
-        rectTransform.anchoredPosition = posicionOriginal;
+        if (rectTransform == null)
+            rectTransform = GetComponent<RectTransform>();
+        if (posicionGuardada)
+            rectTransform.anchoredPosition = posicionOriginal;
+    }
+
+    public void ResetearEstado()
+    {
+        if (canvasGroup == null)
+            canvasGroup = GetComponent<CanvasGroup>();
+        canvasGroup.blocksRaycasts = true;
+        RestablecerPosicion();
     }
 
     public void OnBeginDrag(PointerEventData eventData)

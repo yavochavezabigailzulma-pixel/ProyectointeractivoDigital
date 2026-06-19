@@ -43,6 +43,6 @@ public class JuegosManager : MonoBehaviour
         perguntadosPanel.SetActive(false);
         horaPanel.SetActive(false);
         sopaPanel.SetActive(false);
-        oracionPanel.SetActive(true);
+        oracionPanel.SetActive(false);
         }
 }

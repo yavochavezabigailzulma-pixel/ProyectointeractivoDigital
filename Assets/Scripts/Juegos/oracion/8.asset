@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d420590715a7df458f754d978bfd5fb, type: 3}
-  m_Name: 2
+  m_Script: {fileID: 11500000, guid: 0734ebb3a39dcd44c9af8ac642702df8, type: 3}
+  m_Name: 8
   m_EditorClassIdentifier: 
-  pregunta: "\xBFCon qu\xE9 otro nombre se conoce al universo?"
-  opcion1: Cosmos
-  opcion2: Galaxia
-  opcion3: Sistema
+  parteAntes: "\"La mayor\xEDa de los asteroides se encuentran en el "
+  parteDespues: de asteroides."
+  respuestaCorrecta: "Cintur\xF3n"
+  opcion2: Camino
+  opcion3: Grupo

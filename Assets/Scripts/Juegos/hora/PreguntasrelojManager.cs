@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
 
 public class PreguntasRelojManager : MonoBehaviour
 {
     [Header("UI")]
     [SerializeField] TextMeshProUGUI preguntaTexto;
-    [SerializeField] Image imagenReloj;
+
+    [Header("Reloj")]
+    [SerializeField] RectTransform agujaHoras;
+    [SerializeField] RectTransform agujaMinutos;
 
     [Header("Opciones")]
     [SerializeField] GameObject opcion1;
@@ -20,33 +22,66 @@ public class PreguntasRelojManager : MonoBehaviour
     public GameObject panelIncorrecto;
     public float tiempoFeedback = 1.5f;
 
+    [Header("Fin del juego")]
+    public GameObject panelFinJuego;
+
     [Header("Preguntas")]
     public DatosPreguntasReloj[] preguntas;
-    private int indice = 0;
 
     private string respuestaCorrecta;
     private GameObject[] opciones;
+    private List<int> indicesRestantes = new List<int>();
+    private bool aceptandoRespuesta = true;
 
     void Start()
     {
         opciones = new GameObject[] { opcion1, opcion2, opcion3 };
-        CargarPregunta(indice);
+
+        if (panelCorrecto) panelCorrecto.SetActive(false);
+        if (panelIncorrecto) panelIncorrecto.SetActive(false);
+        if (panelFinJuego) panelFinJuego.SetActive(false);
+
+        InicializarIndices();
+        CargarSiguientePreguntaAleatoria();
+    }
+
+    void InicializarIndices()
+    {
+        indicesRestantes.Clear();
+        for (int i = 0; i < preguntas.Length; i++)
+            indicesRestantes.Add(i);
+    }
+
+    void CargarSiguientePreguntaAleatoria()
+    {
+        if (indicesRestantes.Count == 0)
+        {
+            FinDelJuego();
+            return;
+        }
+
+        int pos = Random.Range(0, indicesRestantes.Count);
+        int idx = indicesRestantes[pos];
+        indicesRestantes.RemoveAt(pos);
+
+        CargarPregunta(idx);
     }
 
     void CargarPregunta(int idx)
     {
-        if (idx >= preguntas.Length) return;
-
-        DatosPreguntasReloj  actual = preguntas[idx];
+        DatosPreguntasReloj actual = preguntas[idx];
 
         preguntaTexto.text = actual.pregunta;
-        imagenReloj.sprite = actual.imagenReloj;
 
-        // Guardar cuál es la correcta
+        // Aplicar rotaciones de las agujas según la pregunta
+        agujaHoras.localRotation = Quaternion.Euler(0f, 0f, actual.rotacionAgujaHoras);
+        agujaMinutos.localRotation = Quaternion.Euler(0f, 0f, actual.rotacionAgujaMinutos);
+
         respuestaCorrecta = actual.opcion1;
 
-        // Mezclar opciones
         List<string> lista = new List<string> { actual.opcion1, actual.opcion2, actual.opcion3 };
+
+        // Mezclar opciones
         for (int i = 0; i < lista.Count; i++)
         {
             int rand = Random.Range(i, lista.Count);
@@ -61,11 +96,15 @@ public class PreguntasRelojManager : MonoBehaviour
 
         if (panelCorrecto) panelCorrecto.SetActive(false);
         if (panelIncorrecto) panelIncorrecto.SetActive(false);
+
+        aceptandoRespuesta = true;
     }
 
-    // Este método se llama desde el botón, pasando su propio texto
+    // Este método se llama desde el botón, pasando su propio GameObject
     public void SeleccionarOpcion(GameObject botonPresionado)
     {
+        if (!aceptandoRespuesta) return; // evita doble clic durante el feedback
+
         string respuesta = botonPresionado.GetComponentInChildren<TextMeshProUGUI>().text;
 
         if (respuesta == respuestaCorrecta)
@@ -76,26 +115,29 @@ public class PreguntasRelojManager : MonoBehaviour
 
     IEnumerator FeedbackCorrecto()
     {
+        aceptandoRespuesta = false;
         if (panelCorrecto) panelCorrecto.SetActive(true);
         yield return new WaitForSeconds(tiempoFeedback);
         if (panelCorrecto) panelCorrecto.SetActive(false);
 
-        indice++;
-        if (indice < preguntas.Length)
-            CargarPregunta(indice);
-        else
-            FinDelJuego();
+        CargarSiguientePreguntaAleatoria();
     }
 
     IEnumerator FeedbackIncorrecto()
     {
+        aceptandoRespuesta = false;
         if (panelIncorrecto) panelIncorrecto.SetActive(true);
         yield return new WaitForSeconds(tiempoFeedback);
         if (panelIncorrecto) panelIncorrecto.SetActive(false);
+        aceptandoRespuesta = true; // permitir reintentar
     }
 
     void FinDelJuego()
     {
+        foreach (var op in opciones)
+            op.SetActive(false);
+
+        if (panelFinJuego) panelFinJuego.SetActive(true);
         Debug.Log("Juego terminado");
     }
 }

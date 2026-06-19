@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class OracionManager : MonoBehaviour
 {
-    [Header("Texto de la oración")]
+    [Header("Texto de la oracion")]
     [SerializeField] TextMeshProUGUI textoAntes;
     [SerializeField] TextMeshProUGUI textoDespues;
 
@@ -19,30 +19,66 @@ public class OracionManager : MonoBehaviour
     public GameObject panelIncorrecto;
     public float tiempoFeedback = 1.5f;
 
+    [Header("Fin del juego")]
+    public GameObject panelFinJuego; // asignar en el inspector
+
     [Header("Preguntas")]
     public DatosOracion[] preguntas;
-    private int indice = 0;
 
     private string respuestaCorrecta;
     private GameObject[] tarjetas;
+    private List<int> indicesRestantes = new List<int>();
 
     void Start()
     {
         tarjetas = new GameObject[] { tarjeta1, tarjeta2, tarjeta3 };
-        CargarPregunta(indice);
+
+        if (panelCorrecto) panelCorrecto.SetActive(false);
+        if (panelIncorrecto) panelIncorrecto.SetActive(false);
+        if (panelFinJuego) panelFinJuego.SetActive(false);
+
+        StartCoroutine(IniciarAlFrame());
+    }
+
+    IEnumerator IniciarAlFrame()
+    {
+        // Esperar un frame para que el Canvas calcule posiciones reales
+        yield return null;
+        InicializarIndices();
+        CargarSiguientePreguntaAleatoria();
+    }
+
+    void InicializarIndices()
+    {
+        indicesRestantes.Clear();
+        for (int i = 0; i < preguntas.Length; i++)
+            indicesRestantes.Add(i);
+    }
+
+    void CargarSiguientePreguntaAleatoria()
+    {
+        if (indicesRestantes.Count == 0)
+        {
+            FinDelJuego();
+            return;
+        }
+
+        // Elegir un indice aleatorio de los que quedan sin repetir
+        int pos = Random.Range(0, indicesRestantes.Count);
+        int idx = indicesRestantes[pos];
+        indicesRestantes.RemoveAt(pos);
+
+        CargarPregunta(idx);
     }
 
     void CargarPregunta(int idx)
     {
-        if (idx >= preguntas.Length) return;
-
         DatosOracion actual = preguntas[idx];
 
         textoAntes.text = actual.parteAntes;
         textoDespues.text = actual.parteDespues;
         respuestaCorrecta = actual.respuestaCorrecta;
 
-        // Mezclar opciones
         List<string> lista = new List<string>
         {
             actual.respuestaCorrecta,
@@ -50,6 +86,7 @@ public class OracionManager : MonoBehaviour
             actual.opcion3
         };
 
+        // Mezclar opciones aleatoriamente
         for (int i = 0; i < lista.Count; i++)
         {
             int rand = Random.Range(i, lista.Count);
@@ -59,11 +96,13 @@ public class OracionManager : MonoBehaviour
         for (int i = 0; i < tarjetas.Length; i++)
         {
             tarjetas[i].SetActive(true);
-            tarjetas[i].GetComponentInChildren<TextMeshProUGUI>().text = lista[i];
 
             TarjetaOracion tarjeta = tarjetas[i].GetComponent<TarjetaOracion>();
+            tarjeta.ResetearEstado(); // restaura posicion y blocksRaycasts
             tarjeta.valorRespuesta = lista[i];
             tarjeta.manager = this;
+
+            tarjetas[i].GetComponentInChildren<TextMeshProUGUI>().text = lista[i];
         }
 
         if (panelCorrecto) panelCorrecto.SetActive(false);
@@ -80,16 +119,13 @@ public class OracionManager : MonoBehaviour
 
     IEnumerator FeedbackCorrecto(TarjetaOracion tarjeta)
     {
+        tarjeta.ResetearEstado(); // asegurar blocksRaycasts = true antes de desactivar
         tarjeta.gameObject.SetActive(false);
         if (panelCorrecto) panelCorrecto.SetActive(true);
         yield return new WaitForSeconds(tiempoFeedback);
         if (panelCorrecto) panelCorrecto.SetActive(false);
 
-        indice++;
-        if (indice < preguntas.Length)
-            CargarPregunta(indice);
-        else
-            Debug.Log("Juego terminado");
+        CargarSiguientePreguntaAleatoria();
     }
 
     IEnumerator FeedbackIncorrecto(TarjetaOracion tarjeta)
@@ -97,6 +133,16 @@ public class OracionManager : MonoBehaviour
         if (panelIncorrecto) panelIncorrecto.SetActive(true);
         yield return new WaitForSeconds(tiempoFeedback);
         if (panelIncorrecto) panelIncorrecto.SetActive(false);
-        tarjeta.RestablecerPosicion();
+        tarjeta.ResetearEstado();
+    }
+
+    void FinDelJuego()
+    {
+        // Ocultar tarjetas al terminar
+        foreach (var t in tarjetas)
+            t.SetActive(false);
+
+        if (panelFinJuego) panelFinJuego.SetActive(true);
+        Debug.Log("Juego terminado");
     }
 }

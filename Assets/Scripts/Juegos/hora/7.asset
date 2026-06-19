@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0734ebb3a39dcd44c9af8ac642702df8, type: 3}
-  m_Name: NuevaPreguntaOracion
+  m_Script: {fileID: 11500000, guid: d72dc8b4e659fd343b69be9d4e46bac9, type: 3}
+  m_Name: 7
   m_EditorClassIdentifier: 
-  parteAntes: '"Las estrellas son esferas de'
-  parteDespues: muy grandes que emiten luz y calor."
-  respuestaCorrecta: Fuego y gas
-  opcion2: Hielo
-  opcion3: Agua
+  pregunta: "\xBFQu\xE9 hora es?"
+  rotacionAgujaHoras: -40
+  rotacionAgujaMinutos: 104
+  opcion1: Dos en punto
+  opcion2: Doce en punto
+  opcion3: Una en punto
