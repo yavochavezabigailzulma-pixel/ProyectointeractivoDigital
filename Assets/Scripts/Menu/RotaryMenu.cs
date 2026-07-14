@@ -13,7 +13,8 @@ public class RotaryMenu : MonoBehaviour,
     public EventReference clicMatraca;
 
     [Header("Geometría de la rueda")]
-    public float radius = 300f;
+    public float radiusX = 300f;
+    public float radiusY = 300f;
     [Range(60f, 360f)]
     public float visibleArcDegrees = 220f;
     public float arcRotationOffset = 270f;
@@ -25,8 +26,8 @@ public class RotaryMenu : MonoBehaviour,
     public float inertia = 0.92f;
 
     [Header("Escalado de ítems")]
-    public float centerScale = 1.3f;
-    public float edgeScale = 0.7f;
+    public Vector2 centerScale = new Vector2(1.3f, 1.3f);
+    public Vector2 edgeScale = new Vector2(0.7f, 0.7f);
     public float scaleSpeed = 10f;
 
     [Header("Opacidad")]
@@ -203,7 +204,7 @@ public class RotaryMenu : MonoBehaviour,
             float itemAngle = i * anglePerItem - wheelAngle + arcRotationOffset;
             float rad = itemAngle * Mathf.Deg2Rad;
             //items[i].anchoredPosition = new Vector2(Mathf.Cos(rad) * radius, Mathf.Sin(rad) * radius);
-            items[i].anchoredPosition = new Vector2(Mathf.Cos(rad) * radius, Mathf.Sin(rad) * radius) + centerOffset;
+            items[i].anchoredPosition = new Vector2(Mathf.Cos(rad) * radiusX, Mathf.Sin(rad) * radiusY) + centerOffset;
 
             if (apuntarAlCentro)
                 items[i].localRotation = Quaternion.Euler(0f, 0f, itemAngle - 90f);
@@ -222,8 +223,11 @@ public class RotaryMenu : MonoBehaviour,
             float itemAngle = NormalizeAngle(i * anglePerItem - wheelAngle);
             float t = Mathf.Clamp01(Mathf.Abs(itemAngle) / halfArc);
 
-            float cur = items[i].localScale.x;
-            items[i].localScale = Vector3.one * Mathf.Lerp(cur, Mathf.Lerp(centerScale, edgeScale, t), Time.deltaTime * scaleSpeed);
+            Vector2 targetScale = Vector2.Lerp(centerScale, edgeScale, t);
+            Vector2 curScale = new Vector2(items[i].localScale.x, items[i].localScale.y);
+            Vector2 newScale = Vector2.Lerp(curScale, targetScale, Time.deltaTime * scaleSpeed);
+
+            items[i].localScale = new Vector3(newScale.x, newScale.y, 1f);
             groups[i].alpha = Mathf.Lerp(centerAlpha, edgeAlpha, t);
         }
     }
@@ -257,9 +261,9 @@ public class RotaryMenu : MonoBehaviour,
             float a1 = arcRotationOffset + (s / 64f) * visibleArcDegrees;
             float a2 = arcRotationOffset + ((s + 1) / 64f) * visibleArcDegrees;
             Gizmos.DrawLine(
-                origin + new Vector3(Mathf.Cos(a1 * Mathf.Deg2Rad), Mathf.Sin(a1 * Mathf.Deg2Rad)) * radius,
-                origin + new Vector3(Mathf.Cos(a2 * Mathf.Deg2Rad), Mathf.Sin(a2 * Mathf.Deg2Rad)) * radius
-            );
+                    origin + new Vector3(Mathf.Cos(a1 * Mathf.Deg2Rad) * radiusX, Mathf.Sin(a1 * Mathf.Deg2Rad) * radiusY),
+                    origin + new Vector3(Mathf.Cos(a2 * Mathf.Deg2Rad) * radiusX, Mathf.Sin(a2 * Mathf.Deg2Rad) * radiusY)
+                );
         }
     }
 #endif
