@@ -6,7 +6,7 @@ public class OrbitaVisual : MonoBehaviour
 {
     [Header("Configuración")]
     public int segmentos = 128;
-    //public Color colorLinea = new Color(0.3f, 0.8f, 1f, 0.4f);
+    public Color colorLinea = new Color(0f, 0f, 1f, 0.4f);
     public Transform planetaHijo;
 
     [Header("Ajuste Manual")]
@@ -23,7 +23,7 @@ public class OrbitaVisual : MonoBehaviour
         lr.loop = true;
         lr.startWidth = 0.05f;
         lr.endWidth = 0.05f;
-        //lr.material = new Material(Shader.Find("Sprites/Default"));
+        lr.material = new Material(Shader.Find("Sprites/Default"));
     }
 
     void Update()
@@ -31,8 +31,8 @@ public class OrbitaVisual : MonoBehaviour
         float radio = new Vector2(planetaHijo.localPosition.x,
                                   planetaHijo.localPosition.z).magnitude + ajusteRadio;
 
-        //lr.startColor = colorLinea;
-        //lr.endColor = colorLinea;
+        lr.startColor = colorLinea;
+        lr.endColor = colorLinea;
 
         float angulo = 0f;
         float paso = 2f * Mathf.PI / segmentos;

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using FMODUnity;
+using UnityEngine.SceneManagement;
 [ExecuteInEditMode]
 public class RotaryMenu : MonoBehaviour,
     IBeginDragHandler, IDragHandler, IEndDragHandler
@@ -195,6 +196,8 @@ public class RotaryMenu : MonoBehaviour,
 
     void PositionAllItems(float wheelAngle)
     {
+        bool apuntarAlCentro = SceneManager.GetActiveScene().name == "Menu";
+
         for (int i = 0; i < itemCount; i++)
         {
             float itemAngle = i * anglePerItem - wheelAngle + arcRotationOffset;
@@ -202,8 +205,11 @@ public class RotaryMenu : MonoBehaviour,
             //items[i].anchoredPosition = new Vector2(Mathf.Cos(rad) * radius, Mathf.Sin(rad) * radius);
             items[i].anchoredPosition = new Vector2(Mathf.Cos(rad) * radius, Mathf.Sin(rad) * radius) + centerOffset;
 
-            //items[i].localRotation = Quaternion.Euler(0f, 0f, itemAngle - 90f);
-            items[i].localRotation = Quaternion.identity;
+            if (apuntarAlCentro)
+                items[i].localRotation = Quaternion.Euler(0f, 0f, itemAngle - 90f);
+            else
+                items[i].localRotation = Quaternion.identity;
+
         }
     }
 
