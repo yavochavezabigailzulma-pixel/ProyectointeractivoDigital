@@ -8,7 +8,7 @@ public class NavegadorCuerpos : MonoBehaviour
     public Animator animator;
     public GameObject pantallaMenu;
     public GameObject pantallaContenido;
-
+    public int infoID;
     public GameObject[] paneles; // arrastra los 6 paneles en orden
     //public Sprite[] infoBG;
     //void Awake() => Instance = this;
@@ -43,10 +43,26 @@ public class NavegadorCuerpos : MonoBehaviour
     public GameObject planetUrano;
     public GameObject planetNeptuno;
 
+    [Header("Ajuste Título Planetas (case 11+)")]
+    public Vector2 posicionTituloPlanetas = new Vector2(0f, 0f);
+    public float tamanioTituloPlanetas = 36f;
+
+    private Vector2 posicionTituloDefault;
+    private float tamanioTituloDefault;
+    private bool defaultsGuardados = false;
+
     [Header ("Paneles")]
     public GameObject panelInfo;
     public TextMeshProUGUI textoInfo;
     public TextMeshProUGUI textoTitulo;
+    public GameObject botonAbrirInfo;
+    public GameObject botonCerrarInfo;
+
+    void Start()
+    {
+        posicionTituloDefault = textoTitulo.rectTransform.anchoredPosition;
+        tamanioTituloDefault = textoTitulo.fontSize;
+    }
 
     public void AbrirSeccion(int index)
     {
@@ -97,6 +113,9 @@ public class NavegadorCuerpos : MonoBehaviour
     {
         canvas.SetActive(false);
         
+        infoID = tipo;
+        botonAbrirInfo.SetActive(true);
+        botonCerrarInfo.SetActive(false);
         switch (tipo){
             case 1: nebulosa.SetActive(true);
                 ZoomCuerpos.Instance.SetObjetivo(nebulosa.transform); break;
@@ -166,10 +185,30 @@ public class NavegadorCuerpos : MonoBehaviour
         }
     }
 
+    public void AsignarID()
+    {
+        mostrarInfo(infoID);
+    }
     public void mostrarInfo(int tipo)
     {
         //panelInfo.SetActive(true);
         animator.SetBool("InfoOn", true);
+
+        botonAbrirInfo.SetActive(false);
+        botonCerrarInfo.SetActive(true);
+
+        // Ajuste independiente de tamaño/posición para planetas (case 11+)
+        if (tipo >= 11)
+        {
+            textoTitulo.rectTransform.anchoredPosition = posicionTituloPlanetas;
+            textoTitulo.fontSize = tamanioTituloPlanetas;
+        }
+        else
+        {
+            textoTitulo.rectTransform.anchoredPosition = posicionTituloDefault;
+            textoTitulo.fontSize = tamanioTituloDefault;
+        }
+
         switch (tipo)
         {
             case 1:
@@ -265,19 +304,21 @@ public class NavegadorCuerpos : MonoBehaviour
                 textoTitulo.text =
                     "<align=center><size=150%><b>MERCURIO</b></size></align>\n" +
                     "\n" +
+                    "\n" +
                     "<b>Posición:</b> 1\n" +
                     "<b>Tipo:</b> Rocoso\n" +
                     "N° de Lunas: Ninguna\n";
 
                 textoInfo.text =
                     "<b>Curiosidades:</b>\n" +
-                    "   - Es el planeta más cercano al Sol.\n" +
-                    "   - Tiene temperaturas muy extremas.";
+                    "- Es el planeta más cercano al Sol.\n" +
+                    "- Tiene temperaturas muy extremas.";
                 break;
 
             case 12:
                 textoTitulo.text =
                     "<align=center><size=150%><b>VENUS</b></size></align>\n" +
+                    "\n" +
                     "\n" +
                     "<b>Posición:</b> 2\n" +
                     "<b>Tipo:</b> Rocoso\n" +
@@ -285,13 +326,14 @@ public class NavegadorCuerpos : MonoBehaviour
 
                 textoInfo.text =
                     "<b>Curiosidades:</b>\n" +
-                    "   - Tiene una atmósfera densa que atrapa el calor, lo que lo hace el planeta más caliente.\n" +
-                    "   - Gira en sentido contrario a la mayoría de los planetas.";
+                    "- Tiene una atmósfera densa que atrapa el calor, lo que lo hace el planeta más caliente.\n" +
+                    "- Gira en sentido contrario a la mayoría de los planetas.";
                 break;
 
             case 13:
                 textoTitulo.text =
                     "<align=center><size=150%><b>TIERRA</b></size></align>\n" +
+                    "\n" +
                     "\n" +
                     "<b>Posición:</b> 3\n" +
                     "<b>Tipo:</b> Rocoso\n" +
@@ -299,13 +341,14 @@ public class NavegadorCuerpos : MonoBehaviour
 
                 textoInfo.text =
                     "<b>Curiosidades:</b>\n" +
-                    "   - Es el único planeta conocido que alberga vida.\n" +
-                    "   - Casi tres cuartas partes de su superficie están cubiertas por agua.";
+                    "- Es el único planeta conocido que alberga vida.\n" +
+                    "- Casi tres cuartas partes de su superficie están cubiertas por agua.";
                 break;
 
             case 14:
                 textoTitulo.text =
                     "<align=center><size=150%><b>MARTE</b></size></align>\n" +
+                    "\n" +
                     "\n" +
                     "<b>Posición:</b> 4\n" +
                     "<b>Tipo:</b> Rocoso\n" +
@@ -313,13 +356,14 @@ public class NavegadorCuerpos : MonoBehaviour
 
                 textoInfo.text =
                     "<b>Curiosidades:</b>\n" +
-                    "   - Es conocido como el \"planeta rojo\" debido al óxido de hierro en su superficie.\n" +
-                    "   - Tiene el volcán más grande del sistema solar, el Monte Olimpo.";
+                    "- Es conocido como el \"planeta rojo\" debido al óxido de hierro en su superficie.\n" +
+                    "- Tiene el volcán más grande del sistema solar, el Monte Olimpo.";
                 break;
 
             case 15:
                 textoTitulo.text =
                     "<align=center><size=150%><b>JÚPITER</b></size></align>\n" +
+                    "\n" +
                     "\n" +
                     "<b>Posición:</b> 5\n" +
                     "<b>Tipo:</b> Gaseoso\n" +
@@ -327,13 +371,14 @@ public class NavegadorCuerpos : MonoBehaviour
 
                 textoInfo.text =
                     "<b>Curiosidades:</b>\n" +
-                    "   - Es el planeta más grande de todo el sistema solar.\n" +
-                    "   - Tiene una gran mancha roja que es una tormenta gigante.";
+                    "- Es el planeta más grande de todo el sistema solar.\n" +
+                    "- Tiene una gran mancha roja que es una tormenta gigante.";
                 break;
 
             case 16:
                 textoTitulo.text =
                     "<align=center><size=150%><b>SATURNO</b></size></align>\n" +
+                    "\n" +
                     "\n" +
                     "<b>Posición:</b> 6\n" +
                     "<b>Tipo:</b> Gaseoso\n" +
@@ -341,13 +386,14 @@ public class NavegadorCuerpos : MonoBehaviour
 
                 textoInfo.text =
                     "<b>Curiosidades:</b>\n" +
-                    "   - Es famoso por su complejo y visible sistema de anillos.\n" +
-                    "   - Es el segundo planeta más grande del sistema solar.";
+                    "- Es famoso por su complejo y visible sistema de anillos.\n" +
+                    "- Es el segundo planeta más grande del sistema solar.";
                 break;
 
             case 17:
                 textoTitulo.text =
                     "<align=center><size=150%><b>URANO</b></size></align>\n" +
+                    "\n" +
                     "\n" +
                     "<b>Posición:</b> 7\n" +
                     "<b>Tipo:</b> Gigante helado\n" +
@@ -355,13 +401,14 @@ public class NavegadorCuerpos : MonoBehaviour
 
                 textoInfo.text =
                     "<b>Curiosidades:</b>\n" +
-                    "   - Gira de lado, casi paralelo a su órbita.\n" +
-                    "   - Su color azul verdoso se debe al metano en su atmósfera.";
+                    "- Gira de lado, casi paralelo a su órbita.\n" +
+                    "- Su color azul verdoso se debe al metano en su atmósfera.";
                 break;
 
             case 18:
                 textoTitulo.text =
                     "<align=center><size=150%><b>NEPTUNO</b></size></align>\n" +
+                    "\n" +
                     "\n" +
                     "<b>Posición:</b> 8\n" +
                     "<b>Tipo:</b> Gigante helado\n" +
@@ -369,14 +416,17 @@ public class NavegadorCuerpos : MonoBehaviour
 
                 textoInfo.text =
                     "<b>Curiosidades:</b>\n" +
-                    "   - Es el planeta más alejado del Sol.\n" +
-                    "   - Tiene vientos supersónicos extremadamente rápidos.";
+                    "- Es el planeta más alejado del Sol.\n" +
+                    "- Tiene vientos supersónicos extremadamente rápidos.";
                 break;
         }
     }
     public void ocultarInfo()
     {
         //panelInfo.SetActive(false);
+        botonAbrirInfo.SetActive(true);
+        botonCerrarInfo.SetActive(false);
+
         animator.SetBool("InfoOn", false);
     }
 }
