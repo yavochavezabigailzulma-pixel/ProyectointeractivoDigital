@@ -235,7 +235,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &96003590
 Transform:
   m_ObjectHideFlags: 0
@@ -3666,7 +3666,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1176753009
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3911,7 +3911,7 @@ PrefabInstance:
     - target: {fileID: -4744381353898276585, guid: 8034e304d40ba444b9b424dd94f26950,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 60
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: -4071861236979771779, guid: 8034e304d40ba444b9b424dd94f26950,
         type: 3}
@@ -3921,17 +3921,17 @@ PrefabInstance:
     - target: {fileID: -1642185939554716355, guid: 8034e304d40ba444b9b424dd94f26950,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 60
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 33925873730044423, guid: 8034e304d40ba444b9b424dd94f26950,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 60
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 924775567252679230, guid: 8034e304d40ba444b9b424dd94f26950,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 60
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 5513800960293980626, guid: 8034e304d40ba444b9b424dd94f26950,
         type: 3}
@@ -4586,7 +4586,7 @@ PrefabInstance:
     - target: {fileID: -4744381353898276585, guid: 8867c7b2c38318044922def230de7ff0,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 60
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: -4071861236979771779, guid: 8867c7b2c38318044922def230de7ff0,
         type: 3}
@@ -4596,7 +4596,7 @@ PrefabInstance:
     - target: {fileID: -1642185939554716355, guid: 8867c7b2c38318044922def230de7ff0,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 60
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: -1290840422155097837, guid: 8867c7b2c38318044922def230de7ff0,
         type: 3}
@@ -4606,17 +4606,17 @@ PrefabInstance:
     - target: {fileID: 33925873730044423, guid: 8867c7b2c38318044922def230de7ff0,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 60
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 924775567252679230, guid: 8867c7b2c38318044922def230de7ff0,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 60
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 3682257447919186761, guid: 8867c7b2c38318044922def230de7ff0,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 60
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5513800960293980626, guid: 8867c7b2c38318044922def230de7ff0,
         type: 3}
