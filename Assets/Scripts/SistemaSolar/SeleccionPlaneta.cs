@@ -19,6 +19,7 @@ public class SeleccionPlaneta : MonoBehaviour
     void Start()
     {
         // Obtener TODOS los botones hijos
+        UISistemaSolar.Instance.panelInfoPlanetas.SetActive(false);
         Button[] botonesInfo = transform.parent.GetComponentsInChildren<Button>(true);
         Debug.Log($"[{nombrePlaneta}] Botones encontrados: {botonesInfo.Length}");
 
