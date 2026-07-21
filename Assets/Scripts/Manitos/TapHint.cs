@@ -18,6 +18,11 @@ public class TapHint : MonoBehaviour, INotificaHintCompletado
     [SerializeField] private float radioDeteccion = 80f;    // en pixeles de pantalla
     [SerializeField] private float velocidadFadeOutRapido = 6f;
 
+    [Header("Duración máxima (auto-ocultar)")]
+    [Tooltip("Si está activo, el hint se oculta solo tras este tiempo, aunque el usuario no haga el gesto.")]
+    [SerializeField] private bool usarDuracionMaxima = false;
+    [SerializeField] private float duracionMaximaSegundos = 3f;
+
     [Header("Punto objetivo (relativo, si no usas las referencias de arriba)")]
     [SerializeField] private Vector3 puntoObjetivoLocal = Vector3.zero;
 
@@ -66,7 +71,10 @@ public class TapHint : MonoBehaviour, INotificaHintCompletado
     private Vector3 posInicioLocal;
 
     private Coroutine loopCoroutine;
+    private Coroutine fadeOutCoroutine;
+    private Coroutine timeoutCoroutine;
     private bool ocultoPermanentemente = false;
+    private bool eventoCompletadoDisparado = false;
 
     void Awake()
     {
@@ -87,12 +95,15 @@ public class TapHint : MonoBehaviour, INotificaHintCompletado
             return;
         }
 
-        // Estas dos líneas son las que se perdieron:
         posObjetivoLocal = puntoObjetivoLocal;
         posInicioLocal = puntoObjetivoLocal + offsetInicio;
 
         ocultoPermanentemente = false;
+        eventoCompletadoDisparado = false;
         loopCoroutine = StartCoroutine(LoopTap());
+
+        if (usarDuracionMaxima)
+            timeoutCoroutine = StartCoroutine(TimeoutAutomatico());
     }
 
     IEnumerator NotificarYaCompletadoDiferido()
@@ -105,6 +116,16 @@ public class TapHint : MonoBehaviour, INotificaHintCompletado
     void OnDisable()
     {
         if (loopCoroutine != null) StopCoroutine(loopCoroutine);
+        if (timeoutCoroutine != null) StopCoroutine(timeoutCoroutine);
+    }
+
+    IEnumerator TimeoutAutomatico()
+    {
+        // Tiempo real: corre igual aunque el juego esté en pausa (Time.timeScale = 0)
+        yield return new WaitForSecondsRealtime(duracionMaximaSegundos);
+
+        if (!ocultoPermanentemente)
+            ForzarOcultarInmediato();
     }
 
     void Update()
@@ -160,18 +181,54 @@ public class TapHint : MonoBehaviour, INotificaHintCompletado
         RegistroHintsSesion.MarcarCompletado(claveGuardado);
 
         if (loopCoroutine != null) StopCoroutine(loopCoroutine);
-        StartCoroutine(FadeOutRapidoYDesactivar());
+        if (timeoutCoroutine != null) StopCoroutine(timeoutCoroutine);
+        fadeOutCoroutine = StartCoroutine(FadeOutRapidoYDesactivar());
+    }
+
+    /// <summary>
+    /// Fuerza la desaparición inmediata del hint, sin animación de fade,
+    /// y garantiza que el HintSequencer reciba la notificación de "completado".
+    /// Se usa automáticamente cuando se cumple la duración máxima, pero también
+    /// es llamable manualmente desde cualquier script como botón de emergencia.
+    /// </summary>
+    public void ForzarOcultarInmediato()
+    {
+        ocultoPermanentemente = true;
+        RegistroHintsSesion.MarcarCompletado(claveGuardado);
+
+        if (loopCoroutine != null) StopCoroutine(loopCoroutine);
+        if (fadeOutCoroutine != null) StopCoroutine(fadeOutCoroutine);
+        if (timeoutCoroutine != null) StopCoroutine(timeoutCoroutine);
+
+        FinalizarOcultamiento();
     }
 
     IEnumerator FadeOutRapidoYDesactivar()
     {
         float alphaActual = ObtenerAlphaActual();
-        while (alphaActual > 0f)
+        float tiempoMaximo = 1f; // red de seguridad extra: nunca debería tardar más que esto
+        float transcurrido = 0f;
+
+        while (alphaActual > 0f && transcurrido < tiempoMaximo)
         {
-            alphaActual -= velocidadFadeOutRapido * Time.deltaTime;
+            float delta = Time.unscaledDeltaTime; // no afectado por Time.timeScale
+            alphaActual -= velocidadFadeOutRapido * delta;
+            transcurrido += delta;
             SetAlpha(Mathf.Clamp01(alphaActual));
             yield return null;
         }
+
+        FinalizarOcultamiento();
+    }
+
+    // Único punto que desactiva y notifica — evita disparar el evento dos veces
+    // sin importar si se llega por fade normal, timeout, o forzado manual.
+    void FinalizarOcultamiento()
+    {
+        if (eventoCompletadoDisparado) return;
+        eventoCompletadoDisparado = true;
+
+        SetAlpha(0f);
         gameObject.SetActive(false);
         onHintCompletado?.Invoke();
     }

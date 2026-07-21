@@ -14,14 +14,15 @@ public class ElementoEstacion
 
 public class EstacionesController : MonoBehaviour
 {
-    [Header("Elementos decorativos por estación")]
-    public Image elementoDecorativo;
-    public ElementoEstacion[] elementos;
+    //[Header("Elementos decorativos por estación")]
+    //public Image elementoDecorativo;
+    //public ElementoEstacion[] elementos;
 
-    [Header("Panel principal")]
-    public Sprite[] fondos;
-    public Image fondo;
+    [Header("Objetos de fondo por estación")]
+    // En vez de un solo "fondo" con sprites, un objeto específico por estación
+    public GameObject[] objetosFondo;
     public GameObject panelFondo;
+    public GameObject panelTransparente;
 
     [Header("Panel información")]
     public Sprite[] fondosInfo;
@@ -54,20 +55,28 @@ public class EstacionesController : MonoBehaviour
 
     public void abrirFondo(int estacion)
     {
-        if (estacion < 0 || estacion >= fondos.Length)
+        if (estacion < 0 || estacion >= objetosFondo.Length)
             return;
 
         estacionActual = estacion;
-        fondo.sprite = fondos[estacion];
-        panelFondo.SetActive(true);
 
-        if (estacion < elementos.Length && elementos[estacion] != null)
+        // Desactiva todos los objetos de fondo y activa solo el de la estación elegida
+        for (int i = 0; i < objetosFondo.Length; i++)
         {
-            elementoDecorativo.sprite = elementos[estacion].sprite;
-            elementoDecorativo.rectTransform.anchoredPosition = elementos[estacion].posicion;
-            elementoDecorativo.rectTransform.sizeDelta = elementos[estacion].tamaño;
-            elementoDecorativo.gameObject.SetActive(true);
+            if (objetosFondo[i] != null)
+                objetosFondo[i].SetActive(i == estacion);
         }
+
+        panelFondo.SetActive(false);
+        panelTransparente.SetActive(true);
+
+        //if (estacion < elementos.Length && elementos[estacion] != null)
+        //{
+        //    elementoDecorativo.sprite = elementos[estacion].sprite;
+        //    elementoDecorativo.rectTransform.anchoredPosition = elementos[estacion].posicion;
+        //    elementoDecorativo.rectTransform.sizeDelta = elementos[estacion].tamaño;
+        //    elementoDecorativo.gameObject.SetActive(true);
+        //}
 
         panelInfo1.SetActive(true);
         panelInfo2.SetActive(true);
@@ -80,9 +89,17 @@ public class EstacionesController : MonoBehaviour
 
     public void cerrarFondo()
     {
-        panelFondo.SetActive(false);
+        panelFondo.SetActive(true);
+        panelTransparente.SetActive(false);
 
-        elementoDecorativo.gameObject.SetActive(false);
+        // Desactiva todos los objetos de fondo al cerrar
+        for (int i = 0; i < objetosFondo.Length; i++)
+        {
+            if (objetosFondo[i] != null)
+                objetosFondo[i].SetActive(false);
+        }
+
+        //elementoDecorativo.gameObject.SetActive(false);
 
         panelInfo1.SetActive(false);
         panelInfo2.SetActive(false);
@@ -104,19 +121,16 @@ public class EstacionesController : MonoBehaviour
                 textoInfo1.text =
                     "<b>¿Cuándo ocurre en nuestro hemisferio?</b>\n" +
                     "De septiembre a diciembre\n" +
-                    "\n" +
                     "<b>Inicio: Equinoccio de primavera - 21 de septiembre</b>\n" +
                     "• Día y noche duran casi lo mismo";
 
                 textoInfo2.text =
                     "<b>¿Cómo es el clima?</b>\n" +
-                    "\n" +
                     "• Temperatura agradable\n" +
                     "• Empieza a hacer más calor";
 
                 textoInfo3.text =
                     "<b>¿Qué pasa en la naturaleza?</b>\n" +
-                    "\n" +
                     "• Florecen las plantas\n" +
                     "• Todo se vuelve verde y colorido";
                 break;
@@ -125,19 +139,16 @@ public class EstacionesController : MonoBehaviour
                 textoInfo1.text =
                     "<b>¿Cuándo ocurre en nuestro hemisferio?</b>\n" +
                     "De diciembre a marzo\n" +
-                    "\n" +
                     "<b>Inicio: Solsticio de verano - 21 de diciembre</b>\n" +
                     "• Día más largo del año";
 
                 textoInfo2.text =
                     "<b>¿Cómo es el clima?</b>\n" +
-                    "\n" +
                     "• Mucho calor\n" +
                     "• Época de lluvias";
 
                 textoInfo3.text =
                     "<b>¿Qué pasa en la naturaleza?</b>\n" +
-                    "\n" +
                     "• Las plantas crecen rápido\n" +
                     "• Hay tormentas frecuentes";
                 break;
@@ -146,19 +157,16 @@ public class EstacionesController : MonoBehaviour
                 textoInfo1.text =
                     "<b>¿Cuándo ocurre en nuestro hemisferio?</b>\n" +
                     "De marzo a junio\n" +
-                    "\n" +
                     "<b>Inicio: Equinoccio de otoño - 21 de marzo</b>\n" +
                     "• Día y noche duran lo mismo";
 
                 textoInfo2.text =
                     "<b>¿Cómo es el clima?</b>\n" +
-                    "\n" +
                     "• Empieza a hacer más frío\n" +
                     "• Menos lluvias";
 
                 textoInfo3.text =
                     "<b>¿Qué pasa en la naturaleza?</b>\n" +
-                    "\n" +
                     "• Caen las hojas\n" +
                     "• Cambian de color";
                 break;
@@ -167,19 +175,16 @@ public class EstacionesController : MonoBehaviour
                 textoInfo1.text =
                     "<b>¿Cuándo ocurre en nuestro hemisferio?</b>\n" +
                     "De junio a septiembre\n" +
-                    "\n" +
                     "<b>Inicio: Solsticio de invierno - 21 de junio</b>\n" +
                     "• Día más corto del año";
 
                 textoInfo2.text =
                     "<b>¿Cómo es el clima?</b>\n" +
-                    "\n" +
                     "• Hace frío\n" +
                     "• Puede haber heladas";
 
                 textoInfo3.text =
                     "<b>¿Qué pasa en la naturaleza?</b>\n" +
-                    "\n" +
                     "• Las plantas crecen menos\n" +
                     "• Los animales buscan refugio";
                 break;
