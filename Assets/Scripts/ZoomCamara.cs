@@ -163,6 +163,7 @@ public class ZoomCamara : MonoBehaviour
             {
                 // Supera el máximo: desenfoca y vuelve al sistema solar
                 EnfocarEn(null);
+                //UISistemaSolar.Instance.CerrarPopupInfoSinHint(); // corta hintSequenceAlCerrarPanel sin volver a lanzarlo
                 targetPosition = posicionInicial;
                 esperandoSoltarDedos = true;
             }

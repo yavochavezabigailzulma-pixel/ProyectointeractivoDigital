@@ -86,15 +86,22 @@ public class PinchZoomHint : MonoBehaviour, INotificaHintCompletado
 
         if (RegistroHintsSesion.EstaCompletado(claveGuardado))
         {
-            gameObject.SetActive(false);
-            onHintCompletado?.Invoke(); // ya estaba visto: avisamos igual para no trabar una secuencia
+            StartCoroutine(NotificarYaCompletadoDiferido());
             return;
         }
 
         ocultoPermanentemente = false;
-        loopCoroutine = StartCoroutine(LoopPinch());
+        loopCoroutine = StartCoroutine(LoopPinch()); 
     }
 
+    IEnumerator NotificarYaCompletadoDiferido()
+    {
+        // Espera un frame: evita invocar el evento mientras HintSequencer
+        // todavía está ejecutando AvanzarAlSiguientePaso en la misma pila.
+        yield return null;
+        gameObject.SetActive(false);
+        onHintCompletado?.Invoke();
+    }
     void OnDisable()
     {
         if (loopCoroutine != null) StopCoroutine(loopCoroutine);

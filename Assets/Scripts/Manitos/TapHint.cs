@@ -83,16 +83,23 @@ public class TapHint : MonoBehaviour, INotificaHintCompletado
 
         if (RegistroHintsSesion.EstaCompletado(claveGuardado))
         {
-            gameObject.SetActive(false);
-            onHintCompletado?.Invoke(); // ya estaba visto: avisamos igual para no trabar una secuencia
+            StartCoroutine(NotificarYaCompletadoDiferido());
             return;
         }
 
+        // Estas dos líneas son las que se perdieron:
         posObjetivoLocal = puntoObjetivoLocal;
         posInicioLocal = puntoObjetivoLocal + offsetInicio;
 
         ocultoPermanentemente = false;
         loopCoroutine = StartCoroutine(LoopTap());
+    }
+
+    IEnumerator NotificarYaCompletadoDiferido()
+    {
+        yield return null;
+        gameObject.SetActive(false);
+        onHintCompletado?.Invoke();
     }
 
     void OnDisable()

@@ -4,15 +4,7 @@ using UnityEngine.SceneManagement;
 /// <summary>
 /// Muestra una lista de hints en orden: uno se activa recién cuando el anterior
 /// termina de ocultarse. Funciona con cualquier hint que implemente
-/// INotificaHintCompletado (PinchZoomHint, TapHint, o los que agregues después).
-///
-/// Modos de activación disponibles (elegir en el Inspector):
-///  - Manual: llamá a IniciarSecuencia() desde un botón, un evento, o tu propio código
-///            cuando se cumpla la condición que quieras.
-///  - AlIniciar: arranca solo al cargar la escena (Start).
-///  - AlHabilitarse: arranca cada vez que este GameObject se activa
-///    (útil poniendo el sequencer como hijo de un panel: se dispara al abrir el panel).
-///  - AlCargarEscena: arranca cuando se carga la escena indicada en "nombreEscena".
+/// INotificaHintCompletado (PinchZoomHint, TapHint, SwipeHint, o los que agregues después).
 /// </summary>
 public class HintSequencer : MonoBehaviour
 {
@@ -68,15 +60,29 @@ public class HintSequencer : MonoBehaviour
     {
         if (unaSolaVez && yaCompletada) return;
 
-        // Si esta secuencia ya se había iniciado antes (ej: se vuelve a llamar
-        // al reingresar a la escena) y quedó "colgada" en algún paso intermedio,
-        // hay que desuscribir ese paso ANTES de resetear el índice. Si no,
-        // el listener viejo queda vivo y el evento se dispara dos veces,
-        // haciendo que se salteen pasos.
+        // Si esta secuencia ya se había iniciado antes y quedó "colgada" en algún
+        // paso intermedio, hay que desuscribir ese paso ANTES de resetear el índice.
         DesuscribirPasoActual();
 
         indiceActual = -1;
         AvanzarAlSiguientePaso();
+    }
+
+    /// <summary>
+    /// Corta la secuencia donde esté, desuscribe el listener del paso actual
+    /// y desactiva su GameObject. Seguro de llamar aunque la secuencia
+    /// no esté corriendo (no hace nada en ese caso).
+    /// </summary>
+    public void DetenerSecuencia()
+    {
+        DesuscribirPasoActual();
+
+        if (indiceActual >= 0 && indiceActual < pasos.Length && pasos[indiceActual] != null)
+        {
+            pasos[indiceActual].SetActive(false);
+        }
+
+        indiceActual = -1;
     }
 
     void AvanzarAlSiguientePaso()

@@ -8,6 +8,12 @@ using UnityEngine.UI;
 
 public class UISistemaSolar : MonoBehaviour
 {
+    [Header("Tutorial al cerrar panel de información")]
+    [Tooltip("Se dispara SOLO cuando el jugador cierra el panel manualmente (botón volver) mientras sigue en modo selección.")]
+    [SerializeField] private HintSequencer hintSequenceAlCerrarPanel;
+
+    [Tooltip("Se invoca apenas se muestra el panel de info, para que cualquier hint de selección en curso se corte.")]
+    public System.Action AlMostrarInfo;
 
     public GameObject panelInfoPlanetas;
     public TextMeshProUGUI textoTitulo;
@@ -49,11 +55,16 @@ public class UISistemaSolar : MonoBehaviour
 
         //animator.SetBool("InfoOn", false);
     }
+
     public void MostrarInfo(string planeta)
     {
         planetaActual = planeta;
         // Activar primero, luego animar
         panelInfoPlanetas.SetActive(true);
+
+        // Avisa a quien esté escuchando (por ejemplo, el SeleccionPlaneta activo)
+        // para que corte cualquier hint de selección que siguiera en curso.
+        AlMostrarInfo?.Invoke();
 
         // Forzar reset del Animator por si quedó en estado sucio
         animator.Rebind();
@@ -186,14 +197,37 @@ public class UISistemaSolar : MonoBehaviour
                 //imagenPlaneta.sprite = spriteNeptuno;
                 break;
 
-            //default:
-            //    textoInfo.text = "Información no disponible.";
-            //    //imagenPlaneta.sprite = spriteDefault;
-            //    panelInfoPlanetas.SetActive(false);
-            //    break;
+                //default:
+                //    textoInfo.text = "Información no disponible.";
+                //    //imagenPlaneta.sprite = spriteDefault;
+                //    panelInfoPlanetas.SetActive(false);
+                //    break;
         }
     }
+
+    /// <summary>
+    /// Cierra el panel de info y dispara el hint de "cómo cerrar".
+    /// Usar SOLO cuando el usuario cierra manualmente con el botón "volver"
+    /// mientras el planeta sigue seleccionado.
+    /// </summary>
     public void OcultarPopupInfo()
+    {
+        animator.SetBool("InfoOn", false);
+
+        botonInfoDesplegable.SetActive(true);
+        botonVolverDesplegable.SetActive(false);
+        hintSequenceAlCerrarPanel.IniciarSecuencia();
+
+        AudioManager.Instance.Play(clicVolver);
+
+    }
+
+    /// <summary>
+    /// Cierra el panel de info SIN disparar ningún hint nuevo, y corta
+    /// cualquier hint de "cómo cerrar" que estuviera en curso.
+    /// Usar cuando el usuario abandona la selección del planeta por completo.
+    /// </summary>
+    public void CerrarPopupInfoSinHint()
     {
         animator.SetBool("InfoOn", false);
 
@@ -201,7 +235,10 @@ public class UISistemaSolar : MonoBehaviour
         botonVolverDesplegable.SetActive(false);
 
         AudioManager.Instance.Play(clicVolver);
+
+        hintSequenceAlCerrarPanel?.DetenerSecuencia();
     }
+
     public void AbrirInfoActual()
     {
         if (string.IsNullOrEmpty(planetaActual))
@@ -209,6 +246,7 @@ public class UISistemaSolar : MonoBehaviour
 
         MostrarInfo(planetaActual);
     }
+
     public void SetPlanetaActual(string planeta)
     {
         planetaActual = planeta;

@@ -1,7 +1,7 @@
-
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+
 public class SeleccionPlaneta : MonoBehaviour
 {
     public string nombrePlaneta;
@@ -10,12 +10,18 @@ public class SeleccionPlaneta : MonoBehaviour
     public float minZoomPlaneta = 3f;
     public float maxZoomPlaneta = 20f;
 
+    [Header("Tutorial al seleccionar")]
+    [Tooltip("Se activa la primera vez que el jugador selecciona ESTE planeta.")]
+    [SerializeField] private HintSequencer secuenciaHintsAlSeleccionar;
+    [SerializeField] private bool soloUnaVezPorSesion = true;
+
     private float tiempoPresion = 0f;
     public bool seleccionado = false;
     private System.Collections.Generic.List<GameObject> botonesInfoList = new();
     private Button botonComponent;
 
     private bool estabaSeleccionado;
+
     void Start()
     {
         // Obtener TODOS los botones hijos
@@ -57,6 +63,29 @@ public class SeleccionPlaneta : MonoBehaviour
         botonesInfoList = new System.Collections.Generic.List<GameObject>();
         foreach (Button b in botonesInfo)
             botonesInfoList.Add(b.gameObject);
+
+        if (UISistemaSolar.Instance != null)
+            UISistemaSolar.Instance.AlMostrarInfo += DetenerHintDeSeleccion;
+    }
+
+    void OnEnable()
+    {
+        // Se suscribe a la notificación de UISistemaSolar para cortar el hint
+        // de selección en cuanto se abre el panel de info (evita que ambos
+        // hints se muestren superpuestos).
+        //if (UISistemaSolar.Instance != null)
+        //    UISistemaSolar.Instance.AlMostrarInfo += DetenerHintDeSeleccion;
+    }
+
+    void OnDisable()
+    {
+        if (UISistemaSolar.Instance != null)
+            UISistemaSolar.Instance.AlMostrarInfo -= DetenerHintDeSeleccion;
+    }
+
+    void DetenerHintDeSeleccion()
+    {
+        secuenciaHintsAlSeleccionar?.DetenerSecuencia();
     }
 
     private void Update()
@@ -80,18 +109,25 @@ public class SeleccionPlaneta : MonoBehaviour
             if (estabaSeleccionado)
             {
                 UISistemaSolar.Instance.panelInfoPlanetas.SetActive(false);
-                // Ocultar también el panel de info desplegado al deseleccionar
-                UISistemaSolar.Instance.OcultarPopupInfo();
+
+                // Se abandona la selección por completo: cerrar el panel SIN
+                // disparar el hint de "cómo cerrar" (ese solo aplica cuando
+                // el usuario cierra el panel manualmente y sigue seleccionado).
+                //UISistemaSolar.Instance.CerrarPopupInfoSinHint();
+
+                secuenciaHintsAlSeleccionar?.DetenerSecuencia();
             }
         }
 
         estabaSeleccionado = seleccionado;
     }
+
     void OnMouseDown()
     {
         tiempoPresion = Time.time;
         Debug.Log("Touch detectado");
     }
+
     void OnMouseUp()
     {
         float duracion = Time.time - tiempoPresion;
@@ -102,7 +138,24 @@ public class SeleccionPlaneta : MonoBehaviour
 
             ZoomCamara.Instance.EnfocarEn(transform, minZoomPlaneta, maxZoomPlaneta);
             StartCoroutine(MostrarBotonInfo());
+
+            DispararTutorialSiCorresponde();
         }
+    }
+
+    void DispararTutorialSiCorresponde()
+    {
+        if (secuenciaHintsAlSeleccionar == null) return;
+
+        string clave = $"hint_seleccion_{nombrePlaneta}";
+
+        if (soloUnaVezPorSesion && RegistroHintsSesion.EstaCompletado(clave))
+            return;
+
+        if (soloUnaVezPorSesion)
+            RegistroHintsSesion.MarcarCompletado(clave);
+
+        secuenciaHintsAlSeleccionar.IniciarSecuencia();
     }
 
     public float retrasoInfo = 1f; // ajustable en Inspector

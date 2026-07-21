@@ -921,6 +921,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &420323661
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 420323663}
+  - component: {fileID: 420323662}
+  m_Layer: 0
+  m_Name: HintSequencer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &420323662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420323661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae58469bee8e4cd4289ea9e251cab705, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pasos:
+  - {fileID: 1101441681}
+  tipoActivacion: 1
+  nombreEscena: Menu
+  unaSolaVez: 1
+--- !u!4 &420323663
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420323661}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.75112385, y: 2.67, z: -17.632717}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &548166184
 GameObject:
   m_ObjectHideFlags: 0
@@ -2478,7 +2527,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1101441682
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2548,6 +2597,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 958ffab021fc6294aa87725824123cf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  claveGuardado: hint_swipe_menu
+  resetearParaPruebas: 0
+  detectarSwipeDelUsuario: 1
+  distanciaMinimaSwipe: 50
+  velocidadFadeOutRapido: 6
   trayectoria: 1
   distancia: -350
   alturaCurva: 25
@@ -2585,6 +2639,9 @@ MonoBehaviour:
   anguloRotacion: 15
   anguloInicial: 0
   anguloFinal: 40
+  onHintCompletado:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1216391576
 GameObject:
   m_ObjectHideFlags: 0
@@ -4478,3 +4535,4 @@ SceneRoots:
   - {fileID: 353847726}
   - {fileID: 565681392}
   - {fileID: 228833116}
+  - {fileID: 420323663}
