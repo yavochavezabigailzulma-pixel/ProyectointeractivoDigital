@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 using System.Collections.Generic;
 
 /// <summary>
@@ -32,6 +33,10 @@ public class GlobeContinentPicker : MonoBehaviour
     [Tooltip("Si el dedo/mouse se movió más que esto (en píxeles) entre el inicio y el final del toque, se considera arrastre/rotación y NO se abre ningún panel.")]
     [SerializeField] private float umbralArrastre = 20f;
 
+    [Header("Diagnóstico en pantalla (opcional, para ver en el build real)")]
+    [Tooltip("Si lo asignás, muestra ahí toda la info de diagnóstico, visible directamente en el dispositivo.")]
+    //[SerializeField] private TextMeshProUGUI textoDiagnostico;
+
     private Camera camaraPrincipal;
     private MeshCollider meshCollider;
     private Vector2 posicionInicioToque;
@@ -44,6 +49,9 @@ public class GlobeContinentPicker : MonoBehaviour
 
         if (camaraPrincipal == null)
             Debug.LogError("[GlobeContinentPicker] No se encontró una cámara con el tag 'MainCamera'. Asignale ese tag a tu cámara.");
+
+
+        Debug.Log($"[Chequeo UV] La malla del collider tiene UVs: {meshCollider.sharedMesh.uv.Length > 0} (cantidad: {meshCollider.sharedMesh.uv.Length}, vertices: {meshCollider.sharedMesh.vertexCount})");
     }
 
     void Update()
@@ -90,15 +98,21 @@ public class GlobeContinentPicker : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
-            // DIAGNÓSTICO TEMPORAL: mostrar siempre qué golpeó el rayo.
-            Debug.Log($"[GlobeContinentPicker] Rayo pegó en: '{hit.collider.name}' (¿es el MeshCollider esperado? {hit.collider == meshCollider}), UV: {hit.textureCoord}");
-
-            if (hit.collider != meshCollider) return;
-
+            bool esMeshColliderEsperado = hit.collider == meshCollider;
             Vector2 uv = hit.textureCoord;
             Color colorTocado = MuestrearColorExacto(uv);
             string colorHex = ColorUtility.ToHtmlStringRGB(colorTocado);
-            Debug.Log($"[GlobeContinentPicker] Color muestreado: #{colorHex} (RGBA: {colorTocado})");
+
+            string diagnostico =
+                $"Collider: {hit.collider.name} (esperado: {esMeshColliderEsperado})\n" +
+                $"UV: {uv}\n" +
+                $"Textura: {texturaMascara.width}x{texturaMascara.height} | isReadable: {texturaMascara.isReadable} | formato: {texturaMascara.format}\n" +
+                $"Color leído: #{colorHex}  RGBA: {colorTocado}";
+
+            Debug.Log($"[GlobeContinentPicker] {diagnostico}");
+            //if (textoDiagnostico != null) textoDiagnostico.text = diagnostico;
+
+            if (!esMeshColliderEsperado) return;
 
             Continente continente = EncontrarContinentePorColor(colorTocado);
             if (continente != null)
@@ -107,15 +121,8 @@ public class GlobeContinentPicker : MonoBehaviour
                 if (continente.panel != null)
                     continente.panel.SetActive(true);
             }
-            else
-            {
-                Debug.Log($"[GlobeContinentPicker] No hay continente para el color {colorTocado} en UV {uv}");
-            }
         }
-        else
-        {
-            Debug.Log("[GlobeContinentPicker] El rayo no pegó en nada.");
-        }
+        
     }
 
     Color MuestrearColorExacto(Vector2 uv)

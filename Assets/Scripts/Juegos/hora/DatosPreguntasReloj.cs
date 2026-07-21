@@ -4,7 +4,7 @@ using UnityEngine;
 public class DatosPreguntasReloj : ScriptableObject
 {
     public string pregunta;
-
+    public string horaEnNumeros; // ej: "12:15"
     [Header("Configuracion del reloj")]
     public float rotacionAgujaHoras;   // grados en Z para la aguja de horas
     public float rotacionAgujaMinutos; // grados en Z para la aguja de minutos

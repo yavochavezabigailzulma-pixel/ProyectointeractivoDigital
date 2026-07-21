@@ -28,6 +28,9 @@ public class PreguntasRelojManager : MonoBehaviour
     [Header("Preguntas")]
     public DatosPreguntasReloj[] preguntas;
 
+    [Header("Display hora")]
+    public TMP_Text displayHora;
+
     private string respuestaCorrecta;
     private GameObject[] opciones;
     private List<int> indicesRestantes = new List<int>();
@@ -98,6 +101,7 @@ public class PreguntasRelojManager : MonoBehaviour
         if (panelIncorrecto) panelIncorrecto.SetActive(false);
 
         aceptandoRespuesta = true;
+        if (displayHora) displayHora.text = actual.horaEnNumeros;
     }
 
     // Este método se llama desde el botón, pasando su propio GameObject

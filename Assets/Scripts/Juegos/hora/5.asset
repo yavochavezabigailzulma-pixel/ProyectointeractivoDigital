@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 5
   m_EditorClassIdentifier: 
   pregunta: "\xBFQu\xE9 hora es?"
+  horaEnNumeros: 10:45
   rotacionAgujaHoras: 62
   rotacionAgujaMinutos: -166
   opcion1: Diez y cuarenta y cinco

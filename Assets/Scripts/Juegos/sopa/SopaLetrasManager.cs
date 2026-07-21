@@ -25,6 +25,9 @@ public class SopaLetrasManager : MonoBehaviour
     public Transform panelPalabras;
     public GameObject palabraTagPrefab;
     public TextMeshProUGUI textoFeedback;
+    public Sprite[] fondosTag;
+    public Color colorFondoTag = Color.white;
+    public Vector2 tamanoTag = new Vector2(120, 30);
 
     // Cuadrícula raw
     private readonly string[] GRID_RAW = {
@@ -131,9 +134,22 @@ public class SopaLetrasManager : MonoBehaviour
 
     void GenerarTags()
     {
-        foreach (string pal in palabras)
+        for (int i = 0; i < palabras.Length; i++)
         {
+            string pal = palabras[i];
             GameObject go = Instantiate(palabraTagPrefab, panelPalabras);
+            go.GetComponent<RectTransform>().sizeDelta = tamanoTag;
+            // Asignar fondo rotando entre los disponibles
+            if (fondosTag != null && fondosTag.Length > 0)
+            {
+                Image imgFondo = go.GetComponent<Image>();
+                if (imgFondo != null)
+                {
+                    imgFondo.sprite = fondosTag[i % fondosTag.Length];
+                    imgFondo.color = colorFondoTag; // ← añade esto
+                }
+            }
+
             TextMeshProUGUI tmp = go.GetComponentInChildren<TextMeshProUGUI>();
             tmp.text = pal;
             tags[pal] = tmp;
