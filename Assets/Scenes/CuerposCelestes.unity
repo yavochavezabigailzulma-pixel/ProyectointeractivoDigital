@@ -25783,6 +25783,7 @@ GameObject:
   - component: {fileID: 1586949842}
   - component: {fileID: 1586949841}
   - component: {fileID: 1586949840}
+  - component: {fileID: 1586949844}
   m_Layer: 5
   m_Name: CanvasOv
   m_TagString: Untagged
@@ -25876,6 +25877,34 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1586949844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586949839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c113c3fae341fc4cb6a68fd7f861fa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicaCuerposCelestes:
+    Guid:
+      Data1: 364474887
+      Data2: 1285104856
+      Data3: 98622630
+      Data4: -1888142286
+    Path: event:/Music/CuerposCelestes
+  musicaCuerpos3D:
+    Guid:
+      Data1: -1359195155
+      Data2: 1240589578
+      Data3: 125808519
+      Data4: 1479557287
+    Path: event:/Music/CuerposCelestes3D
+  duracionFadeEntrada: 2
+  duracionFadeSalida: 3
 --- !u!1 &1593017068
 GameObject:
   m_ObjectHideFlags: 0

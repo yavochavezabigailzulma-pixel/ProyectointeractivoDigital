@@ -4559,6 +4559,13 @@ MonoBehaviour:
   hours: 12
   minutes: 0
   bienvenidaPanel: {fileID: 1551179708}
+  musicaReloj:
+    Guid:
+      Data1: 1624193889
+      Data2: 1158186167
+      Data3: 928311994
+      Data4: 1634586397
+    Path: event:/Music/RelojMusic
 --- !u!114 &2120985243
 MonoBehaviour:
   m_ObjectHideFlags: 0

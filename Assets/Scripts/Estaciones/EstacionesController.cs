@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using FMOD;
+using FMODUnity;
 
 [System.Serializable]
 public class ElementoEstacion
@@ -17,6 +19,20 @@ public class EstacionesController : MonoBehaviour
     //[Header("Elementos decorativos por estación")]
     //public Image elementoDecorativo;
     //public ElementoEstacion[] elementos;
+
+    [Header("Sonidos")]
+    public EventReference musicPrimavera;
+    public EventReference musicVerano;
+    public EventReference musicOtono;
+    public EventReference musicInvierno;
+
+    private EventReference[] musicasEstaciones;
+
+    [Header("Sonido general (menú de selección de estaciones)")]
+    public EventReference musicaGeneral;
+    private FMOD.Studio.EventInstance musicaGeneralInstance;
+    [SerializeField] private float duracionFadeEntradaGeneral = 0.5f;
+    [SerializeField] private float duracionFadeSalidaGeneral = 0.5f;
 
     [Header("Objetos de fondo por estación")]
     // En vez de un solo "fondo" con sprites, un objeto específico por estación
@@ -53,6 +69,30 @@ public class EstacionesController : MonoBehaviour
 
     private int estacionActual = -1;
 
+    void Awake()
+    {
+        musicasEstaciones = new EventReference[]
+        {
+            musicPrimavera, musicVerano, musicOtono, musicInvierno
+        };
+    }
+
+    private void Start()
+    {
+        // Sonido general del menú de selección, arranca sonando a volumen completo
+        if (!musicaGeneral.IsNull)
+        {
+            musicaGeneralInstance = AudioManager.Instance.CreateLoop(musicaGeneral);
+            AudioManager.Instance.SetVolume(musicaGeneralInstance, 1f);
+        }
+    }
+
+    void OnDestroy()
+    {
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.StopLoop(musicaGeneralInstance);
+    }
+
     public void abrirFondo(int estacion)
     {
         if (estacion < 0 || estacion >= objetosFondo.Length)
@@ -85,6 +125,13 @@ public class EstacionesController : MonoBehaviour
         botonAbrir1.SetActive(true);
         botonAbrir2.SetActive(true);
         botonAbrir3.SetActive(true);
+
+        // --- Música ---
+        if (estacion < musicasEstaciones.Length)
+            AudioManager.Instance.PlayMusicaConFade(musicasEstaciones[estacion]);
+
+        // El sonido general baja mientras suena la estación
+        AudioManager.Instance.FadeTo(musicaGeneralInstance, 0f, duracionFadeSalidaGeneral);
     }
 
     public void cerrarFondo()
@@ -111,6 +158,12 @@ public class EstacionesController : MonoBehaviour
         botonCerrar1.SetActive(false);
         botonCerrar2.SetActive(false);
         botonCerrar3.SetActive(false);
+
+        // --- Música ---
+        AudioManager.Instance.StopMusicaEstacion();
+
+        // El sonido general vuelve a subir al volver al menú de selección
+        AudioManager.Instance.FadeTo(musicaGeneralInstance, 1f, duracionFadeEntradaGeneral);
     }
 
     private void SetTextos()

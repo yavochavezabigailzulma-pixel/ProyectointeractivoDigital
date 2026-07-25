@@ -1,5 +1,7 @@
-using UnityEngine;
 using System;
+using FMOD.Studio;
+using FMODUnity;
+using UnityEngine;
 
 public class ClockManager : MonoBehaviour
 {
@@ -11,6 +13,9 @@ public class ClockManager : MonoBehaviour
     public GameObject bienvenidaPanel;
 
     public static event Action<int, int> OnTimeChanged;
+
+    public EventReference musicaReloj;
+    EventInstance musicaRelojInstance;
 
     void Awake()
     {
@@ -24,7 +29,16 @@ public class ClockManager : MonoBehaviour
             bienvenidaPanel.SetActive(true);
             MenuManager.Instance.primeraVezReloj = false;
         }
+        if (!musicaReloj.IsNull)
+            musicaRelojInstance = AudioManager.Instance.CreateLoop(musicaReloj);
     }
+    void OnDestroy()
+    {
+        // Se llama cuando este objeto se destruye (por ejemplo, al descargarse la escena)
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.StopLoop(musicaRelojInstance);
+    }
+
     public void SetTime(int h, int m)
     {
         int prevMinutes = minutes;

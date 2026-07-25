@@ -58,12 +58,13 @@ public class NavegadorCuerpos : MonoBehaviour
     public GameObject botonAbrirInfo;
     public GameObject botonCerrarInfo;
 
+    
     void Start()
     {
         posicionTituloDefault = textoTitulo.rectTransform.anchoredPosition;
         tamanioTituloDefault = textoTitulo.fontSize;
     }
-
+    
     public void AbrirSeccion(int index)
     {
         pantallaMenu.SetActive(false);

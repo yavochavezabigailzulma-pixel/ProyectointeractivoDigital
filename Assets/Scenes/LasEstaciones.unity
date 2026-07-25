@@ -20003,6 +20003,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b505fa1c7bf17f741a8547c7b2822273, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicPrimavera:
+    Guid:
+      Data1: 1542820211
+      Data2: 1135300565
+      Data3: 836187029
+      Data4: 871534782
+    Path: event:/Music/Estaciones/Primavera
+  musicVerano:
+    Guid:
+      Data1: -708197087
+      Data2: 1229124450
+      Data3: -2137594707
+      Data4: 866142260
+    Path: event:/Music/Estaciones/Verano
+  musicOtono:
+    Guid:
+      Data1: 1463310941
+      Data2: 1283505423
+      Data3: 279911085
+      Data4: 2108474619
+    Path: event:/Music/Estaciones/Otono
+  musicInvierno:
+    Guid:
+      Data1: 1466774868
+      Data2: 1119158858
+      Data3: -295096954
+      Data4: -1870611664
+    Path: event:/Music/Estaciones/Invierno
+  musicaGeneral:
+    Guid:
+      Data1: -1119179164
+      Data2: 1124895698
+      Data3: 1912185523
+      Data4: -1561653916
+    Path: event:/Music/Estaciones/Estaciones
+  duracionFadeEntradaGeneral: 3
+  duracionFadeSalidaGeneral: 2
   objetosFondo:
   - {fileID: 1176753008}
   - {fileID: 2102264107}

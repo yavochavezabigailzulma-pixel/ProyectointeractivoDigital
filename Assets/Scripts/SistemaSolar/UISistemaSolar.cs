@@ -8,6 +8,9 @@ using UnityEngine.UI;
 
 public class UISistemaSolar : MonoBehaviour
 {
+    public EventReference musicaSistemaSolar;
+    EventInstance musicaSistemaSolarInstance;
+
     [Header("Tutorial al cerrar panel de información")]
     [Tooltip("Se dispara SOLO cuando el jugador cierra el panel manualmente (botón volver) mientras sigue en modo selección.")]
     [SerializeField] private HintSequencer hintSequenceAlCerrarPanel;
@@ -55,7 +58,17 @@ public class UISistemaSolar : MonoBehaviour
 
         //animator.SetBool("InfoOn", false);
     }
-
+    private void Start()
+    {
+        if (!musicaSistemaSolar.IsNull)
+            musicaSistemaSolarInstance = AudioManager.Instance.CreateLoop(musicaSistemaSolar);
+    }
+    void OnDestroy()
+    {
+        // Se llama cuando este objeto se destruye (por ejemplo, al descargarse la escena)
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.StopLoop(musicaSistemaSolarInstance);
+    }
     public void MostrarInfo(string planeta)
     {
         planetaActual = planeta;
