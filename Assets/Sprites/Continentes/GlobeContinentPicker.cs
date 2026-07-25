@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
+using FMODUnity;
 
 /// <summary>
 /// Detecta qué continente se tocó sobre una esfera (globo), usando una textura
@@ -20,6 +21,8 @@ public class GlobeContinentPicker : MonoBehaviour
         public Color colorEnMascara = Color.white;
         [Tooltip("Opcional: panel a activar directamente al tocar este continente.")]
         public GameObject panel;
+        [Tooltip("Música específica de este continente.")]
+        public EventReference musica;
     }
 
     [Header("Textura máscara (Read/Write Enabled, Compression: None, Filter: Point)")]
@@ -120,9 +123,20 @@ public class GlobeContinentPicker : MonoBehaviour
                 Debug.Log($"[GlobeContinentPicker] Tocaste: {continente.id}");
                 if (continente.panel != null)
                     continente.panel.SetActive(true);
+
+                // --- Música ---
+                AudioManager.Instance.PlayMusicaConFade(continente.musica);
             }
         }
-        
+
+    }
+
+    /// <summary>
+    /// Detiene la música del continente actual. Llamar desde el botón de cerrar/volver del panel.
+    /// </summary>
+    public void DetenerMusicaContinente()
+    {
+        AudioManager.Instance.StopMusicaEstacion();
     }
 
     Color MuestrearColorExacto(Vector2 uv)

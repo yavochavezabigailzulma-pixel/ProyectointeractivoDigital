@@ -5406,6 +5406,7 @@ GameObject:
   - component: {fileID: 417298494}
   - component: {fileID: 417298496}
   - component: {fileID: 417298495}
+  - component: {fileID: 417298497}
   m_Layer: 5
   m_Name: BG_Europa
   m_TagString: Untagged
@@ -5473,6 +5474,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 417298493}
   m_CullTransparentMesh: 1
+--- !u!114 &417298497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 417298493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb51ce8b00a9bd44ea42eede3b417f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &418461927
 GameObject:
   m_ObjectHideFlags: 0
@@ -7370,6 +7383,7 @@ GameObject:
   - component: {fileID: 584601392}
   - component: {fileID: 584601394}
   - component: {fileID: 584601393}
+  - component: {fileID: 584601395}
   m_Layer: 5
   m_Name: BG_America
   m_TagString: Untagged
@@ -7437,6 +7451,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 584601391}
   m_CullTransparentMesh: 1
+--- !u!114 &584601395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584601391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb51ce8b00a9bd44ea42eede3b417f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &589795519
 GameObject:
   m_ObjectHideFlags: 0
@@ -8089,6 +8115,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 615886066}
   m_CullTransparentMesh: 1
+--- !u!1 &616757099
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 616757100}
+  m_Layer: 0
+  m_Name: MusicController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &616757100
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616757099}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1893, y: 182.20454, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &638738276
 GameObject:
   m_ObjectHideFlags: 0
@@ -15463,6 +15520,7 @@ GameObject:
   - component: {fileID: 843221294}
   - component: {fileID: 843221296}
   - component: {fileID: 843221295}
+  - component: {fileID: 843221297}
   m_Layer: 5
   m_Name: BG_Africa
   m_TagString: Untagged
@@ -15530,6 +15588,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 843221293}
   m_CullTransparentMesh: 1
+--- !u!114 &843221297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843221293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb51ce8b00a9bd44ea42eede3b417f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &845033085
 GameObject:
   m_ObjectHideFlags: 0
@@ -15618,6 +15688,7 @@ GameObject:
   - component: {fileID: 852794039}
   - component: {fileID: 852794041}
   - component: {fileID: 852794040}
+  - component: {fileID: 852794042}
   m_Layer: 5
   m_Name: BG_Oceania
   m_TagString: Untagged
@@ -15685,6 +15756,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 852794038}
   m_CullTransparentMesh: 1
+--- !u!114 &852794042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852794038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb51ce8b00a9bd44ea42eede3b417f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &856344919
 GameObject:
   m_ObjectHideFlags: 0
@@ -20463,21 +20546,63 @@ MonoBehaviour:
   - id: America
     colorEnMascara: {r: 1, g: 0.6627451, b: 0.33333334, a: 0}
     panel: {fileID: 584601391}
+    musica:
+      Guid:
+        Data1: 2029234921
+        Data2: 1091909193
+        Data3: 639687867
+        Data4: -1446862802
+      Path: event:/Music/Continentes/America
   - id: Europa
     colorEnMascara: {r: 0.34901962, g: 0.6313726, b: 0.8901961, a: 0}
     panel: {fileID: 417298493}
+    musica:
+      Guid:
+        Data1: -466777341
+        Data2: 1174524013
+        Data3: 1623503265
+        Data4: 25166786
+      Path: event:/Music/Continentes/Europa
   - id: Africa
     colorEnMascara: {r: 0.8862745, g: 0.8, b: 0.09803922, a: 0}
     panel: {fileID: 843221293}
+    musica:
+      Guid:
+        Data1: 1390979992
+        Data2: 1141695505
+        Data3: -170154077
+        Data4: -2085688286
+      Path: event:/Music/Continentes/Africa
   - id: Asia
     colorEnMascara: {r: 0.56078434, g: 0.74509805, b: 0.13725491, a: 0}
     panel: {fileID: 1306225505}
+    musica:
+      Guid:
+        Data1: -1781551235
+        Data2: 1212463155
+        Data3: 487702179
+        Data4: -1264797661
+      Path: event:/Music/Continentes/Asia
   - id: Oceania
     colorEnMascara: {r: 0.7137255, g: 0.5568628, b: 0.89411765, a: 0}
     panel: {fileID: 852794038}
+    musica:
+      Guid:
+        Data1: -1581947664
+        Data2: 1113821467
+        Data3: -664237413
+        Data4: 1397067520
+      Path: event:/Music/Continentes/Oceania
   - id: Antartida
     colorEnMascara: {r: 1, g: 1, b: 1, a: 0}
     panel: {fileID: 1351592559}
+    musica:
+      Guid:
+        Data1: -1307105189
+        Data2: 1090986360
+        Data3: 1410687167
+        Data4: -456297430
+      Path: event:/Music/Continentes/Antartida
   toleranciaColor: 0.1
   umbralArrastre: 20
 --- !u!64 &1175537238
@@ -23379,6 +23504,7 @@ GameObject:
   - component: {fileID: 1306225506}
   - component: {fileID: 1306225508}
   - component: {fileID: 1306225507}
+  - component: {fileID: 1306225509}
   m_Layer: 5
   m_Name: BG_Asia
   m_TagString: Untagged
@@ -23446,6 +23572,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1306225505}
   m_CullTransparentMesh: 1
+--- !u!114 &1306225509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1306225505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb51ce8b00a9bd44ea42eede3b417f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1307681913
 GameObject:
   m_ObjectHideFlags: 0
@@ -24210,6 +24348,7 @@ GameObject:
   - component: {fileID: 1351592560}
   - component: {fileID: 1351592562}
   - component: {fileID: 1351592561}
+  - component: {fileID: 1351592563}
   m_Layer: 5
   m_Name: BG_Antartida
   m_TagString: Untagged
@@ -24277,6 +24416,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1351592559}
   m_CullTransparentMesh: 1
+--- !u!114 &1351592563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351592559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb51ce8b00a9bd44ea42eede3b417f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1352823120
 GameObject:
   m_ObjectHideFlags: 0
@@ -34446,3 +34597,4 @@ SceneRoots:
   - {fileID: 1504430863}
   - {fileID: 2023447588}
   - {fileID: 1859965110}
+  - {fileID: 616757100}

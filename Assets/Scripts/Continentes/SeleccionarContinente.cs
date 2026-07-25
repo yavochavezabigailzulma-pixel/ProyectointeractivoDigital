@@ -59,7 +59,7 @@ public class SeleccionarContinente : MonoBehaviour
     public void CerrarPanelMenu()
     {
         panelMenu.SetActive(false);
-        CollidersManager.Instance.SwitchInMap(true);
+        //CollidersManager.Instance.SwitchInMap(true);
     }
     public void CerrarPanelContent()
     {
