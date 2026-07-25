@@ -2322,6 +2322,43 @@ MonoBehaviour:
   horaPanel: {fileID: 1918244202}
   sopaPanel: {fileID: 474960195}
   oracionPanel: {fileID: 1928624170}
+  musicPerguntados:
+    Guid:
+      Data1: -1746583121
+      Data2: 1200448054
+      Data3: -306888294
+      Data4: 393577014
+    Path: event:/Music/Juegos/JuegoPreguntas
+  musicHora:
+    Guid:
+      Data1: 812738777
+      Data2: 1175993456
+      Data3: -1241858891
+      Data4: -1215753344
+    Path: event:/Music/Juegos/JuegoRelojMusic
+  musicSopa:
+    Guid:
+      Data1: 1624193889
+      Data2: 1158186167
+      Data3: 928311994
+      Data4: 1634586397
+    Path: event:/Music/Juegos/JuegoSopa
+  musicOracion:
+    Guid:
+      Data1: 299852139
+      Data2: 1326047740
+      Data3: -551694961
+      Data4: 1575126510
+    Path: event:/Music/Juegos/JuegoCompleta
+  musicaGeneral:
+    Guid:
+      Data1: 904156913
+      Data2: 1329759469
+      Data3: 2097004986
+      Data4: 1037407663
+    Path: event:/Music/Juegos/JuegoSMenu
+  duracionFadeEntradaGeneral: 2
+  duracionFadeSalidaGeneral: 3
 --- !u!1 &467543401
 GameObject:
   m_ObjectHideFlags: 0

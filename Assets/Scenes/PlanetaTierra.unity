@@ -1698,6 +1698,57 @@ MonoBehaviour:
   toggleOn: {fileID: 21300000, guid: f7db335a0bd9e084dbf293d39f6dff0c, type: 3}
   toggleOff: {fileID: 21300000, guid: f2f9b58c2aa232b458085ac8c7874d8c, type: 3}
   buttonSwitch: {fileID: 405897358}
+--- !u!1 &1287638223
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1287638224}
+  - component: {fileID: 1287638225}
+  m_Layer: 0
+  m_Name: Music
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1287638224
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287638223}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1893, y: 182.20454, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1287638225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287638223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf4696cd490f83c479eb053a1dc41c2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicaRotacion:
+    Guid:
+      Data1: 2080023224
+      Data2: 1222571011
+      Data3: 658330555
+      Data4: 2056998862
+    Path: event:/Music/RotacionTierra
 --- !u!1 &1426376602
 GameObject:
   m_ObjectHideFlags: 0
@@ -2665,3 +2716,4 @@ SceneRoots:
   - {fileID: 731735999}
   - {fileID: 1763745236}
   - {fileID: 8182171}
+  - {fileID: 1287638224}

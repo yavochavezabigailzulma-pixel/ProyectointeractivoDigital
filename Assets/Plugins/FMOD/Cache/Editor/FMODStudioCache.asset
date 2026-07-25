@@ -20,13 +20,13 @@ MonoBehaviour:
     Data4: 393577014
   Banks:
   - {fileID: 5375049294219994478}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 314784
 --- !u!114 &-5343546893043321250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,10 +113,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Music/RelojMusic
   Guid:
-    Data1: 1624193889
-    Data2: 1158186167
-    Data3: 928311994
-    Data4: 1634586397
+    Data1: 828902254
+    Data2: 1316688629
+    Data3: -1532984447
+    Data4: 1270741202
   Banks:
   - {fileID: 5375049294219994478}
   IsStream: 1
@@ -125,7 +125,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 62641
+  Length: 174419
 --- !u!114 &-2573507634098518542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,19 +140,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Music/Juegos/JuegoSopa
   Guid:
-    Data1: 828902254
-    Data2: 1316688629
-    Data3: -1532984447
-    Data4: 1270741202
+    Data1: 1624193889
+    Data2: 1158186167
+    Data3: 928311994
+    Data4: 1634586397
   Banks:
   - {fileID: 5375049294219994478}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 62641
 --- !u!114 &-2089444711555200278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,6 +207,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-692405383626321279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/RotacionTierra
+  m_EditorClassIdentifier: 
+  Path: event:/Music/RotacionTierra
+  Guid:
+    Data1: 2080023224
+    Data2: 1222571011
+    Data3: 658330555
+    Data4: 2056998862
+  Banks:
+  - {fileID: 5375049294219994478}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 140068
+--- !u!114 &-665912218316234550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Juegos/JuegoSMenu
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Juegos/JuegoSMenu
+  Guid:
+    Data1: 904156913
+    Data2: 1329759469
+    Data3: 2097004986
+    Data4: 1037407663
+  Banks:
+  - {fileID: 5375049294219994478}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 177475
 --- !u!114 &-557027463616679705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,13 +323,15 @@ MonoBehaviour:
   - {fileID: 2072668825027421540}
   - {fileID: -2573507634098518542}
   - {fileID: -7315154183996967337}
+  - {fileID: -665912218316234550}
+  - {fileID: -692405383626321279}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4725744668468142691}
   StringsBanks:
   - {fileID: 4536964855871900339}
   cacheVersion: 131859
-  cacheTime: 639205343031386479
+  cacheTime: 639205810601969001
   SerializableEventsDict:
   - key: event:/UI/GiroMenu
     index: 0
@@ -311,6 +367,10 @@ MonoBehaviour:
     index: 15
   - key: event:/Music/Juegos/JuegoPreguntas
     index: 16
+  - key: event:/Music/Juegos/JuegoSMenu
+    index: 17
+  - key: event:/Music/RotacionTierra
+    index: 18
 --- !u!114 &380195161158734066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,13 +472,13 @@ MonoBehaviour:
     Data4: 1575126510
   Banks:
   - {fileID: 5375049294219994478}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 142296
 --- !u!114 &3283695602643625966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -461,10 +521,10 @@ MonoBehaviour:
   Path: Assets/BancoSonidos/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639205343027618868
+  lastModified: 639205804265097533
   FileSizes:
   - Name: 
-    Value: 1602
+    Value: 1706
   Exists: 1
 --- !u!114 &4545387245336529628
 MonoBehaviour:
@@ -508,7 +568,7 @@ MonoBehaviour:
   Path: Assets/BancoSonidos/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639205343027543650
+  lastModified: 639205804265042294
   FileSizes: []
   Exists: 1
 --- !u!114 &5375049294219994478
@@ -526,7 +586,7 @@ MonoBehaviour:
   Path: Assets/BancoSonidos/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639205343031386479
+  lastModified: 639205810601969001
   FileSizes: []
   Exists: 1
 --- !u!114 &6751913436741860398

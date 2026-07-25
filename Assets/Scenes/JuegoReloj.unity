@@ -4561,10 +4561,10 @@ MonoBehaviour:
   bienvenidaPanel: {fileID: 1551179708}
   musicaReloj:
     Guid:
-      Data1: 1624193889
-      Data2: 1158186167
-      Data3: 928311994
-      Data4: 1634586397
+      Data1: 828902254
+      Data2: 1316688629
+      Data3: -1532984447
+      Data4: 1270741202
     Path: event:/Music/RelojMusic
 --- !u!114 &2120985243
 MonoBehaviour:
