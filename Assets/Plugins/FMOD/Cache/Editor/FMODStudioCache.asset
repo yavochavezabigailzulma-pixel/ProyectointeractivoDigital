@@ -27,6 +27,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 75000
+--- !u!114 &-8447895405433424644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/CuerposCelestes/CuerposCelestes3D
+  m_EditorClassIdentifier: 
+  Path: event:/Music/CuerposCelestes/CuerposCelestes3D
+  Guid:
+    Data1: -1359195155
+    Data2: 1240589578
+    Data3: 125808519
+    Data4: 1479557287
+  Banks:
+  - {fileID: 5375049294219994478}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 230000
 --- !u!114 &-7760650877959434667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,6 +234,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-2888571023639358299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Reloj/RelojMusic
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Reloj/RelojMusic
+  Guid:
+    Data1: 828902254
+    Data2: 1316688629
+    Data3: -1532984447
+    Data4: 1270741202
+  Banks:
+  - {fileID: 5375049294219994478}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 174419
 --- !u!114 &-2101610265696127151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,33 +288,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 142296
---- !u!114 &-1839376906329250720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/SistemaSolar
-  m_EditorClassIdentifier: 
-  Path: event:/Music/SistemaSolar
-  Guid:
-    Data1: -928717504
-    Data2: 1205023388
-    Data3: 99735424
-    Data4: 955448976
-  Banks:
-  - {fileID: 5375049294219994478}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 340000
 --- !u!114 &-1348401290646507011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -364,9 +391,7 @@ MonoBehaviour:
   - {fileID: 4545387245336529628}
   - {fileID: -4132588466075913682}
   - {fileID: 1637569359448520888}
-  - {fileID: 5470471584299074010}
   - {fileID: -564108664653345957}
-  - {fileID: -1839376906329250720}
   - {fileID: -8943478103735412769}
   - {fileID: 4867875703767535902}
   - {fileID: -1348401290646507011}
@@ -374,24 +399,26 @@ MonoBehaviour:
   - {fileID: 6551175715396563863}
   - {fileID: -6906972129835343922}
   - {fileID: -2101610265696127151}
-  - {fileID: 5526174835715008438}
   - {fileID: -7055087737383577088}
   - {fileID: -6346678776276710502}
   - {fileID: -6733638479902448258}
   - {fileID: 4675976097516313659}
-  - {fileID: 4451280989059205515}
   - {fileID: 5896967335489390386}
   - {fileID: 4942867187561953133}
-  - {fileID: 933260073074970053}
   - {fileID: -7760650877959434667}
   - {fileID: 7072840898729681994}
+  - {fileID: 1620432113353164411}
+  - {fileID: 2231329980755007584}
+  - {fileID: -2888571023639358299}
+  - {fileID: 3214330793535716139}
+  - {fileID: -8447895405433424644}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4725744668468142691}
   StringsBanks:
   - {fileID: 4536964855871900339}
   cacheVersion: 131859
-  cacheTime: 639205953147836343
+  cacheTime: 639206081177327297
   SerializableEventsDict:
   - key: event:/UI/GiroMenu
     index: 0
@@ -401,49 +428,49 @@ MonoBehaviour:
     index: 2
   - key: event:/Music/Continentes/Europa
     index: 3
-  - key: event:/Music/CuerposCelestes
-    index: 4
   - key: event:/Music/Estaciones/Verano
-    index: 5
-  - key: event:/Music/SistemaSolar
-    index: 6
+    index: 4
   - key: event:/Music/Inicio
-    index: 7
+    index: 5
   - key: event:/Music/Estaciones/Invierno
-    index: 8
+    index: 6
   - key: event:/Music/Continentes/Antartida
-    index: 9
+    index: 7
   - key: event:/Music/Estaciones/Otono
-    index: 10
+    index: 8
   - key: event:/Music/Juegos/JuegoSopa
-    index: 11
+    index: 9
   - key: event:/Music/Estaciones/Estaciones
-    index: 12
+    index: 10
   - key: event:/Music/Juegos/JuegoCompleta
-    index: 13
-  - key: event:/Music/RelojMusic
-    index: 14
+    index: 11
   - key: event:/Music/Estaciones/Primavera
-    index: 15
+    index: 12
   - key: event:/Music/Continentes/Asia
-    index: 16
+    index: 13
   - key: event:/Music/Continentes/Africa
-    index: 17
+    index: 14
   - key: event:/Music/Juegos/JuegoPreguntas
-    index: 18
-  - key: event:/Music/RotacionTierra
-    index: 19
+    index: 15
   - key: event:/Music/Juegos/JuegoRelojMusic
-    index: 20
+    index: 16
   - key: event:/Music/Continentes/America
-    index: 21
-  - key: event:/Music/CuerposCelestes3D
-    index: 22
+    index: 17
   - key: event:/Music/Continentes/Oceania
-    index: 23
+    index: 18
   - key: event:/Music/Juegos/JuegoSMenu
+    index: 19
+  - key: event:/Music/CuerposCelestes/CuerposCelestes
+    index: 20
+  - key: event:/Music/SistemaSolar/SistemaSolar
+    index: 21
+  - key: event:/Music/Reloj/RelojMusic
+    index: 22
+  - key: event:/Music/RotacionTIerra/RotacionTierra
+    index: 23
+  - key: event:/Music/CuerposCelestes/CuerposCelestes3D
     index: 24
---- !u!114 &933260073074970053
+--- !u!114 &1620432113353164411
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -453,14 +480,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/CuerposCelestes3D
+  m_Name: event:/Music/CuerposCelestes/CuerposCelestes
   m_EditorClassIdentifier: 
-  Path: event:/Music/CuerposCelestes3D
+  Path: event:/Music/CuerposCelestes/CuerposCelestes
   Guid:
-    Data1: -1359195155
-    Data2: 1240589578
-    Data3: 125808519
-    Data4: 1479557287
+    Data1: 364474887
+    Data2: 1285104856
+    Data3: 98622630
+    Data4: -1888142286
   Banks:
   - {fileID: 5375049294219994478}
   IsStream: 1
@@ -469,7 +496,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 230000
+  Length: 310000
 --- !u!114 &1637569359448520888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -497,7 +524,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 22053
---- !u!114 &4451280989059205515
+--- !u!114 &2231329980755007584
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -507,9 +534,36 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/RotacionTierra
+  m_Name: event:/Music/SistemaSolar/SistemaSolar
   m_EditorClassIdentifier: 
-  Path: event:/Music/RotacionTierra
+  Path: event:/Music/SistemaSolar/SistemaSolar
+  Guid:
+    Data1: -928717504
+    Data2: 1205023388
+    Data3: 99735424
+    Data4: 955448976
+  Banks:
+  - {fileID: 5375049294219994478}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 578000
+--- !u!114 &3214330793535716139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/RotacionTIerra/RotacionTierra
+  m_EditorClassIdentifier: 
+  Path: event:/Music/RotacionTIerra/RotacionTierra
   Guid:
     Data1: 2080023224
     Data2: 1222571011
@@ -539,10 +593,10 @@ MonoBehaviour:
   Path: Assets/BancoSonidos/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639205916323508597
+  lastModified: 639206054787565828
   FileSizes:
   - Name: 
-    Value: 1974
+    Value: 2024
   Exists: 1
 --- !u!114 &4545387245336529628
 MonoBehaviour:
@@ -613,7 +667,7 @@ MonoBehaviour:
   Path: Assets/BancoSonidos/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639205916323488560
+  lastModified: 639206054787545815
   FileSizes: []
   Exists: 1
 --- !u!114 &4867875703767535902
@@ -685,63 +739,9 @@ MonoBehaviour:
   Path: Assets/BancoSonidos/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639205953147836343
+  lastModified: 639206081177327297
   FileSizes: []
   Exists: 1
---- !u!114 &5470471584299074010
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/CuerposCelestes
-  m_EditorClassIdentifier: 
-  Path: event:/Music/CuerposCelestes
-  Guid:
-    Data1: 364474887
-    Data2: 1285104856
-    Data3: 98622630
-    Data4: -1888142286
-  Banks:
-  - {fileID: 5375049294219994478}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 310000
---- !u!114 &5526174835715008438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/RelojMusic
-  m_EditorClassIdentifier: 
-  Path: event:/Music/RelojMusic
-  Guid:
-    Data1: 828902254
-    Data2: 1316688629
-    Data3: -1532984447
-    Data4: 1270741202
-  Banks:
-  - {fileID: 5375049294219994478}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 174419
 --- !u!114 &5896967335489390386
 MonoBehaviour:
   m_ObjectHideFlags: 0
