@@ -109,8 +109,8 @@ public class TapHint : MonoBehaviour, INotificaHintCompletado
     IEnumerator NotificarYaCompletadoDiferido()
     {
         yield return null;
-        gameObject.SetActive(false);
-        onHintCompletado?.Invoke();
+        eventoCompletadoDisparado = true; // por si algo intenta forzar el ocultamiento después
+        FinalizarOcultamiento();
     }
 
     void OnDisable()
@@ -227,6 +227,8 @@ public class TapHint : MonoBehaviour, INotificaHintCompletado
     {
         if (eventoCompletadoDisparado) return;
         eventoCompletadoDisparado = true;
+
+        Debug.Log($"[TapHint] Hint completado: {claveGuardado}", this);
 
         SetAlpha(0f);
         gameObject.SetActive(false);

@@ -27,7 +27,6 @@ public class SeleccionPlaneta : MonoBehaviour
         // Obtener TODOS los botones hijos
         UISistemaSolar.Instance.panelInfoPlanetas.SetActive(false);
         Button[] botonesInfo = transform.parent.GetComponentsInChildren<Button>(true);
-        Debug.Log($"[{nombrePlaneta}] Botones encontrados: {botonesInfo.Length}");
 
         foreach (Button boton in botonesInfo)
         {
@@ -42,7 +41,6 @@ public class SeleccionPlaneta : MonoBehaviour
 
             EventTrigger.Entry down = new EventTrigger.Entry { eventID = EventTriggerType.PointerDown };
             down.callback.AddListener(_ => {
-                Debug.Log($"[{nombrePlaneta}] PointerDown en {botonGO.name}");
                 tiempoPresion = Time.time;
             });
             trigger.triggers.Add(down);
@@ -50,13 +48,10 @@ public class SeleccionPlaneta : MonoBehaviour
             EventTrigger.Entry up = new EventTrigger.Entry { eventID = EventTriggerType.PointerUp };
             up.callback.AddListener(_ => {
                 float duracion = Time.time - tiempoPresion;
-                Debug.Log($"[{nombrePlaneta}] PointerUp en {botonGO.name} | duracion: {duracion}");
                 if (duracion < ZoomCamara.Instance.toleranciaPinch)
                     UISistemaSolar.Instance.MostrarInfo(nombrePlaneta);
             });
             trigger.triggers.Add(up);
-
-            Debug.Log($"[{nombrePlaneta}] Listeners asignados a: {botonGO.name}");
         }
 
         // Guardar referencia a todos para activar/desactivar
@@ -125,7 +120,6 @@ public class SeleccionPlaneta : MonoBehaviour
     void OnMouseDown()
     {
         tiempoPresion = Time.time;
-        Debug.Log("Touch detectado");
     }
 
     void OnMouseUp()

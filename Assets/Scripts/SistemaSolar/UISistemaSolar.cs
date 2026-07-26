@@ -263,6 +263,5 @@ public class UISistemaSolar : MonoBehaviour
     public void SetPlanetaActual(string planeta)
     {
         planetaActual = planeta;
-        Debug.Log($"[SetPlanetaActual] actualizado a: '{planeta}'");
     }
 }

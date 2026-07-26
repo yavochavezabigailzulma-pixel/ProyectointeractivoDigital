@@ -418,7 +418,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 4536964855871900339}
   cacheVersion: 131859
-  cacheTime: 639206081177327297
+  cacheTime: 639206592825905954
   SerializableEventsDict:
   - key: event:/UI/GiroMenu
     index: 0
@@ -593,7 +593,7 @@ MonoBehaviour:
   Path: Assets/BancoSonidos/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639206054787565828
+  lastModified: 639206592825905954
   FileSizes:
   - Name: 
     Value: 2024
@@ -667,7 +667,7 @@ MonoBehaviour:
   Path: Assets/BancoSonidos/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639206054787545815
+  lastModified: 639206592825870631
   FileSizes: []
   Exists: 1
 --- !u!114 &4867875703767535902
