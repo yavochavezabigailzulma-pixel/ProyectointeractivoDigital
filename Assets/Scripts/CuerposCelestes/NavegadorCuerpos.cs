@@ -1,8 +1,13 @@
 using TMPro;
 using UnityEngine;
+using FMOD.Studio;
+using FMODUnity;
 
 public class NavegadorCuerpos : MonoBehaviour
 {
+    public EventReference selectBoton;
+    public EventReference clicVolver;
+
     [Header("Animaciones")]
     public GameObject AnimAlien;
     public GameObject AnimAstronaut1;
@@ -75,6 +80,7 @@ public class NavegadorCuerpos : MonoBehaviour
     {
         pantallaMenu.SetActive(false);
         pantallaContenido.SetActive(true);
+        AudioManager.Instance.Play(selectBoton);
 
         for (int i = 0; i < paneles.Length; i++)
         {
@@ -113,6 +119,7 @@ public class NavegadorCuerpos : MonoBehaviour
         AnimAstronaut1.SetActive(false);
         AnimAstronaut2.SetActive(false);
         AnimAstronaut3.SetActive(false);
+        AudioManager.Instance.Play(clicVolver);
     }
     public void Continuar()
     {
@@ -127,7 +134,9 @@ public class NavegadorCuerpos : MonoBehaviour
     public void Ir3D(int tipo)
     {
         canvas.SetActive(false);
-        
+
+        AudioManager.Instance.Play(selectBoton);
+
         infoID = tipo;
         botonAbrirInfo.SetActive(true);
         botonCerrarInfo.SetActive(false);
@@ -174,6 +183,8 @@ public class NavegadorCuerpos : MonoBehaviour
 
     public void Volver3D(int tipo)
     {
+        AudioManager.Instance.Play(clicVolver);
+
         canvas.SetActive(true);
         ZoomCuerpos.Instance.SetObjetivo(null);
         switch (tipo)

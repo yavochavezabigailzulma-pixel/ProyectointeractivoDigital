@@ -204,7 +204,7 @@ MonoBehaviour:
   Path: Assets/BancoSonidos/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 639161123145756142
+  lastModified: 639144007714514628
   FileSizes: []
   Exists: 1
 --- !u!114 &-4132588466075913682
@@ -412,13 +412,14 @@ MonoBehaviour:
   - {fileID: -2888571023639358299}
   - {fileID: 3214330793535716139}
   - {fileID: -8447895405433424644}
+  - {fileID: 8021385624828605186}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4725744668468142691}
   StringsBanks:
   - {fileID: 4536964855871900339}
   cacheVersion: 131859
-  cacheTime: 639206992227409944
+  cacheTime: 639207709972427467
   SerializableEventsDict:
   - key: event:/UI/GiroMenu
     index: 0
@@ -470,6 +471,8 @@ MonoBehaviour:
     index: 23
   - key: event:/Music/CuerposCelestes/CuerposCelestes3D
     index: 24
+  - key: event:/Music/InicioOff
+    index: 25
 --- !u!114 &1620432113353164411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -593,10 +596,10 @@ MonoBehaviour:
   Path: Assets/BancoSonidos/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639206992223182784
+  lastModified: 639207709964273757
   FileSizes:
   - Name: 
-    Value: 2024
+    Value: 2070
   Exists: 1
 --- !u!114 &4545387245336529628
 MonoBehaviour:
@@ -667,7 +670,7 @@ MonoBehaviour:
   Path: Assets/BancoSonidos/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639206992223171052
+  lastModified: 639207709964238628
   FileSizes: []
   Exists: 1
 --- !u!114 &4867875703767535902
@@ -739,7 +742,7 @@ MonoBehaviour:
   Path: Assets/BancoSonidos/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639206992227409944
+  lastModified: 639207709972427467
   FileSizes: []
   Exists: 1
 --- !u!114 &5896967335489390386
@@ -850,3 +853,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 115000
+--- !u!114 &8021385624828605186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/InicioOff
+  m_EditorClassIdentifier: 
+  Path: event:/Music/InicioOff
+  Guid:
+    Data1: -1822414149
+    Data2: 1130081260
+    Data3: 313605257
+    Data4: 2084894136
+  Banks:
+  - {fileID: 5375049294219994478}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 62641

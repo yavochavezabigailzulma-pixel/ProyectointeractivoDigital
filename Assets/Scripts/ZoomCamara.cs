@@ -1,7 +1,10 @@
-﻿using UnityEngine;
+﻿using FMODUnity;
+using UnityEngine;
 
 public class ZoomCamara : MonoBehaviour
 {
+    public EventReference clicVolver;
+
     [Header("Tutorial")]
     [SerializeField] private HintSequencer secuenciaHintsAlSeleccionar;
     [SerializeField] private GameObject hintPinchEsperado;
@@ -299,6 +302,8 @@ public class ZoomCamara : MonoBehaviour
         if (planetaSeguido == null) return;
 
         EnfocarEn(null);
+
+        AudioManager.Instance.Play(clicVolver);
 
         if (UISistemaSolar.Instance != null)
             UISistemaSolar.Instance.CerrarPopupInfoSinHint();

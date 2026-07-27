@@ -222,7 +222,7 @@ public class UIManager : MonoBehaviour
     }
     public void VolverMenu()
     {
-        //AudioManager.Instance.Play(clicVolver);
+        AudioManager.Instance.Play(clicVolver);
         SceneManager.LoadScene("Menu");
     }
 

@@ -2504,6 +2504,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 745725e3534a483459a246ef28730d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectBoton:
+    Guid:
+      Data1: 563518035
+      Data2: 1210902707
+      Data3: -943627087
+      Data4: -1136224814
+    Path: event:/UI/ClicSelect
+  clicVolver:
+    Guid:
+      Data1: -541596362
+      Data2: 1080860997
+      Data3: -1174453631
+      Data4: -1774216874
+    Path: event:/UI/ClicVolver
   AnimAlien: {fileID: 2142003274}
   AnimAstronaut1: {fileID: 491761273}
   AnimAstronaut2: {fileID: 1277924907}

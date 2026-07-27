@@ -796,11 +796,11 @@ MonoBehaviour:
   panelMenu: {fileID: 1036317383}
   musicaIntroMenu:
     Guid:
-      Data1: -1603088301
-      Data2: 1259327195
-      Data3: 1683254931
-      Data4: 1779533768
-    Path: event:/Music/Inicio
+      Data1: -1822414149
+      Data2: 1130081260
+      Data3: 313605257
+      Data4: 2084894136
+    Path: event:/Music/InicioOff
   panelPopup: {fileID: 614529482}
   textoBoton1: {fileID: 942266642}
   textoBoton2: {fileID: 1590344718}
@@ -950,6 +950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae58469bee8e4cd4289ea9e251cab705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  claveSecuencia: 
   pasos:
   - objeto: {fileID: 1101441681}
     claveGuardado: SwipeMenu
