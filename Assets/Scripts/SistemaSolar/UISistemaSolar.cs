@@ -12,7 +12,8 @@ public class UISistemaSolar : MonoBehaviour
     EventInstance musicaSistemaSolarInstance;
 
     [Header("Tutorial al cerrar panel de información")]
-    [Tooltip("Se dispara SOLO cuando el jugador cierra el panel manualmente (botón volver) mientras sigue en modo selección.")]
+    [Tooltip("Su paso actual se completa cuando el jugador cierra el panel " +
+             "manualmente (botón volver) mientras sigue en modo selección.")]
     [SerializeField] private HintSequencer hintSequenceAlCerrarPanel;
 
     [Tooltip("Se invoca apenas se muestra el panel de info, para que cualquier hint de selección en curso se corte.")]
@@ -28,18 +29,6 @@ public class UISistemaSolar : MonoBehaviour
     private string planetaActual;
 
     public Animator animator;
-    //[Header("Sprites Planetas")]  // NUEVO: asigna cada sprite en el Inspector
-    //public Sprite spriteMercurio;
-    //public Sprite spriteVenus;
-    //public Sprite spriteTierra;
-    //public Sprite spriteMarte;
-    //public Sprite spriteJupiter;
-    //public Sprite spriteSaturno;
-    //public Sprite spriteUrano;
-    //public Sprite spriteNeptuno;
-    //public Sprite spriteDefault;
-
-    //public Image imagenPlaneta;
 
     public EventReference clicVolver;
 
@@ -55,34 +44,31 @@ public class UISistemaSolar : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        //animator.SetBool("InfoOn", false);
     }
+
     private void Start()
     {
         if (!musicaSistemaSolar.IsNull)
             musicaSistemaSolarInstance = AudioManager.Instance.CreateLoop(musicaSistemaSolar);
     }
+
     void OnDestroy()
     {
-        // Se llama cuando este objeto se destruye (por ejemplo, al descargarse la escena)
         if (AudioManager.Instance != null)
             AudioManager.Instance.StopLoop(musicaSistemaSolarInstance);
     }
+
     public void MostrarInfo(string planeta)
     {
         planetaActual = planeta;
-        // Activar primero, luego animar
         panelInfoPlanetas.SetActive(true);
 
         // Avisa a quien esté escuchando (por ejemplo, el SeleccionPlaneta activo)
         // para que corte cualquier hint de selección que siguiera en curso.
         AlMostrarInfo?.Invoke();
 
-        // Forzar reset del Animator por si quedó en estado sucio
         animator.Rebind();
         animator.Update(0f);
-
         animator.SetBool("InfoOn", true);
 
         botonInfoDesplegable.SetActive(false);
@@ -102,7 +88,6 @@ public class UISistemaSolar : MonoBehaviour
                     "<b>Curiosidades:</b>\n" +
                     "- Es el planeta más cercano al Sol.\n" +
                     "- Tiene temperaturas muy extremas.";
-                //imagenPlaneta.sprite = spriteMercurio;
                 break;
 
             case "Venus":
@@ -117,7 +102,6 @@ public class UISistemaSolar : MonoBehaviour
                     "<b>Curiosidades:</b>\n" +
                     "- Tiene una atmósfera densa que atrapa el calor, lo que lo hace el planeta más caliente.\n" +
                     "- Gira en sentido contrario a la mayoría de los planetas.";
-                //imagenPlaneta.sprite = spriteVenus;
                 break;
 
             case "Tierra":
@@ -132,7 +116,6 @@ public class UISistemaSolar : MonoBehaviour
                     "<b>Curiosidades:</b>\n" +
                     "- Es el único planeta conocido que alberga vida.\n" +
                     "- Casi tres cuartas partes de su superficie están cubiertas por agua.";
-                //imagenPlaneta.sprite = spriteTierra;
                 break;
 
             case "Marte":
@@ -147,7 +130,6 @@ public class UISistemaSolar : MonoBehaviour
                     "<b>Curiosidades:</b>\n" +
                     "- Es conocido como el \"planeta rojo\" debido al óxido de hierro en su superficie.\n" +
                     "- Tiene el volcán más grande del sistema solar, el Monte Olimpo.";
-                //imagenPlaneta.sprite = spriteMarte;
                 break;
 
             case "Júpiter":
@@ -162,7 +144,6 @@ public class UISistemaSolar : MonoBehaviour
                     "<b>Curiosidades:</b>\n" +
                     "- Es el planeta más grande de todo el sistema solar.\n" +
                     "- Tiene una gran mancha roja que es una tormenta gigante.";
-                //imagenPlaneta.sprite = spriteJupiter;
                 break;
 
             case "Saturno":
@@ -177,7 +158,6 @@ public class UISistemaSolar : MonoBehaviour
                     "<b>Curiosidades:</b>\n" +
                     "- Es famoso por su complejo y visible sistema de anillos.\n" +
                     "- Es el segundo planeta más grande del sistema solar.";
-                //imagenPlaneta.sprite = spriteSaturno;
                 break;
 
             case "Urano":
@@ -192,7 +172,6 @@ public class UISistemaSolar : MonoBehaviour
                     "<b>Curiosidades:</b>\n" +
                     "- Gira de lado, casi paralelo a su órbita.\n" +
                     "- Su color azul verdoso se debe al metano en su atmósfera.";
-                //imagenPlaneta.sprite = spriteUrano;
                 break;
 
             case "Neptuno":
@@ -207,21 +186,14 @@ public class UISistemaSolar : MonoBehaviour
                     "<b>Curiosidades:</b>\n" +
                     "- Es el planeta más alejado del Sol.\n" +
                     "- Tiene vientos supersónicos extremadamente rápidos.";
-                //imagenPlaneta.sprite = spriteNeptuno;
                 break;
-
-                //default:
-                //    textoInfo.text = "Información no disponible.";
-                //    //imagenPlaneta.sprite = spriteDefault;
-                //    panelInfoPlanetas.SetActive(false);
-                //    break;
         }
     }
 
     /// <summary>
-    /// Cierra el panel de info y dispara el hint de "cómo cerrar".
-    /// Usar SOLO cuando el usuario cierra manualmente con el botón "volver"
-    /// mientras el planeta sigue seleccionado.
+    /// Cierra el panel de info manualmente (botón "volver"), mientras el
+    /// planeta sigue seleccionado. Inicia la secuencia de "cómo cerrar"
+    /// desde cero — usar solo aquí, nunca al abandonar la selección.
     /// </summary>
     public void OcultarPopupInfo()
     {
@@ -229,14 +201,14 @@ public class UISistemaSolar : MonoBehaviour
 
         botonInfoDesplegable.SetActive(true);
         botonVolverDesplegable.SetActive(false);
-        hintSequenceAlCerrarPanel.IniciarSecuencia();
+
+        hintSequenceAlCerrarPanel?.IniciarSecuencia();
 
         AudioManager.Instance.Play(clicVolver);
-
     }
 
     /// <summary>
-    /// Cierra el panel de info SIN disparar ningún hint nuevo, y corta
+    /// Cierra el panel de info SIN iniciar ningún hint nuevo, y corta
     /// cualquier hint de "cómo cerrar" que estuviera en curso.
     /// Usar cuando el usuario abandona la selección del planeta por completo.
     /// </summary>
@@ -249,7 +221,13 @@ public class UISistemaSolar : MonoBehaviour
 
         AudioManager.Instance.Play(clicVolver);
 
-        hintSequenceAlCerrarPanel?.DetenerSecuencia();
+        if (hintSequenceAlCerrarPanel != null)
+        {
+            bool completado = hintSequenceAlCerrarPanel.CompletarPasoActual();
+            Debug.Log(completado
+                ? $"[Hint] Paso completado correctamente en '{hintSequenceAlCerrarPanel.name}' (al cerrar panel sin hint)."
+                : $"[Hint] CompletarPasoActual() NO tuvo efecto en '{hintSequenceAlCerrarPanel.name}' (¿ya estaba detenida o sin hint activo?)");
+        }
     }
 
     public void AbrirInfoActual()

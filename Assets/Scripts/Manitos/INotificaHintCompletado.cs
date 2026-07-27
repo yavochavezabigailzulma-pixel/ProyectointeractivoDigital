@@ -1,10 +1,11 @@
-using UnityEngine.Events;
+using System;
 
 /// <summary>
-/// Cualquier hint que quiera poder encadenarse con HintSequencer
-/// debe implementar esta interfaz y exponer su UnityEvent de finalización.
+/// Cualquier hint controlado por HintSequencer debe implementar esto.
+/// El hint no decide cuándo ocultarse: solo sabe CÓMO hacerlo (con su
+/// animación de fade propia) cuando el Sequencer se lo ordena.
 /// </summary>
-public interface INotificaHintCompletado
+public interface IHintAnimado
 {
-    UnityEvent OnHintCompletado { get; }
+    void Ocultar(Action alTerminar);
 }

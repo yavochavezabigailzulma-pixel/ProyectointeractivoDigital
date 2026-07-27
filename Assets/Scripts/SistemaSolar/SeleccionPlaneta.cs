@@ -4,16 +4,24 @@ using UnityEngine.UI;
 
 public class SeleccionPlaneta : MonoBehaviour
 {
+    [Header("Botones de volver (se intercambian según selección)")]
+    [Tooltip("Botón visible por defecto: lleva al menú principal.")]
+    [SerializeField] private GameObject botonVolverMenu;
+    [Tooltip("Botón visible mientras hay un planeta seleccionado: deselecciona en vez de ir al menú.")]
+    [SerializeField] private GameObject botonVolverDeseleccion;
+
+    [Header("Secuencia principal: pinch -> swipe -> tap")]
+    [SerializeField] private HintSequencer hintSequencer;
+    [SerializeField] private GameObject hintTapEsperado;
+
+    [Header("Secuencia encadenada (arranca al terminar la de arriba)")]
+    [SerializeField] private HintSequencer hintSequenceAlSeleccionar;
+
     public string nombrePlaneta;
 
     [Header("Zoom por planeta")]
     public float minZoomPlaneta = 3f;
     public float maxZoomPlaneta = 20f;
-
-    [Header("Tutorial al seleccionar")]
-    [Tooltip("Se activa la primera vez que el jugador selecciona ESTE planeta.")]
-    [SerializeField] private HintSequencer secuenciaHintsAlSeleccionar;
-    [SerializeField] private bool soloUnaVezPorSesion = true;
 
     private float tiempoPresion = 0f;
     public bool seleccionado = false;
@@ -61,28 +69,28 @@ public class SeleccionPlaneta : MonoBehaviour
 
         if (UISistemaSolar.Instance != null)
             UISistemaSolar.Instance.AlMostrarInfo += DetenerHintDeSeleccion;
-    }
 
-    void OnEnable()
-    {
-        // Se suscribe a la notificación de UISistemaSolar para cortar el hint
-        // de selección en cuanto se abre el panel de info (evita que ambos
-        // hints se muestren superpuestos).
-        //if (UISistemaSolar.Instance != null)
-        //    UISistemaSolar.Instance.AlMostrarInfo += DetenerHintDeSeleccion;
     }
 
     void OnDisable()
     {
         if (UISistemaSolar.Instance != null)
             UISistemaSolar.Instance.AlMostrarInfo -= DetenerHintDeSeleccion;
+
     }
 
     void DetenerHintDeSeleccion()
     {
-        secuenciaHintsAlSeleccionar?.DetenerSecuencia();
-    }
+        hintSequencer?.DetenerSecuencia(); // este sí se corta, no se completa
 
+        if (hintSequenceAlSeleccionar != null)
+        {
+            bool completado = hintSequenceAlSeleccionar.CompletarPasoActual();
+            Debug.Log(completado
+                ? $"[Hint] Paso completado correctamente en '{hintSequenceAlSeleccionar.name}' (al abrir panel de info)."
+                : $"[Hint] CompletarPasoActual() NO tuvo efecto en '{hintSequenceAlSeleccionar.name}' (¿ya estaba detenida o sin hint activo?)");
+        }
+    }
     private void Update()
     {
         seleccionado = (ZoomCamara.Instance.planetaSeguido == transform);
@@ -91,8 +99,6 @@ public class SeleccionPlaneta : MonoBehaviour
         {
             GetComponent<CapsuleCollider>().enabled = false;
 
-            // Garantizar que el panel esté activo SIEMPRE que el planeta esté seleccionado,
-            // no solo en la transición — cubre frames perdidos y estados inconsistentes
             UISistemaSolar.Instance.panelInfoPlanetas.SetActive(true);
         }
         else
@@ -105,12 +111,20 @@ public class SeleccionPlaneta : MonoBehaviour
             {
                 UISistemaSolar.Instance.panelInfoPlanetas.SetActive(false);
 
-                // Se abandona la selección por completo: cerrar el panel SIN
-                // disparar el hint de "cómo cerrar" (ese solo aplica cuando
-                // el usuario cierra el panel manualmente y sigue seleccionado).
-                //UISistemaSolar.Instance.CerrarPopupInfoSinHint();
+                UISistemaSolar.Instance.CerrarPopupInfoSinHint();
 
-                secuenciaHintsAlSeleccionar?.DetenerSecuencia();
+                hintSequencer?.DetenerSecuencia(); // este sí se corta
+
+                if (hintSequenceAlSeleccionar != null)
+                {
+                    bool completado = hintSequenceAlSeleccionar.CompletarPasoActual();
+                    Debug.Log(completado
+                        ? $"[Hint] Paso completado correctamente en '{hintSequenceAlSeleccionar.name}' (al deseleccionar)."
+                        : $"[Hint] CompletarPasoActual() NO tuvo efecto en '{hintSequenceAlSeleccionar.name}' (¿ya estaba detenida o sin hint activo?)");
+                }
+
+                if (botonVolverMenu != null) botonVolverMenu.SetActive(true);
+                if (botonVolverDeseleccion != null) botonVolverDeseleccion.SetActive(false);
             }
         }
 
@@ -127,29 +141,29 @@ public class SeleccionPlaneta : MonoBehaviour
         float duracion = Time.time - tiempoPresion;
         if (duracion < ZoomCamara.Instance.toleranciaPinch && Input.touchCount < 2)
         {
-            // Actualiza el planeta actual inmediatamente al seleccionar
             UISistemaSolar.Instance.SetPlanetaActual(nombrePlaneta);
-
             ZoomCamara.Instance.EnfocarEn(transform, minZoomPlaneta, maxZoomPlaneta);
             StartCoroutine(MostrarBotonInfo());
 
-            DispararTutorialSiCorresponde();
+            bool completado = hintSequencer.CompletarPaso(hintTapEsperado);
+            Debug.Log(completado
+                ? $"[Hint] Paso 3 (tap) completado correctamente en '{hintSequencer.name}'."
+                : $"[Hint] Tap detectado pero NO era el paso activo en '{hintSequencer.name}'.");
+
+            // En el MISMO instante, arranca la secuencia independiente en paralelo
+            if (hintSequenceAlSeleccionar != null)
+            {
+                hintSequenceAlSeleccionar.IniciarSecuencia();
+                Debug.Log($"[Hint] '{hintSequenceAlSeleccionar.name}' iniciada en paralelo al tocar el planeta.");
+            }
+            else
+            {
+                Debug.LogWarning("[Hint] hintSequenceAlSeleccionar no está asignado en el Inspector.", this);
+            }
+
+            if (botonVolverMenu != null) botonVolverMenu.SetActive(false);
+            if (botonVolverDeseleccion != null) botonVolverDeseleccion.SetActive(true);
         }
-    }
-
-    void DispararTutorialSiCorresponde()
-    {
-        if (secuenciaHintsAlSeleccionar == null) return;
-
-        string clave = $"hint_seleccion_{nombrePlaneta}";
-
-        if (soloUnaVezPorSesion && RegistroHintsSesion.EstaCompletado(clave))
-            return;
-
-        if (soloUnaVezPorSesion)
-            RegistroHintsSesion.MarcarCompletado(clave);
-
-        secuenciaHintsAlSeleccionar.IniciarSecuencia();
     }
 
     public float retrasoInfo = 1f; // ajustable en Inspector

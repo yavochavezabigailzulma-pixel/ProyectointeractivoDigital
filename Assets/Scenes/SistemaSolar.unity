@@ -715,17 +715,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d118572356611243b3c8a1150591d72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  claveGuardado: hint_pinchout_sissolar
-  resetearParaPruebas: 0
-  detectarPinchDelUsuario: 1
-  cambioMinimoDistancia: 60
   velocidadFadeOutRapido: 6
-  mano1: {fileID: 1537540579}
-  mano2: {fileID: 322472114}
+  mano1: {fileID: 438403989}
+  mano2: {fileID: 831170722}
   centro: {x: 0, y: 0, z: 0}
   gesto: 1
-  distanciaCercana: 4.28
-  distanciaLejana: 9.55
+  distanciaCercana: -98.2
+  distanciaLejana: -237.3
   trayectoria: 0
   alturaCurva: 0.3
   duracionMovimiento: 0.7
@@ -762,9 +758,6 @@ MonoBehaviour:
   anguloRotacion: 15
   anguloInicial: 0
   anguloFinal: -20
-  onHintCompletado:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!4 &81426327
 Transform:
   m_ObjectHideFlags: 0
@@ -773,14 +766,16 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 81426325}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.017629338, y: -0.00000008940696, z: -0.00000001862645, w: 0.9998446}
-  m_LocalPosition: {x: 0, y: -0.05, z: 0.05}
-  m_LocalScale: {x: 0.004816791, y: 0.004335114, z: 0.004816791}
-  m_ConstrainProportionsScale: 1
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -265.79, z: -18}
+  m_LocalScale: {x: 1.5000005, y: 1.48512, z: 1.516534}
+  m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 438403989}
+  - {fileID: 831170722}
   - {fileID: 322472114}
   - {fileID: 1537540579}
-  m_Father: {fileID: 1861015333}
+  m_Father: {fileID: 1771515704}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &81426328
 MonoBehaviour:
@@ -789,7 +784,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 81426325}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 925798dbb86faac42af4128dc0067863, type: 3}
   m_Name: 
@@ -1355,46 +1350,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 127016436}
   m_CullTransparentMesh: 1
---- !u!21 &145803486
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &153666946
 GameObject:
   m_ObjectHideFlags: 0
@@ -1652,13 +1607,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae58469bee8e4cd4289ea9e251cab705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  claveSecuencia: 
   pasos:
-  - {fileID: 1279646205}
-  - {fileID: 815720483}
-  - {fileID: 1024740037}
+  - objeto: {fileID: 1279646205}
+    claveGuardado: ZoomInSistemaSolar
+    duracionMaximaSegundos: 0
+  - objeto: {fileID: 815720483}
+    claveGuardado: DeslizarEnSistemaSolar
+    duracionMaximaSegundos: 0
+  - objeto: {fileID: 1024740037}
+    claveGuardado: TapZoomInPlaneta
+    duracionMaximaSegundos: 0
   tipoActivacion: 1
   nombreEscena: SistemaSolar
-  unaSolaVez: 0
+  unaSolaVez: 1
+  repetible: 0
+  onSecuenciaCompletada:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &189992941
 GameObject:
   m_ObjectHideFlags: 0
@@ -2106,6 +2072,46 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!21 &289541138
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &298642495
 GameObject:
   m_ObjectHideFlags: 0
@@ -2324,7 +2330,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &322472114
 Transform:
   m_ObjectHideFlags: 0
@@ -2559,11 +2565,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcb53e765cb9d3647a820692c88264b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  botonVolverMenu: {fileID: 1973503855}
+  botonVolverDeseleccion: {fileID: 1796358020}
+  hintSequencer: {fileID: 0}
+  hintTapEsperado: {fileID: 0}
+  hintSequenceAlSeleccionar: {fileID: 0}
   nombrePlaneta: Neptuno
   minZoomPlaneta: 3
   maxZoomPlaneta: 20
-  secuenciaHintsAlSeleccionar: {fileID: 0}
-  soloUnaVezPorSesion: 1
   seleccionado: 0
   retrasoInfo: 1
 --- !u!114 &392795908
@@ -3077,46 +3086,81 @@ LineRenderer:
   m_UseWorldSpace: 0
   m_Loop: 1
   m_ApplyActiveColorSpace: 1
---- !u!21 &449009014
-Material:
-  serializedVersion: 8
+--- !u!1 &438403988
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 438403989}
+  - component: {fileID: 438403991}
+  - component: {fileID: 438403990}
+  m_Layer: 0
+  m_Name: ManoDer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &438403989
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438403988}
+  m_LocalRotation: {x: 0, y: 0, z: 0.2840153, w: 0.95881975}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 81426327}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 33}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &438403990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438403988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: b01aedf58323aca44aad517c5aef07b1, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &438403991
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438403988}
+  m_CullTransparentMesh: 1
 --- !u!1 &459392218
 GameObject:
   m_ObjectHideFlags: 0
@@ -3444,6 +3488,46 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!21 &474004155
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1001 &485397332
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3765,11 +3849,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcb53e765cb9d3647a820692c88264b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  botonVolverMenu: {fileID: 1973503855}
+  botonVolverDeseleccion: {fileID: 1796358020}
+  hintSequencer: {fileID: 0}
+  hintTapEsperado: {fileID: 0}
+  hintSequenceAlSeleccionar: {fileID: 0}
   nombrePlaneta: Saturno
   minZoomPlaneta: 3
   maxZoomPlaneta: 20
-  secuenciaHintsAlSeleccionar: {fileID: 0}
-  soloUnaVezPorSesion: 1
   seleccionado: 0
   retrasoInfo: 1
 --- !u!114 &485397338
@@ -4422,7 +4509,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 145803486}
+  - {fileID: 1676647903}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4794,46 +4881,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 547378958}
   m_CullTransparentMesh: 1
---- !u!21 &551565342
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &579550723
 GameObject:
   m_ObjectHideFlags: 0
@@ -5104,11 +5151,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcb53e765cb9d3647a820692c88264b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  botonVolverMenu: {fileID: 0}
+  botonVolverDeseleccion: {fileID: 0}
+  hintSequencer: {fileID: 0}
+  hintTapEsperado: {fileID: 0}
+  hintSequenceAlSeleccionar: {fileID: 0}
   nombrePlaneta: Neptuno
   minZoomPlaneta: 3
   maxZoomPlaneta: 20
-  secuenciaHintsAlSeleccionar: {fileID: 0}
-  soloUnaVezPorSesion: 1
   seleccionado: 0
   retrasoInfo: 1
 --- !u!114 &593294478
@@ -5199,7 +5249,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 449009014}
+  - {fileID: 1007917428}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5496,11 +5546,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae58469bee8e4cd4289ea9e251cab705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  claveSecuencia: secuencia_al_cerrar_panel
   pasos:
-  - {fileID: 81426325}
+  - objeto: {fileID: 81426325}
+    claveGuardado: ZoomOutSistema
+    duracionMaximaSegundos: 0
   tipoActivacion: 0
   nombreEscena: SistemaSolar
-  unaSolaVez: 0
+  unaSolaVez: 1
+  repetible: 0
+  onSecuenciaCompletada:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &641926536
 Transform:
   m_ObjectHideFlags: 0
@@ -5589,7 +5646,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1740148380}
+  - {fileID: 1548720010}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6114,11 +6171,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcb53e765cb9d3647a820692c88264b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  botonVolverMenu: {fileID: 1973503855}
+  botonVolverDeseleccion: {fileID: 1796358020}
+  hintSequencer: {fileID: 0}
+  hintTapEsperado: {fileID: 0}
+  hintSequenceAlSeleccionar: {fileID: 0}
   nombrePlaneta: "J\xFApiter"
   minZoomPlaneta: 3
   maxZoomPlaneta: 20
-  secuenciaHintsAlSeleccionar: {fileID: 0}
-  soloUnaVezPorSesion: 1
   seleccionado: 0
   retrasoInfo: 1
 --- !u!114 &746802537
@@ -6376,7 +6436,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 815720483}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00023282038, y: 0.9982064, z: 0.059739884, w: 0.003890245}
+  m_LocalRotation: {x: -0.0003067935, y: 0.9635164, z: 0.26764697, w: 0.0011044423}
   m_LocalPosition: {x: -0.46, y: -3.13, z: 1.61}
   m_LocalScale: {x: 0.63, y: 0.6228494, z: 0.63794446}
   m_ConstrainProportionsScale: 1
@@ -6459,10 +6519,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 958ffab021fc6294aa87725824123cf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  claveGuardado: hint_swipe_sistemasolar
-  resetearParaPruebas: 0
-  detectarSwipeDelUsuario: 1
-  distanciaMinimaSwipe: 50
   velocidadFadeOutRapido: 6
   trayectoria: 1
   distancia: 7
@@ -6501,9 +6557,81 @@ MonoBehaviour:
   anguloRotacion: 15
   anguloInicial: 0
   anguloFinal: -20
-  onHintCompletado:
+--- !u!1 &831170721
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 831170722}
+  - component: {fileID: 831170724}
+  - component: {fileID: 831170723}
+  m_Layer: 0
+  m_Name: ManoIzq
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &831170722
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831170721}
+  m_LocalRotation: {x: 0.2840153, y: 0.95881975, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 81426327}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 33}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &831170723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831170721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: b01aedf58323aca44aad517c5aef07b1, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &831170724
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831170721}
+  m_CullTransparentMesh: 1
 --- !u!1 &849696178
 GameObject:
   m_ObjectHideFlags: 0
@@ -7340,7 +7468,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 551565342}
+  - {fileID: 289541138}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7753,46 +7881,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 949540668}
   m_CullTransparentMesh: 1
---- !u!21 &959243484
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &967384701
 GameObject:
   m_ObjectHideFlags: 0
@@ -7864,11 +7952,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcb53e765cb9d3647a820692c88264b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  botonVolverMenu: {fileID: 1973503855}
+  botonVolverDeseleccion: {fileID: 1796358020}
+  hintSequencer: {fileID: 186611408}
+  hintTapEsperado: {fileID: 1024740037}
+  hintSequenceAlSeleccionar: {fileID: 1938615990}
   nombrePlaneta: Tierra
   minZoomPlaneta: 3
   maxZoomPlaneta: 20
-  secuenciaHintsAlSeleccionar: {fileID: 1938615990}
-  soloUnaVezPorSesion: 1
   seleccionado: 0
   retrasoInfo: 1
 --- !u!23 &967384706
@@ -8070,7 +8161,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000398994}
   m_CullTransparentMesh: 1
---- !u!21 &1002613464
+--- !u!21 &1007917428
 Material:
   serializedVersion: 8
   m_ObjectHideFlags: 0
@@ -8208,15 +8299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 562bd365456ac534095ee8ff441f4c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  claveGuardado: hint_tap_tierra1
-  resetearParaPruebas: 0
-  detectarTapDelUsuario: 1
-  puntoObjetivoUI: {fileID: 0}
-  puntoObjetivoMundo: {fileID: 0}
-  radioDeteccion: 80
   velocidadFadeOutRapido: 6
-  usarDuracionMaxima: 0
-  duracionMaximaSegundos: 5
   puntoObjetivoLocal: {x: 0.01, y: -0.05, z: 0.13}
   offsetInicio: {x: 0, y: 0, z: 0}
   trayectoria: 0
@@ -8259,9 +8342,6 @@ MonoBehaviour:
   mostrarAnilloContacto: 1
   anilloContactoSprite: {fileID: 0}
   escalaMaxAnillo: 1.8
-  onHintCompletado:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1024740041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8274,6 +8354,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925798dbb86faac42af4128dc0067863, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!21 &1034952780
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &1035457209
 GameObject:
   m_ObjectHideFlags: 0
@@ -8559,6 +8679,140 @@ Transform:
   - {fileID: 1490807859}
   m_Father: {fileID: 2138737361}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1078768283
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1078768284}
+  - component: {fileID: 1078768286}
+  - component: {fileID: 1078768285}
+  m_Layer: 5
+  m_Name: Text (TMP) (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1078768284
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078768283}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 5.2019997, y: 2, z: 4.4526315}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1796358021}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 3}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1078768285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078768283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Volver
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 7.8
+  m_fontSizeBase: 7.8
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1078768286
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078768283}
+  m_CullTransparentMesh: 1
 --- !u!1 &1089173874
 GameObject:
   m_ObjectHideFlags: 0
@@ -8607,11 +8861,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcb53e765cb9d3647a820692c88264b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  botonVolverMenu: {fileID: 0}
+  botonVolverDeseleccion: {fileID: 0}
+  hintSequencer: {fileID: 0}
+  hintTapEsperado: {fileID: 0}
+  hintSequenceAlSeleccionar: {fileID: 0}
   nombrePlaneta: Marte
   minZoomPlaneta: 3
   maxZoomPlaneta: 20
-  secuenciaHintsAlSeleccionar: {fileID: 0}
-  soloUnaVezPorSesion: 1
   seleccionado: 0
   retrasoInfo: 1
 --- !u!136 &1089173877
@@ -9212,46 +9469,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1190573952}
   m_CullTransparentMesh: 1
---- !u!21 &1191295544
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &1209989304
 GameObject:
   m_ObjectHideFlags: 0
@@ -9948,11 +10165,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcb53e765cb9d3647a820692c88264b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  botonVolverMenu: {fileID: 1973503855}
+  botonVolverDeseleccion: {fileID: 1796358020}
+  hintSequencer: {fileID: 0}
+  hintTapEsperado: {fileID: 0}
+  hintSequenceAlSeleccionar: {fileID: 0}
   nombrePlaneta: Marte
   minZoomPlaneta: 3
   maxZoomPlaneta: 20
-  secuenciaHintsAlSeleccionar: {fileID: 0}
-  soloUnaVezPorSesion: 1
   seleccionado: 0
   retrasoInfo: 1
 --- !u!136 &1273460950
@@ -10068,14 +10288,16 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1279646205}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.5, z: -4}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
-  m_ConstrainProportionsScale: 1
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -265.79, z: -4}
+  m_LocalScale: {x: 0.8, y: 1, z: 0.8}
+  m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1468295149}
+  - {fileID: 1708483831}
   - {fileID: 1480517653}
   - {fileID: 416833303}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1771515704}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1279646207
 MonoBehaviour:
@@ -10089,17 +10311,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d118572356611243b3c8a1150591d72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  claveGuardado: hint_pinchin_sissolar
-  resetearParaPruebas: 0
-  detectarPinchDelUsuario: 1
-  cambioMinimoDistancia: 60
   velocidadFadeOutRapido: 6
-  mano1: {fileID: 416833303}
-  mano2: {fileID: 1480517653}
+  mano1: {fileID: 1468295149}
+  mano2: {fileID: 1708483831}
   centro: {x: 0, y: 0, z: 0}
   gesto: 0
-  distanciaCercana: 4.28
-  distanciaLejana: 9.55
+  distanciaCercana: -157.22
+  distanciaLejana: -541.6
   trayectoria: 0
   alturaCurva: 0.3
   duracionMovimiento: 0.7
@@ -10136,9 +10354,6 @@ MonoBehaviour:
   anguloRotacion: 15
   anguloInicial: 0
   anguloFinal: -20
-  onHintCompletado:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1293537605
 GameObject:
   m_ObjectHideFlags: 0
@@ -12118,6 +12333,81 @@ LineRenderer:
   m_UseWorldSpace: 0
   m_Loop: 1
   m_ApplyActiveColorSpace: 1
+--- !u!1 &1468295148
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1468295149}
+  - component: {fileID: 1468295151}
+  - component: {fileID: 1468295150}
+  m_Layer: 0
+  m_Name: ManoDer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1468295149
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468295148}
+  m_LocalRotation: {x: 0, y: 0, z: 0.2840153, w: 0.95881975}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.54, y: 1.54, z: 1.54}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1279646206}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 33}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 1314.9, y: 352}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1468295150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468295148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: b01aedf58323aca44aad517c5aef07b1, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1468295151
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468295148}
+  m_CullTransparentMesh: 1
 --- !u!21 &1472429582
 Material:
   serializedVersion: 8
@@ -12612,7 +12902,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1537540579
 Transform:
   m_ObjectHideFlags: 0
@@ -12680,6 +12970,46 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!21 &1548720010
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &1552540440
 GameObject:
   m_ObjectHideFlags: 0
@@ -12911,6 +13241,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 636630bc31a2773449de62297047aff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  secuenciaHintsAlSeleccionar: {fileID: 186611408}
+  hintPinchEsperado: {fileID: 1279646205}
+  hintSwipeEsperado: {fileID: 815720483}
   zoomSpeed: 0.1
   minZoom: 10
   maxZoom: 135
@@ -13179,11 +13512,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcb53e765cb9d3647a820692c88264b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  botonVolverMenu: {fileID: 1973503855}
+  botonVolverDeseleccion: {fileID: 1796358020}
+  hintSequencer: {fileID: 0}
+  hintTapEsperado: {fileID: 0}
+  hintSequenceAlSeleccionar: {fileID: 0}
   nombrePlaneta: Mercurio
   minZoomPlaneta: 3
   maxZoomPlaneta: 20
-  secuenciaHintsAlSeleccionar: {fileID: 0}
-  soloUnaVezPorSesion: 1
   seleccionado: 0
   retrasoInfo: 1
 --- !u!114 &1635600318
@@ -13503,11 +13839,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcb53e765cb9d3647a820692c88264b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  botonVolverMenu: {fileID: 0}
+  botonVolverDeseleccion: {fileID: 0}
+  hintSequencer: {fileID: 0}
+  hintTapEsperado: {fileID: 0}
+  hintSequenceAlSeleccionar: {fileID: 0}
   nombrePlaneta: Venus
   minZoomPlaneta: 3
   maxZoomPlaneta: 20
-  secuenciaHintsAlSeleccionar: {fileID: 0}
-  soloUnaVezPorSesion: 1
   seleccionado: 0
   retrasoInfo: 1
 --- !u!114 &1639932366
@@ -13598,7 +13937,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1002613464}
+  - {fileID: 1034952780}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14004,6 +14343,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1657850825}
   m_CullTransparentMesh: 1
+--- !u!21 &1676647903
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &1707604669
 GameObject:
   m_ObjectHideFlags: 0
@@ -14138,6 +14517,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1707604669}
+  m_CullTransparentMesh: 1
+--- !u!1 &1708483830
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1708483831}
+  - component: {fileID: 1708483833}
+  - component: {fileID: 1708483832}
+  m_Layer: 0
+  m_Name: ManoIzq
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1708483831
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708483830}
+  m_LocalRotation: {x: 0.2840153, y: 0.95881975, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.54, y: 1.54, z: 1.54}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1279646206}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 33}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 1125, y: 352}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1708483832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708483830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: b01aedf58323aca44aad517c5aef07b1, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1708483833
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708483830}
   m_CullTransparentMesh: 1
 --- !u!1 &1709372544
 GameObject:
@@ -14462,11 +14916,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcb53e765cb9d3647a820692c88264b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  botonVolverMenu: {fileID: 1973503855}
+  botonVolverDeseleccion: {fileID: 1796358020}
+  hintSequencer: {fileID: 0}
+  hintTapEsperado: {fileID: 0}
+  hintSequenceAlSeleccionar: {fileID: 0}
   nombrePlaneta: Urano
   minZoomPlaneta: 3
   maxZoomPlaneta: 20
-  secuenciaHintsAlSeleccionar: {fileID: 0}
-  soloUnaVezPorSesion: 1
   seleccionado: 0
   retrasoInfo: 1
 --- !u!114 &1712200815
@@ -14516,46 +14973,6 @@ Transform:
   - {fileID: 4827691871860280443}
   m_Father: {fileID: 1354484046}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1740148380
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &1740480244
 GameObject:
   m_ObjectHideFlags: 0
@@ -14894,11 +15311,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcb53e765cb9d3647a820692c88264b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  botonVolverMenu: {fileID: 0}
+  botonVolverDeseleccion: {fileID: 0}
+  hintSequencer: {fileID: 0}
+  hintTapEsperado: {fileID: 0}
+  hintSequenceAlSeleccionar: {fileID: 0}
   nombrePlaneta: Saturno
   minZoomPlaneta: 3
   maxZoomPlaneta: 20
-  secuenciaHintsAlSeleccionar: {fileID: 0}
-  soloUnaVezPorSesion: 1
   seleccionado: 0
   retrasoInfo: 1
 --- !u!114 &1742132704
@@ -15111,11 +15531,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcb53e765cb9d3647a820692c88264b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  botonVolverMenu: {fileID: 0}
+  botonVolverDeseleccion: {fileID: 0}
+  hintSequencer: {fileID: 0}
+  hintTapEsperado: {fileID: 0}
+  hintSequenceAlSeleccionar: {fileID: 0}
   nombrePlaneta: Mercurio
   minZoomPlaneta: 3
   maxZoomPlaneta: 20
-  secuenciaHintsAlSeleccionar: {fileID: 0}
-  soloUnaVezPorSesion: 1
   seleccionado: 0
   retrasoInfo: 1
 --- !u!114 &1764805764
@@ -15228,7 +15651,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1973503856}
+  - {fileID: 1796358021}
   - {fileID: 1366423201}
+  - {fileID: 1279646206}
+  - {fileID: 81426327}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -15294,15 +15720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 562bd365456ac534095ee8ff441f4c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  claveGuardado: hint_tap_tierra2
-  resetearParaPruebas: 0
-  detectarTapDelUsuario: 1
-  puntoObjetivoUI: {fileID: 0}
-  puntoObjetivoMundo: {fileID: 0}
-  radioDeteccion: 80
   velocidadFadeOutRapido: 6
-  usarDuracionMaxima: 0
-  duracionMaximaSegundos: 3
   puntoObjetivoLocal: {x: 0.01, y: -0.03, z: 0.07}
   offsetInicio: {x: 0, y: 0, z: 0}
   trayectoria: 0
@@ -15345,9 +15763,6 @@ MonoBehaviour:
   mostrarAnilloContacto: 1
   anilloContactoSprite: {fileID: 0}
   escalaMaxAnillo: 1.8
-  onHintCompletado:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!212 &1793344042
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15400,6 +15815,139 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1796358020
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1796358021}
+  - component: {fileID: 1796358024}
+  - component: {fileID: 1796358023}
+  - component: {fileID: 1796358022}
+  m_Layer: 5
+  m_Name: VolverPropio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1796358021
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796358020}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.35, y: 3.068182, z: 1.2518181}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 1078768284}
+  m_Father: {fileID: 1771515704}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 933, y: -367}
+  m_SizeDelta: {x: 190, y: 40}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1796358022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796358020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1796358023}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1562118973}
+        m_TargetAssemblyTypeName: ZoomCamara, Assembly-CSharp
+        m_MethodName: DeseleccionarPlanetaActual
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1796358023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796358020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 7747f5762ecd3674c9c9f1443b04a4fb, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1796358024
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796358020}
+  m_CullTransparentMesh: 1
 --- !u!1 &1807033841 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7dd5ebdb060d776438f5a1dfbb5a0a4e,
@@ -15557,7 +16105,6 @@ Transform:
   - {fileID: 579550724}
   - {fileID: 1024740039}
   - {fileID: 1793344039}
-  - {fileID: 81426327}
   m_Father: {fileID: 1188054795}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1861015334
@@ -15872,46 +16419,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1901600433
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &1909829600
 GameObject:
   m_ObjectHideFlags: 0
@@ -16263,11 +16770,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcb53e765cb9d3647a820692c88264b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  botonVolverMenu: {fileID: 0}
+  botonVolverDeseleccion: {fileID: 0}
+  hintSequencer: {fileID: 0}
+  hintTapEsperado: {fileID: 0}
+  hintSequenceAlSeleccionar: {fileID: 0}
   nombrePlaneta: "J\xFApiter"
   minZoomPlaneta: 3
   maxZoomPlaneta: 20
-  secuenciaHintsAlSeleccionar: {fileID: 0}
-  soloUnaVezPorSesion: 1
   seleccionado: 0
   retrasoInfo: 1
 --- !u!114 &1910973186
@@ -16451,11 +16961,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcb53e765cb9d3647a820692c88264b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  botonVolverMenu: {fileID: 0}
+  botonVolverDeseleccion: {fileID: 0}
+  hintSequencer: {fileID: 0}
+  hintTapEsperado: {fileID: 0}
+  hintSequenceAlSeleccionar: {fileID: 0}
   nombrePlaneta: Urano
   minZoomPlaneta: 3
   maxZoomPlaneta: 20
-  secuenciaHintsAlSeleccionar: {fileID: 0}
-  soloUnaVezPorSesion: 1
   seleccionado: 0
   retrasoInfo: 1
 --- !u!1 &1922016356
@@ -16531,7 +17044,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 959243484}
+  - {fileID: 474004155}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16828,11 +17341,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae58469bee8e4cd4289ea9e251cab705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  claveSecuencia: secuencia_al_seleccionar
   pasos:
-  - {fileID: 1793344038}
+  - objeto: {fileID: 1793344038}
+    claveGuardado: TapPlanetainfo
+    duracionMaximaSegundos: 0
   tipoActivacion: 0
   nombreEscena: SistemaSolar
-  unaSolaVez: 0
+  unaSolaVez: 1
+  repetible: 0
+  onSecuenciaCompletada:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1938615991
 Transform:
   m_ObjectHideFlags: 0
@@ -16921,7 +17441,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1901600433}
+  - {fileID: 2121282584}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17535,11 +18055,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcb53e765cb9d3647a820692c88264b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  botonVolverMenu: {fileID: 1973503855}
+  botonVolverDeseleccion: {fileID: 1796358020}
+  hintSequencer: {fileID: 0}
+  hintTapEsperado: {fileID: 0}
+  hintSequenceAlSeleccionar: {fileID: 0}
   nombrePlaneta: Venus
   minZoomPlaneta: 3
   maxZoomPlaneta: 20
-  secuenciaHintsAlSeleccionar: {fileID: 0}
-  soloUnaVezPorSesion: 1
   seleccionado: 0
   retrasoInfo: 1
 --- !u!114 &1996943473
@@ -18153,6 +18676,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2106360274}
   m_CullTransparentMesh: 1
+--- !u!21 &2121282584
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &2138737360
 GameObject:
   m_ObjectHideFlags: 0
@@ -18226,7 +18789,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1191295544}
+  - {fileID: 2143787154}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18716,6 +19279,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2142237625}
   m_CullTransparentMesh: 1
+--- !u!21 &2143787154
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!23 &940908946538171996
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18814,11 +19417,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcb53e765cb9d3647a820692c88264b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  botonVolverMenu: {fileID: 0}
+  botonVolverDeseleccion: {fileID: 0}
+  hintSequencer: {fileID: 0}
+  hintTapEsperado: {fileID: 0}
+  hintSequenceAlSeleccionar: {fileID: 0}
   nombrePlaneta: Tierra
   minZoomPlaneta: 3
   maxZoomPlaneta: 20
-  secuenciaHintsAlSeleccionar: {fileID: 0}
-  soloUnaVezPorSesion: 1
   seleccionado: 0
   retrasoInfo: 1
 --- !u!136 &4827691871860280445
@@ -18874,7 +19480,6 @@ SceneRoots:
   - {fileID: 1474676173}
   - {fileID: 1569458290}
   - {fileID: 850040587}
-  - {fileID: 1279646206}
   - {fileID: 815720484}
   - {fileID: 186611407}
   - {fileID: 1938615991}

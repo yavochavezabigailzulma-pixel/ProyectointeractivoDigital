@@ -932,7 +932,7 @@ GameObject:
   - component: {fileID: 420323663}
   - component: {fileID: 420323662}
   m_Layer: 0
-  m_Name: HintSequencer
+  m_Name: HintSequencerMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -951,10 +951,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pasos:
-  - {fileID: 1101441681}
+  - objeto: {fileID: 1101441681}
+    claveGuardado: SwipeMenu
+    duracionMaximaSegundos: 0
   tipoActivacion: 1
   nombreEscena: Menu
   unaSolaVez: 1
+  repetible: 0
+  onSecuenciaCompletada:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &420323663
 Transform:
   m_ObjectHideFlags: 0
@@ -2191,6 +2197,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 29bf353371bcc39438f38324eafd3b4e, type: 3}
   - {fileID: 21300000, guid: 009340373be103441a3c7fe96b4edd34, type: 3}
   backgroundImage: {fileID: 548166186}
+  hintSequencerMenu: {fileID: 420323662}
+  hintSwipeEsperado: {fileID: 1101441681}
 --- !u!114 &988046305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2597,10 +2605,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 958ffab021fc6294aa87725824123cf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  claveGuardado: hint_swipe_menu
-  resetearParaPruebas: 0
-  detectarSwipeDelUsuario: 1
-  distanciaMinimaSwipe: 50
   velocidadFadeOutRapido: 6
   trayectoria: 1
   distancia: -350
@@ -2639,9 +2643,6 @@ MonoBehaviour:
   anguloRotacion: 15
   anguloInicial: 0
   anguloFinal: 40
-  onHintCompletado:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1216391576
 GameObject:
   m_ObjectHideFlags: 0

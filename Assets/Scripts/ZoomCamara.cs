@@ -2,6 +2,14 @@
 
 public class ZoomCamara : MonoBehaviour
 {
+    [Header("Tutorial")]
+    [SerializeField] private HintSequencer secuenciaHintsAlSeleccionar;
+    [SerializeField] private GameObject hintPinchEsperado;
+    [SerializeField] private GameObject hintSwipeEsperado;
+
+    private bool pinchYaNotificadoEsteGesto = false;
+    private bool swipeYaNotificadoEsteGesto = false;
+
     [Header("Zoom global")]
     public float zoomSpeed = 0.05f;
     public float minZoom = 5f;
@@ -49,7 +57,12 @@ public class ZoomCamara : MonoBehaviour
     Vector3 PuntoMira => focusTarget - Vector3.up * 0.25f;
     void Update()
     {
-        if (Input.touchCount == 0) esperandoSoltarDedos = false;
+        if (Input.touchCount == 0)
+        {
+            esperandoSoltarDedos = false;
+            pinchYaNotificadoEsteGesto = false;
+            swipeYaNotificadoEsteGesto = false;
+        }
         if (Input.touchCount == 1) ManejarDrag();
         if (Input.touchCount == 2)
         {
@@ -106,6 +119,16 @@ public class ZoomCamara : MonoBehaviour
         Touch t = Input.GetTouch(0);
         if (t.phase != TouchPhase.Moved) return;
 
+        // Notifica al hint de swipe en cuanto detecta un desplazamiento real de un dedo
+        if (!swipeYaNotificadoEsteGesto && t.deltaPosition.sqrMagnitude > 4f)
+        {
+            swipeYaNotificadoEsteGesto = true;
+            bool completado = secuenciaHintsAlSeleccionar.CompletarPaso(hintSwipeEsperado);
+            Debug.Log(completado
+                ? $"[Hint] Paso 2 (swipe) completado correctamente en '{secuenciaHintsAlSeleccionar.name}'."
+                : $"[Hint] Swipe detectado pero NO era el paso activo en '{secuenciaHintsAlSeleccionar.name}'.");
+        }
+
         if (enfoqueCompletado && planetaSeguido != null)
         {
             // Rotación horizontal libre
@@ -146,6 +169,15 @@ public class ZoomCamara : MonoBehaviour
         float diff = currDist - prevDist;
         float factor = Vector3.Distance(transform.position, Vector3.zero) * zoomSpeed * Time.deltaTime;
 
+        if (!pinchYaNotificadoEsteGesto && Mathf.Abs(diff) > 1f)
+        {
+            pinchYaNotificadoEsteGesto = true;
+            bool completado = secuenciaHintsAlSeleccionar.CompletarPaso(hintPinchEsperado);
+            Debug.Log(completado
+                ? $"[Hint] Paso 1 (pinch) completado correctamente en '{secuenciaHintsAlSeleccionar.name}'."
+                : $"[Hint] Pinch detectado pero NO era el paso activo en '{secuenciaHintsAlSeleccionar.name}'.");
+        }
+
         // Al iniciar pinch sobre un planeta, abandona el modo órbita
         if (enfoqueCompletado && planetaSeguido != null)
         {
@@ -163,7 +195,13 @@ public class ZoomCamara : MonoBehaviour
             {
                 // Supera el máximo: desenfoca y vuelve al sistema solar
                 EnfocarEn(null);
-                //UISistemaSolar.Instance.CerrarPopupInfoSinHint(); // corta hintSequenceAlCerrarPanel sin volver a lanzarlo
+
+                // Deselección por pinch-out: corta el hint de "cómo cerrar panel"
+                // si seguía activo (equivalente a lo que ya hace SeleccionPlaneta.Update()
+                // para las otras vías de deselección).
+                if (UISistemaSolar.Instance != null)
+                    UISistemaSolar.Instance.CerrarPopupInfoSinHint();
+
                 targetPosition = posicionInicial;
                 esperandoSoltarDedos = true;
             }
@@ -255,5 +293,14 @@ public class ZoomCamara : MonoBehaviour
         targetPosition = destino;
         animando = false;
         enfoqueCompletado = true;
+    }
+    public void DeseleccionarPlanetaActual()
+    {
+        if (planetaSeguido == null) return;
+
+        EnfocarEn(null);
+
+        if (UISistemaSolar.Instance != null)
+            UISistemaSolar.Instance.CerrarPopupInfoSinHint();
     }
 }

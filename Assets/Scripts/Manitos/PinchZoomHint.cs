@@ -1,22 +1,16 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Events;
+using System;
 using System.Collections;
 
-public class PinchZoomHint : MonoBehaviour, INotificaHintCompletado
+public class PinchZoomHint : MonoBehaviour, IHintAnimado
 {
     public enum TipoGesto { ZoomIn, ZoomOut, Alternar }
     public enum TipoTrayectoria { Recta, Curva }
     public enum TipoEscala { Ninguna, Achicar, Agrandar }
     public enum TipoRotacion { Ninguna, Inclinacion, Direccional, DeAaB }
 
-    [Header("Persistencia")]
-    [SerializeField] private string claveGuardado = "hint_pinch_tutorial"; // única por cada hint/ventana
-    [SerializeField] private bool resetearParaPruebas = false;
-
-    [Header("Detección de gesto del usuario")]
-    [SerializeField] private bool detectarPinchDelUsuario = true;
-    [SerializeField] private float cambioMinimoDistancia = 60f; // en pixeles de pantalla
+    [Header("Ocultamiento")]
     [SerializeField] private float velocidadFadeOutRapido = 6f;
 
     [Header("Referencias")]
@@ -34,9 +28,7 @@ public class PinchZoomHint : MonoBehaviour, INotificaHintCompletado
     [SerializeField] private float alturaCurva = 0.3f;
     [SerializeField] private float duracionMovimiento = 0.7f;
     [SerializeField] private float pausaEntreCiclos = 0.4f;
-    [SerializeField]
-    private AnimationCurve curvaMovimiento =
-        AnimationCurve.EaseInOut(0, 0, 1, 1);
+    [SerializeField] private AnimationCurve curvaMovimiento = AnimationCurve.EaseInOut(0, 0, 1, 1);
 
     [Header("Fade")]
     [SerializeField] private bool usarFade = true;
@@ -52,20 +44,13 @@ public class PinchZoomHint : MonoBehaviour, INotificaHintCompletado
     [SerializeField] private float anguloInicial = 0f;
     [SerializeField] private float anguloFinal = -20f;
 
-    [Header("Eventos")]
-    [Tooltip("Se dispara cuando el hint termina de ocultarse: al completarlo el usuario, o al detectarse que ya estaba visto anteriormente.")]
-    [SerializeField] private UnityEvent onHintCompletado;
-    public UnityEvent OnHintCompletado => onHintCompletado;
-
     private SpriteRenderer sr1, sr2;
     private Image img1, img2;
     private Vector3 escalaInicial1, escalaInicial2;
     private Quaternion rotInicial1, rotInicial2;
     private bool cicloZoomIn = true;
-
     private Coroutine loopCoroutine;
-    private bool ocultoPermanentemente = false;
-    private float distanciaInicialToques = -1f;
+    private bool ocultando = false;
 
     void Awake()
     {
@@ -81,93 +66,41 @@ public class PinchZoomHint : MonoBehaviour, INotificaHintCompletado
 
     void OnEnable()
     {
-        if (resetearParaPruebas)
-            RegistroHintsSesion.Resetear(claveGuardado);
-
-        if (RegistroHintsSesion.EstaCompletado(claveGuardado))
-        {
-            StartCoroutine(NotificarYaCompletadoDiferido());
-            return;
-        }
-
-        ocultoPermanentemente = false;
-        loopCoroutine = StartCoroutine(LoopPinch()); 
+        ocultando = false;
+        loopCoroutine = StartCoroutine(LoopPinch());
     }
 
-    IEnumerator NotificarYaCompletadoDiferido()
-    {
-        // Espera un frame: evita invocar el evento mientras HintSequencer
-        // todavía está ejecutando AvanzarAlSiguientePaso en la misma pila.
-        yield return null;
-        gameObject.SetActive(false);
-        onHintCompletado?.Invoke();
-    }
     void OnDisable()
     {
         if (loopCoroutine != null) StopCoroutine(loopCoroutine);
     }
 
-    void Update()
+    public void Ocultar(Action alTerminar)
     {
-        if (!detectarPinchDelUsuario || ocultoPermanentemente) return;
-        DetectarGestoUsuario();
-    }
-
-    void DetectarGestoUsuario()
-    {
-        // Touch real (móvil): dos dedos
-        if (Input.touchCount == 2)
-        {
-            Touch t0 = Input.GetTouch(0);
-            Touch t1 = Input.GetTouch(1);
-            float distanciaActual = Vector2.Distance(t0.position, t1.position);
-
-            if (distanciaInicialToques < 0f)
-            {
-                distanciaInicialToques = distanciaActual;
-            }
-            else if (Mathf.Abs(distanciaActual - distanciaInicialToques) >= cambioMinimoDistancia)
-            {
-                MarcarComoCompletadoYOcultar();
-            }
-        }
-        else
-        {
-            distanciaInicialToques = -1f;
-        }
-
-        // Simulación en editor/PC: scroll del mouse actúa como pinch (estándar en la industria para pruebas)
-#if UNITY_EDITOR
-        float scroll = Input.GetAxis("Mouse ScrollWheel");
-        if (Mathf.Abs(scroll) > 0.01f)
-        {
-            MarcarComoCompletadoYOcultar();
-        }
-#endif
-    }
-
-    public void MarcarComoCompletadoYOcultar()
-    {
-        if (ocultoPermanentemente) return;
-        ocultoPermanentemente = true;
-
-        RegistroHintsSesion.MarcarCompletado(claveGuardado);
+        if (ocultando) return;
+        ocultando = true;
 
         if (loopCoroutine != null) StopCoroutine(loopCoroutine);
-        StartCoroutine(FadeOutRapidoYDesactivar());
+        StartCoroutine(FadeOutYNotificar(alTerminar));
     }
 
-    IEnumerator FadeOutRapidoYDesactivar()
+    IEnumerator FadeOutYNotificar(Action alTerminar)
     {
-        float alphaActual = ObtenerAlphaActual();
-        while (alphaActual > 0f)
+        float alpha = ObtenerAlphaActual();
+        float maximo = 1f, transcurrido = 0f;
+
+        while (alpha > 0f && transcurrido < maximo)
         {
-            alphaActual -= velocidadFadeOutRapido * Time.deltaTime;
-            SetAlpha(Mathf.Clamp01(alphaActual));
+            float delta = Time.unscaledDeltaTime;
+            alpha -= velocidadFadeOutRapido * delta;
+            transcurrido += delta;
+            SetAlpha(Mathf.Clamp01(alpha));
             yield return null;
         }
+
+        SetAlpha(0f);
         gameObject.SetActive(false);
-        onHintCompletado?.Invoke();
+        alTerminar?.Invoke();
     }
 
     float ObtenerAlphaActual()
@@ -179,7 +112,7 @@ public class PinchZoomHint : MonoBehaviour, INotificaHintCompletado
 
     IEnumerator LoopPinch()
     {
-        while (!ocultoPermanentemente)
+        while (true)
         {
             bool haciaAfuera = gesto == TipoGesto.ZoomIn ||
                                 (gesto == TipoGesto.Alternar && cicloZoomIn);
@@ -225,10 +158,8 @@ public class PinchZoomHint : MonoBehaviour, INotificaHintCompletado
                 ? alturaCurva * Mathf.Sin(progreso * Mathf.PI)
                 : 0f;
 
-            Vector3 pos1 = centro + new Vector3(-distanciaActual * 0.5f, arco, 0f);
-            Vector3 pos2 = centro + new Vector3(distanciaActual * 0.5f, arco, 0f);
-            mano1.localPosition = pos1;
-            mano2.localPosition = pos2;
+            mano1.localPosition = centro + new Vector3(-distanciaActual * 0.5f, arco, 0f);
+            mano2.localPosition = centro + new Vector3(distanciaActual * 0.5f, arco, 0f);
 
             if (tipoEscala != TipoEscala.Ninguna)
             {
@@ -249,9 +180,8 @@ public class PinchZoomHint : MonoBehaviour, INotificaHintCompletado
                     break;
                 case TipoRotacion.Direccional:
                     float signoDir = haciaAfuera ? 1f : -1f;
-                    float anguloDireccional = signoDir * 180f;
-                    mano1.localRotation = rotInicial1 * Quaternion.Euler(0, 0, anguloDireccional);
-                    mano2.localRotation = rotInicial2 * Quaternion.Euler(0, 0, 0f);
+                    mano1.localRotation = rotInicial1 * Quaternion.Euler(0, 0, signoDir * 180f);
+                    mano2.localRotation = rotInicial2;
                     break;
                 case TipoRotacion.DeAaB:
                     float anguloActual = Mathf.Lerp(anguloInicial, anguloFinal, curva);

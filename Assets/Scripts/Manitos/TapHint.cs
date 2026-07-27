@@ -1,33 +1,20 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Events;
+using System;
 using System.Collections;
 
-public class TapHint : MonoBehaviour, INotificaHintCompletado
+public class TapHint : MonoBehaviour, IHintAnimado
 {
     public enum TipoTrayectoriaAcercamiento { Recta, Curva }
 
-    [Header("Persistencia")]
-    [SerializeField] private string claveGuardado = "hint_tap_tutorial"; // única por cada hint/ventana
-    [SerializeField] private bool resetearParaPruebas = false;
-
-    [Header("Detección del tap real del usuario")]
-    [SerializeField] private bool detectarTapDelUsuario = true;
-    [SerializeField] private RectTransform puntoObjetivoUI; // usar si el punto es un elemento UI
-    [SerializeField] private Transform puntoObjetivoMundo;  // usar si el punto es un objeto en escena (usa Camera.main)
-    [SerializeField] private float radioDeteccion = 80f;    // en pixeles de pantalla
+    [Header("Ocultamiento")]
     [SerializeField] private float velocidadFadeOutRapido = 6f;
 
-    [Header("Duración máxima (auto-ocultar)")]
-    [Tooltip("Si está activo, el hint se oculta solo tras este tiempo, aunque el usuario no haga el gesto.")]
-    [SerializeField] private bool usarDuracionMaxima = false;
-    [SerializeField] private float duracionMaximaSegundos = 3f;
-
-    [Header("Punto objetivo (relativo, si no usas las referencias de arriba)")]
+    [Header("Punto objetivo (posición local del gesto)")]
     [SerializeField] private Vector3 puntoObjetivoLocal = Vector3.zero;
 
     [Header("Posición de origen del gesto")]
-    [SerializeField] private Vector3 offsetInicio = new Vector3(0.6f, 0.6f, 0f); // desde dónde "entra" la mano
+    [SerializeField] private Vector3 offsetInicio = new Vector3(0.6f, 0.6f, 0f);
     [SerializeField] private TipoTrayectoriaAcercamiento trayectoria = TipoTrayectoriaAcercamiento.Curva;
     [SerializeField] private float alturaCurvaAcercamiento = 0.3f;
 
@@ -37,9 +24,7 @@ public class TapHint : MonoBehaviour, INotificaHintCompletado
     [SerializeField] private float duracionSostenido = 0.1f;
     [SerializeField] private float duracionLiberacion = 0.2f;
     [SerializeField] private float pausaEntreCiclos = 0.5f;
-    [SerializeField]
-    private AnimationCurve curvaAcercamiento =
-        AnimationCurve.EaseInOut(0, 0, 1, 1);
+    [SerializeField] private AnimationCurve curvaAcercamiento = AnimationCurve.EaseInOut(0, 0, 1, 1);
 
     [Header("Fade")]
     [SerializeField] private bool usarFade = true;
@@ -47,34 +32,24 @@ public class TapHint : MonoBehaviour, INotificaHintCompletado
 
     [Header("Escala al presionar")]
     [SerializeField] private bool usarEscalaAlPresionar = true;
-    [SerializeField] private float intensidadEscalaPresion = 0.2f; // 0.2 = se achica 20%
+    [SerializeField] private float intensidadEscalaPresion = 0.2f;
 
     [Header("Inclinación al presionar")]
     [SerializeField] private bool usarInclinacion = true;
     [SerializeField] private float anguloInclinacion = -12f;
 
-    [Header("Anillo de contacto (feedback visual opcional)")]
+    [Header("Anillo de contacto (opcional)")]
     [SerializeField] private bool mostrarAnilloContacto = true;
-    [SerializeField] private SpriteRenderer anilloContactoSprite; // sprite circular opcional, hijo de este objeto
+    [SerializeField] private SpriteRenderer anilloContactoSprite;
     [SerializeField] private float escalaMaxAnillo = 1.8f;
-
-    [Header("Eventos")]
-    [Tooltip("Se dispara cuando el hint termina de ocultarse: al completarlo el usuario, o al detectarse que ya estaba visto anteriormente.")]
-    [SerializeField] private UnityEvent onHintCompletado;
-    public UnityEvent OnHintCompletado => onHintCompletado;
 
     private SpriteRenderer sr;
     private Image img;
     private Vector3 escalaInicial;
     private Quaternion rotInicial;
-    private Vector3 posObjetivoLocal;
     private Vector3 posInicioLocal;
-
     private Coroutine loopCoroutine;
-    private Coroutine fadeOutCoroutine;
-    private Coroutine timeoutCoroutine;
-    private bool ocultoPermanentemente = false;
-    private bool eventoCompletadoDisparado = false;
+    private bool ocultando = false;
 
     void Awake()
     {
@@ -86,153 +61,43 @@ public class TapHint : MonoBehaviour, INotificaHintCompletado
 
     void OnEnable()
     {
-        if (resetearParaPruebas)
-            RegistroHintsSesion.Resetear(claveGuardado);
-
-        if (RegistroHintsSesion.EstaCompletado(claveGuardado))
-        {
-            StartCoroutine(NotificarYaCompletadoDiferido());
-            return;
-        }
-
-        posObjetivoLocal = puntoObjetivoLocal;
         posInicioLocal = puntoObjetivoLocal + offsetInicio;
-
-        ocultoPermanentemente = false;
-        eventoCompletadoDisparado = false;
+        ocultando = false;
         loopCoroutine = StartCoroutine(LoopTap());
-
-        if (usarDuracionMaxima)
-            timeoutCoroutine = StartCoroutine(TimeoutAutomatico());
-    }
-
-    IEnumerator NotificarYaCompletadoDiferido()
-    {
-        yield return null;
-        eventoCompletadoDisparado = true; // por si algo intenta forzar el ocultamiento después
-        FinalizarOcultamiento();
     }
 
     void OnDisable()
     {
         if (loopCoroutine != null) StopCoroutine(loopCoroutine);
-        if (timeoutCoroutine != null) StopCoroutine(timeoutCoroutine);
     }
 
-    IEnumerator TimeoutAutomatico()
+    public void Ocultar(Action alTerminar)
     {
-        // Tiempo real: corre igual aunque el juego esté en pausa (Time.timeScale = 0)
-        yield return new WaitForSecondsRealtime(duracionMaximaSegundos);
-
-        if (!ocultoPermanentemente)
-            ForzarOcultarInmediato();
-    }
-
-    void Update()
-    {
-        if (!detectarTapDelUsuario || ocultoPermanentemente) return;
-        DetectarTapUsuario();
-    }
-
-    void DetectarTapUsuario()
-    {
-        Vector2? posicionInput = null;
-
-        if (Input.GetMouseButtonDown(0))
-            posicionInput = Input.mousePosition;
-        else if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
-            posicionInput = Input.GetTouch(0).position;
-
-        if (posicionInput == null) return;
-
-        Vector2 puntoObjetivoPantalla = ObtenerPuntoObjetivoEnPantalla();
-        float distancia = Vector2.Distance(posicionInput.Value, puntoObjetivoPantalla);
-
-        if (distancia <= radioDeteccion)
-        {
-            MarcarComoCompletadoYOcultar();
-        }
-    }
-
-    Vector2 ObtenerPuntoObjetivoEnPantalla()
-    {
-        if (puntoObjetivoUI != null)
-        {
-            return RectTransformUtility.WorldToScreenPoint(null, puntoObjetivoUI.position);
-        }
-        else if (puntoObjetivoMundo != null)
-        {
-            return Camera.main.WorldToScreenPoint(puntoObjetivoMundo.position);
-        }
-        else
-        {
-            // fallback: usa la posición mundial de este mismo objeto en su punto objetivo
-            return Camera.main.WorldToScreenPoint(transform.parent != null
-                ? transform.parent.TransformPoint(posObjetivoLocal)
-                : posObjetivoLocal);
-        }
-    }
-
-    public void MarcarComoCompletadoYOcultar()
-    {
-        if (ocultoPermanentemente) return;
-        ocultoPermanentemente = true;
-
-        RegistroHintsSesion.MarcarCompletado(claveGuardado);
+        if (ocultando) return;
+        ocultando = true;
 
         if (loopCoroutine != null) StopCoroutine(loopCoroutine);
-        if (timeoutCoroutine != null) StopCoroutine(timeoutCoroutine);
-        fadeOutCoroutine = StartCoroutine(FadeOutRapidoYDesactivar());
+        StartCoroutine(FadeOutYNotificar(alTerminar));
     }
 
-    /// <summary>
-    /// Fuerza la desaparición inmediata del hint, sin animación de fade,
-    /// y garantiza que el HintSequencer reciba la notificación de "completado".
-    /// Se usa automáticamente cuando se cumple la duración máxima, pero también
-    /// es llamable manualmente desde cualquier script como botón de emergencia.
-    /// </summary>
-    public void ForzarOcultarInmediato()
+    IEnumerator FadeOutYNotificar(Action alTerminar)
     {
-        ocultoPermanentemente = true;
-        RegistroHintsSesion.MarcarCompletado(claveGuardado);
+        float alpha = ObtenerAlphaActual();
+        float maximo = 1f, transcurrido = 0f;
 
-        if (loopCoroutine != null) StopCoroutine(loopCoroutine);
-        if (fadeOutCoroutine != null) StopCoroutine(fadeOutCoroutine);
-        if (timeoutCoroutine != null) StopCoroutine(timeoutCoroutine);
-
-        FinalizarOcultamiento();
-    }
-
-    IEnumerator FadeOutRapidoYDesactivar()
-    {
-        float alphaActual = ObtenerAlphaActual();
-        float tiempoMaximo = 1f; // red de seguridad extra: nunca debería tardar más que esto
-        float transcurrido = 0f;
-
-        while (alphaActual > 0f && transcurrido < tiempoMaximo)
+        while (alpha > 0f && transcurrido < maximo)
         {
-            float delta = Time.unscaledDeltaTime; // no afectado por Time.timeScale
-            alphaActual -= velocidadFadeOutRapido * delta;
+            float delta = Time.unscaledDeltaTime;
+            alpha -= velocidadFadeOutRapido * delta;
             transcurrido += delta;
-            SetAlpha(Mathf.Clamp01(alphaActual));
+            SetAlpha(Mathf.Clamp01(alpha));
             yield return null;
         }
 
-        FinalizarOcultamiento();
-    }
-
-    // Único punto que desactiva y notifica — evita disparar el evento dos veces
-    // sin importar si se llega por fade normal, timeout, o forzado manual.
-    void FinalizarOcultamiento()
-    {
-        if (eventoCompletadoDisparado) return;
-        eventoCompletadoDisparado = true;
-
-        Debug.Log($"[TapHint] Hint completado: {claveGuardado}", this);
-
         SetAlpha(0f);
+        SetAnillo(0f, 0f);
         gameObject.SetActive(false);
-        onHintCompletado?.Invoke();
+        alTerminar?.Invoke();
     }
 
     float ObtenerAlphaActual()
@@ -244,7 +109,7 @@ public class TapHint : MonoBehaviour, INotificaHintCompletado
 
     IEnumerator LoopTap()
     {
-        while (!ocultoPermanentemente)
+        while (true)
         {
             yield return StartCoroutine(HacerTap());
             yield return new WaitForSeconds(pausaEntreCiclos);
@@ -259,7 +124,6 @@ public class TapHint : MonoBehaviour, INotificaHintCompletado
         SetAlpha(0f);
         SetAnillo(0f, 0f);
 
-        // --- Fade in ---
         if (usarFade)
         {
             float fadeT = 0f;
@@ -272,7 +136,6 @@ public class TapHint : MonoBehaviour, INotificaHintCompletado
         }
         else SetAlpha(1f);
 
-        // --- Fase 1: acercamiento hacia el punto ---
         float t = 0f;
         while (t < duracionAcercamiento)
         {
@@ -280,20 +143,15 @@ public class TapHint : MonoBehaviour, INotificaHintCompletado
             float progreso = Mathf.Clamp01(t / duracionAcercamiento);
             float curva = curvaAcercamiento.Evaluate(progreso);
 
-            Vector3 posBase = Vector3.Lerp(posInicioLocal, posObjetivoLocal, curva);
-
+            Vector3 posBase = Vector3.Lerp(posInicioLocal, puntoObjetivoLocal, curva);
             if (trayectoria == TipoTrayectoriaAcercamiento.Curva)
-            {
-                float arco = alturaCurvaAcercamiento * Mathf.Sin(progreso * Mathf.PI);
-                posBase += Vector3.up * arco;
-            }
+                posBase += Vector3.up * (alturaCurvaAcercamiento * Mathf.Sin(progreso * Mathf.PI));
 
             transform.localPosition = posBase;
             yield return null;
         }
-        transform.localPosition = posObjetivoLocal;
+        transform.localPosition = puntoObjetivoLocal;
 
-        // --- Fase 2: presión (escala + inclinación) ---
         float tp = 0f;
         while (tp < duracionPresion)
         {
@@ -302,20 +160,16 @@ public class TapHint : MonoBehaviour, INotificaHintCompletado
 
             if (usarEscalaAlPresionar)
                 transform.localScale = escalaInicial * Mathf.Lerp(1f, 1f - intensidadEscalaPresion, progreso);
-
             if (usarInclinacion)
                 transform.localRotation = rotInicial * Quaternion.Euler(0, 0, Mathf.Lerp(0f, anguloInclinacion, progreso));
-
             if (mostrarAnilloContacto)
                 SetAnillo(progreso, 1f - progreso * 0.5f);
 
             yield return null;
         }
 
-        // --- Fase 3: sostenido (breve pausa en el punto de contacto) ---
         yield return new WaitForSeconds(duracionSostenido);
 
-        // --- Fase 4: liberación (vuelve a escala/rotación normal) ---
         float tl = 0f;
         Vector3 escalaAlPresionar = transform.localScale;
         Quaternion rotAlPresionar = transform.localRotation;
@@ -330,7 +184,6 @@ public class TapHint : MonoBehaviour, INotificaHintCompletado
             if (mostrarAnilloContacto)
                 SetAnillo(1f, Mathf.Lerp(0.5f, escalaMaxAnillo, progreso) / escalaMaxAnillo * (1f - progreso));
 
-            // fade out al final de la liberación
             if (usarFade && progreso > 1f - (duracionFade / duracionLiberacion))
             {
                 float fadeOutT = (progreso - (1f - duracionFade / duracionLiberacion)) / (duracionFade / duracionLiberacion);

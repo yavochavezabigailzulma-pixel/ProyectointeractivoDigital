@@ -52,6 +52,12 @@ public class RotaryMenu : MonoBehaviour,
     [Tooltip("La Image del objeto 'Fondo' en el Canvas")]
     public Image backgroundImage;
 
+    [Header("Tutorial de swipe")]
+    [Tooltip("Se completa la primera vez que el usuario logra cambiar el ítem central.")]
+    [SerializeField] private HintSequencer hintSequencerMenu;
+    [SerializeField] private GameObject hintSwipeEsperado;
+    private bool hintYaNotificado = false;
+
     public System.Action<int> onCenterChanged;
 
     private RectTransform[] items;
@@ -133,7 +139,7 @@ public class RotaryMenu : MonoBehaviour,
             //    avatarImage.color = items[centeredIndex].GetComponent<Image>().color;
 
             //// Fondo — solo actualiza cuando realmente cambió el ítem central
-            
+
         }
 
         int idx = Mathf.RoundToInt(currentAngle / anglePerItem) % itemCount;
@@ -144,10 +150,28 @@ public class RotaryMenu : MonoBehaviour,
             ApplyBackground(centeredIndex);
             onCenterChanged?.Invoke(centeredIndex);
             AudioManager.Instance.Play(clicMatraca);
+
+            // Notifica al hint de swipe SOLO la primera vez que el centro cambia
+            if (!hintYaNotificado)
+            {
+                hintYaNotificado = true;
+
+                if (hintSequencerMenu != null)
+                {
+                    bool completado = hintSequencerMenu.CompletarPaso(hintSwipeEsperado);
+                    Debug.Log(completado
+                        ? $"[Hint] Paso completado correctamente en '{hintSequencerMenu.name}'."
+                        : $"[Hint] CompletarPaso() NO tuvo efecto en '{hintSequencerMenu.name}' (¿secuencia detenida, ya avanzada, o sin hint activo?)");
+                }
+                else
+                {
+                    Debug.LogWarning("[Hint] hintSequencerMenu no está asignado en el Inspector.", this);
+                }
+            }
         }
 
         PositionAllItems(currentAngle);
-        UpdateScalesAndAlpha(currentAngle);        
+        UpdateScalesAndAlpha(currentAngle);
     }
     void ApplyBackground(int index)
     {
