@@ -151,7 +151,6 @@ public class RotaryMenu : MonoBehaviour,
             onCenterChanged?.Invoke(centeredIndex);
             AudioManager.Instance.Play(clicMatraca);
 
-            // Notifica al hint de swipe SOLO la primera vez que el centro cambia
             if (!hintYaNotificado)
             {
                 hintYaNotificado = true;

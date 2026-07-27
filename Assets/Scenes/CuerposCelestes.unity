@@ -131,7 +131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6595115}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +297,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 10428055}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -467,7 +467,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 15111978}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverPieIzq_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -498,7 +498,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 15689233}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -678,7 +678,7 @@ GameObject:
   m_Component:
   - component: {fileID: 24259662}
   - component: {fileID: 24259663}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverPieDer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1080,7 +1080,7 @@ GameObject:
   m_Component:
   - component: {fileID: 41466142}
   - component: {fileID: 41466143}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverPieDer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1143,7 +1143,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 43964233}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverManoIzq_Target
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
@@ -1591,7 +1591,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 62167237}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1624,7 +1624,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 64116179}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverPieIzq_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1663,7 +1663,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &67232247
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2237,7 +2237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 94705063}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2406,7 +2406,7 @@ GameObject:
   m_Component:
   - component: {fileID: 97242723}
   - component: {fileID: 97242724}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverPieIzq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2504,6 +2504,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 745725e3534a483459a246ef28730d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimAlien: {fileID: 2142003274}
+  AnimAstronaut1: {fileID: 491761273}
+  AnimAstronaut2: {fileID: 1277924907}
+  AnimAstronaut3: {fileID: 278459632}
   canvas: {fileID: 1586949839}
   animator: {fileID: 1531512352}
   pantallaMenu: {fileID: 1900433368}
@@ -2555,7 +2559,7 @@ GameObject:
   - component: {fileID: 99076912}
   - component: {fileID: 99076914}
   - component: {fileID: 99076913}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: manoDer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3210,7 +3214,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 130147190}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverPieDer_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3421,7 +3425,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 137746187}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3454,7 +3458,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 150003794}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: sprites
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3797,7 +3801,7 @@ GameObject:
   - component: {fileID: 154247909}
   - component: {fileID: 154247911}
   - component: {fileID: 154247910}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: manoDer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4039,7 +4043,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 159968553}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4170,7 +4174,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 172964557}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4335,7 +4339,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 182600742}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EffectorManoIzq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4366,7 +4370,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 183071257}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4745,7 +4749,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 193874215}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TARGETS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4840,7 +4844,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 62.00004, y: 286.1}
+  m_AnchoredPosition: {x: 62.00004, y: 206.4}
   m_SizeDelta: {x: 160, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &203920074
@@ -5962,7 +5966,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 236962756}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6029,7 +6033,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 244417273}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AvatarPlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6194,7 +6198,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 249221882}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TARGETS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6263,7 +6267,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 262880842}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6294,7 +6298,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 274641104}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverPieIzq_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6325,7 +6329,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 278459633}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Astronauta3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6464,7 +6468,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 282639455}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6647,7 +6651,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 287329366}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverManoIzq_Target
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
@@ -6678,7 +6682,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 288614873}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6978,7 +6982,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 306707544}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7151,7 +7155,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &314824023
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7222,7 +7226,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 317664727}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7523,7 +7527,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 344681807}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7557,7 +7561,7 @@ GameObject:
   m_Component:
   - component: {fileID: 353080169}
   - component: {fileID: 353080170}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverPieDer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7755,7 +7759,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 357668684}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SOLVERS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7790,7 +7794,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 359071773}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7946,7 +7950,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 378433961}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EffectorPieIzq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8384,7 +8388,7 @@ GameObject:
   m_Component:
   - component: {fileID: 394212911}
   - component: {fileID: 394212912}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverManoIzq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8447,7 +8451,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 400145991}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8613,7 +8617,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 413520613}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8647,7 +8651,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 414639253}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8680,7 +8684,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 421592042}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8711,7 +8715,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 427764358}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverPieDer_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9008,7 +9012,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 448344365}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EffectorPieIzq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9041,7 +9045,7 @@ GameObject:
   - component: {fileID: 450265024}
   - component: {fileID: 450265026}
   - component: {fileID: 450265025}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pieDer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9539,7 +9543,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 458419596}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9591,6 +9595,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1.11111, z: 1.111111}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 709549243}
   - {fileID: 814262838}
   - {fileID: 2037942660}
   - {fileID: 1743665662}
@@ -9648,7 +9653,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 462835880}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: sprites
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9684,7 +9689,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 462980880}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9717,7 +9722,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 466611956}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: sprites
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9886,7 +9891,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 470145746}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10053,7 +10058,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 491761274}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Astronauta1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10231,7 +10236,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 502006193}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10314,7 +10319,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 511014056}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10346,7 +10351,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 512107091}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10379,7 +10384,7 @@ GameObject:
   - component: {fileID: 516227090}
   - component: {fileID: 516227092}
   - component: {fileID: 516227091}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ojosA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10865,7 +10870,7 @@ GameObject:
   - component: {fileID: 532930733}
   - component: {fileID: 532930735}
   - component: {fileID: 532930734}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tronco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10977,7 +10982,7 @@ GameObject:
   - component: {fileID: 535383275}
   - component: {fileID: 535383277}
   - component: {fileID: 535383276}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: manoIzq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11083,7 +11088,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 540861728}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverManoDer_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11116,7 +11121,7 @@ GameObject:
   - component: {fileID: 541777943}
   - component: {fileID: 541777945}
   - component: {fileID: 541777944}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: avatar_Play
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11199,7 +11204,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 546118613}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SOLVERS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11234,7 +11239,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 550497904}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11265,7 +11270,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 554105114}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11430,7 +11435,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 569430315}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11552,7 +11557,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 577964640}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EffectorPieDer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11962,7 +11967,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 598752600}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EffectorManoDer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11993,7 +11998,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 603262252}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TARGETS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12248,7 +12253,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 605942320}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EffectorManoDer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12279,7 +12284,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 623633012}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverManoDer_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12312,7 +12317,7 @@ GameObject:
   - component: {fileID: 625707467}
   - component: {fileID: 625707469}
   - component: {fileID: 625707468}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pieIzq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12654,7 +12659,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 640928506}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12865,7 +12870,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 656908009}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12963,7 +12968,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 661259783}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EffectorPieIzq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12994,7 +12999,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 662533226}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13196,7 +13201,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 674893233}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13366,7 +13371,7 @@ GameObject:
   - component: {fileID: 678397784}
   - component: {fileID: 678397786}
   - component: {fileID: 678397785}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ojosC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14523,7 +14528,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &701710182
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14536,6 +14541,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 885692963}
   - {fileID: 67232247}
   - {fileID: 603676222}
   - {fileID: 189199275}
@@ -14721,6 +14727,78 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 707219756}
   m_CullTransparentMesh: 1
+--- !u!1 &709549242
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 709549243}
+  - component: {fileID: 709549245}
+  - component: {fileID: 709549244}
+  m_Layer: 5
+  m_Name: Avatar_RT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &709549243
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709549242}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 9.46, y: 9.46, z: 9.46}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 462488041}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -473.57, y: -41.65}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &709549244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709549242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 8400000, guid: 0b1f0889fc00326429fab9d61d70a4fc, type: 2}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &709549245
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709549242}
+  m_CullTransparentMesh: 1
 --- !u!1 &710653815
 GameObject:
   m_ObjectHideFlags: 0
@@ -14731,7 +14809,7 @@ GameObject:
   m_Component:
   - component: {fileID: 710653816}
   - component: {fileID: 710653817}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverManoIzq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14794,7 +14872,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 711470696}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverPieDer_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15199,7 +15277,7 @@ GameObject:
   m_Component:
   - component: {fileID: 732403820}
   - component: {fileID: 732403821}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverPieIzq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15270,7 +15348,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &733058035
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15337,7 +15415,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 733157963}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15369,7 +15447,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 735182565}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15640,7 +15718,7 @@ GameObject:
   - component: {fileID: 741820433}
   - component: {fileID: 741820435}
   - component: {fileID: 741820434}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: avatarAstronauta_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16111,7 +16189,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 764179226}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EffectorManoDer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16142,7 +16220,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 767004422}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16340,7 +16418,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 774114809}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverPieDer_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16416,7 +16494,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 775280478}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16452,7 +16530,7 @@ GameObject:
   - component: {fileID: 776199923}
   - component: {fileID: 776199925}
   - component: {fileID: 776199924}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pieIzq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16558,7 +16636,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 779414849}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16856,7 +16934,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 801577449}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: sprites
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17226,7 +17304,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &814262838
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17293,7 +17371,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 814566349}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17475,7 +17553,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &832709479
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17510,7 +17588,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 837425143}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17543,7 +17621,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 849375640}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EffectorManoIzq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17829,7 +17907,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 859659534}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18264,7 +18342,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 885411778}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TARGETS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18290,6 +18368,78 @@ Transform:
   - {fileID: 64116179}
   m_Father: {fileID: 2046268986}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &885692962
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 885692963}
+  - component: {fileID: 885692965}
+  - component: {fileID: 885692964}
+  m_Layer: 5
+  m_Name: Avatar_RT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &885692963
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885692962}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 9.4, y: 9.4, z: 9.4}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 701710182}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -520, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &885692964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885692962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 8400000, guid: 0b1f0889fc00326429fab9d61d70a4fc, type: 2}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &885692965
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885692962}
+  m_CullTransparentMesh: 1
 --- !u!1 &886160000
 GameObject:
   m_ObjectHideFlags: 0
@@ -18700,7 +18850,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 897628229}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18731,7 +18881,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 899784739}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverManoIzq_Target
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
@@ -18899,7 +19049,7 @@ GameObject:
   - component: {fileID: 918637133}
   - component: {fileID: 918637135}
   - component: {fileID: 918637134}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: manoIzq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19374,7 +19524,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 934897796}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19410,7 +19560,7 @@ GameObject:
   - component: {fileID: 935887144}
   - component: {fileID: 935887146}
   - component: {fileID: 935887145}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tronco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19924,7 +20074,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 955657135}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19956,7 +20106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 959592200}
   - component: {fileID: 959592201}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverManoIzq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20668,7 +20818,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 978644551}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EffectorManoDer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20806,7 +20956,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 990355766}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EffectorPieIzq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20837,7 +20987,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 990686767}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20870,7 +21020,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 990819583}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20903,7 +21053,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 991878186}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21267,7 +21417,7 @@ GameObject:
   - component: {fileID: 1018800616}
   - component: {fileID: 1018800618}
   - component: {fileID: 1018800617}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: manoDer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21373,7 +21523,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1028672232}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21405,7 +21555,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1030124769}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EffectorManoIzq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21436,7 +21586,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1039501005}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SOLVERS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21904,7 +22054,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1050113769}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22542,7 +22692,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1072025133}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverManoDer_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22710,7 +22860,7 @@ GameObject:
   - component: {fileID: 1083499308}
   - component: {fileID: 1083499310}
   - component: {fileID: 1083499309}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: manoDer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22951,7 +23101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1093022413}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23207,7 +23357,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1120112242}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EffectorPieDer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23451,7 +23601,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1148363918}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24207,7 +24357,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1181637118}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverPieDer_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24373,7 +24523,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1187513846}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverManoDer_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24757,7 +24907,7 @@ GameObject:
   - component: {fileID: 1220764616}
   - component: {fileID: 1220764618}
   - component: {fileID: 1220764617}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ojosC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24870,7 +25020,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1224805926
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25040,7 +25190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1247343544}
   - component: {fileID: 1247343545}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverManoDer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25135,7 +25285,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1257927531}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25189,7 +25339,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1263419650}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25256,7 +25406,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1277924908}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Astronauta2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25557,7 +25707,7 @@ GameObject:
   - component: {fileID: 1303691082}
   - component: {fileID: 1303691084}
   - component: {fileID: 1303691083}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pieDer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25665,7 +25815,7 @@ GameObject:
   - component: {fileID: 1308371712}
   - component: {fileID: 1308371714}
   - component: {fileID: 1308371713}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pieIzq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25969,7 +26119,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1318229548}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26002,7 +26152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1322398531}
   - component: {fileID: 1322398532}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverPieIzq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26099,7 +26249,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1326267092}
   - component: {fileID: 1326267093}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverManoIzq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26297,7 +26447,7 @@ GameObject:
   - component: {fileID: 1329693612}
   - component: {fileID: 1329693614}
   - component: {fileID: 1329693613}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ojosC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26402,7 +26552,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1333953346}
   - component: {fileID: 1333953347}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverPieDer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26467,7 +26617,7 @@ GameObject:
   - component: {fileID: 1336309074}
   - component: {fileID: 1336309076}
   - component: {fileID: 1336309075}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pieIzq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27021,7 +27171,7 @@ GameObject:
   - component: {fileID: 1343805070}
   - component: {fileID: 1343805072}
   - component: {fileID: 1343805071}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ojosA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27126,7 +27276,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1349887523}
   - component: {fileID: 1349887524}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverManoIzq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27324,7 +27474,7 @@ GameObject:
   - component: {fileID: 1369415998}
   - component: {fileID: 1369416000}
   - component: {fileID: 1369415999}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: avatar_hora
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27413,7 +27563,7 @@ GameObject:
   - component: {fileID: 1371987002}
   - component: {fileID: 1371987004}
   - component: {fileID: 1371987003}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pieIzq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27788,7 +27938,7 @@ GameObject:
   - component: {fileID: 1388075899}
   - component: {fileID: 1388075901}
   - component: {fileID: 1388075900}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: manoIzq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28789,7 +28939,7 @@ GameObject:
   - component: {fileID: 1438040074}
   - component: {fileID: 1438040076}
   - component: {fileID: 1438040075}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ojosA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28893,7 +29043,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1438457705}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AvatarHora
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29674,7 +29824,7 @@ GameObject:
   - component: {fileID: 1460309816}
   - component: {fileID: 1460309818}
   - component: {fileID: 1460309817}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: manoDer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31004,7 +31154,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1503466110}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31037,7 +31187,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1505782819}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverPieIzq_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31580,7 +31730,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1521116731}
   - component: {fileID: 1521116732}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverPieDer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31645,7 +31795,7 @@ GameObject:
   - component: {fileID: 1522159097}
   - component: {fileID: 1522159099}
   - component: {fileID: 1522159098}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ojosC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31784,7 +31934,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1528259099}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31916,7 +32066,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1539857974}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31950,7 +32100,7 @@ GameObject:
   - component: {fileID: 1543073507}
   - component: {fileID: 1543073509}
   - component: {fileID: 1543073508}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ojosC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32056,7 +32206,7 @@ GameObject:
   - component: {fileID: 1544440133}
   - component: {fileID: 1544440135}
   - component: {fileID: 1544440134}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pieDer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32237,7 +32387,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1561412765}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32296,7 +32446,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 62.00004, y: 128}
+  m_AnchoredPosition: {x: 62.00004, y: 48.3}
   m_SizeDelta: {x: 160, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1561564534
@@ -32654,7 +32804,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1581718035}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EffectorManoDer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32819,7 +32969,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1590582142}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33120,7 +33270,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1597391913}
   - component: {fileID: 1597391914}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverPieIzq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33185,7 +33335,7 @@ GameObject:
   - component: {fileID: 1601057653}
   - component: {fileID: 1601057655}
   - component: {fileID: 1601057654}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: manoIzq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33371,7 +33521,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1618546617}
   - component: {fileID: 1618546618}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverManoDer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33434,7 +33584,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1620990374}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33467,7 +33617,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1622045055}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33566,6 +33716,78 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1632798297}
   m_CullTransparentMesh: 1
+--- !u!1 &1632867097
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1632867098}
+  - component: {fileID: 1632867100}
+  - component: {fileID: 1632867099}
+  m_Layer: 5
+  m_Name: Avatar_RT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1632867098
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632867097}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 9.000001, y: 9.000001, z: 9.000001}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1727695966}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -629.4, y: -37.71}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1632867099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632867097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 8400000, guid: 0b1f0889fc00326429fab9d61d70a4fc, type: 2}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1632867100
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632867097}
+  m_CullTransparentMesh: 1
 --- !u!1 &1633284463
 GameObject:
   m_ObjectHideFlags: 0
@@ -33575,7 +33797,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1633284464}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverManoIzq_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34212,7 +34434,7 @@ GameObject:
   - component: {fileID: 1662264248}
   - component: {fileID: 1662264250}
   - component: {fileID: 1662264249}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ojosA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34573,7 +34795,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1667827964}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34608,7 +34830,7 @@ GameObject:
   - component: {fileID: 1671016124}
   - component: {fileID: 1671016126}
   - component: {fileID: 1671016125}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tronco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34826,7 +35048,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1679542733}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EffectorPieDer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34857,7 +35079,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1681544375}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34888,7 +35110,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1681993355}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34942,7 +35164,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1688791779}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34973,7 +35195,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1691597946}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SOLVERS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35317,7 +35539,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1723379721}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35351,7 +35573,7 @@ GameObject:
   - component: {fileID: 1723876246}
   - component: {fileID: 1723876248}
   - component: {fileID: 1723876247}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: manoIzq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35575,7 +35797,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1727075468}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SOLVERS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35631,6 +35853,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1632867098}
   - {fileID: 733058035}
   - {fileID: 2110603238}
   - {fileID: 1596780133}
@@ -35688,7 +35911,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1731088221}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35721,7 +35944,7 @@ GameObject:
   - component: {fileID: 1737144275}
   - component: {fileID: 1737144277}
   - component: {fileID: 1737144276}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pieDer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35960,7 +36183,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1746548849}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35995,7 +36218,7 @@ GameObject:
   - component: {fileID: 1752168073}
   - component: {fileID: 1752168075}
   - component: {fileID: 1752168074}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pieDer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36702,7 +36925,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1816591007}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverManoDer_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36733,7 +36956,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1823386554}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EffectorPieIzq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36899,7 +37122,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1833012592}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37096,7 +37319,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1839875564}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37128,7 +37351,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1844758683}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EffectorManoIzq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37293,7 +37516,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1849828333}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverManoIzq_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37460,7 +37683,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1855056550}
   - component: {fileID: 1855056551}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverPieIzq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37523,7 +37746,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1855276501}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EffectorManoIzq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38373,7 +38596,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1891085253}
   - component: {fileID: 1891085254}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverManoDer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38758,7 +38981,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1897626885}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38973,7 +39196,7 @@ GameObject:
   - component: {fileID: 1905009268}
   - component: {fileID: 1905009270}
   - component: {fileID: 1905009269}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tronco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39618,7 +39841,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1934240237}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EffectorPieDer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39852,7 +40075,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1945007317}
   - component: {fileID: 1945007318}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverManoDer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39946,7 +40169,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1949090506}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40482,7 +40705,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1969242660}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40648,7 +40871,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1982393806}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EffectorPieDer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42344,7 +42567,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1992347529}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42576,7 +42799,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2026596380}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43234,7 +43457,7 @@ GameObject:
   - component: {fileID: 2046268986}
   - component: {fileID: 2046268988}
   - component: {fileID: 2046268987}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: avatarAstronauta_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43317,7 +43540,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2051488839}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TARGETS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43352,7 +43575,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2052786088}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43431,7 +43654,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2055937136}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44380,7 +44603,7 @@ GameObject:
   - component: {fileID: 2086042625}
   - component: {fileID: 2086042627}
   - component: {fileID: 2086042626}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tronco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44492,7 +44715,7 @@ GameObject:
   - component: {fileID: 2096915782}
   - component: {fileID: 2096915784}
   - component: {fileID: 2096915783}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: avatarAstronauta_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44576,7 +44799,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2100900613}
   - component: {fileID: 2100900614}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverManoDer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44639,7 +44862,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2101151218}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44781,7 +45004,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2107898805}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolverPieIzq_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44812,7 +45035,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2109305717}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45196,7 +45419,7 @@ GameObject:
   - component: {fileID: 2128374063}
   - component: {fileID: 2128374065}
   - component: {fileID: 2128374064}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ojosA
   m_TagString: Untagged
   m_Icon: {fileID: 0}

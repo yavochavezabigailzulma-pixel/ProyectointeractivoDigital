@@ -3,13 +3,19 @@ using UnityEngine;
 
 public class NavegadorCuerpos : MonoBehaviour
 {
+    [Header("Animaciones")]
+    public GameObject AnimAlien;
+    public GameObject AnimAstronaut1;
+    public GameObject AnimAstronaut2;
+    public GameObject AnimAstronaut3;
+
     public GameObject canvas;
     //public static NavegadorCuerpos Instance;
     public Animator animator;
     public GameObject pantallaMenu;
     public GameObject pantallaContenido;
     public int infoID;
-    public GameObject[] paneles; // arrastra los 6 paneles en orden
+    public GameObject[] paneles;
     //public Sprite[] infoBG;
     //void Awake() => Instance = this;
 
@@ -77,20 +83,24 @@ public class NavegadorCuerpos : MonoBehaviour
                 //panelInfo.GetComponent<UnityEngine.UI.Image>().sprite = infoBG[i];
         }
 
+        AnimAlien.SetActive(false);
         // Verifica si debe mostrar bienvenida
         if (index == 0 /*&& MenuManager.Instance.primeraVezEstrellas*/)
         {
             bienvenidaEstrellas.SetActive(true);
+            AnimAstronaut1.SetActive(true);
             //MenuManager.Instance.primeraVezEstrellas = false;
         }
         else if (index == 1/* && MenuManager.Instance.primeraVezGalaxias*/)
         {
             bienvenidaGalaxias.SetActive(true);
+            AnimAstronaut2.SetActive(true);
             //MenuManager.Instance.primeraVezGalaxias = false;
         }
         else if (index == 5 /*&& MenuManager.Instance.primeraVezPlanetas*/)
         {
             bienvenidaPlanetas.SetActive(true);
+            AnimAstronaut3.SetActive(true);
             //MenuManager.Instance.primeraVezPlanetas = false;
         }
     }
@@ -99,6 +109,10 @@ public class NavegadorCuerpos : MonoBehaviour
     {
         pantallaContenido.SetActive(false);
         pantallaMenu.SetActive(true);
+        AnimAlien.SetActive(true);
+        AnimAstronaut1.SetActive(false);
+        AnimAstronaut2.SetActive(false);
+        AnimAstronaut3.SetActive(false);
     }
     public void Continuar()
     {

@@ -8,6 +8,12 @@ public class HandDragHandler : MonoBehaviour,
     private Camera cam;
     private Transform clockCenter;
 
+    [Header("Tutorial de swipe")]
+    [Tooltip("Se completa la primera vez que el usuario logra cambiar el ítem central.")]
+    [SerializeField] private HintSequencer hintSequencerMenu;
+    [SerializeField] private GameObject hintSwipeEsperado;
+    private bool hintYaNotificado = false;
+
     void Start()
     {
         cam = Camera.main;
@@ -28,6 +34,23 @@ public class HandDragHandler : MonoBehaviour,
             worldPos.x - clockCenter.position.x,
             worldPos.y - clockCenter.position.y
         );
+
+        if (!hintYaNotificado)
+        {
+            hintYaNotificado = true;
+
+            if (hintSequencerMenu != null)
+            {
+                bool completado = hintSequencerMenu.CompletarPaso(hintSwipeEsperado);
+                Debug.Log(completado
+                    ? $"[Hint] Paso completado correctamente en '{hintSequencerMenu.name}'."
+                    : $"[Hint] CompletarPaso() NO tuvo efecto en '{hintSequencerMenu.name}' (¿secuencia detenida, ya avanzada, o sin hint activo?)");
+            }
+            else
+            {
+                Debug.LogWarning("[Hint] hintSequencerMenu no está asignado en el Inspector.", this);
+            }
+        }
 
         float angle = Mathf.Atan2(dir.x, dir.y) * Mathf.Rad2Deg;
         if (angle < 0f) angle += 360f;
