@@ -189,6 +189,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 172872
+--- !u!114 &-6260235249381553701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/CerrarPanel
+  m_EditorClassIdentifier: 
+  Path: event:/UI/CerrarPanel
+  Guid:
+    Data1: 1518902835
+    Data2: 1263489952
+    Data3: 1784330123
+    Data4: -70379221
+  Banks:
+  - {fileID: -4664911101318860837}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 595
 --- !u!114 &-4664911101318860837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,7 +231,7 @@ MonoBehaviour:
   Path: Assets/BancoSonidos/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 639144007714514628
+  lastModified: 639207791300067416
   FileSizes: []
   Exists: 1
 --- !u!114 &-4132588466075913682
@@ -234,6 +261,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-3861345821830572870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/AbrirPanel
+  m_EditorClassIdentifier: 
+  Path: event:/UI/AbrirPanel
+  Guid:
+    Data1: 1197013609
+    Data2: 1313812869
+    Data3: 2040591293
+    Data4: 523504662
+  Banks:
+  - {fileID: -4664911101318860837}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1200
 --- !u!114 &-2888571023639358299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -413,13 +467,15 @@ MonoBehaviour:
   - {fileID: 3214330793535716139}
   - {fileID: -8447895405433424644}
   - {fileID: 8021385624828605186}
+  - {fileID: -3861345821830572870}
+  - {fileID: -6260235249381553701}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4725744668468142691}
   StringsBanks:
   - {fileID: 4536964855871900339}
   cacheVersion: 131859
-  cacheTime: 639207709972427467
+  cacheTime: 639207791300067416
   SerializableEventsDict:
   - key: event:/UI/GiroMenu
     index: 0
@@ -473,6 +529,10 @@ MonoBehaviour:
     index: 24
   - key: event:/Music/InicioOff
     index: 25
+  - key: event:/UI/AbrirPanel
+    index: 26
+  - key: event:/UI/CerrarPanel
+    index: 27
 --- !u!114 &1620432113353164411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -596,10 +656,10 @@ MonoBehaviour:
   Path: Assets/BancoSonidos/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639207709964273757
+  lastModified: 639207789211137758
   FileSizes:
   - Name: 
-    Value: 2070
+    Value: 2164
   Exists: 1
 --- !u!114 &4545387245336529628
 MonoBehaviour:
@@ -670,7 +730,7 @@ MonoBehaviour:
   Path: Assets/BancoSonidos/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639207709964238628
+  lastModified: 639207789211112622
   FileSizes: []
   Exists: 1
 --- !u!114 &4867875703767535902

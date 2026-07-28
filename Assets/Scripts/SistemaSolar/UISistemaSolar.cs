@@ -31,6 +31,8 @@ public class UISistemaSolar : MonoBehaviour
     public Animator animator;
 
     public EventReference clicVolver;
+    public EventReference abrirDeslizable;
+    public EventReference cerrarDeslizable;
 
     public static UISistemaSolar Instance;
 
@@ -63,6 +65,7 @@ public class UISistemaSolar : MonoBehaviour
         planetaActual = planeta;
         panelInfoPlanetas.SetActive(true);
 
+        AudioManager.Instance.Play(abrirDeslizable);
         // Avisa a quien esté escuchando (por ejemplo, el SeleccionPlaneta activo)
         // para que corte cualquier hint de selección que siguiera en curso.
         AlMostrarInfo?.Invoke();
@@ -204,7 +207,7 @@ public class UISistemaSolar : MonoBehaviour
 
         hintSequenceAlCerrarPanel?.IniciarSecuencia();
 
-        AudioManager.Instance.Play(clicVolver);
+        AudioManager.Instance.Play(cerrarDeslizable);
     }
 
     /// <summary>
