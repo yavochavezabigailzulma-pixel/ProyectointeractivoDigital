@@ -193,11 +193,6 @@ public class UISistemaSolar : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Cierra el panel de info manualmente (botón "volver"), mientras el
-    /// planeta sigue seleccionado. Inicia la secuencia de "cómo cerrar"
-    /// desde cero — usar solo aquí, nunca al abandonar la selección.
-    /// </summary>
     public void OcultarPopupInfo()
     {
         animator.SetBool("InfoOn", false);
@@ -210,11 +205,6 @@ public class UISistemaSolar : MonoBehaviour
         AudioManager.Instance.Play(cerrarDeslizable);
     }
 
-    /// <summary>
-    /// Cierra el panel de info SIN iniciar ningún hint nuevo, y corta
-    /// cualquier hint de "cómo cerrar" que estuviera en curso.
-    /// Usar cuando el usuario abandona la selección del planeta por completo.
-    /// </summary>
     public void CerrarPopupInfoSinHint()
     {
         animator.SetBool("InfoOn", false);
@@ -227,9 +217,6 @@ public class UISistemaSolar : MonoBehaviour
         if (hintSequenceAlCerrarPanel != null)
         {
             bool completado = hintSequenceAlCerrarPanel.CompletarPasoActual();
-            Debug.Log(completado
-                ? $"[Hint] Paso completado correctamente en '{hintSequenceAlCerrarPanel.name}' (al cerrar panel sin hint)."
-                : $"[Hint] CompletarPasoActual() NO tuvo efecto en '{hintSequenceAlCerrarPanel.name}' (¿ya estaba detenida o sin hint activo?)");
         }
     }
 
