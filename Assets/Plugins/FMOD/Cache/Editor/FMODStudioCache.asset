@@ -231,7 +231,7 @@ MonoBehaviour:
   Path: Assets/BancoSonidos/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 639208554601693842
+  lastModified: 639207791300067416
   FileSizes: []
   Exists: 1
 --- !u!114 &-4132588466075913682
@@ -396,6 +396,24 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-1123163332926776855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/BancoSonidos/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 639208645804173087
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-564108664653345957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -440,6 +458,7 @@ MonoBehaviour:
   - {fileID: 4725744668468142691}
   - {fileID: 5375049294219994478}
   - {fileID: -4664911101318860837}
+  - {fileID: -1123163332926776855}
   EditorEvents:
   - {fileID: -1175276518836623753}
   - {fileID: 4545387245336529628}
@@ -469,13 +488,14 @@ MonoBehaviour:
   - {fileID: 8021385624828605186}
   - {fileID: -3861345821830572870}
   - {fileID: -6260235249381553701}
+  - {fileID: 6631704374253280804}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4725744668468142691}
   StringsBanks:
   - {fileID: 4536964855871900339}
   cacheVersion: 131859
-  cacheTime: 639208554601693842
+  cacheTime: 639208645804173087
   SerializableEventsDict:
   - key: event:/UI/GiroMenu
     index: 0
@@ -656,10 +676,10 @@ MonoBehaviour:
   Path: Assets/BancoSonidos/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639208554601539780
+  lastModified: 639208645804147663
   FileSizes:
   - Name: 
-    Value: 2164
+    Value: 2242
   Exists: 1
 --- !u!114 &4545387245336529628
 MonoBehaviour:
@@ -730,7 +750,7 @@ MonoBehaviour:
   Path: Assets/BancoSonidos/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639207747221341801
+  lastModified: 639208640723305478
   FileSizes: []
   Exists: 1
 --- !u!114 &4867875703767535902
@@ -802,7 +822,7 @@ MonoBehaviour:
   Path: Assets/BancoSonidos/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639207747225281087
+  lastModified: 639207709972427467
   FileSizes: []
   Exists: 1
 --- !u!114 &5896967335489390386
@@ -859,6 +879,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 62641
+--- !u!114 &6631704374253280804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/GiroTierra
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/GiroTierra
+  Guid:
+    Data1: 709737783
+    Data2: 1181340396
+    Data3: 892150681
+    Data4: -1900713028
+  Banks:
+  - {fileID: -1123163332926776855}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 80
 --- !u!114 &7072840898729681994
 MonoBehaviour:
   m_ObjectHideFlags: 0
