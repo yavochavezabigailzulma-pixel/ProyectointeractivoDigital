@@ -1460,7 +1460,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &147547062
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20031,6 +20031,34 @@ MonoBehaviour:
       Data3: -295096954
       Data4: -1870611664
     Path: event:/Music/Estaciones/Invierno
+  clicSelect:
+    Guid:
+      Data1: 563518035
+      Data2: 1210902707
+      Data3: -943627087
+      Data4: -1136224814
+    Path: event:/UI/ClicSelect
+  clicVolver:
+    Guid:
+      Data1: -541596362
+      Data2: 1080860997
+      Data3: -1174453631
+      Data4: -1774216874
+    Path: event:/UI/ClicVolver
+  abrirPanelInfo:
+    Guid:
+      Data1: 1197013609
+      Data2: 1313812869
+      Data3: 2040591293
+      Data4: 523504662
+    Path: event:/UI/AbrirPanel
+  cerrarPanelInfo:
+    Guid:
+      Data1: 1518902835
+      Data2: 1263489952
+      Data3: 1784330123
+      Data4: -70379221
+    Path: event:/UI/CerrarPanel
   musicaGeneral:
     Guid:
       Data1: -1119179164

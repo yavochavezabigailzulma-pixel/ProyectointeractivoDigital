@@ -123,6 +123,7 @@ public class NavegadorCuerpos : MonoBehaviour
     }
     public void Continuar()
     {
+        AudioManager.Instance.Play(selectBoton);
         if (bienvenidaEstrellas)
             bienvenidaEstrellas.SetActive(false);
         if (bienvenidaGalaxias)

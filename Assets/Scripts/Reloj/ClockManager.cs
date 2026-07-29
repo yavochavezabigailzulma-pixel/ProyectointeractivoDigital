@@ -17,6 +17,9 @@ public class ClockManager : MonoBehaviour
     public EventReference musicaReloj;
     EventInstance musicaRelojInstance;
 
+    public EventReference clicSelect;
+    public EventReference clicMatraca;
+
     void Awake()
     {
         Instance = this;
@@ -65,12 +68,16 @@ public class ClockManager : MonoBehaviour
 
     public void AddHours(int delta)
     {
+
+        AudioManager.Instance.Play(clicSelect);
         int h = (hours + delta + 24) % 24;
         SetTimeFromHour(h, minutes);
     }
 
     public void AddMinutes(int delta)
     {
+
+        AudioManager.Instance.Play(clicSelect);
         int m = minutes + delta;
         int h = hours;
         if (m >= 60) { m -= 60; h = (h + 1) % 24; }
@@ -81,5 +88,7 @@ public class ClockManager : MonoBehaviour
     {
         if (bienvenidaPanel)
             bienvenidaPanel.SetActive(false);
+
+        AudioManager.Instance.Play(clicSelect);
     }
 }

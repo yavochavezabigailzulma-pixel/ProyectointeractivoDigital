@@ -6707,6 +6707,20 @@ MonoBehaviour:
   - {fileID: 245333137}
   - {fileID: 418461927}
   textoInfo: {fileID: 0}
+  clicVolver:
+    Guid:
+      Data1: -541596362
+      Data2: 1080860997
+      Data3: -1174453631
+      Data4: -1774216874
+    Path: event:/UI/ClicVolver
+  clicSelect:
+    Guid:
+      Data1: 563518035
+      Data2: 1210902707
+      Data3: -943627087
+      Data4: -1136224814
+    Path: event:/UI/ClicSelect
 --- !u!64 &534559026
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12700,6 +12714,20 @@ MonoBehaviour:
   - {fileID: 1543247566}
   - {fileID: 1908096080}
   textoInfo: {fileID: 1352823122}
+  clicVolver:
+    Guid:
+      Data1: -541596362
+      Data2: 1080860997
+      Data3: -1174453631
+      Data4: -1774216874
+    Path: event:/UI/ClicVolver
+  clicSelect:
+    Guid:
+      Data1: 563518035
+      Data2: 1210902707
+      Data3: -943627087
+      Data4: -1136224814
+    Path: event:/UI/ClicSelect
 --- !u!1 &699744375
 GameObject:
   m_ObjectHideFlags: 0
@@ -13123,6 +13151,20 @@ MonoBehaviour:
   - {fileID: 485297300}
   - {fileID: 25258370}
   textoInfo: {fileID: 0}
+  clicVolver:
+    Guid:
+      Data1: -541596362
+      Data2: 1080860997
+      Data3: -1174453631
+      Data4: -1774216874
+    Path: event:/UI/ClicVolver
+  clicSelect:
+    Guid:
+      Data1: 563518035
+      Data2: 1210902707
+      Data3: -943627087
+      Data4: -1136224814
+    Path: event:/UI/ClicSelect
 --- !u!64 &720111666
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -20528,7 +20570,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 514cc89b4efea7a47b09d650cdc596d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clicMatraca:
+    Guid:
+      Data1: 709737783
+      Data2: 1181340396
+      Data3: 892150681
+      Data4: -1900713028
+    Path: event:/SFX/GiroTierra
   sensibilidad: 0.3
+  gradosPorClic: 35
 --- !u!114 &1175537237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20605,6 +20655,13 @@ MonoBehaviour:
       Path: event:/Music/Continentes/Antartida
   toleranciaColor: 0.1
   umbralArrastre: 20
+  selectBoton:
+    Guid:
+      Data1: 563518035
+      Data2: 1210902707
+      Data3: -943627087
+      Data4: -1136224814
+    Path: event:/UI/ClicSelect
 --- !u!64 &1175537238
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -28650,6 +28707,20 @@ MonoBehaviour:
   - {fileID: 206328144}
   - {fileID: 1133405478}
   textoInfo: {fileID: 0}
+  clicVolver:
+    Guid:
+      Data1: -541596362
+      Data2: 1080860997
+      Data3: -1174453631
+      Data4: -1774216874
+    Path: event:/UI/ClicVolver
+  clicSelect:
+    Guid:
+      Data1: 563518035
+      Data2: 1210902707
+      Data3: -943627087
+      Data4: -1136224814
+    Path: event:/UI/ClicSelect
 --- !u!1 &1713277371
 GameObject:
   m_ObjectHideFlags: 0
@@ -29221,6 +29292,20 @@ MonoBehaviour:
   - {fileID: 1410246423}
   - {fileID: 1199553307}
   textoInfo: {fileID: 0}
+  clicVolver:
+    Guid:
+      Data1: -541596362
+      Data2: 1080860997
+      Data3: -1174453631
+      Data4: -1774216874
+    Path: event:/UI/ClicVolver
+  clicSelect:
+    Guid:
+      Data1: 563518035
+      Data2: 1210902707
+      Data3: -943627087
+      Data4: -1136224814
+    Path: event:/UI/ClicSelect
 --- !u!64 &1746581986
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -31227,6 +31312,20 @@ MonoBehaviour:
   - {fileID: 794351608}
   - {fileID: 1809921808}
   textoInfo: {fileID: 0}
+  clicVolver:
+    Guid:
+      Data1: -541596362
+      Data2: 1080860997
+      Data3: -1174453631
+      Data4: -1774216874
+    Path: event:/UI/ClicVolver
+  clicSelect:
+    Guid:
+      Data1: 563518035
+      Data2: 1210902707
+      Data3: -943627087
+      Data4: -1136224814
+    Path: event:/UI/ClicSelect
 --- !u!64 &1857412019
 MeshCollider:
   m_ObjectHideFlags: 0

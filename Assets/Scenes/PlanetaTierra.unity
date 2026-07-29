@@ -239,6 +239,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelInfo: {fileID: 234917884}
   textoInfo: {fileID: 1758872338}
+  abrirDeslizable:
+    Guid:
+      Data1: 1197013609
+      Data2: 1313812869
+      Data3: 2040591293
+      Data4: 523504662
+    Path: event:/UI/AbrirPanel
+  cerrarDeslizable:
+    Guid:
+      Data1: 1518902835
+      Data2: 1263489952
+      Data3: 1784330123
+      Data4: -70379221
+    Path: event:/UI/CerrarPanel
 --- !u!1 &234917884
 GameObject:
   m_ObjectHideFlags: 0
@@ -1692,9 +1706,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ca665e9e845e8346b50b5171eebed3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clicMatraca:
+    Guid:
+      Data1: 709737783
+      Data2: 1181340396
+      Data3: 892150681
+      Data4: -1900713028
+    Path: event:/SFX/GiroTierra
+  clicSelect:
+    Guid:
+      Data1: 563518035
+      Data2: 1210902707
+      Data3: -943627087
+      Data4: -1136224814
+    Path: event:/UI/ClicSelect
   sensibilidad: 0.3
   manual: 0
   btnText: {fileID: 1426376604}
+  gradosPorClic: 35
   toggleOn: {fileID: 21300000, guid: f7db335a0bd9e084dbf293d39f6dff0c, type: 3}
   toggleOff: {fileID: 21300000, guid: f2f9b58c2aa232b458085ac8c7874d8c, type: 3}
   buttonSwitch: {fileID: 405897358}

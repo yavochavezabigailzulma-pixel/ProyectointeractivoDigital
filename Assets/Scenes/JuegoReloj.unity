@@ -2414,6 +2414,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMinuteHand: 0
+  clicMatraca:
+    Guid:
+      Data1: -1950528052
+      Data2: 1255847135
+      Data3: 1934656957
+      Data4: -486088150
+    Path: event:/UI/GiroMenu
   hintSequencerMenu: {fileID: 947641506}
   hintSwipeEsperado: {fileID: 1015420918}
 --- !u!136 &562029823
@@ -6239,7 +6246,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1551179709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8773,6 +8780,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMinuteHand: 1
+  clicMatraca:
+    Guid:
+      Data1: -1950528052
+      Data2: 1255847135
+      Data3: 1934656957
+      Data4: -486088150
+    Path: event:/UI/GiroMenu
   hintSequencerMenu: {fileID: 947641506}
   hintSwipeEsperado: {fileID: 1015420918}
 --- !u!136 &2086843218
@@ -8853,6 +8867,20 @@ MonoBehaviour:
       Data3: -1532984447
       Data4: 1270741202
     Path: event:/Music/RelojMusic
+  clicSelect:
+    Guid:
+      Data1: 563518035
+      Data2: 1210902707
+      Data3: -943627087
+      Data4: -1136224814
+    Path: event:/UI/ClicSelect
+  clicMatraca:
+    Guid:
+      Data1: 709737783
+      Data2: 1181340396
+      Data3: 892150681
+      Data4: -1900713028
+    Path: event:/SFX/GiroTierra
 --- !u!114 &2120985243
 MonoBehaviour:
   m_ObjectHideFlags: 0

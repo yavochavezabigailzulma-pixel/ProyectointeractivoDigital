@@ -1,3 +1,4 @@
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
@@ -19,6 +20,8 @@ public class SeleccionarContinente : MonoBehaviour
     //public Image contentImage;
     public TMP_Text textoInfo;
 
+    public EventReference clicVolver;
+    public EventReference clicSelect;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +48,7 @@ public class SeleccionarContinente : MonoBehaviour
     }
     public void AbrirPanelContent(int catego)
     {
+        AudioManager.Instance.Play(clicSelect);
 
         panelContent.SetActive(true);
 
@@ -59,11 +63,14 @@ public class SeleccionarContinente : MonoBehaviour
     public void CerrarPanelMenu()
     {
         panelMenu.SetActive(false);
+
+        AudioManager.Instance.Play(clicVolver);
         //CollidersManager.Instance.SwitchInMap(true);
     }
     public void CerrarPanelContent()
     {
-        panelContent.SetActive(false); 
+        panelContent.SetActive(false);
+        AudioManager.Instance.Play(clicVolver);
         foreach (GameObject content in contents)
         {
             content.SetActive(false);

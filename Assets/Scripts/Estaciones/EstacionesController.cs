@@ -28,6 +28,11 @@ public class EstacionesController : MonoBehaviour
 
     private EventReference[] musicasEstaciones;
 
+    public EventReference clicSelect;
+    public EventReference clicVolver;
+    public EventReference abrirPanelInfo;
+    public EventReference cerrarPanelInfo;
+
     [Header("Sonido general (menú de selección de estaciones)")]
     public EventReference musicaGeneral;
     private FMOD.Studio.EventInstance musicaGeneralInstance;
@@ -95,6 +100,8 @@ public class EstacionesController : MonoBehaviour
 
     public void abrirFondo(int estacion)
     {
+        AudioManager.Instance.Play(clicSelect);
+
         if (estacion < 0 || estacion >= objetosFondo.Length)
             return;
 
@@ -136,6 +143,8 @@ public class EstacionesController : MonoBehaviour
 
     public void cerrarFondo()
     {
+        AudioManager.Instance.Play(clicVolver);
+
         panelFondo.SetActive(true);
         panelTransparente.SetActive(false);
 
@@ -252,6 +261,9 @@ public class EstacionesController : MonoBehaviour
         animatorInfo1.SetBool("InfoOn", true);
         botonAbrir1.SetActive(false);
         botonCerrar1.SetActive(true);
+
+        AudioManager.Instance.Play(abrirPanelInfo);
+
     }
 
     public void cerrarInfo1()
@@ -259,6 +271,7 @@ public class EstacionesController : MonoBehaviour
         animatorInfo1.SetBool("InfoOn", false);
         botonAbrir1.SetActive(true);
         botonCerrar1.SetActive(false);
+        AudioManager.Instance.Play(cerrarPanelInfo);
     }
 
     // ── Panel 2 ──────────────────────────────────────
@@ -269,6 +282,7 @@ public class EstacionesController : MonoBehaviour
         animatorInfo2.SetBool("InfoOn", true);
         botonAbrir2.SetActive(false);
         botonCerrar2.SetActive(true);
+        AudioManager.Instance.Play(abrirPanelInfo);
     }
 
     public void cerrarInfo2()
@@ -276,6 +290,7 @@ public class EstacionesController : MonoBehaviour
         animatorInfo2.SetBool("InfoOn", false);
         botonAbrir2.SetActive(true);
         botonCerrar2.SetActive(false);
+        AudioManager.Instance.Play(cerrarPanelInfo);
     }
 
     // ── Panel 3 ──────────────────────────────────────
@@ -286,6 +301,7 @@ public class EstacionesController : MonoBehaviour
         animatorInfo3.SetBool("InfoOn", true);
         botonAbrir3.SetActive(false);
         botonCerrar3.SetActive(true);
+        AudioManager.Instance.Play(abrirPanelInfo);
     }
 
     public void cerrarInfo3()
@@ -293,6 +309,7 @@ public class EstacionesController : MonoBehaviour
         animatorInfo3.SetBool("InfoOn", false);
         botonAbrir3.SetActive(true);
         botonCerrar3.SetActive(false);
+        AudioManager.Instance.Play(cerrarPanelInfo);
     }
 
     // ── Cerrar todo (botón Volver) ───────────────────

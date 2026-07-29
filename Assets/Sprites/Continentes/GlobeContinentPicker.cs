@@ -3,14 +3,6 @@ using TMPro;
 using System.Collections.Generic;
 using FMODUnity;
 
-/// <summary>
-/// Detecta qué continente se tocó sobre una esfera (globo), usando una textura
-/// "máscara" donde cada continente está pintado con un color sólido distinto
-/// (en vez de la textura visual real del mapa).
-///
-/// Requiere que el GameObject tenga un MeshCollider (no SphereCollider),
-/// porque solo MeshCollider devuelve coordenadas UV en el RaycastHit.
-/// </summary>
 [RequireComponent(typeof(MeshCollider))]
 public class GlobeContinentPicker : MonoBehaviour
 {
@@ -45,6 +37,7 @@ public class GlobeContinentPicker : MonoBehaviour
     private Vector2 posicionInicioToque;
     private bool siguiendoToque = false;
 
+    public EventReference selectBoton;
     void Awake()
     {
         camaraPrincipal = Camera.main;
@@ -126,6 +119,8 @@ public class GlobeContinentPicker : MonoBehaviour
 
                 // --- Música ---
                 AudioManager.Instance.PlayMusicaConFade(continente.musica);
+
+                AudioManager.Instance.Play(selectBoton);
             }
         }
 

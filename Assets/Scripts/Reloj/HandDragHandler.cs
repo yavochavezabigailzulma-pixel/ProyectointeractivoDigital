@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using FMODUnity;
 
 public class HandDragHandler : MonoBehaviour,
     IBeginDragHandler, IDragHandler, IEndDragHandler
@@ -7,6 +8,10 @@ public class HandDragHandler : MonoBehaviour,
     public bool isMinuteHand;
     private Camera cam;
     private Transform clockCenter;
+
+    [Header("Sonido")]
+    public EventReference clicMatraca;
+    private int? ultimoValor = null;
 
     [Header("Tutorial de swipe")]
     [Tooltip("Se completa la primera vez que el usuario logra cambiar el ítem central.")]
@@ -29,16 +34,13 @@ public class HandDragHandler : MonoBehaviour,
             Mathf.Abs(cam.transform.position.z - clockCenter.position.z))
         );
         worldPos.z = clockCenter.position.z;
-
         Vector2 dir = new Vector2(
             worldPos.x - clockCenter.position.x,
             worldPos.y - clockCenter.position.y
         );
-
         if (!hintYaNotificado)
         {
             hintYaNotificado = true;
-
             if (hintSequencerMenu != null)
             {
                 bool completado = hintSequencerMenu.CompletarPaso(hintSwipeEsperado);
@@ -51,30 +53,34 @@ public class HandDragHandler : MonoBehaviour,
                 Debug.LogWarning("[Hint] hintSequencerMenu no está asignado en el Inspector.", this);
             }
         }
-
         float angle = Mathf.Atan2(dir.x, dir.y) * Mathf.Rad2Deg;
         if (angle < 0f) angle += 360f;
-
         if (isMinuteHand)
         {
             int m = Mathf.RoundToInt(angle / 6f) % 60;
+            ReproducirMatracaSiCambio(m);
             ClockManager.Instance.SetTime(ClockManager.Instance.hours, m);
         }
         else
         {
             float angleDelta = angle - GetCurrentHourAngle();
-
             while (angleDelta > 180f) angleDelta -= 360f;
             while (angleDelta < -180f) angleDelta += 360f;
-
             float hourDelta = angleDelta / 30f;
             float newHourFloat = ClockManager.Instance.hours + hourDelta;
-
             int h = Mathf.RoundToInt(newHourFloat) % 24;
             if (h < 0) h += 24;
-
+            ReproducirMatracaSiCambio(h);
             ClockManager.Instance.SetTimeFromHour(h, ClockManager.Instance.minutes);
         }
+    }
+
+    private void ReproducirMatracaSiCambio(int valorNuevo)
+    {
+        if (ultimoValor.HasValue && ultimoValor.Value != valorNuevo)
+            AudioManager.Instance.Play(clicMatraca);
+
+        ultimoValor = valorNuevo;
     }
 
     public void OnEndDrag(PointerEventData eventData) { }
