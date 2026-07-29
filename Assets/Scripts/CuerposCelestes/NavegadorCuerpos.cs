@@ -82,6 +82,7 @@ public class NavegadorCuerpos : MonoBehaviour
         pantallaContenido.SetActive(true);
         AudioManager.Instance.Play(selectBoton);
 
+        panelInfo.SetActive(true);
         for (int i = 0; i < paneles.Length; i++)
         {
             paneles[i].SetActive(i == index);
@@ -95,6 +96,7 @@ public class NavegadorCuerpos : MonoBehaviour
         {
             bienvenidaEstrellas.SetActive(true);
             AnimAstronaut1.SetActive(true);
+            panelInfo.SetActive(false);
             //MenuManager.Instance.primeraVezEstrellas = false;
         }
         else if (index == 1/* && MenuManager.Instance.primeraVezGalaxias*/)
