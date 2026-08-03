@@ -19,3 +19,6 @@ MonoBehaviour:
   opcion1: Diez y cuarenta y cinco
   opcion2: Once y cuarto
   opcion3: Once en punto
+  opcion1Numerica: 10:45
+  opcion2Numerica: 11:15
+  opcion3Numerica: 11:00

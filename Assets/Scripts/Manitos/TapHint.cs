@@ -213,4 +213,9 @@ public class TapHint : MonoBehaviour, IHintAnimado
         if (sr != null) { var c = sr.color; c.a = a; sr.color = c; }
         else if (img != null) { var c = img.color; c.a = a; img.color = c; }
     }
+
+    public void SetPuntoObjetivo(Vector3 nuevoPuntoLocal)
+    {
+        puntoObjetivoLocal = nuevoPuntoLocal;
+    }
 }

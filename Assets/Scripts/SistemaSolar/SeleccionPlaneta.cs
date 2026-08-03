@@ -99,6 +99,8 @@ public class SeleccionPlaneta : MonoBehaviour
         {
             GetComponent<CapsuleCollider>().enabled = false;
 
+            if (botonVolverMenu != null) botonVolverMenu.SetActive(false);
+            if (botonVolverDeseleccion != null) botonVolverDeseleccion.SetActive(true);
             UISistemaSolar.Instance.panelInfoPlanetas.SetActive(true);
         }
         else
@@ -161,8 +163,6 @@ public class SeleccionPlaneta : MonoBehaviour
                 Debug.LogWarning("[Hint] hintSequenceAlSeleccionar no está asignado en el Inspector.", this);
             }
 
-            if (botonVolverMenu != null) botonVolverMenu.SetActive(false);
-            if (botonVolverDeseleccion != null) botonVolverDeseleccion.SetActive(true);
         }
     }
 

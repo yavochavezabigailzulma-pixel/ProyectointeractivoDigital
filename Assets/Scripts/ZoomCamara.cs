@@ -246,6 +246,9 @@ public class ZoomCamara : MonoBehaviour
             focusTarget = Vector3.zero;
             minZoomActual = minZoom;
             maxZoomActual = maxZoom;
+
+            StopAllCoroutines();
+            StartCoroutine(AnimarSalida(posicionInicial));
             return;
         }
         focusTarget = planetaTransform.position;
@@ -296,6 +299,32 @@ public class ZoomCamara : MonoBehaviour
         targetPosition = destino;
         animando = false;
         enfoqueCompletado = true;
+    }
+    System.Collections.IEnumerator AnimarSalida(Vector3 destino)
+    {
+        animando = true;
+        velocity = Vector3.zero;
+
+        Vector3 origen = transform.position;
+        Quaternion rotacionOrigen = transform.rotation;
+        float tiempo = 0f;
+
+        while (tiempo < duracionEnfoque)
+        {
+            tiempo += Time.deltaTime;
+            float t = Mathf.Clamp01(tiempo / duracionEnfoque);
+            t = 1f - (1f - t) * (1f - t); // easeOut
+
+            transform.position = Vector3.Lerp(origen, destino, t);
+            transform.rotation = Quaternion.Slerp(rotacionOrigen,
+                Quaternion.LookRotation(PuntoMira - transform.position), t);
+
+            yield return null;
+        }
+
+        transform.position = destino;
+        targetPosition = destino;
+        animando = false;
     }
     public void DeseleccionarPlanetaActual()
     {

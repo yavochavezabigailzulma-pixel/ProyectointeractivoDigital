@@ -7,6 +7,8 @@ public class NavegadorCuerpos : MonoBehaviour
 {
     public EventReference selectBoton;
     public EventReference clicVolver;
+    public EventReference abrirPanel;
+    public EventReference cerrarPanel;
 
     [Header("Animaciones")]
     public GameObject AnimAlien;
@@ -82,6 +84,7 @@ public class NavegadorCuerpos : MonoBehaviour
         pantallaContenido.SetActive(true);
         AudioManager.Instance.Play(selectBoton);
 
+        panelInfo.SetActive(true);
         for (int i = 0; i < paneles.Length; i++)
         {
             paneles[i].SetActive(i == index);
@@ -95,6 +98,7 @@ public class NavegadorCuerpos : MonoBehaviour
         {
             bienvenidaEstrellas.SetActive(true);
             AnimAstronaut1.SetActive(true);
+            panelInfo.SetActive(false);
             //MenuManager.Instance.primeraVezEstrellas = false;
         }
         else if (index == 1/* && MenuManager.Instance.primeraVezGalaxias*/)
@@ -123,6 +127,7 @@ public class NavegadorCuerpos : MonoBehaviour
     }
     public void Continuar()
     {
+        AudioManager.Instance.Play(selectBoton);
         if (bienvenidaEstrellas)
             bienvenidaEstrellas.SetActive(false);
         if (bienvenidaGalaxias)
@@ -220,6 +225,7 @@ public class NavegadorCuerpos : MonoBehaviour
         //panelInfo.SetActive(true);
         animator.SetBool("InfoOn", true);
 
+        AudioManager.Instance.Play(abrirPanel);
         botonAbrirInfo.SetActive(false);
         botonCerrarInfo.SetActive(true);
 
@@ -453,6 +459,7 @@ public class NavegadorCuerpos : MonoBehaviour
         botonAbrirInfo.SetActive(true);
         botonCerrarInfo.SetActive(false);
 
+        AudioManager.Instance.Play(cerrarPanel);
         animator.SetBool("InfoOn", false);
     }
 }

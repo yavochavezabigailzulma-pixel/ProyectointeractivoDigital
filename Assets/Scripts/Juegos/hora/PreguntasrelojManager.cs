@@ -28,21 +28,52 @@ public class PreguntasRelojManager : MonoBehaviour
     [Header("Preguntas")]
     public DatosPreguntasReloj[] preguntas;
 
-    [Header("Display hora")]
+    [Header("Display hora (solo Nivel 1)")]
     public TMP_Text displayHora;
+
+    [Header("Fuentes según tipo de opción")]
+    public TMP_FontAsset fuenteTexto;      // usada en Nivel 1 (ej: "Dos en punto")
+    public TMP_FontAsset fuenteNumerica;   // usada en Nivel 2 (ej: "2:00")
+
+    [Header("Tamaño de fuente según tipo de opción")]
+    public float tamanoFuenteTexto = 32f;
+    public float tamanoFuenteNumerica = 48f;
 
     private string respuestaCorrecta;
     private GameObject[] opciones;
     private List<int> indicesRestantes = new List<int>();
     private bool aceptandoRespuesta = true;
+    private int nivelActual = 1;
 
-    void Start()
+    [Header("Puntaje")]
+    private int respuestasCorrectas = 0;
+    private int totalPreguntas = 0;
+
+    void Awake()
     {
         opciones = new GameObject[] { opcion1, opcion2, opcion3 };
+    }
+
+    // Llamado explícitamente por JuegosManager
+    public void ReiniciarJuego(int nivel)
+    {
+        StopAllCoroutines();
+
+        nivelActual = nivel;
+
+        foreach (var op in opciones)
+            op.SetActive(true);
 
         if (panelCorrecto) panelCorrecto.SetActive(false);
         if (panelIncorrecto) panelIncorrecto.SetActive(false);
         if (panelFinJuego) panelFinJuego.SetActive(false);
+
+        // El recuadro numérico solo se muestra en Nivel 1
+        if (displayHora)
+            displayHora.gameObject.SetActive(nivelActual == 1);
+
+        respuestasCorrectas = 0;
+        aceptandoRespuesta = true;
 
         InicializarIndices();
         CargarSiguientePreguntaAleatoria();
@@ -76,15 +107,18 @@ public class PreguntasRelojManager : MonoBehaviour
 
         preguntaTexto.text = actual.pregunta;
 
-        // Aplicar rotaciones de las agujas según la pregunta
         agujaHoras.localRotation = Quaternion.Euler(0f, 0f, actual.rotacionAgujaHoras);
         agujaMinutos.localRotation = Quaternion.Euler(0f, 0f, actual.rotacionAgujaMinutos);
 
-        respuestaCorrecta = actual.opcion1;
+        bool mostrarNumerico = nivelActual == 2;
 
-        List<string> lista = new List<string> { actual.opcion1, actual.opcion2, actual.opcion3 };
+        List<(string texto, string numerica, bool correcta)> lista = new List<(string, string, bool)>
+    {
+        (actual.opcion1, actual.opcion1Numerica, true),
+        (actual.opcion2, actual.opcion2Numerica, false),
+        (actual.opcion3, actual.opcion3Numerica, false)
+    };
 
-        // Mezclar opciones
         for (int i = 0; i < lista.Count; i++)
         {
             int rand = Random.Range(i, lista.Count);
@@ -94,20 +128,30 @@ public class PreguntasRelojManager : MonoBehaviour
         for (int i = 0; i < opciones.Length; i++)
         {
             opciones[i].SetActive(true);
-            opciones[i].GetComponentInChildren<TextMeshProUGUI>().text = lista[i];
+
+            string valorMostrado = mostrarNumerico ? lista[i].numerica : lista[i].texto;
+
+            TextMeshProUGUI tmp = opciones[i].GetComponentInChildren<TextMeshProUGUI>();
+            tmp.text = valorMostrado;
+            tmp.font = mostrarNumerico ? fuenteNumerica : fuenteTexto;
+            tmp.fontSize = mostrarNumerico ? tamanoFuenteNumerica : tamanoFuenteTexto;
+
+            if (lista[i].correcta)
+                respuestaCorrecta = valorMostrado;
         }
 
         if (panelCorrecto) panelCorrecto.SetActive(false);
         if (panelIncorrecto) panelIncorrecto.SetActive(false);
 
         aceptandoRespuesta = true;
-        if (displayHora) displayHora.text = actual.horaEnNumeros;
+
+        if (displayHora && nivelActual == 1)
+            displayHora.text = actual.horaEnNumeros;
     }
 
-    // Este método se llama desde el botón, pasando su propio GameObject
     public void SeleccionarOpcion(GameObject botonPresionado)
     {
-        if (!aceptandoRespuesta) return; // evita doble clic durante el feedback
+        if (!aceptandoRespuesta) return;
 
         string respuesta = botonPresionado.GetComponentInChildren<TextMeshProUGUI>().text;
 
@@ -121,6 +165,9 @@ public class PreguntasRelojManager : MonoBehaviour
     {
         aceptandoRespuesta = false;
         if (panelCorrecto) panelCorrecto.SetActive(true);
+
+        respuestasCorrectas++;
+
         yield return new WaitForSeconds(tiempoFeedback);
         if (panelCorrecto) panelCorrecto.SetActive(false);
 
@@ -133,7 +180,7 @@ public class PreguntasRelojManager : MonoBehaviour
         if (panelIncorrecto) panelIncorrecto.SetActive(true);
         yield return new WaitForSeconds(tiempoFeedback);
         if (panelIncorrecto) panelIncorrecto.SetActive(false);
-        aceptandoRespuesta = true; // permitir reintentar
+        aceptandoRespuesta = true;
     }
 
     void FinDelJuego()
@@ -141,7 +188,12 @@ public class PreguntasRelojManager : MonoBehaviour
         foreach (var op in opciones)
             op.SetActive(false);
 
-        if (panelFinJuego) panelFinJuego.SetActive(true);
-        Debug.Log("Juego terminado");
+        totalPreguntas = preguntas.Length;
+        int puntaje = totalPreguntas > 0
+            ? Mathf.RoundToInt((float)respuestasCorrectas / totalPreguntas * 100)
+            : 0;
+
+        if (JuegosManager.Instance != null)
+            JuegosManager.Instance.MostrarPuntaje(puntaje);
     }
 }
