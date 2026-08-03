@@ -11,18 +11,29 @@ public class SopaLetrasManager : MonoBehaviour
     public GridLayoutGroup gridLayout;
 
     [Header("Nivel 1 - Grilla reducida (12 columnas x 6 filas)")]
+    public GameObject gridDimensiones;
+    public float anchoGrid1;
+    public float alturaGrid1;
+    public float anchoGrid2;
+    public float alturaGrid2;
+
+    public GameObject contornoDimensiones;
+    public float anchoContorno1;
+    public float alturaContorno1;
+    public float anchoContorno2;
+    public float alturaContorno2;
     [Tooltip("Palabras a encontrar en Nivel 1. Deben caber dentro de la grilla de Nivel 1.")]
     public string[] palabrasNivel1 = {
         "COSMOS","POLVO","ESPIRAL","GALAXIAS"
     };
     [Tooltip("Cada string es una fila. Deben ser 6 filas de máximo 12 caracteres cada una.")]
-    public string[] gridRawNivel1 = {
+    private readonly string[] gridRawNivel1 = {
         "COSMOSRVREES",
         "UNIVERLLORLS",
         "NIVERSOV P H",
         "IXCRGALAXIAS",
         "VENDDOA  LI ",
-        "EEXBPFSPOJUO"
+        "EEXBPESPIRAL"
     };
 
     [Header("Nivel 2 - Grilla completa (configuración actual)")]
@@ -101,11 +112,15 @@ public class SopaLetrasManager : MonoBehaviour
         {
             palabrasActuales = palabrasNivel1;
             gridRawActual = gridRawNivel1;
+            gridDimensiones.GetComponent<RectTransform>().sizeDelta = new Vector2(anchoGrid1, alturaGrid1);
+            contornoDimensiones.GetComponent<RectTransform>().sizeDelta = new Vector2(anchoContorno1, alturaContorno1);
         }
         else
         {
             palabrasActuales = palabrasNivel2;
             gridRawActual = gridRawNivel2;
+            gridDimensiones.GetComponent<RectTransform>().sizeDelta = new Vector2(anchoGrid2, alturaGrid2);
+            contornoDimensiones.GetComponent<RectTransform>().sizeDelta = new Vector2(anchoContorno2, alturaContorno2);
         }
 
         LimpiarInstancias();

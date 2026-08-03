@@ -3,6 +3,23 @@ using FMODUnity;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+
+[System.Serializable]
+public class SpritesTemaPorJuego
+{
+    public Sprite botonUniverso;
+    public Sprite botonTierra;
+    public Sprite botonMundo;
+}
+
+[System.Serializable]
+public class SpritesNivelPorJuego
+{
+    public Sprite tituloSprite;
+    public Sprite botonNivel1;
+    public Sprite botonNivel2;
+}
 
 public class JuegosManager : MonoBehaviour
 {
@@ -10,24 +27,24 @@ public class JuegosManager : MonoBehaviour
     {
         Bienvenida,
         MenuPlay,
-        SeleccionJuego,   // paso 3 (confirmación del juego elegido)
-        SeleccionTema,    // paso 4
-        SeleccionNivel,   // paso 5
-        Instrucciones,    // paso 6
-        Actividad,        // paso 7
-        Puntaje,          // paso 8
-        Retroalimentacion,// paso 9
-        ReintentarVolver  // paso 10
+        SeleccionJuego,
+        SeleccionTema,
+        SeleccionNivel,
+        Instrucciones,
+        Actividad,
+        Puntaje,
+        Retroalimentacion,
+        ReintentarVolver
     }
 
-    [Header("Paneles (asignar en el Inspector, en el mismo orden que el enum)")]
+    [Header("Paneles")]
     public GameObject bienvenida;
     public GameObject menuPlay;
     public GameObject seleccionJuegoPanel;
     public GameObject seleccionTemaPanel;
     public GameObject seleccionNivelPanel;
     public GameObject instruccionesPanel;
-    public GameObject actividadPanel;      // aquí van perguntados/hora/sopa/oracion según el juego
+    public GameObject actividadPanel;
     public GameObject puntajePanel;
     public GameObject retroalimentacionPanel;
     public GameObject reintentarVolverPanel;
@@ -51,12 +68,11 @@ public class JuegosManager : MonoBehaviour
     [SerializeField] private float duracionFadeEntradaGeneral = 0.5f;
     [SerializeField] private float duracionFadeSalidaGeneral = 0.5f;
 
-    // --- Estado de navegación ---
     private Dictionary<Screen, GameObject> panels;
     private Screen pantallaActual;
+    private Stack<Screen> historial = new Stack<Screen>();
 
-    // --- Estado de selección del usuario ---
-    private int juegoSeleccionado = -1; // índice: 0=preguntados,1=hora,2=sopa,3=oracion
+    private int juegoSeleccionado = -1;
     private int nivelSeleccionado = -1;
     private int temaSeleccionado = -1;
 
@@ -68,7 +84,46 @@ public class JuegosManager : MonoBehaviour
     public SopaLetrasManager sopaManager;
     public OracionManager oracionManager;
     public PreguntasRelojManager relojManager;
+
     public static JuegosManager Instance { get; private set; }
+
+    [Header("Seleccion Juego - Fondos y Botón Play por juego")]
+    public Image seleccionJuegoBackground;
+    public Image btnPlaySeleccionJuego;
+    public RectTransform btnPlayRectTransform;
+
+    [Tooltip("Orden: 0-Preguntados, 1-Sopa, 2-Oracion, 3-Hora")]
+    public Sprite[] fondosPorJuego = new Sprite[4];
+
+    [Tooltip("Orden: 0-Preguntados, 1-Sopa, 2-Oracion, 3-Hora")]
+    public Sprite[] spritesBotonPlayPorJuego = new Sprite[4];
+
+    [Tooltip("Orden: 0-Preguntados, 1-Sopa, 2-Oracion, 3-Hora")]
+    public Vector2[] posicionesBotonPlayPorJuego = new Vector2[4];
+
+    [Header("Seleccion Tema - Fondo y Botones por juego")]
+    public Image seleccionTemaBackground;
+    public Image btnTemaUniverso;
+    public Image btnTemaTierra;
+    public Image btnTemaMundo;
+
+    [Tooltip("Orden: 0-Preguntados, 1-Sopa, 2-Oracion. (Hora no llega a este panel)")]
+    public Sprite[] fondosTemaPorJuego = new Sprite[4];
+
+    [Tooltip("Orden: 0-Preguntados, 1-Sopa, 2-Oracion")]
+    public SpritesTemaPorJuego[] botonesTemaPorJuego = new SpritesTemaPorJuego[4];
+
+    [Header("Seleccion Nivel - Fondo, Título y Botones por juego")]
+    public Image seleccionNivelBackground;
+    public Image tituloSeleccionNivel;
+    public Image btnNivel1;
+    public Image btnNivel2;
+
+    [Tooltip("Orden: 0-Preguntados, 1-Sopa, 2-Oracion, 3-Hora")]
+    public Sprite[] fondosNivelPorJuego = new Sprite[4];
+
+    [Tooltip("Orden: 0-Preguntados, 1-Sopa, 2-Oracion, 3-Hora")]
+    public SpritesNivelPorJuego[] spritesNivelPorJuego = new SpritesNivelPorJuego[4];
 
     void Awake()
     {
@@ -93,24 +148,9 @@ public class JuegosManager : MonoBehaviour
 
     void Start()
     {
-        if (!musicaGeneral.IsNull)
-        {
-            //musicaGeneralInstance = AudioManager.Instance.CreateLoop(musicaGeneral);
-            //AudioManager.Instance.SetVolume(musicaGeneralInstance, 1f);
-        }
-
         Navigate(Screen.Bienvenida);
     }
 
-    void OnDestroy()
-    {
-        //if (AudioManager.Instance != null)
-           // AudioManager.Instance.StopLoop(musicaGeneralInstance);
-    }
-
-    // ------------------------------------------------------------
-    // NAVEGACIÓN CENTRAL: apaga todo, prende solo la pantalla pedida
-    // ------------------------------------------------------------
     public void Navigate(Screen destino)
     {
         foreach (var kvp in panels)
@@ -120,63 +160,136 @@ public class JuegosManager : MonoBehaviour
         pantallaActual = destino;
     }
 
-    // ------------------------------------------------------------
-    // PASOS 1-2
-    // ------------------------------------------------------------
+    public void Volver()
+    {
+        if (historial.Count == 0) return;
+
+        Screen anterior = historial.Pop();
+        Navigate(anterior);
+    }
+
     public void CerrarBienvenida()
     {
+        historial.Push(Screen.Bienvenida);
         Navigate(Screen.MenuPlay);
     }
 
-    // ------------------------------------------------------------
-    // PASO 3: eligió juego desde el menú Play
-    // ------------------------------------------------------------
     public void SeleccionarJuego(int juego)
     {
         juegoSeleccionado = juego;
+        AplicarEstiloSeleccionJuego(juego);
+
+        historial.Push(Screen.MenuPlay);
         Navigate(Screen.SeleccionJuego);
     }
 
-    // ------------------------------------------------------------
-    // PASO 4: confirmó el juego -> elige tema
-    // ------------------------------------------------------------
+    private void AplicarEstiloSeleccionJuego(int juego)
+    {
+        if (juego < 0) return;
+
+        if (seleccionJuegoBackground != null &&
+            juego < fondosPorJuego.Length &&
+            fondosPorJuego[juego] != null)
+        {
+            seleccionJuegoBackground.sprite = fondosPorJuego[juego];
+        }
+
+        if (btnPlaySeleccionJuego != null &&
+            juego < spritesBotonPlayPorJuego.Length &&
+            spritesBotonPlayPorJuego[juego] != null)
+        {
+            btnPlaySeleccionJuego.sprite = spritesBotonPlayPorJuego[juego];
+        }
+
+        if (btnPlayRectTransform != null &&
+            juego < posicionesBotonPlayPorJuego.Length)
+        {
+            btnPlayRectTransform.anchoredPosition = posicionesBotonPlayPorJuego[juego];
+        }
+    }
+
     public void ConfirmarJuego()
     {
-        // "Hora" = índice 3 → salta selección de tema
         if (juegoSeleccionado == 3)
         {
+            AplicarEstiloSeleccionNivel(juegoSeleccionado);
+            historial.Push(Screen.SeleccionJuego);
             Navigate(Screen.SeleccionNivel);
+            return;
         }
-        else
-        {
-            Navigate(Screen.SeleccionTema);
-        }
+
+        AplicarEstiloSeleccionTema(juegoSeleccionado);
+        historial.Push(Screen.SeleccionJuego);
+        Navigate(Screen.SeleccionTema);
     }
 
     public void SeleccionarTema(int tema)
     {
         temaSeleccionado = tema;
+        AplicarEstiloSeleccionNivel(juegoSeleccionado);
+
+        historial.Push(Screen.SeleccionTema);
         Navigate(Screen.SeleccionNivel);
     }
 
-    // ------------------------------------------------------------
-    // PASO 5: elige nivel -> instrucciones
-    // ------------------------------------------------------------
+    private void AplicarEstiloSeleccionTema(int juego)
+    {
+        if (juego < 0 || juego >= fondosTemaPorJuego.Length) return;
+
+        if (seleccionTemaBackground != null && fondosTemaPorJuego[juego] != null)
+            seleccionTemaBackground.sprite = fondosTemaPorJuego[juego];
+
+        if (juego < botonesTemaPorJuego.Length && botonesTemaPorJuego[juego] != null)
+        {
+            var sprites = botonesTemaPorJuego[juego];
+
+            if (btnTemaUniverso != null && sprites.botonUniverso != null)
+                btnTemaUniverso.sprite = sprites.botonUniverso;
+
+            if (btnTemaTierra != null && sprites.botonTierra != null)
+                btnTemaTierra.sprite = sprites.botonTierra;
+
+            if (btnTemaMundo != null && sprites.botonMundo != null)
+                btnTemaMundo.sprite = sprites.botonMundo;
+        }
+    }
+
+    private void AplicarEstiloSeleccionNivel(int juego)
+    {
+        if (juego < 0 || juego >= fondosNivelPorJuego.Length) return;
+
+        if (seleccionNivelBackground != null && fondosNivelPorJuego[juego] != null)
+            seleccionNivelBackground.sprite = fondosNivelPorJuego[juego];
+
+        if (juego < spritesNivelPorJuego.Length && spritesNivelPorJuego[juego] != null)
+        {
+            var sprites = spritesNivelPorJuego[juego];
+
+            if (tituloSeleccionNivel != null && sprites.tituloSprite != null)
+                tituloSeleccionNivel.sprite = sprites.tituloSprite;
+
+            if (btnNivel1 != null && sprites.botonNivel1 != null)
+                btnNivel1.sprite = sprites.botonNivel1;
+
+            if (btnNivel2 != null && sprites.botonNivel2 != null)
+                btnNivel2.sprite = sprites.botonNivel2;
+        }
+    }
+
     public void SeleccionarNivel(int nivel)
     {
         nivelSeleccionado = nivel;
+
+        historial.Push(Screen.SeleccionNivel);
         Navigate(Screen.Instrucciones);
     }
 
-    // ------------------------------------------------------------
-    // PASO 6: entendió instrucciones -> arranca actividad
-    // ------------------------------------------------------------
     public void EmpezarActividad()
     {
         AbrirJuego(juegoSeleccionado);
         Navigate(Screen.Actividad);
 
-        int nivel = nivelSeleccionado + 1; // nivelSeleccionado es 0-based (0=Nivel1, 1=Nivel2)
+        int nivel = nivelSeleccionado + 1;
 
         switch (juegoSeleccionado)
         {
@@ -209,17 +322,8 @@ public class JuegosManager : MonoBehaviour
             case 2: oracionPanel.SetActive(true); break;
             case 3: horaPanel.SetActive(true); break;
         }
-
-        //if (juego >= 0 && juego < musicasJuegos.Length)
-        //    AudioManager.Instance.PlayMusicaConFade(musicasJuegos[juego]);
-
-        //AudioManager.Instance.FadeTo(musicaGeneralInstance, 0f, duracionFadeSalidaGeneral);
     }
 
-    // ------------------------------------------------------------
-    // PASO 7 -> 8: terminó la actividad, mostrar puntaje
-    // Llamar esto desde el script propio de cada minijuego al terminar
-    // ------------------------------------------------------------
     public void MostrarPuntaje(int puntaje)
     {
         if (textoPuntaje != null)
@@ -228,41 +332,28 @@ public class JuegosManager : MonoBehaviour
         Navigate(Screen.Puntaje);
     }
 
-    // ------------------------------------------------------------
-    // PASO 8 -> 9
-    // ------------------------------------------------------------
     public void MostrarRetroalimentacion()
     {
         Navigate(Screen.Retroalimentacion);
     }
 
-    // ------------------------------------------------------------
-    // PASO 9 -> 10
-    // ------------------------------------------------------------
     public void MostrarReintentarVolver()
     {
         Navigate(Screen.ReintentarVolver);
     }
 
-    // ------------------------------------------------------------
-    // PASO 10 (a): Reintentar nivel -> vuelve directo a la actividad
-    // ------------------------------------------------------------
     public void ReintentarNivel()
     {
-        EmpezarActividad(); // reusa el mismo juego/nivel/tema guardados
+        EmpezarActividad();
     }
 
-    // ------------------------------------------------------------
-    // PASO 10 (b): Volver al menú Play -> cierra todo, para música del juego
-    // ------------------------------------------------------------
     public void VolverAlMenuPlay()
     {
-        //AudioManager.Instance.StopMusicaEstacion();
-        //AudioManager.Instance.FadeTo(musicaGeneralInstance, 1f, duracionFadeEntradaGeneral);
-
         juegoSeleccionado = -1;
         nivelSeleccionado = -1;
         temaSeleccionado = -1;
+
+        historial.Clear();
 
         Navigate(Screen.MenuPlay);
     }
