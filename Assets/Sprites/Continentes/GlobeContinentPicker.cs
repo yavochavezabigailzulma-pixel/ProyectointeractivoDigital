@@ -32,6 +32,10 @@ public class GlobeContinentPicker : MonoBehaviour
     [Tooltip("Si lo asignás, muestra ahí toda la info de diagnóstico, visible directamente en el dispositivo.")]
     //[SerializeField] private TextMeshProUGUI textoDiagnostico;
 
+    [Header("Tutorial")]
+    [SerializeField] private HintSequencer secuenciaHintsAlSeleccionar;
+    [SerializeField] private GameObject hintContinenteEsperado;
+
     private Camera camaraPrincipal;
     private MeshCollider meshCollider;
     private Vector2 posicionInicioToque;
@@ -121,6 +125,8 @@ public class GlobeContinentPicker : MonoBehaviour
                 AudioManager.Instance.PlayMusicaConFade(continente.musica);
 
                 AudioManager.Instance.Play(selectBoton);
+
+                secuenciaHintsAlSeleccionar.CompletarPaso(hintContinenteEsperado);
             }
         }
 

@@ -19,6 +19,18 @@ public class EstacionesController : MonoBehaviour
     //[Header("Elementos decorativos por estación")]
     //public Image elementoDecorativo;
     //public ElementoEstacion[] elementos;
+    [Header("Tutorial de paneles")]
+    [SerializeField] private HintSequencer hintSequencerPaneles;
+    [SerializeField] private GameObject hintTapAbrirEsperado;   // paso 0: ya funciona
+    [SerializeField] private GameObject hintTapCerrarEsperado;  // paso 1: se reposiciona dinámicamente
+
+    [Header("Puntos de cierre por panel (para reposicionar el hint 2)")]
+    [Tooltip("Arrastra un Transform ubicado sobre el botón de cerrar de cada panel.")]
+    [SerializeField] private Transform puntoCierrePanel1;
+    [SerializeField] private Transform puntoCierrePanel2;
+    [SerializeField] private Transform puntoCierrePanel3;
+
+    private bool primerPanelAbiertoRegistrado = false;
 
     [Header("Sonidos")]
     public EventReference musicPrimavera;
@@ -264,6 +276,7 @@ public class EstacionesController : MonoBehaviour
 
         AudioManager.Instance.Play(abrirPanelInfo);
 
+        NotificarAperturaPanel(1, puntoCierrePanel1);
     }
 
     public void cerrarInfo1()
@@ -272,6 +285,8 @@ public class EstacionesController : MonoBehaviour
         botonAbrir1.SetActive(true);
         botonCerrar1.SetActive(false);
         AudioManager.Instance.Play(cerrarPanelInfo);
+
+        NotificarCierrePanel(1);
     }
 
     // ── Panel 2 ──────────────────────────────────────
@@ -283,6 +298,8 @@ public class EstacionesController : MonoBehaviour
         botonAbrir2.SetActive(false);
         botonCerrar2.SetActive(true);
         AudioManager.Instance.Play(abrirPanelInfo);
+
+        NotificarAperturaPanel(2, puntoCierrePanel2);
     }
 
     public void cerrarInfo2()
@@ -291,6 +308,7 @@ public class EstacionesController : MonoBehaviour
         botonAbrir2.SetActive(true);
         botonCerrar2.SetActive(false);
         AudioManager.Instance.Play(cerrarPanelInfo);
+        NotificarCierrePanel(2);
     }
 
     // ── Panel 3 ──────────────────────────────────────
@@ -302,6 +320,8 @@ public class EstacionesController : MonoBehaviour
         botonAbrir3.SetActive(false);
         botonCerrar3.SetActive(true);
         AudioManager.Instance.Play(abrirPanelInfo);
+
+        NotificarAperturaPanel(3, puntoCierrePanel3);
     }
 
     public void cerrarInfo3()
@@ -310,6 +330,7 @@ public class EstacionesController : MonoBehaviour
         botonAbrir3.SetActive(true);
         botonCerrar3.SetActive(false);
         AudioManager.Instance.Play(cerrarPanelInfo);
+        NotificarCierrePanel(3);
     }
 
     // ── Cerrar todo (botón Volver) ───────────────────
@@ -322,5 +343,41 @@ public class EstacionesController : MonoBehaviour
         botonAbrir1.SetActive(true); botonCerrar1.SetActive(false);
         botonAbrir2.SetActive(true); botonCerrar2.SetActive(false);
         botonAbrir3.SetActive(true); botonCerrar3.SetActive(false);
+
+    }
+    void NotificarAperturaPanel(int numeroPanel, Transform puntoCierre)
+    {
+        if (hintSequencerPaneles == null) return;
+
+        // Solo la PRIMERA apertura cuenta: reposiciona el hint de cierre
+        // hacia el panel que el usuario efectivamente eligió abrir primero.
+        if (!primerPanelAbiertoRegistrado && hintTapCerrarEsperado != null && puntoCierre != null)
+        {
+            primerPanelAbiertoRegistrado = true;
+
+            var tapCerrar = hintTapCerrarEsperado.GetComponent<TapHint>();
+            if (tapCerrar != null)
+            {
+                Vector3 posicionLocal = hintTapCerrarEsperado.transform.parent != null
+                    ? hintTapCerrarEsperado.transform.parent.InverseTransformPoint(puntoCierre.position)
+                    : puntoCierre.position;
+
+                tapCerrar.SetPuntoObjetivo(posicionLocal);
+            }
+        }
+
+        bool completado = hintSequencerPaneles.CompletarPaso(hintTapAbrirEsperado);
+        //Debug.Log(completado
+        //    ? $"[Hint] Paso 1 (abrir panel {numeroPanel}) completado correctamente en '{hintSequencerPaneles.name}'."
+        //    : $"[Hint] Apertura de panel {numeroPanel} detectada pero NO era el paso activo en '{hintSequencerPaneles.name}'.");
+    }
+    void NotificarCierrePanel(int numeroPanel)
+    {
+        if (hintSequencerPaneles == null) return;
+
+        bool completado = hintSequencerPaneles.CompletarPaso(hintTapCerrarEsperado);
+        //Debug.Log(completado
+        //    ? $"[Hint] Paso 2 (cerrar panel {numeroPanel}) completado correctamente en '{hintSequencerPaneles.name}'."
+        //    : $"[Hint] Cierre de panel {numeroPanel} detectado pero NO era el paso activo en '{hintSequencerPaneles.name}'.");
     }
 }

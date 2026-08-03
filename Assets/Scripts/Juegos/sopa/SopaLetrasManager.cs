@@ -1,4 +1,4 @@
-﻿// ── SopaLetrasManager.cs ──────────────────────────────────────
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,10 +10,37 @@ public class SopaLetrasManager : MonoBehaviour
     public GameObject celdaPrefab;
     public GridLayoutGroup gridLayout;
 
-    [Header("Palabras a encontrar")]
-    public string[] palabras = {
+    [Header("Nivel 1 - Grilla reducida (12 columnas x 6 filas)")]
+    [Tooltip("Palabras a encontrar en Nivel 1. Deben caber dentro de la grilla de Nivel 1.")]
+    public string[] palabrasNivel1 = {
+        "COSMOS","POLVO","ESPIRAL","GALAXIAS"
+    };
+    [Tooltip("Cada string es una fila. Deben ser 6 filas de máximo 12 caracteres cada una.")]
+    public string[] gridRawNivel1 = {
+        "COSMOSRVREES",
+        "UNIVERLLORLS",
+        "NIVERSOV P H",
+        "IXCRGALAXIAS",
+        "VENDDOA  LI ",
+        "EEXBPFSPOJUO"
+    };
+
+    [Header("Nivel 2 - Grilla completa (configuración actual)")]
+    [Tooltip("Palabras a encontrar en Nivel 2.")]
+    public string[] palabrasNivel2 = {
         "COSMOS","UNIVERSO","GALAXIAS","ESTRELLAS",
         "POLVO","ESPIRAL","OVALADA","ELIPTICA"
+    };
+    private readonly string[] gridRawNivel2 = {
+        "COSMOSRVREESVFSDRTY",
+        "UNIVERLLORLS VADTXHE",
+        "NIVERSOV P HTEPZSIX",
+        "IXCRGALAXIASCRLTCBU",
+        "VENDDOA  LI UAEUCOH",
+        "EEXBPFSPOJUO OFLXEOA",
+        "RRKEACTFCTRES PILKVL",
+        "SRESPIRALESYCCHBDAR",
+        "OOVALADAEDELIPTICAS"
     };
 
     [Header("Colores")]
@@ -29,18 +56,12 @@ public class SopaLetrasManager : MonoBehaviour
     public Color colorFondoTag = Color.white;
     public Vector2 tamanoTag = new Vector2(120, 30);
 
-    // Cuadrícula raw
-    private readonly string[] GRID_RAW = {
-        "COSMOSRVREESVFSDRTY",
-        "UNIVERLLORLS VADTXHE",
-        "NIVERSOV P HTEPZSIX",
-        "IXCRGALAXIASCRLTCBU",
-        "VENDDOA  LI UAEUCOH",
-        "EEXBPFSPOJUO OFLXEOA",
-        "RRKEACTFCTRES PILKVL",
-        "SRESPIRALESYCCHBDAR",
-        "OOVALADAEDELIPTICAS"
-    };
+    [Header("Fin de juego")]
+    public float tiempoAntesDeFinalizar = 1.2f;
+
+    // Datos activos de la partida actual (dependen del nivel elegido)
+    private string[] palabrasActuales;
+    private string[] gridRawActual;
 
     private int ROWS;
     private int COLS;
@@ -55,28 +76,76 @@ public class SopaLetrasManager : MonoBehaviour
     private bool arrastrando = false;
     private List<SopaLetrasCell> seleccionActual = new();
 
-    void Start()
-    {
-        ConstruirGrid();
-        BuscarPalabras();
-        GenerarCeldas();
-        GenerarTags();
-    }
+    // Referencias a lo instanciado, para poder destruirlo al reconstruir
+    private List<GameObject> celdasInstanciadas = new();
+    private List<GameObject> tagsInstanciados = new();
+
+    private bool jugando = false;
 
     void Update()
     {
-        if (arrastrando && Input.GetMouseButtonUp(0))
+        if (jugando && arrastrando && Input.GetMouseButtonUp(0))
         {
             arrastrando = false;
             Verificar();
         }
     }
 
+    // Llamado explícitamente por JuegosManager al iniciar o reintentar el nivel.
+    public void ReiniciarJuego(int nivel)
+    {
+        StopAllCoroutines();
+
+        // Elegir configuración según nivel
+        if (nivel == 1)
+        {
+            palabrasActuales = palabrasNivel1;
+            gridRawActual = gridRawNivel1;
+        }
+        else
+        {
+            palabrasActuales = palabrasNivel2;
+            gridRawActual = gridRawNivel2;
+        }
+
+        LimpiarInstancias();
+
+        arrastrando = false;
+        celdaInicio = null;
+        celdaActual = null;
+        seleccionActual.Clear();
+        halladas.Clear();
+        ubicaciones.Clear();
+        tags.Clear();
+
+        if (textoFeedback)
+            textoFeedback.text = "";
+
+        ConstruirGrid();
+        BuscarPalabras();
+        GenerarCeldas();
+        GenerarTags();
+
+        jugando = true;
+    }
+
+    // Destruye celdas y tags de la partida/nivel anterior antes de reconstruir
+    void LimpiarInstancias()
+    {
+        foreach (var go in celdasInstanciadas)
+            if (go != null) Destroy(go);
+        celdasInstanciadas.Clear();
+
+        foreach (var go in tagsInstanciados)
+            if (go != null) Destroy(go);
+        tagsInstanciados.Clear();
+    }
+
     void ConstruirGrid()
     {
-        ROWS = GRID_RAW.Length;
+        ROWS = gridRawActual.Length;
         COLS = 0;
-        foreach (var row in GRID_RAW)
+        foreach (var row in gridRawActual)
             if (row.Length > COLS) COLS = row.Length;
 
         grid = new char[ROWS, COLS];
@@ -85,7 +154,7 @@ public class SopaLetrasManager : MonoBehaviour
         for (int r = 0; r < ROWS; r++)
             for (int c = 0; c < COLS; c++)
             {
-                char ch = c < GRID_RAW[r].Length ? GRID_RAW[r][c] : ' ';
+                char ch = c < gridRawActual[r].Length ? gridRawActual[r][c] : ' ';
                 grid[r, c] = (ch == ' ') ? letras[Random.Range(0, letras.Length)] : ch;
             }
     }
@@ -95,7 +164,7 @@ public class SopaLetrasManager : MonoBehaviour
         int[] drs = { 0, 1, 0, -1, 1, 1, -1, -1 };
         int[] dcs = { 1, 0, -1, 0, 1, -1, 1, -1 };
 
-        foreach (string pal in palabras)
+        foreach (string pal in palabrasActuales)
         {
             for (int r = 0; r < ROWS && !ubicaciones.ContainsKey(pal); r++)
                 for (int c = 0; c < COLS && !ubicaciones.ContainsKey(pal); c++)
@@ -113,6 +182,9 @@ public class SopaLetrasManager : MonoBehaviour
                         }
                         if (ok) ubicaciones[pal] = celdsList;
                     }
+
+            if (!ubicaciones.ContainsKey(pal))
+                Debug.LogWarning($"[SopaLetras] La palabra \"{pal}\" no entró en la grilla actual. Revisá gridRawNivel1/2.");
         }
     }
 
@@ -129,30 +201,34 @@ public class SopaLetrasManager : MonoBehaviour
                 cell.Init(r, c, grid[r, c], this);
                 celdas[r, c] = cell;
                 go.GetComponent<Image>().color = colorNormal;
+
+                celdasInstanciadas.Add(go);
             }
     }
 
     void GenerarTags()
     {
-        for (int i = 0; i < palabras.Length; i++)
+        for (int i = 0; i < palabrasActuales.Length; i++)
         {
-            string pal = palabras[i];
+            string pal = palabrasActuales[i];
             GameObject go = Instantiate(palabraTagPrefab, panelPalabras);
             go.GetComponent<RectTransform>().sizeDelta = tamanoTag;
-            // Asignar fondo rotando entre los disponibles
+
             if (fondosTag != null && fondosTag.Length > 0)
             {
                 Image imgFondo = go.GetComponent<Image>();
                 if (imgFondo != null)
                 {
                     imgFondo.sprite = fondosTag[i % fondosTag.Length];
-                    imgFondo.color = colorFondoTag; // ← añade esto
+                    imgFondo.color = colorFondoTag;
                 }
             }
 
             TextMeshProUGUI tmp = go.GetComponentInChildren<TextMeshProUGUI>();
             tmp.text = pal;
             tags[pal] = tmp;
+
+            tagsInstanciados.Add(go);
         }
     }
 
@@ -160,6 +236,7 @@ public class SopaLetrasManager : MonoBehaviour
 
     public void IniciarSeleccion(SopaLetrasCell celda)
     {
+        if (!jugando) return;
         arrastrando = true;
         celdaInicio = celda;
         celdaActual = celda;
@@ -209,7 +286,6 @@ public class SopaLetrasManager : MonoBehaviour
 
     void ActualizarVisualSeleccion()
     {
-        // Limpiar selección anterior
         foreach (var cel in seleccionActual)
             if (!EstaEncontrada(cel))
                 cel.GetComponent<Image>().color = colorNormal;
@@ -237,7 +313,7 @@ public class SopaLetrasManager : MonoBehaviour
             new Vector2Int(celdaActual.fila, celdaActual.columna)
         );
 
-        foreach (var pal in palabras)
+        foreach (var pal in palabrasActuales)
         {
             if (halladas.Contains(pal)) continue;
             if (!ubicaciones.ContainsKey(pal)) continue;
@@ -265,20 +341,36 @@ public class SopaLetrasManager : MonoBehaviour
                 if (textoFeedback)
                     textoFeedback.text = $"¡Encontraste \"{pal}\"!";
 
-                if (halladas.Count == palabras.Length && textoFeedback)
-                    textoFeedback.text = "¡Encontraste todas las palabras!";
+                if (halladas.Count == palabrasActuales.Length)
+                {
+                    jugando = false;
+
+                    if (textoFeedback)
+                        textoFeedback.text = "¡Encontraste todas las palabras!";
+
+                    StartCoroutine(FinalizarJuego());
+                }
 
                 seleccionActual.Clear();
                 return;
             }
         }
 
-        // No encontrada — limpiar selección
         foreach (var pos in linea)
             if (!EstaEncontrada(celdas[pos.x, pos.y]))
                 celdas[pos.x, pos.y].GetComponent<Image>().color = colorNormal;
 
         seleccionActual.Clear();
+    }
+
+    IEnumerator FinalizarJuego()
+    {
+        yield return new WaitForSeconds(tiempoAntesDeFinalizar);
+
+        int puntaje = 100; // criterio fijo, ver mensaje anterior sobre cronómetro descartado
+
+        if (JuegosManager.Instance != null)
+            JuegosManager.Instance.MostrarPuntaje(puntaje);
     }
 
     bool EstaEncontrada(SopaLetrasCell cel)

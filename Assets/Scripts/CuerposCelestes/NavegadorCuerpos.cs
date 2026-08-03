@@ -7,6 +7,8 @@ public class NavegadorCuerpos : MonoBehaviour
 {
     public EventReference selectBoton;
     public EventReference clicVolver;
+    public EventReference abrirPanel;
+    public EventReference cerrarPanel;
 
     [Header("Animaciones")]
     public GameObject AnimAlien;
@@ -223,6 +225,7 @@ public class NavegadorCuerpos : MonoBehaviour
         //panelInfo.SetActive(true);
         animator.SetBool("InfoOn", true);
 
+        AudioManager.Instance.Play(abrirPanel);
         botonAbrirInfo.SetActive(false);
         botonCerrarInfo.SetActive(true);
 
@@ -456,6 +459,7 @@ public class NavegadorCuerpos : MonoBehaviour
         botonAbrirInfo.SetActive(true);
         botonCerrarInfo.SetActive(false);
 
+        AudioManager.Instance.Play(cerrarPanel);
         animator.SetBool("InfoOn", false);
     }
 }

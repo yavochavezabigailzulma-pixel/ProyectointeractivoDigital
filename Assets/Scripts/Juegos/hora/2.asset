@@ -19,3 +19,6 @@ MonoBehaviour:
   opcion1: Cuatro y veinte
   opcion2: Cinco y cuarto
   opcion3: Siete y media
+  opcion1Numerica: 04:20
+  opcion2Numerica: 17:15
+  opcion3Numerica: 07:30
