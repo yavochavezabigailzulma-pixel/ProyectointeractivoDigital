@@ -89,6 +89,11 @@ public class JuegosManager : MonoBehaviour
     public EventReference musicOracion;
     private EventReference[] musicasJuegos;
 
+    public EventReference selectClic;
+    public EventReference clicVolver;
+    public EventReference animoTuPuedes;
+    public EventReference bienHecho;
+
     [Header("Sonido general (menú de selección de juegos)")]
     public EventReference musicaGeneral;
     private EventInstance musicaGeneralInstance;
@@ -239,18 +244,25 @@ public class JuegosManager : MonoBehaviour
         pantallaActual = destino;
     }
 
+    private void NavigateForward(Screen origen, Screen destino)
+    {
+        AudioManager.Instance.Play(selectClic);
+        historial.Push(origen);
+        Navigate(destino);
+    }
+
     public void Volver()
     {
         if (historial.Count == 0) return;
 
+        AudioManager.Instance.Play(clicVolver);
+
         Screen anterior = historial.Pop();
         Navigate(anterior);
     }
-
     public void CerrarBienvenida()
     {
-        historial.Push(Screen.Bienvenida);
-        Navigate(Screen.MenuPlay);
+        NavigateForward(Screen.Bienvenida, Screen.MenuPlay);
     }
 
     public void SeleccionarJuego(int juego)
@@ -258,8 +270,7 @@ public class JuegosManager : MonoBehaviour
         juegoSeleccionado = juego;
         AplicarEstiloSeleccionJuego(juego);
 
-        historial.Push(Screen.MenuPlay);
-        Navigate(Screen.SeleccionJuego);
+        NavigateForward(Screen.MenuPlay, Screen.SeleccionJuego);
     }
 
     private void AplicarEstiloSeleccionJuego(int juego)
@@ -292,14 +303,12 @@ public class JuegosManager : MonoBehaviour
         if (juegoSeleccionado == 3)
         {
             AplicarEstiloSeleccionNivel(juegoSeleccionado);
-            historial.Push(Screen.SeleccionJuego);
-            Navigate(Screen.SeleccionNivel);
+            NavigateForward(Screen.SeleccionJuego, Screen.SeleccionNivel);
             return;
         }
 
         AplicarEstiloSeleccionTema(juegoSeleccionado);
-        historial.Push(Screen.SeleccionJuego);
-        Navigate(Screen.SeleccionTema);
+        NavigateForward(Screen.SeleccionJuego, Screen.SeleccionTema);
     }
 
     public void SeleccionarTema(int tema)
@@ -307,8 +316,7 @@ public class JuegosManager : MonoBehaviour
         temaSeleccionado = tema;
         AplicarEstiloSeleccionNivel(juegoSeleccionado);
 
-        historial.Push(Screen.SeleccionTema);
-        Navigate(Screen.SeleccionNivel);
+        NavigateForward(Screen.SeleccionTema, Screen.SeleccionNivel);
     }
 
     private void AplicarEstiloSeleccionTema(int juego)
@@ -358,13 +366,10 @@ public class JuegosManager : MonoBehaviour
     public void SeleccionarNivel(int nivel)
     {
         nivelSeleccionado = nivel;
-
         AplicarEstiloInstrucciones(juegoSeleccionado, nivel);
 
-        historial.Push(Screen.SeleccionNivel);
-        Navigate(Screen.Instrucciones);
+        NavigateForward(Screen.SeleccionNivel, Screen.Instrucciones);
     }
-
     private void AplicarEstiloInstrucciones(int juego, int nivel)
     {
         if (juego < 0 || juego >= instruccionesPorJuego.Length) return;
@@ -393,6 +398,8 @@ public class JuegosManager : MonoBehaviour
 
     public void EmpezarActividad()
     {
+        AudioManager.Instance.Play(selectClic);
+
         AbrirJuego(juegoSeleccionado);
         Navigate(Screen.Actividad);
 
@@ -411,11 +418,10 @@ public class JuegosManager : MonoBehaviour
                 if (oracionManager != null) oracionManager.ReiniciarJuego(nivel, tema);
                 break;
             case 3:
-                if (relojManager != null) relojManager.ReiniciarJuego(nivel); // Hora no usa tema
+                if (relojManager != null) relojManager.ReiniciarJuego(nivel);
                 break;
         }
     }
-
     private void AbrirJuego(int juego)
     {
         perguntadosPanel.SetActive(false);
@@ -434,6 +440,8 @@ public class JuegosManager : MonoBehaviour
 
     public void MostrarPuntaje(int puntaje)
     {
+        AudioManager.Instance.Play(selectClic);
+
         ultimoPuntaje = puntaje;
 
         if (textoPuntaje != null)
@@ -462,15 +470,20 @@ public class JuegosManager : MonoBehaviour
     }
     public void MostrarRetroalimentacion()
     {
+        AudioManager.Instance.Play(selectClic);
         AplicarEstiloRetroalimentacion(juegoSeleccionado, ultimoPuntaje);
         Navigate(Screen.Retroalimentacion);
     }
-
     private void AplicarEstiloRetroalimentacion(int juego, int puntaje)
     {
         if (juego < 0 || juego >= fondosRetroalimentacionPorJuego.Length) return;
 
         bool esPuntajeAlto = puntaje >= 50;
+
+        if (puntaje >= 50)
+            AudioManager.Instance.Play(bienHecho);
+        else
+            AudioManager.Instance.Play(animoTuPuedes);
 
         if (retroalimentacionBackground != null && fondosRetroalimentacionPorJuego[juego] != null)
             retroalimentacionBackground.sprite = fondosRetroalimentacionPorJuego[juego];
@@ -501,10 +514,11 @@ public class JuegosManager : MonoBehaviour
 
     public void MostrarReintentarVolver()
     {
+        AudioManager.Instance.Play(selectClic);
+
         AplicarEstiloReintentarVolver(juegoSeleccionado);
         Navigate(Screen.ReintentarVolver);
     }
-
     private void AplicarEstiloReintentarVolver(int juego)
     {
         if (juego < 0 || juego >= fondosReintentarVolverPorJuego.Length) return;
@@ -534,6 +548,8 @@ public class JuegosManager : MonoBehaviour
 
     public void VolverAlMenuPlay()
     {
+        AudioManager.Instance.Play(clicVolver);
+
         juegoSeleccionado = -1;
         nivelSeleccionado = -1;
         temaSeleccionado = -1;
@@ -571,6 +587,6 @@ public class JuegosManager : MonoBehaviour
             case 3: if (relojManager != null) relojManager.DetenerJuego(); break;
         }
 
-        Volver();
+        Volver(); // ya reproduce clicVolver internamente
     }
 }

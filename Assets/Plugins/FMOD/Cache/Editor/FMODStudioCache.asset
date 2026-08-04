@@ -81,6 +81,303 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 52000
+--- !u!114 &-8084084702971857823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/CicloEstrella/EstrelladeNeutrones
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/CicloEstrella/EstrelladeNeutrones
+  Guid:
+    Data1: 1715950714
+    Data2: 1226454596
+    Data3: 471826343
+    Data4: -1057739923
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 15542
+--- !u!114 &-7901731897113390609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/Estaciones/Verano 3
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/Estaciones/Verano 3
+  Guid:
+    Data1: -1568219233
+    Data2: 1109884067
+    Data3: 2013377162
+    Data4: 1573076348
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 15908
+--- !u!114 &-7851966681593199422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/Continentes/Antartida 2
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/Continentes/Antartida 2
+  Guid:
+    Data1: -1769674493
+    Data2: 1304996089
+    Data3: -1230880354
+    Data4: 380222578
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 27115
+--- !u!114 &-7499261916202305647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/CicloEstrella/AgujeroNegro
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/CicloEstrella/AgujeroNegro
+  Guid:
+    Data1: 1231822850
+    Data2: 1186046265
+    Data3: 1135753879
+    Data4: -1710296392
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 15777
+--- !u!114 &-7410243214052241547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/Continentes/Africa 2
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/Continentes/Africa 2
+  Guid:
+    Data1: -565516088
+    Data2: 1089782746
+    Data3: 1864376757
+    Data4: 1883881043
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 30641
+--- !u!114 &-7244466622682199058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/Estaciones/Primavera 2
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/Estaciones/Primavera 2
+  Guid:
+    Data1: 1265204561
+    Data2: 1306295076
+    Data3: 1212599444
+    Data4: -780173125
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 12486
+--- !u!114 &-7146042220859703992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/CicloEstrella/GiganteRoja
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/CicloEstrella/GiganteRoja
+  Guid:
+    Data1: 1846025543
+    Data2: 1322608407
+    Data3: 502636930
+    Data4: 400667694
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 13792
+--- !u!114 &-7108285593282519409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Avatar/Continentes/Ocean\xEDa 3"
+  m_EditorClassIdentifier: 
+  Path: "event:/Avatar/Continentes/Ocean\xEDa 3"
+  Guid:
+    Data1: 192748265
+    Data2: 1159064304
+    Data3: -267558486
+    Data4: -1769626624
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 18956
+--- !u!114 &-6421193563225550505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/Continentes/Antartida 3
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/Continentes/Antartida 3
+  Guid:
+    Data1: 1029542006
+    Data2: 1316639058
+    Data3: -1951629176
+    Data4: -155307338
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 21159
+--- !u!114 &-6377200299291020291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/CuerposCelestes/Galaxias
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/CuerposCelestes/Galaxias
+  Guid:
+    Data1: 1586689888
+    Data2: 1224744902
+    Data3: 1033097347
+    Data4: 1726336371
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 14341
+--- !u!114 &-6104946475114377181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/Continentes/Africa 3
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/Continentes/Africa 3
+  Guid:
+    Data1: 1740440558
+    Data2: 1225420299
+    Data3: 1522730891
+    Data4: 1320061776
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 18390
 --- !u!114 &-6039032258742541194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,6 +486,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-5089842129511887737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/CicloEstrella/Muerte
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/CicloEstrella/Muerte
+  Guid:
+    Data1: -1658240096
+    Data2: 1291391239
+    Data3: -1610960465
+    Data4: 715458241
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 17449
+--- !u!114 &-4965196594812612668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/Estaciones/Otono
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/Estaciones/Otono
+  Guid:
+    Data1: 522355428
+    Data2: 1140836080
+    Data3: 1195096210
+    Data4: 659746098
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 52554
 --- !u!114 &-4877133955857670254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,6 +675,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 150912
+--- !u!114 &-4072844289381226259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/Continentes/America 2
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/Continentes/America 2
+  Guid:
+    Data1: -788870764
+    Data2: 1210770719
+    Data3: 1996532884
+    Data4: -117822759
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 23719
 --- !u!114 &-3985920444289946562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,7 +717,7 @@ MonoBehaviour:
   Path: Assets/BancoSonidos/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639213131991413623
+  lastModified: 639214462201669207
   FileSizes: []
   Exists: 1
 --- !u!114 &-3914881113139799869
@@ -414,6 +792,87 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 310000
+--- !u!114 &-3226914449381193869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/CuerposCelestes/Estrellas
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/CuerposCelestes/Estrellas
+  Guid:
+    Data1: -37578703
+    Data2: 1130681025
+    Data3: 893328515
+    Data4: -952930053
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 11102
+--- !u!114 &-3136152799139494390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/Estaciones/Otono 2
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/Estaciones/Otono 2
+  Guid:
+    Data1: 114771610
+    Data2: 1248914612
+    Data3: 1525842849
+    Data4: 60460949
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 11833
+--- !u!114 &-2285863328186064182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/Estaciones/Otono 3
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/Estaciones/Otono 3
+  Guid:
+    Data1: -189775037
+    Data2: 1252216501
+    Data3: -1704093019
+    Data4: 784869253
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 17554
 --- !u!114 &-1838335395735249840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -441,6 +900,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-1825210042847104324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/Continentes/Europa 2
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/Continentes/Europa 2
+  Guid:
+    Data1: 34952616
+    Data2: 1169663965
+    Data3: 1410294458
+    Data4: 1470238631
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 31843
+--- !u!114 &-1205639601527212830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/CicloEstrella/SuperGiganteRoja
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/CicloEstrella/SuperGiganteRoja
+  Guid:
+    Data1: -1511206638
+    Data2: 1341859830
+    Data3: 78355338
+    Data4: -223658252
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 13818
 --- !u!114 &-867759329615283472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -459,6 +972,87 @@ MonoBehaviour:
   lastModified: 639213131991662903
   FileSizes: []
   Exists: 1
+--- !u!114 &-466463330897615426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/Estaciones/Primavera 3
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/Estaciones/Primavera 3
+  Guid:
+    Data1: -1288650225
+    Data2: 1241570838
+    Data3: 166311318
+    Data4: 1223571067
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 16718
+--- !u!114 &-385176674650547810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/Continentes/Europa
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/Continentes/Europa
+  Guid:
+    Data1: 2058261757
+    Data2: 1149627180
+    Data3: 207296958
+    Data4: -179915945
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 18102
+--- !u!114 &-243895903174490919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/Continentes/Antartida
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/Continentes/Antartida
+  Guid:
+    Data1: -1613769804
+    Data2: 1171313409
+    Data3: 2069327800
+    Data4: 1051810449
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 20845
 --- !u!114 &-77821228442570119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -504,6 +1098,7 @@ MonoBehaviour:
   - {fileID: -3985920444289946562}
   - {fileID: -3914881113139799869}
   - {fileID: -867759329615283472}
+  - {fileID: 5193795069564151937}
   EditorEvents:
   - {fileID: 3705645934721319551}
   - {fileID: -3462581771939620036}
@@ -534,13 +1129,61 @@ MonoBehaviour:
   - {fileID: -5654638032882208566}
   - {fileID: -5930606664301862586}
   - {fileID: 2445815999354857132}
+  - {fileID: -7499261916202305647}
+  - {fileID: -7851966681593199422}
+  - {fileID: 1643744747368718199}
+  - {fileID: 2898537253153048603}
+  - {fileID: -466463330897615426}
+  - {fileID: -1205639601527212830}
+  - {fileID: 2048494210415435176}
+  - {fileID: 8468245805078067255}
+  - {fileID: -3226914449381193869}
+  - {fileID: 6140490394764521751}
+  - {fileID: -2285863328186064182}
+  - {fileID: -7146042220859703992}
+  - {fileID: -7244466622682199058}
+  - {fileID: 797629562735964122}
+  - {fileID: 2681820790562650774}
+  - {fileID: 6382730830459490473}
+  - {fileID: -6377200299291020291}
+  - {fileID: 7894752669725611205}
+  - {fileID: 365474705602043696}
+  - {fileID: 4571501296743081921}
+  - {fileID: 6973011267136313053}
+  - {fileID: 5500667349595686485}
+  - {fileID: 8198246643773886923}
+  - {fileID: -6421193563225550505}
+  - {fileID: -8084084702971857823}
+  - {fileID: 7727072044669476906}
+  - {fileID: -4072844289381226259}
+  - {fileID: 5741802384385520857}
+  - {fileID: -3136152799139494390}
+  - {fileID: 1417157862805035481}
+  - {fileID: -7901731897113390609}
+  - {fileID: -5089842129511887737}
+  - {fileID: 3002122877637107699}
+  - {fileID: -1825210042847104324}
+  - {fileID: 935796928005128196}
+  - {fileID: -243895903174490919}
+  - {fileID: 1440916434158856662}
+  - {fileID: 1990956632063696565}
+  - {fileID: -7410243214052241547}
+  - {fileID: 7668556106053653838}
+  - {fileID: -4965196594812612668}
+  - {fileID: -7108285593282519409}
+  - {fileID: 4049378518385408857}
+  - {fileID: -6104946475114377181}
+  - {fileID: 5867479096074508901}
+  - {fileID: 8994305952461117048}
+  - {fileID: 5572887408767622398}
+  - {fileID: -385176674650547810}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2783618311470738512}
   StringsBanks:
   - {fileID: 7881385042960529730}
   cacheVersion: 131859
-  cacheTime: 639213131991662903
+  cacheTime: 639214462201669207
   SerializableEventsDict:
   - key: event:/Music/Continentes/Europa
     index: 0
@@ -600,6 +1243,156 @@ MonoBehaviour:
     index: 27
   - key: event:/UI/GiroMenu
     index: 28
+  - key: event:/Avatar/CicloEstrella/AgujeroNegro
+    index: 29
+  - key: event:/Avatar/Continentes/Antartida 2
+    index: 30
+  - key: event:/Avatar/Play/AnimoTuPuedes
+    index: 31
+  - key: event:/Avatar/Continentes/Asia 2
+    index: 32
+  - key: event:/Avatar/Estaciones/Primavera 3
+    index: 33
+  - key: event:/Avatar/CicloEstrella/SuperGiganteRoja
+    index: 34
+  - key: event:/Avatar/Estaciones/Invierno 2
+    index: 35
+  - key: event:/Avatar/Estaciones/Primavera
+    index: 36
+  - key: event:/Avatar/CuerposCelestes/Estrellas
+    index: 37
+  - key: event:/Avatar/Estaciones/Invierno 3
+    index: 38
+  - key: event:/Avatar/Estaciones/Otono 3
+    index: 39
+  - key: event:/Avatar/CicloEstrella/GiganteRoja
+    index: 40
+  - key: event:/Avatar/Estaciones/Primavera 2
+    index: 41
+  - key: event:/Avatar/Estaciones/Verano 2
+    index: 42
+  - key: event:/Avatar/CicloEstrella/Introduccion
+    index: 43
+  - key: event:/Avatar/Continentes/Asia 3
+    index: 44
+  - key: event:/Avatar/CuerposCelestes/Galaxias
+    index: 45
+  - key: event:/Avatar/Continentes/Asia
+    index: 46
+  - key: event:/Avatar/Estaciones/Invierno
+    index: 47
+  - key: event:/Avatar/Reloj/Reloj
+    index: 48
+  - key: event:/Avatar/CicloEstrella/Cierre
+    index: 49
+  - key: event:/Avatar/CicloEstrella/EnfriamientoLento
+    index: 50
+  - key: event:/Avatar/Continentes/Africa
+    index: 51
+  - key: event:/Avatar/Continentes/Antartida 3
+    index: 52
+  - key: event:/Avatar/CicloEstrella/EstrelladeNeutrones
+    index: 53
+  - key: "event:/Avatar/Continentes/Ocean\xEDa 2"
+    index: 54
+  - key: event:/Avatar/Continentes/America 2
+    index: 55
+  - key: event:/Avatar/CicloEstrella/Nebulosa
+    index: 56
+  - key: event:/Avatar/Estaciones/Otono 2
+    index: 57
+  - key: event:/Avatar/Estaciones/Verano
+    index: 58
+  - key: event:/Avatar/Estaciones/Verano 3
+    index: 59
+  - key: event:/Avatar/CicloEstrella/Muerte
+    index: 60
+  - key: event:/Avatar/Continentes/America 3
+    index: 61
+  - key: event:/Avatar/Continentes/Europa 2
+    index: 62
+  - key: event:/Avatar/CicloEstrella/EnanaBlanca
+    index: 63
+  - key: event:/Avatar/Continentes/Antartida
+    index: 64
+  - key: event:/Avatar/Continentes/America
+    index: 65
+  - key: event:/Avatar/CicloEstrella/SecPrincipal
+    index: 66
+  - key: event:/Avatar/Continentes/Africa 2
+    index: 67
+  - key: event:/Avatar/CicloEstrella/Supernova
+    index: 68
+  - key: event:/Avatar/Estaciones/Otono
+    index: 69
+  - key: "event:/Avatar/Continentes/Ocean\xEDa 3"
+    index: 70
+  - key: event:/Avatar/Continentes/Europa 3
+    index: 71
+  - key: event:/Avatar/Continentes/Africa 3
+    index: 72
+  - key: event:/Avatar/Play/LoHicisteBien
+    index: 73
+  - key: event:/Avatar/CuerposCelestes/Planetas
+    index: 74
+  - key: "event:/Avatar/Continentes/Ocean\xEDa"
+    index: 75
+  - key: event:/Avatar/Continentes/Europa
+    index: 76
+--- !u!114 &365474705602043696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/Estaciones/Invierno
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/Estaciones/Invierno
+  Guid:
+    Data1: -1057954206
+    Data2: 1228451486
+    Data3: -294456946
+    Data4: 2055868275
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 50848
+--- !u!114 &797629562735964122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/Estaciones/Verano 2
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/Estaciones/Verano 2
+  Guid:
+    Data1: -1641032879
+    Data2: 1227752882
+    Data3: -1315902066
+    Data4: 1751812481
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 11728
 --- !u!114 &817113507350313510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -627,6 +1420,114 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 314784
+--- !u!114 &935796928005128196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/CicloEstrella/EnanaBlanca
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/CicloEstrella/EnanaBlanca
+  Guid:
+    Data1: 5562796
+    Data2: 1108434001
+    Data3: -443579726
+    Data4: 1166137115
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 14158
+--- !u!114 &1417157862805035481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/Estaciones/Verano
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/Estaciones/Verano
+  Guid:
+    Data1: -1645469797
+    Data2: 1221965801
+    Data3: -692153924
+    Data4: 1670956010
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 48908
+--- !u!114 &1440916434158856662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/Continentes/America
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/Continentes/America
+  Guid:
+    Data1: 743168953
+    Data2: 1291256747
+    Data3: -452217671
+    Data4: -1062139038
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 18573
+--- !u!114 &1643744747368718199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/Play/AnimoTuPuedes
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/Play/AnimoTuPuedes
+  Guid:
+    Data1: -1259504379
+    Data2: 1163968293
+    Data3: 1234689714
+    Data4: 325046401
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1697
 --- !u!114 &1967968822221338110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -654,6 +1555,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 68880
+--- !u!114 &1990956632063696565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/CicloEstrella/SecPrincipal
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/CicloEstrella/SecPrincipal
+  Guid:
+    Data1: -1881643322
+    Data2: 1315045688
+    Data3: -1997456195
+    Data4: 621109319
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 23719
+--- !u!114 &2048494210415435176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/Estaciones/Invierno 2
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/Estaciones/Invierno 2
+  Guid:
+    Data1: 413514523
+    Data2: 1126915164
+    Data3: 1806531229
+    Data4: 2142542364
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 9848
 --- !u!114 &2445815999354857132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -681,6 +1636,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &2681820790562650774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/CicloEstrella/Introduccion
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/CicloEstrella/Introduccion
+  Guid:
+    Data1: -1466484908
+    Data2: 1190940845
+    Data3: -1132277842
+    Data4: 1971205152
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 15360
 --- !u!114 &2783618311470738512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -699,6 +1681,60 @@ MonoBehaviour:
   lastModified: 639207747221341801
   FileSizes: []
   Exists: 1
+--- !u!114 &2898537253153048603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/Continentes/Asia 2
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/Continentes/Asia 2
+  Guid:
+    Data1: -1150740728
+    Data2: 1083941253
+    Data3: -1043286142
+    Data4: 924862223
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 23719
+--- !u!114 &3002122877637107699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/Continentes/America 3
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/Continentes/America 3
+  Guid:
+    Data1: -1434908248
+    Data2: 1286165690
+    Data3: 1095505286
+    Data4: 733789397
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 19879
 --- !u!114 &3071826491280885215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -861,6 +1897,78 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 22053
+--- !u!114 &4049378518385408857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/Continentes/Europa 3
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/Continentes/Europa 3
+  Guid:
+    Data1: 768529130
+    Data2: 1210618901
+    Data3: -1053151596
+    Data4: -1151468923
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 18520
+--- !u!114 &4571501296743081921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/Reloj/Reloj
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/Reloj/Reloj
+  Guid:
+    Data1: 1761138789
+    Data2: 1142531388
+    Data3: -231419256
+    Data4: 407795794
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 10031
+--- !u!114 &5193795069564151937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Avatar.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/BancoSonidos/Desktop/Avatar.bank
+  Name: Avatar
+  StudioPath: bank:/Avatar
+  lastModified: 639214462198081514
+  FileSizes: []
+  Exists: 1
 --- !u!114 &5315547090157191618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -888,6 +1996,195 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 230000
+--- !u!114 &5500667349595686485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/CicloEstrella/EnfriamientoLento
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/CicloEstrella/EnfriamientoLento
+  Guid:
+    Data1: 578508656
+    Data2: 1233823725
+    Data3: 598907825
+    Data4: -2064419892
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 13923
+--- !u!114 &5572887408767622398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Avatar/Continentes/Ocean\xEDa"
+  m_EditorClassIdentifier: 
+  Path: "event:/Avatar/Continentes/Ocean\xEDa"
+  Guid:
+    Data1: 1704884477
+    Data2: 1254071348
+    Data3: 214929813
+    Data4: -144603718
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 21263
+--- !u!114 &5741802384385520857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/CicloEstrella/Nebulosa
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/CicloEstrella/Nebulosa
+  Guid:
+    Data1: -1063799400
+    Data2: 1282706272
+    Data3: -1380898657
+    Data4: -164298500
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 22177
+--- !u!114 &5867479096074508901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/Play/LoHicisteBien
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/Play/LoHicisteBien
+  Guid:
+    Data1: -230783502
+    Data2: 1123131401
+    Data3: 1065118377
+    Data4: 524385716
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1697
+--- !u!114 &6140490394764521751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/Estaciones/Invierno 3
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/Estaciones/Invierno 3
+  Guid:
+    Data1: 827128641
+    Data2: 1340288261
+    Data3: -491357269
+    Data4: -454241963
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 16848
+--- !u!114 &6382730830459490473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/Continentes/Asia 3
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/Continentes/Asia 3
+  Guid:
+    Data1: 774323544
+    Data2: 1111283629
+    Data3: 1344936368
+    Data4: 651727830
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 18991
+--- !u!114 &6973011267136313053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/CicloEstrella/Cierre
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/CicloEstrella/Cierre
+  Guid:
+    Data1: -385402519
+    Data2: 1149175130
+    Data3: 1892335015
+    Data4: 1173550603
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 23719
 --- !u!114 &7427658444943051094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -915,6 +2212,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 140068
+--- !u!114 &7668556106053653838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/CicloEstrella/Supernova
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/CicloEstrella/Supernova
+  Guid:
+    Data1: -1754810924
+    Data2: 1150871232
+    Data3: 1122559885
+    Data4: 201554583
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 15647
+--- !u!114 &7727072044669476906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Avatar/Continentes/Ocean\xEDa 2"
+  m_EditorClassIdentifier: 
+  Path: "event:/Avatar/Continentes/Ocean\xEDa 2"
+  Guid:
+    Data1: -659676272
+    Data2: 1230053201
+    Data3: -1651755097
+    Data4: -2067325518
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 32626
 --- !u!114 &7881385042960529730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -930,11 +2281,65 @@ MonoBehaviour:
   Path: Assets/BancoSonidos/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639213131979307483
+  lastModified: 639214372159884018
   FileSizes:
   - Name: 
-    Value: 2242
+    Value: 4492
   Exists: 1
+--- !u!114 &7894752669725611205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/Continentes/Asia
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/Continentes/Asia
+  Guid:
+    Data1: -1332163487
+    Data2: 1118512837
+    Data3: 845377718
+    Data4: -1726838253
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 16065
+--- !u!114 &8198246643773886923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/Continentes/Africa
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/Continentes/Africa
+  Guid:
+    Data1: -254632587
+    Data2: 1265962159
+    Data3: -327694719
+    Data4: -649972527
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 20088
 --- !u!114 &8251291553159927223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -962,6 +2367,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 75000
+--- !u!114 &8468245805078067255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/Estaciones/Primavera
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/Estaciones/Primavera
+  Guid:
+    Data1: -2028046561
+    Data2: 1269049239
+    Data3: -823183957
+    Data4: -1547442056
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 51718
 --- !u!114 &8758962950265953540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -989,3 +2421,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 168437
+--- !u!114 &8994305952461117048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Avatar/CuerposCelestes/Planetas
+  m_EditorClassIdentifier: 
+  Path: event:/Avatar/CuerposCelestes/Planetas
+  Guid:
+    Data1: 955670777
+    Data2: 1310292387
+    Data3: -509941080
+    Data4: 2046437878
+  Banks:
+  - {fileID: 5193795069564151937}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 21916

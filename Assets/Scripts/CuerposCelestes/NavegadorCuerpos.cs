@@ -462,4 +462,25 @@ public class NavegadorCuerpos : MonoBehaviour
         AudioManager.Instance.Play(cerrarPanel);
         animator.SetBool("InfoOn", false);
     }
+
+
+    //public GameObject obj1;
+    //public GameObject obj2;
+    //public GameObject obj3;
+    //public GameObject obj4;
+    //public GameObject obj5;
+    //public GameObject obj6;
+    //public GameObject obj7;
+    //public GameObject obj8;
+    //public GameObject obj9;
+    //public GameObject obj10;
+    //public GameObject obj11;
+    //public GameObject obj12;
+    //public GameObject obj13;
+    //public void resetearPaneles()
+    //{
+    //    obj1.SetActive(true); obj2.SetActive(false); obj3.SetActive(false); obj4.SetActive(false); obj5.SetActive(false);
+    //    obj6.SetActive(false); obj7.SetActive(false); obj8.SetActive(false); obj9.SetActive(false); obj10.SetActive(false);
+    //    obj11.SetActive(false); obj12.SetActive(false); obj13.SetActive(false);
+    //}
 }

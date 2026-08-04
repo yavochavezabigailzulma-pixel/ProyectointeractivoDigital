@@ -1068,6 +1068,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 96003590}
+  - component: {fileID: 96003591}
   m_Layer: 0
   m_Name: INVIERNO
   m_TagString: Untagged
@@ -1093,6 +1094,37 @@ Transform:
   - {fileID: 1610690526}
   m_Father: {fileID: 320915812}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &96003591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96003589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1057954206
+      Data2: 1228451486
+      Data3: -294456946
+      Data4: 2055868275
+    Path: event:/Avatar/Estaciones/Invierno
+  Event: 
+  EventPlayTrigger: 11
+  EventStopTrigger: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &97477184
 GameObject:
   m_ObjectHideFlags: 0
@@ -1555,6 +1587,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 147438606}
+  - component: {fileID: 147438607}
   m_Layer: 0
   m_Name: OTONIO
   m_TagString: Untagged
@@ -1580,6 +1613,37 @@ Transform:
   - {fileID: 1176366469}
   m_Father: {fileID: 320915812}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &147438607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147438605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 522355428
+      Data2: 1140836080
+      Data3: 1195096210
+      Data4: 659746098
+    Path: event:/Avatar/Estaciones/Otono
+  Event: 
+  EventPlayTrigger: 11
+  EventStopTrigger: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &147547061
 GameObject:
   m_ObjectHideFlags: 0
@@ -13034,6 +13098,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1176753009}
+  - component: {fileID: 1176753010}
   m_Layer: 5
   m_Name: PRIMAVERA
   m_TagString: Untagged
@@ -13063,6 +13128,37 @@ RectTransform:
   m_AnchoredPosition: {x: -476.91, y: -271.99316}
   m_SizeDelta: {x: 1053.8201, y: 643.9863}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1176753010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176753008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -2028046561
+      Data2: 1269049239
+      Data3: -823183957
+      Data4: -1547442056
+    Path: event:/Avatar/Estaciones/Primavera
+  Event: 
+  EventPlayTrigger: 11
+  EventStopTrigger: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1195722737
 GameObject:
   m_ObjectHideFlags: 0
@@ -23850,6 +23946,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2102264108}
+  - component: {fileID: 2102264109}
   m_Layer: 5
   m_Name: VERANO
   m_TagString: Untagged
@@ -23879,6 +23976,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2102264109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102264107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1645469797
+      Data2: 1221965801
+      Data3: -692153924
+      Data4: 1670956010
+    Path: event:/Avatar/Estaciones/Verano
+  Event: 
+  EventPlayTrigger: 11
+  EventStopTrigger: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &2112002140
 GameObject:
   m_ObjectHideFlags: 0

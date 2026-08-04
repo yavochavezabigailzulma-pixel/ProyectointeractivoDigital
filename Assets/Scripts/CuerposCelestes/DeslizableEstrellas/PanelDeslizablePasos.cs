@@ -34,7 +34,6 @@ public class PanelDeslizablePasos : MonoBehaviour
 
     public void IrAPaso(PasoPanel siguiente)
     {
-        Debug.Log("func");
         if (siguiente == null) return;
 
         pasoActual?.Salir();
@@ -44,6 +43,26 @@ public class PanelDeslizablePasos : MonoBehaviour
         animacionEnCurso = StartCoroutine(AnimarMascara(siguiente.fraccionObjetivo));
 
         pasoActual.Entrar();
+    }
+
+    /// <summary>
+    /// Vuelve al paso inicial. A diferencia de apagar/prender los GameObjects
+    /// a mano desde afuera, esto pasa por IrAPaso para que el paso actualmente
+    /// activo reciba correctamente su Salir() y el estado interno (pasoActual)
+    /// quede sincronizado. Llamar esto al salir de la sección/ventana.
+    /// </summary>
+    public void ResetearPaneles()
+    {
+        if (animacionEnCurso != null) StopCoroutine(animacionEnCurso);
+
+        if (mascara != null)
+            mascara.sizeDelta = new Vector2(mascara.sizeDelta.x, 0f);
+
+        pasoActual?.Salir();
+        pasoActual = null;
+
+        if (pasoInicial != null)
+            IrAPaso(pasoInicial);
     }
 
     private IEnumerator AnimarMascara(float fraccionObjetivo)

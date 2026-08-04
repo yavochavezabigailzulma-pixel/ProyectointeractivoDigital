@@ -131,6 +131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2442131}
+  - component: {fileID: 2442132}
   m_Layer: 5
   m_Name: Scroll1
   m_TagString: Untagged
@@ -159,6 +160,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0.000061035156}
   m_SizeDelta: {x: 2672, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2442132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2442130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1332163487
+      Data2: 1118512837
+      Data3: 845377718
+      Data4: -1726838253
+    Path: event:/Avatar/Continentes/Asia
+  Event: 
+  EventPlayTrigger: 11
+  EventStopTrigger: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &20850781
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,6 +603,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 25258371}
+  - component: {fileID: 25258372}
   m_Layer: 5
   m_Name: Scroll3
   m_TagString: Untagged
@@ -599,6 +632,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0.000061035156}
   m_SizeDelta: {x: 2672, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &25258372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25258370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1029542006
+      Data2: 1316639058
+      Data3: -1951629176
+      Data4: -155307338
+    Path: event:/Avatar/Continentes/Antartida 3
+  Event: 
+  EventPlayTrigger: 11
+  EventStopTrigger: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &34605527
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,6 +829,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 45401325}
+  - component: {fileID: 45401326}
   m_Layer: 5
   m_Name: Scroll1
   m_TagString: Untagged
@@ -793,6 +858,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0.000061035156}
   m_SizeDelta: {x: 2672, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &45401326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45401324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 743168953
+      Data2: 1291256747
+      Data3: -452217671
+      Data4: -1062139038
+    Path: event:/Avatar/Continentes/America
+  Event: 
+  EventPlayTrigger: 11
+  EventStopTrigger: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &58096619
 GameObject:
   m_ObjectHideFlags: 0
@@ -2679,6 +2775,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 206328145}
+  - component: {fileID: 206328146}
   m_Layer: 5
   m_Name: Scroll2
   m_TagString: Untagged
@@ -2707,6 +2804,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0.000061035156}
   m_SizeDelta: {x: 2672, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &206328146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206328144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 34952616
+      Data2: 1169663965
+      Data3: 1410294458
+      Data4: 1470238631
+    Path: event:/Avatar/Continentes/Europa 2
+  Event: 
+  EventPlayTrigger: 11
+  EventStopTrigger: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &216658539
 GameObject:
   m_ObjectHideFlags: 0
@@ -3149,6 +3277,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 245333138}
+  - component: {fileID: 245333139}
   m_Layer: 5
   m_Name: Scroll2
   m_TagString: Untagged
@@ -3177,6 +3306,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0.000061035156}
   m_SizeDelta: {x: 2672, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &245333139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245333137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -565516088
+      Data2: 1089782746
+      Data3: 1864376757
+      Data4: 1883881043
+    Path: event:/Avatar/Continentes/Africa 2
+  Event: 
+  EventPlayTrigger: 11
+  EventStopTrigger: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &247235518
 GameObject:
   m_ObjectHideFlags: 0
@@ -4236,6 +4396,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 313816703}
+  - component: {fileID: 313816704}
   m_Layer: 5
   m_Name: Scroll1
   m_TagString: Untagged
@@ -4264,6 +4425,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0.000061035156}
   m_SizeDelta: {x: 2672, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &313816704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313816702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -254632587
+      Data2: 1265962159
+      Data3: -327694719
+      Data4: -649972527
+    Path: event:/Avatar/Continentes/Africa
+  Event: 
+  EventPlayTrigger: 11
+  EventStopTrigger: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &319268598
 GameObject:
   m_ObjectHideFlags: 0
@@ -5495,6 +5687,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 418461928}
+  - component: {fileID: 418461929}
   m_Layer: 5
   m_Name: Scroll3
   m_TagString: Untagged
@@ -5523,6 +5716,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0.000061035156}
   m_SizeDelta: {x: 2672, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &418461929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418461927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1740440558
+      Data2: 1225420299
+      Data3: 1522730891
+      Data4: 1320061776
+    Path: event:/Avatar/Continentes/Africa 3
+  Event: 
+  EventPlayTrigger: 11
+  EventStopTrigger: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &419687843
 GameObject:
   m_ObjectHideFlags: 0
@@ -6333,6 +6557,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 485297301}
+  - component: {fileID: 485297302}
   m_Layer: 5
   m_Name: Scroll2
   m_TagString: Untagged
@@ -6361,6 +6586,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0.000061035156}
   m_SizeDelta: {x: 2672, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &485297302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485297300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1769674493
+      Data2: 1304996089
+      Data3: -1230880354
+      Data4: 380222578
+    Path: event:/Avatar/Continentes/Antartida 2
+  Event: 
+  EventPlayTrigger: 11
+  EventStopTrigger: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &486854525
 GameObject:
   m_ObjectHideFlags: 0
@@ -14608,6 +14864,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 794351609}
+  - component: {fileID: 794351610}
   m_Layer: 5
   m_Name: Scroll2
   m_TagString: Untagged
@@ -14636,6 +14893,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0.000061035156}
   m_SizeDelta: {x: 2672, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &794351610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794351608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1150740728
+      Data2: 1083941253
+      Data3: -1043286142
+      Data4: 924862223
+    Path: event:/Avatar/Continentes/Asia 2
+  Event: 
+  EventPlayTrigger: 11
+  EventStopTrigger: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &796071774
 GameObject:
   m_ObjectHideFlags: 0
@@ -16695,6 +16983,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 927170361}
+  - component: {fileID: 927170362}
   m_Layer: 5
   m_Name: Scroll1
   m_TagString: Untagged
@@ -16723,6 +17012,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0.000061035156}
   m_SizeDelta: {x: 2672, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &927170362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927170360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 2058261757
+      Data2: 1149627180
+      Data3: 207296958
+      Data4: -179915945
+    Path: event:/Avatar/Continentes/Europa
+  Event: 
+  EventPlayTrigger: 11
+  EventStopTrigger: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &934646314
 GameObject:
   m_ObjectHideFlags: 0
@@ -19886,6 +20206,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1133405479}
+  - component: {fileID: 1133405480}
   m_Layer: 5
   m_Name: Scroll3
   m_TagString: Untagged
@@ -19914,6 +20235,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0.000061035156}
   m_SizeDelta: {x: 2672, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1133405480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133405478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 768529130
+      Data2: 1210618901
+      Data3: -1053151596
+      Data4: -1151468923
+    Path: event:/Avatar/Continentes/Europa 3
+  Event: 
+  EventPlayTrigger: 11
+  EventStopTrigger: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1140854032
 GameObject:
   m_ObjectHideFlags: 0
@@ -21619,6 +21971,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1199553308}
+  - component: {fileID: 1199553309}
   m_Layer: 5
   m_Name: Scroll3
   m_TagString: Untagged
@@ -21647,6 +22000,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0.000061035156}
   m_SizeDelta: {x: 2672, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1199553309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199553307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 192748265
+      Data2: 1159064304
+      Data3: -267558486
+      Data4: -1769626624
+    Path: "event:/Avatar/Continentes/Ocean\xEDa 3"
+  Event: 
+  EventPlayTrigger: 11
+  EventStopTrigger: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!43 &1203923442
 Mesh:
   m_ObjectHideFlags: 0
@@ -25298,6 +25682,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1410246424}
+  - component: {fileID: 1410246425}
   m_Layer: 5
   m_Name: Scroll2
   m_TagString: Untagged
@@ -25326,6 +25711,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0.000061035156}
   m_SizeDelta: {x: 2672, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1410246425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410246423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -659676272
+      Data2: 1230053201
+      Data3: -1651755097
+      Data4: -2067325518
+    Path: "event:/Avatar/Continentes/Ocean\xEDa 2"
+  Event: 
+  EventPlayTrigger: 11
+  EventStopTrigger: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1413101326
 GameObject:
   m_ObjectHideFlags: 0
@@ -26920,6 +27336,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1543247567}
+  - component: {fileID: 1543247568}
   m_Layer: 5
   m_Name: Scroll2
   m_TagString: Untagged
@@ -26948,6 +27365,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0.000061035156}
   m_SizeDelta: {x: 2672, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1543247568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543247566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -788870764
+      Data2: 1210770719
+      Data3: 1996532884
+      Data4: -117822759
+    Path: event:/Avatar/Continentes/America 2
+  Event: 
+  EventPlayTrigger: 11
+  EventStopTrigger: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1548637331
 GameObject:
   m_ObjectHideFlags: 0
@@ -29879,6 +30327,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1752776561}
+  - component: {fileID: 1752776562}
   m_Layer: 5
   m_Name: Scroll1
   m_TagString: Untagged
@@ -29907,6 +30356,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0.000061035156}
   m_SizeDelta: {x: 2672, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1752776562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752776560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1704884477
+      Data2: 1254071348
+      Data3: 214929813
+      Data4: -144603718
+    Path: "event:/Avatar/Continentes/Ocean\xEDa"
+  Event: 
+  EventPlayTrigger: 11
+  EventStopTrigger: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1772856185
 GameObject:
   m_ObjectHideFlags: 0
@@ -30648,6 +31128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1809921809}
+  - component: {fileID: 1809921810}
   m_Layer: 5
   m_Name: Scroll3
   m_TagString: Untagged
@@ -30676,6 +31157,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0.000061035156}
   m_SizeDelta: {x: 2672, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1809921810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809921808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 774323544
+      Data2: 1111283629
+      Data3: 1344936368
+      Data4: 651727830
+    Path: event:/Avatar/Continentes/Asia 3
+  Event: 
+  EventPlayTrigger: 11
+  EventStopTrigger: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1817962337
 GameObject:
   m_ObjectHideFlags: 0
@@ -32619,6 +33131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1908096081}
+  - component: {fileID: 1908096082}
   m_Layer: 5
   m_Name: Scroll3
   m_TagString: Untagged
@@ -32647,6 +33160,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0.000061035156}
   m_SizeDelta: {x: 2672, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1908096082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908096080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1434908248
+      Data2: 1286165690
+      Data3: 1095505286
+      Data4: 733789397
+    Path: event:/Avatar/Continentes/America 3
+  Event: 
+  EventPlayTrigger: 11
+  EventStopTrigger: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1922483193
 GameObject:
   m_ObjectHideFlags: 0
@@ -33784,6 +34328,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2032049371}
+  - component: {fileID: 2032049372}
   m_Layer: 5
   m_Name: Scroll1
   m_TagString: Untagged
@@ -33812,6 +34357,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0.000061035156}
   m_SizeDelta: {x: 2672, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2032049372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032049370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1613769804
+      Data2: 1171313409
+      Data3: 2069327800
+      Data4: 1051810449
+    Path: event:/Avatar/Continentes/Antartida
+  Event: 
+  EventPlayTrigger: 11
+  EventStopTrigger: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &2034234165
 GameObject:
   m_ObjectHideFlags: 0

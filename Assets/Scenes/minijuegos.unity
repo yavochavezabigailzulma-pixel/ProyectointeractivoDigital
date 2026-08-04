@@ -235,6 +235,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 45927528}
+  - component: {fileID: 45927529}
   m_Layer: 5
   m_Name: Preguntas
   m_TagString: Untagged
@@ -272,6 +273,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -13.682861}
   m_SizeDelta: {x: 2310, y: 1080.6343}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &45927529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45927527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 299852139
+      Data2: 1326047740
+      Data3: -551694961
+      Data4: 1575126510
+    Path: event:/Music/Juegos/JuegoCompleta
+  Event: 
+  EventPlayTrigger: 11
+  EventStopTrigger: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &50105312
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,12 +831,12 @@ MonoBehaviour:
   alturaContorno1: 442
   anchoContorno2: 1409.9
   alturaContorno2: 634
-  palabrasNivel1:
+  palabrasUniversoNivel1:
   - COSMOS
   - POLVO
   - ESPIRAL
   - GALAXIAS
-  palabrasNivel2:
+  palabrasUniversoNivel2:
   - COSMOS
   - UNIVERSO
   - GALAXIAS
@@ -813,6 +845,34 @@ MonoBehaviour:
   - ESPIRAL
   - OVALADA
   - ELIPTICA
+  palabrasTierraNivel1:
+  - VERANO
+  - OTONO
+  - CALOR
+  - FRIO
+  palabrasTierraNivel2:
+  - PRIMAVERA
+  - VERANO
+  - OTONO
+  - INVIERNO
+  - FLORES
+  - CALOR
+  - HOJAS
+  - FRIO
+  palabrasMundoNivel1:
+  - EUROPA
+  - ASIA
+  - AFRICA
+  - OCEANIA
+  palabrasMundoNivel2:
+  - EUROPA
+  - ASIA
+  - AFRICA
+  - AMERICA
+  - ANTARTIDA
+  - OCEANIA
+  - PACIFICO
+  - ATLANTICO
   colorNormal: {r: 1, g: 1, b: 1, a: 1}
   colorSeleccion: {r: 0.8, g: 0.9, b: 1, a: 1}
   colorEncontrada: {r: 0.78, g: 0.85, b: 0.27, a: 1}
@@ -1916,7 +1976,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &320845404
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3973,6 +4033,34 @@ MonoBehaviour:
       Data3: -551694961
       Data4: 1575126510
     Path: event:/Music/Juegos/JuegoCompleta
+  selectClic:
+    Guid:
+      Data1: 563518035
+      Data2: 1210902707
+      Data3: -943627087
+      Data4: -1136224814
+    Path: event:/UI/ClicSelect
+  clicVolver:
+    Guid:
+      Data1: -541596362
+      Data2: 1080860997
+      Data3: -1174453631
+      Data4: -1774216874
+    Path: event:/UI/ClicVolver
+  animoTuPuedes:
+    Guid:
+      Data1: -1259504379
+      Data2: 1163968293
+      Data3: 1234689714
+      Data4: 325046401
+    Path: event:/Avatar/Play/AnimoTuPuedes
+  bienHecho:
+    Guid:
+      Data1: -230783502
+      Data2: 1123131401
+      Data3: 1065118377
+      Data4: 524385716
+    Path: event:/Avatar/Play/LoHicisteBien
   musicaGeneral:
     Guid:
       Data1: 904156913
@@ -4013,7 +4101,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 77e9792261830b64396fadcf3a0b4f2c, type: 3}
   - {fileID: 21300000, guid: ea5afed99426c2b4f852dfbb9ec17432, type: 3}
   - {fileID: 21300000, guid: b3b76369c5e288a49a612179d6fefef6, type: 3}
-  - {fileID: 0}
   botonesTemaPorJuego:
   - botonUniverso: {fileID: 21300000, guid: ba41a84c01c2d7048a3374ed0cd9bba6, type: 3}
     botonTierra: {fileID: 21300000, guid: 4feb55b8c66c2944fb58c197a18de064, type: 3}
@@ -4337,6 +4424,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 474960196}
+  - component: {fileID: 474960197}
   m_Layer: 5
   m_Name: Sopa
   m_TagString: Untagged
@@ -4365,6 +4453,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &474960197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474960195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 299852139
+      Data2: 1326047740
+      Data3: -551694961
+      Data4: 1575126510
+    Path: event:/Music/Juegos/JuegoCompleta
+  Event: 
+  EventPlayTrigger: 11
+  EventStopTrigger: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &488162595
 GameObject:
   m_ObjectHideFlags: 0
@@ -5555,6 +5674,74 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 574954430}
   m_CullTransparentMesh: 1
+--- !u!1001 &588366171
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2925368091745860925, guid: a98d864fd6dbeb044b871dc8c6408392,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 616.9473
+      objectReference: {fileID: 0}
+    - target: {fileID: 2925368091745860925, guid: a98d864fd6dbeb044b871dc8c6408392,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 320.32257
+      objectReference: {fileID: 0}
+    - target: {fileID: 2925368091745860925, guid: a98d864fd6dbeb044b871dc8c6408392,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 703.3946
+      objectReference: {fileID: 0}
+    - target: {fileID: 2925368091745860925, guid: a98d864fd6dbeb044b871dc8c6408392,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2925368091745860925, guid: a98d864fd6dbeb044b871dc8c6408392,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2925368091745860925, guid: a98d864fd6dbeb044b871dc8c6408392,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2925368091745860925, guid: a98d864fd6dbeb044b871dc8c6408392,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2925368091745860925, guid: a98d864fd6dbeb044b871dc8c6408392,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2925368091745860925, guid: a98d864fd6dbeb044b871dc8c6408392,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2925368091745860925, guid: a98d864fd6dbeb044b871dc8c6408392,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5077794237193205165, guid: a98d864fd6dbeb044b871dc8c6408392,
+        type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a98d864fd6dbeb044b871dc8c6408392, type: 3}
 --- !u!1 &588623374
 GameObject:
   m_ObjectHideFlags: 0
@@ -17042,6 +17229,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1918244203}
+  - component: {fileID: 1918244204}
   m_Layer: 5
   m_Name: Hora
   m_TagString: Untagged
@@ -17079,6 +17267,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1918244204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918244202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 299852139
+      Data2: 1326047740
+      Data3: -551694961
+      Data4: 1575126510
+    Path: event:/Music/Juegos/JuegoCompleta
+  Event: 
+  EventPlayTrigger: 11
+  EventStopTrigger: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1928150559
 GameObject:
   m_ObjectHideFlags: 0
@@ -17125,6 +17344,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1928624171}
+  - component: {fileID: 1928624172}
   m_Layer: 5
   m_Name: Oraciones
   m_TagString: Untagged
@@ -17161,6 +17381,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1928624172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928624170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 299852139
+      Data2: 1326047740
+      Data3: -551694961
+      Data4: 1575126510
+    Path: event:/Music/Juegos/JuegoCompleta
+  Event: 
+  EventPlayTrigger: 11
+  EventStopTrigger: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1930852538
 GameObject:
   m_ObjectHideFlags: 0
@@ -19209,3 +19460,4 @@ SceneRoots:
   - {fileID: 68046764}
   - {fileID: 750628080}
   - {fileID: 1058259597}
+  - {fileID: 588366171}
