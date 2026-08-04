@@ -1183,7 +1183,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 7881385042960529730}
   cacheVersion: 131859
-  cacheTime: 639214462201669207
+  cacheTime: 639214477092162254
   SerializableEventsDict:
   - key: event:/Music/Continentes/Europa
     index: 0
@@ -1527,7 +1527,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1697
+  Length: 4693
 --- !u!114 &1967968822221338110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1966,7 +1966,7 @@ MonoBehaviour:
   Path: Assets/BancoSonidos/Desktop/Avatar.bank
   Name: Avatar
   StudioPath: bank:/Avatar
-  lastModified: 639214462198081514
+  lastModified: 639214477092162254
   FileSizes: []
   Exists: 1
 --- !u!114 &5315547090157191618
@@ -2103,7 +2103,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1697
+  Length: 3400
 --- !u!114 &6140490394764521751
 MonoBehaviour:
   m_ObjectHideFlags: 0
