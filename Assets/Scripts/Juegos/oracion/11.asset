@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0734ebb3a39dcd44c9af8ac642702df8, type: 3}
   m_Name: 11
   m_EditorClassIdentifier: 
-  parteAntes: '"La Luna tarda aproximadamente'
-  parteDespues: "d\xEDas en dar una vuelta a la Tierra.\""
-  respuestaCorrecta: 28
-  opcion2: 24
-  opcion3: 365
+  tema: 2
+  parteAntes: "\"Nuestro planeta est\xE1 dividido en siete grandes masas de tierra
+    llamadas"
+  parteDespues: '"'
+  respuestaCorrecta: Continentes
+  opcion2: "Oc\xE9anos"
+  opcion3: isas

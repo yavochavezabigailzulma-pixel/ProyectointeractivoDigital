@@ -1,858 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8943478103735412769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Inicio
-  m_EditorClassIdentifier: 
-  Path: event:/Music/Inicio
-  Guid:
-    Data1: -1603088301
-    Data2: 1259327195
-    Data3: 1683254931
-    Data4: 1779533768
-  Banks:
-  - {fileID: 5375049294219994478}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 75000
---- !u!114 &-8447895405433424644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/CuerposCelestes/CuerposCelestes3D
-  m_EditorClassIdentifier: 
-  Path: event:/Music/CuerposCelestes/CuerposCelestes3D
-  Guid:
-    Data1: -1359195155
-    Data2: 1240589578
-    Data3: 125808519
-    Data4: 1479557287
-  Banks:
-  - {fileID: 5375049294219994478}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 230000
---- !u!114 &-7760650877959434667
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Continentes/Oceania
-  m_EditorClassIdentifier: 
-  Path: event:/Music/Continentes/Oceania
-  Guid:
-    Data1: -1581947664
-    Data2: 1113821467
-    Data3: -664237413
-    Data4: 1397067520
-  Banks:
-  - {fileID: 5375049294219994478}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 251232
---- !u!114 &-7055087737383577088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Estaciones/Primavera
-  m_EditorClassIdentifier: 
-  Path: event:/Music/Estaciones/Primavera
-  Guid:
-    Data1: 1542820211
-    Data2: 1135300565
-    Data3: 836187029
-    Data4: 871534782
-  Banks:
-  - {fileID: 5375049294219994478}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 92029
---- !u!114 &-6906972129835343922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Estaciones/Estaciones
-  m_EditorClassIdentifier: 
-  Path: event:/Music/Estaciones/Estaciones
-  Guid:
-    Data1: -1119179164
-    Data2: 1124895698
-    Data3: 1912185523
-    Data4: -1561653916
-  Banks:
-  - {fileID: 5375049294219994478}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 168568
---- !u!114 &-6733638479902448258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Continentes/Africa
-  m_EditorClassIdentifier: 
-  Path: event:/Music/Continentes/Africa
-  Guid:
-    Data1: 1390979992
-    Data2: 1141695505
-    Data3: -170154077
-    Data4: -2085688286
-  Banks:
-  - {fileID: 5375049294219994478}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 168437
---- !u!114 &-6346678776276710502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Continentes/Asia
-  m_EditorClassIdentifier: 
-  Path: event:/Music/Continentes/Asia
-  Guid:
-    Data1: -1781551235
-    Data2: 1212463155
-    Data3: 487702179
-    Data4: -1264797661
-  Banks:
-  - {fileID: 5375049294219994478}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 172872
---- !u!114 &-6260235249381553701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI/CerrarPanel
-  m_EditorClassIdentifier: 
-  Path: event:/UI/CerrarPanel
-  Guid:
-    Data1: 1518902835
-    Data2: 1263489952
-    Data3: 1784330123
-    Data4: -70379221
-  Banks:
-  - {fileID: -4664911101318860837}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 595
---- !u!114 &-4664911101318860837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/UI.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/BancoSonidos/Desktop/UI.bank
-  Name: UI
-  StudioPath: bank:/UI
-  lastModified: 639208554601693842
-  FileSizes: []
-  Exists: 1
---- !u!114 &-4132588466075913682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI/ClicVolver
-  m_EditorClassIdentifier: 
-  Path: event:/UI/ClicVolver
-  Guid:
-    Data1: -541596362
-    Data2: 1080860997
-    Data3: -1174453631
-    Data4: -1774216874
-  Banks:
-  - {fileID: -4664911101318860837}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-3861345821830572870
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI/AbrirPanel
-  m_EditorClassIdentifier: 
-  Path: event:/UI/AbrirPanel
-  Guid:
-    Data1: 1197013609
-    Data2: 1313812869
-    Data3: 2040591293
-    Data4: 523504662
-  Banks:
-  - {fileID: -4664911101318860837}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1200
---- !u!114 &-2888571023639358299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Reloj/RelojMusic
-  m_EditorClassIdentifier: 
-  Path: event:/Music/Reloj/RelojMusic
-  Guid:
-    Data1: 828902254
-    Data2: 1316688629
-    Data3: -1532984447
-    Data4: 1270741202
-  Banks:
-  - {fileID: 5375049294219994478}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 174419
---- !u!114 &-2101610265696127151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Juegos/JuegoCompleta
-  m_EditorClassIdentifier: 
-  Path: event:/Music/Juegos/JuegoCompleta
-  Guid:
-    Data1: 299852139
-    Data2: 1326047740
-    Data3: -551694961
-    Data4: 1575126510
-  Banks:
-  - {fileID: 5375049294219994478}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 142296
---- !u!114 &-1348401290646507011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Continentes/Antartida
-  m_EditorClassIdentifier: 
-  Path: event:/Music/Continentes/Antartida
-  Guid:
-    Data1: -1307105189
-    Data2: 1090986360
-    Data3: 1410687167
-    Data4: -456297430
-  Banks:
-  - {fileID: 5375049294219994478}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 150912
---- !u!114 &-1175276518836623753
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI/GiroMenu
-  m_EditorClassIdentifier: 
-  Path: event:/UI/GiroMenu
-  Guid:
-    Data1: -1950528052
-    Data2: 1255847135
-    Data3: 1934656957
-    Data4: -486088150
-  Banks:
-  - {fileID: -4664911101318860837}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-1123163332926776855
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/SFX.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/BancoSonidos/Desktop/SFX.bank
-  Name: SFX
-  StudioPath: bank:/SFX
-  lastModified: 639208646634434410
-  FileSizes: []
-  Exists: 1
---- !u!114 &-564108664653345957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Estaciones/Verano
-  m_EditorClassIdentifier: 
-  Path: event:/Music/Estaciones/Verano
-  Guid:
-    Data1: -708197087
-    Data2: 1229124450
-    Data3: -2137594707
-    Data4: 866142260
-  Banks:
-  - {fileID: 5375049294219994478}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 68880
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: 4536964855871900339}
-  - {fileID: 4725744668468142691}
-  - {fileID: 5375049294219994478}
-  - {fileID: -4664911101318860837}
-  - {fileID: -1123163332926776855}
-  EditorEvents:
-  - {fileID: -1175276518836623753}
-  - {fileID: 4545387245336529628}
-  - {fileID: -4132588466075913682}
-  - {fileID: 1637569359448520888}
-  - {fileID: -564108664653345957}
-  - {fileID: -8943478103735412769}
-  - {fileID: 4867875703767535902}
-  - {fileID: -1348401290646507011}
-  - {fileID: 7362903561435392642}
-  - {fileID: 6551175715396563863}
-  - {fileID: -6906972129835343922}
-  - {fileID: -2101610265696127151}
-  - {fileID: -7055087737383577088}
-  - {fileID: -6346678776276710502}
-  - {fileID: -6733638479902448258}
-  - {fileID: 4675976097516313659}
-  - {fileID: 5896967335489390386}
-  - {fileID: 4942867187561953133}
-  - {fileID: -7760650877959434667}
-  - {fileID: 7072840898729681994}
-  - {fileID: 1620432113353164411}
-  - {fileID: 2231329980755007584}
-  - {fileID: -2888571023639358299}
-  - {fileID: 3214330793535716139}
-  - {fileID: -8447895405433424644}
-  - {fileID: 8021385624828605186}
-  - {fileID: -3861345821830572870}
-  - {fileID: -6260235249381553701}
-  - {fileID: 6631704374253280804}
-  EditorParameters: []
-  MasterBanks:
-  - {fileID: 4725744668468142691}
-  StringsBanks:
-  - {fileID: 4536964855871900339}
-  cacheVersion: 131859
-  cacheTime: 639208659166860684
-  SerializableEventsDict:
-  - key: event:/UI/GiroMenu
-    index: 0
-  - key: event:/UI/ClicSelect
-    index: 1
-  - key: event:/UI/ClicVolver
-    index: 2
-  - key: event:/Music/Continentes/Europa
-    index: 3
-  - key: event:/Music/Estaciones/Verano
-    index: 4
-  - key: event:/Music/Inicio
-    index: 5
-  - key: event:/Music/Estaciones/Invierno
-    index: 6
-  - key: event:/Music/Continentes/Antartida
-    index: 7
-  - key: event:/Music/Estaciones/Otono
-    index: 8
-  - key: event:/Music/Juegos/JuegoSopa
-    index: 9
-  - key: event:/Music/Estaciones/Estaciones
-    index: 10
-  - key: event:/Music/Juegos/JuegoCompleta
-    index: 11
-  - key: event:/Music/Estaciones/Primavera
-    index: 12
-  - key: event:/Music/Continentes/Asia
-    index: 13
-  - key: event:/Music/Continentes/Africa
-    index: 14
-  - key: event:/Music/Juegos/JuegoPreguntas
-    index: 15
-  - key: event:/Music/Juegos/JuegoRelojMusic
-    index: 16
-  - key: event:/Music/Continentes/America
-    index: 17
-  - key: event:/Music/Continentes/Oceania
-    index: 18
-  - key: event:/Music/Juegos/JuegoSMenu
-    index: 19
-  - key: event:/Music/CuerposCelestes/CuerposCelestes
-    index: 20
-  - key: event:/Music/SistemaSolar/SistemaSolar
-    index: 21
-  - key: event:/Music/Reloj/RelojMusic
-    index: 22
-  - key: event:/Music/RotacionTIerra/RotacionTierra
-    index: 23
-  - key: event:/Music/CuerposCelestes/CuerposCelestes3D
-    index: 24
-  - key: event:/Music/InicioOff
-    index: 25
-  - key: event:/UI/AbrirPanel
-    index: 26
-  - key: event:/UI/CerrarPanel
-    index: 27
---- !u!114 &1620432113353164411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/CuerposCelestes/CuerposCelestes
-  m_EditorClassIdentifier: 
-  Path: event:/Music/CuerposCelestes/CuerposCelestes
-  Guid:
-    Data1: 364474887
-    Data2: 1285104856
-    Data3: 98622630
-    Data4: -1888142286
-  Banks:
-  - {fileID: 5375049294219994478}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 310000
---- !u!114 &1637569359448520888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Continentes/Europa
-  m_EditorClassIdentifier: 
-  Path: event:/Music/Continentes/Europa
-  Guid:
-    Data1: -466777341
-    Data2: 1174524013
-    Data3: 1623503265
-    Data4: 25166786
-  Banks:
-  - {fileID: 5375049294219994478}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 22053
---- !u!114 &2231329980755007584
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/SistemaSolar/SistemaSolar
-  m_EditorClassIdentifier: 
-  Path: event:/Music/SistemaSolar/SistemaSolar
-  Guid:
-    Data1: -928717504
-    Data2: 1205023388
-    Data3: 99735424
-    Data4: 955448976
-  Banks:
-  - {fileID: 5375049294219994478}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 578000
---- !u!114 &3214330793535716139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/RotacionTIerra/RotacionTierra
-  m_EditorClassIdentifier: 
-  Path: event:/Music/RotacionTIerra/RotacionTierra
-  Guid:
-    Data1: 2080023224
-    Data2: 1222571011
-    Data3: 658330555
-    Data4: 2056998862
-  Banks:
-  - {fileID: 5375049294219994478}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 140068
---- !u!114 &4536964855871900339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/BancoSonidos/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 639208646634309081
-  FileSizes:
-  - Name: 
-    Value: 2242
-  Exists: 1
---- !u!114 &4545387245336529628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI/ClicSelect
-  m_EditorClassIdentifier: 
-  Path: event:/UI/ClicSelect
-  Guid:
-    Data1: 563518035
-    Data2: 1210902707
-    Data3: -943627087
-    Data4: -1136224814
-  Banks:
-  - {fileID: -4664911101318860837}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &4675976097516313659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Juegos/JuegoPreguntas
-  m_EditorClassIdentifier: 
-  Path: event:/Music/Juegos/JuegoPreguntas
-  Guid:
-    Data1: -1746583121
-    Data2: 1200448054
-    Data3: -306888294
-    Data4: 393577014
-  Banks:
-  - {fileID: 5375049294219994478}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 314784
---- !u!114 &4725744668468142691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/BancoSonidos/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 639207747221341801
-  FileSizes: []
-  Exists: 1
---- !u!114 &4867875703767535902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Estaciones/Invierno
-  m_EditorClassIdentifier: 
-  Path: event:/Music/Estaciones/Invierno
-  Guid:
-    Data1: 1466774868
-    Data2: 1119158858
-    Data3: -295096954
-    Data4: -1870611664
-  Banks:
-  - {fileID: 5375049294219994478}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 52000
---- !u!114 &4942867187561953133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Continentes/America
-  m_EditorClassIdentifier: 
-  Path: event:/Music/Continentes/America
-  Guid:
-    Data1: 2029234921
-    Data2: 1091909193
-    Data3: 639687867
-    Data4: -1446862802
-  Banks:
-  - {fileID: 5375049294219994478}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 209880
---- !u!114 &5375049294219994478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Music.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/BancoSonidos/Desktop/Music.bank
-  Name: Music
-  StudioPath: bank:/Music
-  lastModified: 639208659166860684
-  FileSizes: []
-  Exists: 1
---- !u!114 &5896967335489390386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Juegos/JuegoRelojMusic
-  m_EditorClassIdentifier: 
-  Path: event:/Music/Juegos/JuegoRelojMusic
-  Guid:
-    Data1: 812738777
-    Data2: 1175993456
-    Data3: -1241858891
-    Data4: -1215753344
-  Banks:
-  - {fileID: 5375049294219994478}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 83450
---- !u!114 &6551175715396563863
+--- !u!114 &-9219830743003073256
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -871,7 +19,7 @@ MonoBehaviour:
     Data3: 928311994
     Data4: 1634586397
   Banks:
-  - {fileID: 5375049294219994478}
+  - {fileID: -3985920444289946562}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -879,61 +27,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 62641
---- !u!114 &6631704374253280804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/GiroTierra
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/GiroTierra
-  Guid:
-    Data1: 709737783
-    Data2: 1181340396
-    Data3: 892150681
-    Data4: -1900713028
-  Banks:
-  - {fileID: -1123163332926776855}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 80
---- !u!114 &7072840898729681994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Juegos/JuegoSMenu
-  m_EditorClassIdentifier: 
-  Path: event:/Music/Juegos/JuegoSMenu
-  Guid:
-    Data1: 904156913
-    Data2: 1329759469
-    Data3: 2097004986
-    Data4: 1037407663
-  Banks:
-  - {fileID: 5375049294219994478}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 177475
---- !u!114 &7362903561435392642
+--- !u!114 &-8932664677588305421
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -952,7 +46,7 @@ MonoBehaviour:
     Data3: 279911085
     Data4: 2108474619
   Banks:
-  - {fileID: 5375049294219994478}
+  - {fileID: -3985920444289946562}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -960,7 +54,760 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 115000
---- !u!114 &8021385624828605186
+--- !u!114 &-8371844740042583078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Estaciones/Invierno
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Estaciones/Invierno
+  Guid:
+    Data1: 1466774868
+    Data2: 1119158858
+    Data3: -295096954
+    Data4: -1870611664
+  Banks:
+  - {fileID: -3985920444289946562}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 52000
+--- !u!114 &-6039032258742541194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Juegos/JuegoCompleta
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Juegos/JuegoCompleta
+  Guid:
+    Data1: 299852139
+    Data2: 1326047740
+    Data3: -551694961
+    Data4: 1575126510
+  Banks:
+  - {fileID: -3985920444289946562}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 142296
+--- !u!114 &-5947601335810418705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/GiroTierra
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/GiroTierra
+  Guid:
+    Data1: 709737783
+    Data2: 1181340396
+    Data3: 892150681
+    Data4: -1900713028
+  Banks:
+  - {fileID: -3914881113139799869}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 80
+--- !u!114 &-5930606664301862586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/AbrirPanel
+  m_EditorClassIdentifier: 
+  Path: event:/UI/AbrirPanel
+  Guid:
+    Data1: 1197013609
+    Data2: 1313812869
+    Data3: 2040591293
+    Data4: 523504662
+  Banks:
+  - {fileID: -867759329615283472}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1200
+--- !u!114 &-5654638032882208566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/ClicSelect
+  m_EditorClassIdentifier: 
+  Path: event:/UI/ClicSelect
+  Guid:
+    Data1: 563518035
+    Data2: 1210902707
+    Data3: -943627087
+    Data4: -1136224814
+  Banks:
+  - {fileID: -867759329615283472}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4877133955857670254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/SistemaSolar/SistemaSolar
+  m_EditorClassIdentifier: 
+  Path: event:/Music/SistemaSolar/SistemaSolar
+  Guid:
+    Data1: -928717504
+    Data2: 1205023388
+    Data3: 99735424
+    Data4: 955448976
+  Banks:
+  - {fileID: -3985920444289946562}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 578000
+--- !u!114 &-4711299777277923658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Estaciones/Estaciones
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Estaciones/Estaciones
+  Guid:
+    Data1: -1119179164
+    Data2: 1124895698
+    Data3: 1912185523
+    Data4: -1561653916
+  Banks:
+  - {fileID: -3985920444289946562}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 168568
+--- !u!114 &-4685547339804706352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Continentes/Oceania
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Continentes/Oceania
+  Guid:
+    Data1: -1581947664
+    Data2: 1113821467
+    Data3: -664237413
+    Data4: 1397067520
+  Banks:
+  - {fileID: -3985920444289946562}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 251232
+--- !u!114 &-4374524399164776897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Continentes/America
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Continentes/America
+  Guid:
+    Data1: 2029234921
+    Data2: 1091909193
+    Data3: 639687867
+    Data4: -1446862802
+  Banks:
+  - {fileID: -3985920444289946562}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 209880
+--- !u!114 &-4262996071790377097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Continentes/Antartida
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Continentes/Antartida
+  Guid:
+    Data1: -1307105189
+    Data2: 1090986360
+    Data3: 1410687167
+    Data4: -456297430
+  Banks:
+  - {fileID: -3985920444289946562}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 150912
+--- !u!114 &-3985920444289946562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/BancoSonidos/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 639213131991413623
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-3914881113139799869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/BancoSonidos/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 639213131991425040
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-3525592702113440655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Reloj/RelojMusic
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Reloj/RelojMusic
+  Guid:
+    Data1: 828902254
+    Data2: 1316688629
+    Data3: -1532984447
+    Data4: 1270741202
+  Banks:
+  - {fileID: -3985920444289946562}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 174419
+--- !u!114 &-3462581771939620036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/CuerposCelestes/CuerposCelestes
+  m_EditorClassIdentifier: 
+  Path: event:/Music/CuerposCelestes/CuerposCelestes
+  Guid:
+    Data1: 364474887
+    Data2: 1285104856
+    Data3: 98622630
+    Data4: -1888142286
+  Banks:
+  - {fileID: -3985920444289946562}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 310000
+--- !u!114 &-1838335395735249840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/ClicVolver
+  m_EditorClassIdentifier: 
+  Path: event:/UI/ClicVolver
+  Guid:
+    Data1: -541596362
+    Data2: 1080860997
+    Data3: -1174453631
+    Data4: -1774216874
+  Banks:
+  - {fileID: -867759329615283472}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-867759329615283472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/UI.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/BancoSonidos/Desktop/UI.bank
+  Name: UI
+  StudioPath: bank:/UI
+  lastModified: 639213131991662903
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-77821228442570119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Estaciones/Primavera
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Estaciones/Primavera
+  Guid:
+    Data1: 1542820211
+    Data2: 1135300565
+    Data3: 836187029
+    Data4: 871534782
+  Banks:
+  - {fileID: -3985920444289946562}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 92029
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 7881385042960529730}
+  - {fileID: 2783618311470738512}
+  - {fileID: -3985920444289946562}
+  - {fileID: -3914881113139799869}
+  - {fileID: -867759329615283472}
+  EditorEvents:
+  - {fileID: 3705645934721319551}
+  - {fileID: -3462581771939620036}
+  - {fileID: 1967968822221338110}
+  - {fileID: -4877133955857670254}
+  - {fileID: 8251291553159927223}
+  - {fileID: -8371844740042583078}
+  - {fileID: -4262996071790377097}
+  - {fileID: -8932664677588305421}
+  - {fileID: -9219830743003073256}
+  - {fileID: -4711299777277923658}
+  - {fileID: -6039032258742541194}
+  - {fileID: -3525592702113440655}
+  - {fileID: -77821228442570119}
+  - {fileID: 3071826491280885215}
+  - {fileID: 8758962950265953540}
+  - {fileID: 817113507350313510}
+  - {fileID: 7427658444943051094}
+  - {fileID: 3593530066844881047}
+  - {fileID: 3135967680694531905}
+  - {fileID: -4374524399164776897}
+  - {fileID: 5315547090157191618}
+  - {fileID: -4685547339804706352}
+  - {fileID: 3117819738399164665}
+  - {fileID: -5947601335810418705}
+  - {fileID: 3255214483638126227}
+  - {fileID: -1838335395735249840}
+  - {fileID: -5654638032882208566}
+  - {fileID: -5930606664301862586}
+  - {fileID: 2445815999354857132}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 2783618311470738512}
+  StringsBanks:
+  - {fileID: 7881385042960529730}
+  cacheVersion: 131859
+  cacheTime: 639213131991662903
+  SerializableEventsDict:
+  - key: event:/Music/Continentes/Europa
+    index: 0
+  - key: event:/Music/CuerposCelestes/CuerposCelestes
+    index: 1
+  - key: event:/Music/Estaciones/Verano
+    index: 2
+  - key: event:/Music/SistemaSolar/SistemaSolar
+    index: 3
+  - key: event:/Music/Inicio
+    index: 4
+  - key: event:/Music/Estaciones/Invierno
+    index: 5
+  - key: event:/Music/Continentes/Antartida
+    index: 6
+  - key: event:/Music/Estaciones/Otono
+    index: 7
+  - key: event:/Music/Juegos/JuegoSopa
+    index: 8
+  - key: event:/Music/Estaciones/Estaciones
+    index: 9
+  - key: event:/Music/Juegos/JuegoCompleta
+    index: 10
+  - key: event:/Music/Reloj/RelojMusic
+    index: 11
+  - key: event:/Music/Estaciones/Primavera
+    index: 12
+  - key: event:/Music/Continentes/Asia
+    index: 13
+  - key: event:/Music/Continentes/Africa
+    index: 14
+  - key: event:/Music/Juegos/JuegoPreguntas
+    index: 15
+  - key: event:/Music/RotacionTIerra/RotacionTierra
+    index: 16
+  - key: event:/Music/InicioOff
+    index: 17
+  - key: event:/Music/Juegos/JuegoRelojMusic
+    index: 18
+  - key: event:/Music/Continentes/America
+    index: 19
+  - key: event:/Music/CuerposCelestes/CuerposCelestes3D
+    index: 20
+  - key: event:/Music/Continentes/Oceania
+    index: 21
+  - key: event:/Music/Juegos/JuegoSMenu
+    index: 22
+  - key: event:/SFX/GiroTierra
+    index: 23
+  - key: event:/UI/CerrarPanel
+    index: 24
+  - key: event:/UI/ClicVolver
+    index: 25
+  - key: event:/UI/ClicSelect
+    index: 26
+  - key: event:/UI/AbrirPanel
+    index: 27
+  - key: event:/UI/GiroMenu
+    index: 28
+--- !u!114 &817113507350313510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Juegos/JuegoPreguntas
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Juegos/JuegoPreguntas
+  Guid:
+    Data1: -1746583121
+    Data2: 1200448054
+    Data3: -306888294
+    Data4: 393577014
+  Banks:
+  - {fileID: -3985920444289946562}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 314784
+--- !u!114 &1967968822221338110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Estaciones/Verano
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Estaciones/Verano
+  Guid:
+    Data1: -708197087
+    Data2: 1229124450
+    Data3: -2137594707
+    Data4: 866142260
+  Banks:
+  - {fileID: -3985920444289946562}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 68880
+--- !u!114 &2445815999354857132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/GiroMenu
+  m_EditorClassIdentifier: 
+  Path: event:/UI/GiroMenu
+  Guid:
+    Data1: -1950528052
+    Data2: 1255847135
+    Data3: 1934656957
+    Data4: -486088150
+  Banks:
+  - {fileID: -867759329615283472}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2783618311470738512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/BancoSonidos/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 639207747221341801
+  FileSizes: []
+  Exists: 1
+--- !u!114 &3071826491280885215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Continentes/Asia
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Continentes/Asia
+  Guid:
+    Data1: -1781551235
+    Data2: 1212463155
+    Data3: 487702179
+    Data4: -1264797661
+  Banks:
+  - {fileID: -3985920444289946562}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 172872
+--- !u!114 &3117819738399164665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Juegos/JuegoSMenu
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Juegos/JuegoSMenu
+  Guid:
+    Data1: 904156913
+    Data2: 1329759469
+    Data3: 2097004986
+    Data4: 1037407663
+  Banks:
+  - {fileID: -3985920444289946562}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 177475
+--- !u!114 &3135967680694531905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Juegos/JuegoRelojMusic
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Juegos/JuegoRelojMusic
+  Guid:
+    Data1: 812738777
+    Data2: 1175993456
+    Data3: -1241858891
+    Data4: -1215753344
+  Banks:
+  - {fileID: -3985920444289946562}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 83450
+--- !u!114 &3255214483638126227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/CerrarPanel
+  m_EditorClassIdentifier: 
+  Path: event:/UI/CerrarPanel
+  Guid:
+    Data1: 1518902835
+    Data2: 1263489952
+    Data3: 1784330123
+    Data4: -70379221
+  Banks:
+  - {fileID: -867759329615283472}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 595
+--- !u!114 &3593530066844881047
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -979,7 +826,7 @@ MonoBehaviour:
     Data3: 313605257
     Data4: 2084894136
   Banks:
-  - {fileID: 5375049294219994478}
+  - {fileID: -3985920444289946562}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -987,3 +834,158 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 62641
+--- !u!114 &3705645934721319551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Continentes/Europa
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Continentes/Europa
+  Guid:
+    Data1: -466777341
+    Data2: 1174524013
+    Data3: 1623503265
+    Data4: 25166786
+  Banks:
+  - {fileID: -3985920444289946562}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 22053
+--- !u!114 &5315547090157191618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/CuerposCelestes/CuerposCelestes3D
+  m_EditorClassIdentifier: 
+  Path: event:/Music/CuerposCelestes/CuerposCelestes3D
+  Guid:
+    Data1: -1359195155
+    Data2: 1240589578
+    Data3: 125808519
+    Data4: 1479557287
+  Banks:
+  - {fileID: -3985920444289946562}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 230000
+--- !u!114 &7427658444943051094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/RotacionTIerra/RotacionTierra
+  m_EditorClassIdentifier: 
+  Path: event:/Music/RotacionTIerra/RotacionTierra
+  Guid:
+    Data1: 2080023224
+    Data2: 1222571011
+    Data3: 658330555
+    Data4: 2056998862
+  Banks:
+  - {fileID: -3985920444289946562}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 140068
+--- !u!114 &7881385042960529730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/BancoSonidos/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 639213131979307483
+  FileSizes:
+  - Name: 
+    Value: 2242
+  Exists: 1
+--- !u!114 &8251291553159927223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Inicio
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Inicio
+  Guid:
+    Data1: -1603088301
+    Data2: 1259327195
+    Data3: 1683254931
+    Data4: 1779533768
+  Banks:
+  - {fileID: -3985920444289946562}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 75000
+--- !u!114 &8758962950265953540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Continentes/Africa
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Continentes/Africa
+  Guid:
+    Data1: 1390979992
+    Data2: 1141695505
+    Data3: -170154077
+    Data4: -2085688286
+  Banks:
+  - {fileID: -3985920444289946562}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 168437

@@ -10,28 +10,36 @@ public class SopaLetrasManager : MonoBehaviour
     public GameObject celdaPrefab;
     public GridLayoutGroup gridLayout;
 
-    [Header("Nivel 1 - Grilla reducida (12 columnas x 6 filas)")]
-    [Tooltip("Palabras a encontrar en Nivel 1. Deben caber dentro de la grilla de Nivel 1.")]
-    public string[] palabrasNivel1 = {
-        "COSMOS","POLVO","ESPIRAL","GALAXIAS"
-    };
-    [Tooltip("Cada string es una fila. Deben ser 6 filas de máximo 12 caracteres cada una.")]
-    public string[] gridRawNivel1 = {
+    [Header("Dimensiones del contenedor según nivel")]
+    public GameObject gridDimensiones;
+    public float anchoGrid1;
+    public float alturaGrid1;
+    public float anchoGrid2;
+    public float alturaGrid2;
+
+    public GameObject contornoDimensiones;
+    public float anchoContorno1;
+    public float alturaContorno1;
+    public float anchoContorno2;
+    public float alturaContorno2;
+
+    [Header("Universo - Nivel 1 (4 palabras)")]
+    public string[] palabrasUniversoNivel1 = { "COSMOS", "POLVO", "ESPIRAL", "GALAXIAS" };
+    private readonly string[] gridRawUniversoNivel1 = {
         "COSMOSRVREES",
         "UNIVERLLORLS",
         "NIVERSOV P H",
         "IXCRGALAXIAS",
         "VENDDOA  LI ",
-        "EEXBPFSPOJUO"
+        "EEXBPESPIRAL"
     };
 
-    [Header("Nivel 2 - Grilla completa (configuración actual)")]
-    [Tooltip("Palabras a encontrar en Nivel 2.")]
-    public string[] palabrasNivel2 = {
+    [Header("Universo - Nivel 2 (8 palabras)")]
+    public string[] palabrasUniversoNivel2 = {
         "COSMOS","UNIVERSO","GALAXIAS","ESTRELLAS",
         "POLVO","ESPIRAL","OVALADA","ELIPTICA"
     };
-    private readonly string[] gridRawNivel2 = {
+    private readonly string[] gridRawUniversoNivel2 = {
         "COSMOSRVREESVFSDRTY",
         "UNIVERLLORLS VADTXHE",
         "NIVERSOV P HTEPZSIX",
@@ -41,6 +49,63 @@ public class SopaLetrasManager : MonoBehaviour
         "RRKEACTFCTRES PILKVL",
         "SRESPIRALESYCCHBDAR",
         "OOVALADAEDELIPTICAS"
+    };
+
+    [Header("Tierra - Nivel 1 (4 palabras)")]
+    public string[] palabrasTierraNivel1 = { "VERANO", "OTONO", "CALOR", "FRIO" };
+    private readonly string[] gridRawTierraNivel1 = {
+        "  VERANO",
+        "       OTONO",
+        "CALOR",
+        "        FRIO",
+        "",
+        ""
+    };
+
+    [Header("Tierra - Nivel 2 (8 palabras)")]
+    public string[] palabrasTierraNivel2 = {
+        "PRIMAVERA","VERANO","OTONO","INVIERNO",
+        "FLORES","CALOR","HOJAS","FRIO"
+    };
+    private readonly string[] gridRawTierraNivel2 = {
+        "CDSSESRVREESVFSDRTYO",
+
+        "  PRIMAVERA",
+        "       VERANO",
+        "OTONO",
+        "     INVIERNO",
+        "         FLORES",
+        "CALOR",
+        "       HOJAS",
+        "           FRIO",
+    };
+
+    [Header("Mundo - Nivel 1 (4 palabras)")]
+    public string[] palabrasMundoNivel1 = { "EUROPA", "ASIA", "AFRICA", "OCEANIA" };
+    private readonly string[] gridRawMundoNivel1 = {
+        "  EUROPA",
+        "      ASIA",
+        "AFRICA",
+        "     OCEANIA",
+        "",
+        ""
+    };
+
+    [Header("Mundo - Nivel 2 (8 palabras)")]
+    public string[] palabrasMundoNivel2 = {
+        "EUROPA","ASIA","AFRICA","AMERICA",
+        "ANTARTIDA","OCEANIA","PACIFICO","ATLANTICO"
+    };
+    private readonly string[] gridRawMundoNivel2 = {
+        "CDSSESRVREESVFSDYIKR",
+        "      EUROPA",
+        "        ASIA",
+        "AFRICA     ",
+        "    AMERICA",
+        "   ANTARTIDA",
+        "      OCEANIA",
+        "   PACIFICO",
+        "    ATLANTICO"
     };
 
     [Header("Colores")]
@@ -59,7 +124,6 @@ public class SopaLetrasManager : MonoBehaviour
     [Header("Fin de juego")]
     public float tiempoAntesDeFinalizar = 1.2f;
 
-    // Datos activos de la partida actual (dependen del nivel elegido)
     private string[] palabrasActuales;
     private string[] gridRawActual;
 
@@ -76,7 +140,6 @@ public class SopaLetrasManager : MonoBehaviour
     private bool arrastrando = false;
     private List<SopaLetrasCell> seleccionActual = new();
 
-    // Referencias a lo instanciado, para poder destruirlo al reconstruir
     private List<GameObject> celdasInstanciadas = new();
     private List<GameObject> tagsInstanciados = new();
 
@@ -92,20 +155,21 @@ public class SopaLetrasManager : MonoBehaviour
     }
 
     // Llamado explícitamente por JuegosManager al iniciar o reintentar el nivel.
-    public void ReiniciarJuego(int nivel)
+    public void ReiniciarJuego(int nivel, TemaPregunta tema)
     {
         StopAllCoroutines();
 
-        // Elegir configuración según nivel
+        SeleccionarConfiguracion(nivel, tema);
+
         if (nivel == 1)
         {
-            palabrasActuales = palabrasNivel1;
-            gridRawActual = gridRawNivel1;
+            gridDimensiones.GetComponent<RectTransform>().sizeDelta = new Vector2(anchoGrid1, alturaGrid1);
+            contornoDimensiones.GetComponent<RectTransform>().sizeDelta = new Vector2(anchoContorno1, alturaContorno1);
         }
         else
         {
-            palabrasActuales = palabrasNivel2;
-            gridRawActual = gridRawNivel2;
+            gridDimensiones.GetComponent<RectTransform>().sizeDelta = new Vector2(anchoGrid2, alturaGrid2);
+            contornoDimensiones.GetComponent<RectTransform>().sizeDelta = new Vector2(anchoContorno2, alturaContorno2);
         }
 
         LimpiarInstancias();
@@ -129,7 +193,26 @@ public class SopaLetrasManager : MonoBehaviour
         jugando = true;
     }
 
-    // Destruye celdas y tags de la partida/nivel anterior antes de reconstruir
+    private void SeleccionarConfiguracion(int nivel, TemaPregunta tema)
+    {
+        switch (tema)
+        {
+            case TemaPregunta.Tierra:
+                palabrasActuales = nivel == 1 ? palabrasTierraNivel1 : palabrasTierraNivel2;
+                gridRawActual = nivel == 1 ? gridRawTierraNivel1 : gridRawTierraNivel2;
+                break;
+            case TemaPregunta.Mundo:
+                palabrasActuales = nivel == 1 ? palabrasMundoNivel1 : palabrasMundoNivel2;
+                gridRawActual = nivel == 1 ? gridRawMundoNivel1 : gridRawMundoNivel2;
+                break;
+            case TemaPregunta.Universo:
+            default:
+                palabrasActuales = nivel == 1 ? palabrasUniversoNivel1 : palabrasUniversoNivel2;
+                gridRawActual = nivel == 1 ? gridRawUniversoNivel1 : gridRawUniversoNivel2;
+                break;
+        }
+    }
+
     void LimpiarInstancias()
     {
         foreach (var go in celdasInstanciadas)
@@ -184,7 +267,7 @@ public class SopaLetrasManager : MonoBehaviour
                     }
 
             if (!ubicaciones.ContainsKey(pal))
-                Debug.LogWarning($"[SopaLetras] La palabra \"{pal}\" no entró en la grilla actual. Revisá gridRawNivel1/2.");
+                Debug.LogWarning($"[SopaLetras] La palabra \"{pal}\" no entró en la grilla actual.");
         }
     }
 
@@ -231,8 +314,6 @@ public class SopaLetrasManager : MonoBehaviour
             tagsInstanciados.Add(go);
         }
     }
-
-    // ── Selección ─────────────────────────────────────────────
 
     public void IniciarSeleccion(SopaLetrasCell celda)
     {
@@ -367,7 +448,7 @@ public class SopaLetrasManager : MonoBehaviour
     {
         yield return new WaitForSeconds(tiempoAntesDeFinalizar);
 
-        int puntaje = 100; // criterio fijo, ver mensaje anterior sobre cronómetro descartado
+        int puntaje = 100;
 
         if (JuegosManager.Instance != null)
             JuegosManager.Instance.MostrarPuntaje(puntaje);
@@ -376,5 +457,10 @@ public class SopaLetrasManager : MonoBehaviour
     bool EstaEncontrada(SopaLetrasCell cel)
     {
         return cel.GetComponent<Image>().color == colorEncontrada;
+    }
+
+    public void DetenerJuego()
+    {
+        StopAllCoroutines();
     }
 }

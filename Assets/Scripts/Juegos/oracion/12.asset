@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0734ebb3a39dcd44c9af8ac642702df8, type: 3}
   m_Name: 12
   m_EditorClassIdentifier: 
-  parteAntes: "\"El universo es tambi\xE9n conocido con el nombre de"
+  tema: 2
+  parteAntes: "\"El continente m\xE1s peque\xF1o del planeta se llama"
   parteDespues: '"'
-  respuestaCorrecta: Cosmos
-  opcion2: Galaxia
-  opcion3: Satelite
+  respuestaCorrecta: "Ocean\xEDa"
+  opcion2: Europa
+  opcion3: "Am\xE9rica"

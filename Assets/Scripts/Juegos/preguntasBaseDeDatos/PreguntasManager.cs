@@ -49,19 +49,23 @@ public class PreguntasManager : MonoBehaviour
     private int preguntasCorrectas = 0;
     private int totalPreguntas = 0;
 
+    private TemaPregunta temaActual;
+
+    private int totalPreguntasDelTema;
     void Awake()
     {
         opciones = new GameObject[] { opcion1, opcion2, opcion3 };
     }
 
     // Llamado explícitamente por JuegosManager. nivel: 1 = sin temporizador, 2 = con temporizador
-    public void ReiniciarJuego(int nivel)
+    public void ReiniciarJuego(int nivel, TemaPregunta tema)
     {
         StopAllCoroutines();
         temporizadorPreguntaCoroutine = null;
         temporizadorTotalCoroutine = null;
 
         nivelActual = nivel;
+        temaActual = tema;
 
         foreach (var op in opciones)
             op.SetActive(true);
@@ -77,8 +81,6 @@ public class PreguntasManager : MonoBehaviour
         preguntasCorrectas = 0;
         aceptandoRespuesta = true;
 
-        // El temporizador TOTAL arranca una sola vez para toda la partida,
-        // independiente de cuántas preguntas se respondan.
         if (usaTemporizador && modoTemporizador == ModoTemporizador.TiempoTotalIntento)
             temporizadorTotalCoroutine = StartCoroutine(TemporizadorTotal(tiempoTotalIntento));
 
@@ -96,9 +98,16 @@ public class PreguntasManager : MonoBehaviour
     {
         indicesRestantes.Clear();
         for (int i = 0; i < preguntas.Length; i++)
-            indicesRestantes.Add(i);
-    }
+        {
+            if (preguntas[i].tema == temaActual)
+                indicesRestantes.Add(i);
+        }
 
+        totalPreguntasDelTema = indicesRestantes.Count;
+
+        if (totalPreguntasDelTema == 0)
+            Debug.LogWarning($"[Preguntados] No hay preguntas cargadas para el tema {temaActual}");
+    }
     void CargarSiguientePreguntaAleatoria()
     {
         if (indicesRestantes.Count == 0)
@@ -256,9 +265,9 @@ public class PreguntasManager : MonoBehaviour
     public void RespuestaIncorrecta(OpcionArrastrable opcion)
     {
         if (!aceptandoRespuesta) return;
+        aceptandoRespuesta = false;
         StartCoroutine(FeedbackIncorrecta(opcion));
     }
-
     IEnumerator FeedbackCorrecta(OpcionArrastrable opcion)
     {
         // Solo detiene el temporizador de PREGUNTA. El de tiempo TOTAL sigue corriendo.
@@ -279,10 +288,21 @@ public class PreguntasManager : MonoBehaviour
 
     IEnumerator FeedbackIncorrecta(OpcionArrastrable opcion)
     {
+        if (temporizadorPreguntaCoroutine != null)
+            StopCoroutine(temporizadorPreguntaCoroutine);
+
+        foreach (var op in opciones)
+        {
+            OpcionArrastrable arrastrable = op.GetComponent<OpcionArrastrable>();
+            arrastrable.ResetearEstado();
+            op.SetActive(false);
+        }
+
         if (panelIncorrecto) panelIncorrecto.SetActive(true);
         yield return new WaitForSeconds(tiempoFeedback);
         if (panelIncorrecto) panelIncorrecto.SetActive(false);
-        opcion.ResetearEstado();
+
+        CargarSiguientePreguntaAleatoria();
     }
 
     void FinDelJuego()
@@ -298,15 +318,16 @@ public class PreguntasManager : MonoBehaviour
         foreach (var op in opciones)
             op.SetActive(false);
 
-        // totalPreguntas usa la cantidad definida en el array, no la cantidad respondida,
-        // así que si el tiempo total se acaba antes de terminar, el puntaje refleja
-        // correctamente lo que faltó por responder.
-        totalPreguntas = preguntas.Length;
-        int puntaje = totalPreguntas > 0
-            ? Mathf.RoundToInt((float)preguntasCorrectas / totalPreguntas * 100)
+        int puntaje = totalPreguntasDelTema > 0
+            ? Mathf.RoundToInt((float)preguntasCorrectas / totalPreguntasDelTema * 100)
             : 0;
 
         if (JuegosManager.Instance != null)
             JuegosManager.Instance.MostrarPuntaje(puntaje);
+    }
+
+    public void DetenerJuego()
+    {
+        StopAllCoroutines();
     }
 }
