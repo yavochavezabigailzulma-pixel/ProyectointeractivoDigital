@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d420590715a7df458f754d978bfd5fb, type: 3}
   m_Name: 8
   m_EditorClassIdentifier: 
+  tema: 0
   pregunta: "\xBFQu\xE9 tipo de galaxias tienen forma de \xF3valo?"
-  opcion1: "E\xEDpticas"
+  opcion1: "El\xEDpticas"
   opcion2: Irregulares
   opcion3: Espirales

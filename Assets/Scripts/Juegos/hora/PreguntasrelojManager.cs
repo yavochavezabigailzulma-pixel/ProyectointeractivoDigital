@@ -30,6 +30,7 @@ public class PreguntasRelojManager : MonoBehaviour
 
     [Header("Display hora (solo Nivel 1)")]
     public TMP_Text displayHora;
+    public GameObject fondoDisplayHora;
 
     [Header("Fuentes según tipo de opción")]
     public TMP_FontAsset fuenteTexto;      // usada en Nivel 1 (ej: "Dos en punto")
@@ -71,6 +72,9 @@ public class PreguntasRelojManager : MonoBehaviour
         // El recuadro numérico solo se muestra en Nivel 1
         if (displayHora)
             displayHora.gameObject.SetActive(nivelActual == 1);
+
+        if (fondoDisplayHora)
+            fondoDisplayHora.SetActive(nivelActual == 1);
 
         respuestasCorrectas = 0;
         aceptandoRespuesta = true;
@@ -153,6 +157,8 @@ public class PreguntasRelojManager : MonoBehaviour
     {
         if (!aceptandoRespuesta) return;
 
+        aceptandoRespuesta = false;
+
         string respuesta = botonPresionado.GetComponentInChildren<TextMeshProUGUI>().text;
 
         if (respuesta == respuestaCorrecta)
@@ -176,11 +182,15 @@ public class PreguntasRelojManager : MonoBehaviour
 
     IEnumerator FeedbackIncorrecto()
     {
-        aceptandoRespuesta = false;
         if (panelIncorrecto) panelIncorrecto.SetActive(true);
+
+        //foreach (var op in opciones)
+        //    op.SetActive(false);
+
         yield return new WaitForSeconds(tiempoFeedback);
         if (panelIncorrecto) panelIncorrecto.SetActive(false);
-        aceptandoRespuesta = true;
+
+        CargarSiguientePreguntaAleatoria();
     }
 
     void FinDelJuego()
@@ -195,5 +205,9 @@ public class PreguntasRelojManager : MonoBehaviour
 
         if (JuegosManager.Instance != null)
             JuegosManager.Instance.MostrarPuntaje(puntaje);
+    }
+    public void DetenerJuego()
+    {
+        StopAllCoroutines();
     }
 }

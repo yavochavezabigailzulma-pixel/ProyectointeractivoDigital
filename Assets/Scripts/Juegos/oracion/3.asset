@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0734ebb3a39dcd44c9af8ac642702df8, type: 3}
   m_Name: 3
   m_EditorClassIdentifier: 
-  parteAntes: '"La'
-  parteDespues: "L\xE1ctea es la galaxia donde se encuentra nuestro planeta.\""
-  respuestaCorrecta: "V\xEDa"
-  opcion2: Senda
-  opcion3: Ruta
+  parteAntes: "\"La Luna es el \xFAnico sat\xE9lite"
+  parteDespues: que tiene la Tierra."
+  respuestaCorrecta: Natural
+  opcion2: Artificial
+  opcion3: Brillante

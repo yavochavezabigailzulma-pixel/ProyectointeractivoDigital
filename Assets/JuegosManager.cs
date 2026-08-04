@@ -21,6 +21,33 @@ public class SpritesNivelPorJuego
     public Sprite botonNivel2;
 }
 
+[System.Serializable]
+public class InstruccionesPorJuego
+{
+    public Sprite fondoSprite;
+    public Sprite tituloSprite;
+    public Sprite botonSprite;
+    public Sprite contenedorTextoSprite;
+    [TextArea(3, 6)]
+    public string textoNivel1;
+    [TextArea(3, 6)]
+    public string textoNivel2;
+}
+
+[System.Serializable]
+public class PuntajePorJuego
+{
+    public Sprite fondoSprite;
+    public Sprite botonSprite;
+    public Sprite contenedorTextoSprite;
+}
+
+[System.Serializable]
+public class BurbujaRetroalimentacionPorJuego
+{
+    public Sprite burbujaBajo;   // puntaje < 50
+    public Sprite burbujaAlto;   // puntaje >= 50
+}
 public class JuegosManager : MonoBehaviour
 {
     public enum Screen
@@ -125,6 +152,58 @@ public class JuegosManager : MonoBehaviour
     [Tooltip("Orden: 0-Preguntados, 1-Sopa, 2-Oracion, 3-Hora")]
     public SpritesNivelPorJuego[] spritesNivelPorJuego = new SpritesNivelPorJuego[4];
 
+    [Header("Instrucciones - Elementos por juego")]
+    public Image instruccionesBackground;
+    public Image tituloInstrucciones;
+    public Image botonInstrucciones;
+    public Image contenedorTextoInstrucciones;
+    public TextMeshProUGUI textoInstrucciones;
+
+    [Tooltip("Orden: 0-Preguntados, 1-Sopa, 2-Oracion, 3-Hora")]
+    public InstruccionesPorJuego[] instruccionesPorJuego = new InstruccionesPorJuego[4];
+
+    [Header("Puntaje - Elementos por juego")]
+    public Image puntajeBackground;
+    public Image botonPuntaje;
+    public Image contenedorTextoPuntaje;
+
+    [Tooltip("Orden: 0-Preguntados, 1-Sopa, 2-Oracion, 3-Hora")]
+    public PuntajePorJuego[] puntajePorJuego = new PuntajePorJuego[4];
+
+    [Header("Retroalimentacion - Elementos")]
+    public Image retroalimentacionBackground;
+    public Image burbujaRetroalimentacion;
+    public Image avatarRetroalimentacion;
+    public Image botonRetroalimentacion;
+
+    [Tooltip("Orden: 0-Preguntados, 1-Sopa, 2-Oracion, 3-Hora")]
+    public Sprite[] fondosRetroalimentacionPorJuego = new Sprite[4];
+
+    [Tooltip("Orden: 0-Preguntados, 1-Sopa, 2-Oracion, 3-Hora. Cada elemento tiene su versión < 50 y >= 50")]
+    public BurbujaRetroalimentacionPorJuego[] burbujasPorJuego = new BurbujaRetroalimentacionPorJuego[4];
+
+    [Tooltip("Orden: 0-Preguntados, 1-Sopa, 2-Oracion, 3-Hora")]
+    public Sprite[] botonesRetroalimentacionPorJuego = new Sprite[4];
+
+    [Header("Avatar y Botón según rango de puntaje (no varían por juego)")]
+    public Sprite avatarPuntajeBajo;   // < 50
+    public Sprite avatarPuntajeAlto;   // >= 50
+
+    private int ultimoPuntaje = 0;
+
+    [Header("Reintentar/Volver - Elementos por juego")]
+    public Image reintentarVolverBackground;
+    public Image botonVolverMenu;
+    public Image botonReintentarNivel;
+
+    [Tooltip("Orden: 0-Preguntados, 1-Sopa, 2-Oracion, 3-Hora")]
+    public Sprite[] fondosReintentarVolverPorJuego = new Sprite[4];
+
+    [Tooltip("Orden: 0-Preguntados, 1-Sopa, 2-Oracion, 3-Hora")]
+    public Sprite[] botonesVolverPorJuego = new Sprite[4];
+
+    [Tooltip("Orden: 0-Preguntados, 1-Sopa, 2-Oracion, 3-Hora")]
+    public Sprite[] botonesReintentarPorJuego = new Sprite[4];
     void Awake()
     {
         Instance = this;
@@ -280,8 +359,36 @@ public class JuegosManager : MonoBehaviour
     {
         nivelSeleccionado = nivel;
 
+        AplicarEstiloInstrucciones(juegoSeleccionado, nivel);
+
         historial.Push(Screen.SeleccionNivel);
         Navigate(Screen.Instrucciones);
+    }
+
+    private void AplicarEstiloInstrucciones(int juego, int nivel)
+    {
+        if (juego < 0 || juego >= instruccionesPorJuego.Length) return;
+
+        var datos = instruccionesPorJuego[juego];
+        if (datos == null) return;
+
+        if (instruccionesBackground != null && datos.fondoSprite != null)
+            instruccionesBackground.sprite = datos.fondoSprite;
+
+        if (tituloInstrucciones != null && datos.tituloSprite != null)
+            tituloInstrucciones.sprite = datos.tituloSprite;
+
+        if (botonInstrucciones != null && datos.botonSprite != null)
+            botonInstrucciones.sprite = datos.botonSprite;
+
+        if (contenedorTextoInstrucciones != null && datos.contenedorTextoSprite != null)
+            contenedorTextoInstrucciones.sprite = datos.contenedorTextoSprite;
+
+        if (textoInstrucciones != null)
+        {
+            string texto = nivel == 0 ? datos.textoNivel1 : datos.textoNivel2;
+            textoInstrucciones.text = texto;
+        }
     }
 
     public void EmpezarActividad()
@@ -290,20 +397,21 @@ public class JuegosManager : MonoBehaviour
         Navigate(Screen.Actividad);
 
         int nivel = nivelSeleccionado + 1;
+        TemaPregunta tema = (TemaPregunta)temaSeleccionado;
 
         switch (juegoSeleccionado)
         {
             case 0:
-                if (preguntasManager != null) preguntasManager.ReiniciarJuego(nivel);
+                if (preguntasManager != null) preguntasManager.ReiniciarJuego(nivel, tema);
                 break;
             case 1:
-                if (sopaManager != null) sopaManager.ReiniciarJuego(nivel);
+                if (sopaManager != null) sopaManager.ReiniciarJuego(nivel, tema);
                 break;
             case 2:
-                if (oracionManager != null) oracionManager.ReiniciarJuego(nivel);
+                if (oracionManager != null) oracionManager.ReiniciarJuego(nivel, tema);
                 break;
             case 3:
-                if (relojManager != null) relojManager.ReiniciarJuego(nivel);
+                if (relojManager != null) relojManager.ReiniciarJuego(nivel); // Hora no usa tema
                 break;
         }
     }
@@ -326,20 +434,97 @@ public class JuegosManager : MonoBehaviour
 
     public void MostrarPuntaje(int puntaje)
     {
+        ultimoPuntaje = puntaje;
+
         if (textoPuntaje != null)
             textoPuntaje.text = puntaje.ToString();
+
+        AplicarEstiloPuntaje(juegoSeleccionado);
 
         Navigate(Screen.Puntaje);
     }
 
+    private void AplicarEstiloPuntaje(int juego)
+    {
+        if (juego < 0 || juego >= puntajePorJuego.Length) return;
+
+        var datos = puntajePorJuego[juego];
+        if (datos == null) return;
+
+        if (puntajeBackground != null && datos.fondoSprite != null)
+            puntajeBackground.sprite = datos.fondoSprite;
+
+        if (botonPuntaje != null && datos.botonSprite != null)
+            botonPuntaje.sprite = datos.botonSprite;
+
+        if (contenedorTextoPuntaje != null && datos.contenedorTextoSprite != null)
+            contenedorTextoPuntaje.sprite = datos.contenedorTextoSprite;
+    }
     public void MostrarRetroalimentacion()
     {
+        AplicarEstiloRetroalimentacion(juegoSeleccionado, ultimoPuntaje);
         Navigate(Screen.Retroalimentacion);
+    }
+
+    private void AplicarEstiloRetroalimentacion(int juego, int puntaje)
+    {
+        if (juego < 0 || juego >= fondosRetroalimentacionPorJuego.Length) return;
+
+        bool esPuntajeAlto = puntaje >= 50;
+
+        if (retroalimentacionBackground != null && fondosRetroalimentacionPorJuego[juego] != null)
+            retroalimentacionBackground.sprite = fondosRetroalimentacionPorJuego[juego];
+
+        if (juego < burbujasPorJuego.Length && burbujasPorJuego[juego] != null)
+        {
+            var burbujas = burbujasPorJuego[juego];
+            Sprite burbujaElegida = esPuntajeAlto ? burbujas.burbujaAlto : burbujas.burbujaBajo;
+
+            if (burbujaRetroalimentacion != null && burbujaElegida != null)
+                burbujaRetroalimentacion.sprite = burbujaElegida;
+        }
+
+        if (avatarRetroalimentacion != null)
+        {
+            Sprite avatarElegido = esPuntajeAlto ? avatarPuntajeAlto : avatarPuntajeBajo;
+            if (avatarElegido != null)
+                avatarRetroalimentacion.sprite = avatarElegido;
+        }
+
+        if (botonRetroalimentacion != null &&
+            juego < botonesRetroalimentacionPorJuego.Length &&
+            botonesRetroalimentacionPorJuego[juego] != null)
+        {
+            botonRetroalimentacion.sprite = botonesRetroalimentacionPorJuego[juego];
+        }
     }
 
     public void MostrarReintentarVolver()
     {
+        AplicarEstiloReintentarVolver(juegoSeleccionado);
         Navigate(Screen.ReintentarVolver);
+    }
+
+    private void AplicarEstiloReintentarVolver(int juego)
+    {
+        if (juego < 0 || juego >= fondosReintentarVolverPorJuego.Length) return;
+
+        if (reintentarVolverBackground != null && fondosReintentarVolverPorJuego[juego] != null)
+            reintentarVolverBackground.sprite = fondosReintentarVolverPorJuego[juego];
+
+        if (botonVolverMenu != null &&
+            juego < botonesVolverPorJuego.Length &&
+            botonesVolverPorJuego[juego] != null)
+        {
+            botonVolverMenu.sprite = botonesVolverPorJuego[juego];
+        }
+
+        if (botonReintentarNivel != null &&
+            juego < botonesReintentarPorJuego.Length &&
+            botonesReintentarPorJuego[juego] != null)
+        {
+            botonReintentarNivel.sprite = botonesReintentarPorJuego[juego];
+        }
     }
 
     public void ReintentarNivel()
@@ -356,5 +541,36 @@ public class JuegosManager : MonoBehaviour
         historial.Clear();
 
         Navigate(Screen.MenuPlay);
+    }
+
+    [Header("Confirmacion Salir Actividad")]
+    public GameObject panelConfirmacionSalir;
+
+    public void PedirConfirmacionSalir()
+    {
+        if (panelConfirmacionSalir != null)
+            panelConfirmacionSalir.SetActive(true);
+    }
+
+    public void CancelarSalirActividad()
+    {
+        if (panelConfirmacionSalir != null)
+            panelConfirmacionSalir.SetActive(false);
+    }
+
+    public void ConfirmarSalirActividad()
+    {
+        if (panelConfirmacionSalir != null)
+            panelConfirmacionSalir.SetActive(false);
+
+        switch (juegoSeleccionado)
+        {
+            case 0: if (preguntasManager != null) preguntasManager.DetenerJuego(); break;
+            case 1: if (sopaManager != null) sopaManager.DetenerJuego(); break;
+            case 2: if (oracionManager != null) oracionManager.DetenerJuego(); break;
+            case 3: if (relojManager != null) relojManager.DetenerJuego(); break;
+        }
+
+        Volver();
     }
 }

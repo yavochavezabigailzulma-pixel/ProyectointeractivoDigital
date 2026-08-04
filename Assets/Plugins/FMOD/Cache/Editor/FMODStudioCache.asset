@@ -339,7 +339,7 @@ MonoBehaviour:
   Path: Assets/BancoSonidos/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639213140689819409
+  lastModified: 639213131991413623
   FileSizes: []
   Exists: 1
 --- !u!114 &-3914881113139799869
@@ -357,7 +357,7 @@ MonoBehaviour:
   Path: Assets/BancoSonidos/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 639213140689842009
+  lastModified: 639213131991425040
   FileSizes: []
   Exists: 1
 --- !u!114 &-3525592702113440655
@@ -456,7 +456,7 @@ MonoBehaviour:
   Path: Assets/BancoSonidos/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 639213140689887844
+  lastModified: 639213131991662903
   FileSizes: []
   Exists: 1
 --- !u!114 &-77821228442570119
@@ -540,7 +540,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 7881385042960529730}
   cacheVersion: 131859
-  cacheTime: 639213140689887844
+  cacheTime: 639213131991662903
   SerializableEventsDict:
   - key: event:/Music/Continentes/Europa
     index: 0
@@ -696,7 +696,7 @@ MonoBehaviour:
   Path: Assets/BancoSonidos/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639213062922046357
+  lastModified: 639207747221341801
   FileSizes: []
   Exists: 1
 --- !u!114 &3071826491280885215
@@ -930,7 +930,7 @@ MonoBehaviour:
   Path: Assets/BancoSonidos/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639213140686225856
+  lastModified: 639213131979307483
   FileSizes:
   - Name: 
     Value: 2242

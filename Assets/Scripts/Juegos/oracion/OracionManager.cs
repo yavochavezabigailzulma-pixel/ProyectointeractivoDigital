@@ -48,18 +48,22 @@ public class OracionManager : MonoBehaviour
     private int respuestasCorrectas = 0;
     private int totalPreguntas = 0;
 
+    private int totalPreguntasDelTema;
+
+    private TemaPregunta temaActual;
     void Awake()
     {
         tarjetas = new GameObject[] { tarjeta1, tarjeta2, tarjeta3 };
     }
 
-    public void ReiniciarJuego(int nivel)
+    public void ReiniciarJuego(int nivel, TemaPregunta tema)
     {
         StopAllCoroutines();
         temporizadorPreguntaCoroutine = null;
         temporizadorTotalCoroutine = null;
 
         nivelActual = nivel;
+        temaActual = tema;
 
         foreach (var t in tarjetas)
             t.SetActive(true);
@@ -92,9 +96,16 @@ public class OracionManager : MonoBehaviour
     {
         indicesRestantes.Clear();
         for (int i = 0; i < preguntas.Length; i++)
-            indicesRestantes.Add(i);
-    }
+        {
+            if (preguntas[i].tema == temaActual)
+                indicesRestantes.Add(i);
+        }
 
+        totalPreguntasDelTema = indicesRestantes.Count;
+
+        if (totalPreguntasDelTema == 0)
+            Debug.LogWarning($"[Oracion] No hay preguntas cargadas para el tema {temaActual}");
+    }
     void CargarSiguientePreguntaAleatoria()
     {
         if (indicesRestantes.Count == 0)
@@ -243,15 +254,12 @@ public class OracionManager : MonoBehaviour
     {
         if (!aceptandoRespuesta) return;
 
+        aceptandoRespuesta = false;
+
         if (tarjeta.valorRespuesta == respuestaCorrecta)
-        {
-            aceptandoRespuesta = false;
             StartCoroutine(FeedbackCorrecto(tarjeta));
-        }
         else
-        {
             StartCoroutine(FeedbackIncorrecto(tarjeta));
-        }
     }
 
     IEnumerator FeedbackCorrecto(TarjetaOracion tarjeta)
@@ -273,10 +281,21 @@ public class OracionManager : MonoBehaviour
 
     IEnumerator FeedbackIncorrecto(TarjetaOracion tarjeta)
     {
+        if (temporizadorPreguntaCoroutine != null)
+            StopCoroutine(temporizadorPreguntaCoroutine);
+
+        foreach (var t in tarjetas)
+        {
+            TarjetaOracion tar = t.GetComponent<TarjetaOracion>();
+            tar.ResetearEstado();
+            t.SetActive(false);
+        }
+
         if (panelIncorrecto) panelIncorrecto.SetActive(true);
         yield return new WaitForSeconds(tiempoFeedback);
         if (panelIncorrecto) panelIncorrecto.SetActive(false);
-        tarjeta.ResetearEstado();
+
+        CargarSiguientePreguntaAleatoria();
     }
 
     void FinDelJuego()
@@ -292,12 +311,16 @@ public class OracionManager : MonoBehaviour
         foreach (var t in tarjetas)
             t.SetActive(false);
 
-        totalPreguntas = preguntas.Length;
-        int puntaje = totalPreguntas > 0
-            ? Mathf.RoundToInt((float)respuestasCorrectas / totalPreguntas * 100)
+        int puntaje = totalPreguntasDelTema > 0
+            ? Mathf.RoundToInt((float)respuestasCorrectas / totalPreguntasDelTema * 100)
             : 0;
 
         if (JuegosManager.Instance != null)
             JuegosManager.Instance.MostrarPuntaje(puntaje);
+    }
+
+    public void DetenerJuego()
+    {
+        StopAllCoroutines();
     }
 }

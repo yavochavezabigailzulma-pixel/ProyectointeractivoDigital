@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d420590715a7df458f754d978bfd5fb, type: 3}
   m_Name: 11
   m_EditorClassIdentifier: 
-  pregunta: "\xBFC\xF3mo se llaman las rocas que brillan como estrellas fugaces al
-    entrar a la atm\xF3sfera?"
-  opcion1: Meteoritos
-  opcion2: Asteroides
-  opcion3: Cometas
+  tema: 1
+  pregunta: "\xBFQu\xE9 movimiento de la Tierra dura aproximadamente 24 horas?"
+  opcion1: "Rotaci\xF3n"
+  opcion2: "Traslaci\xF3n"
+  opcion3: "Inclinaci\xF3n"
